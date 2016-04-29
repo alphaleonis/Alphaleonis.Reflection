@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAttributeTable", "CustomAttributeTable\CustomAttributeTable.csproj", "{FD2A88BB-9E97-4956-8D47-5C7E9A0402FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAttributeTableTests", "CustomAttributeTableTests\CustomAttributeTableTests.csproj", "{177FC80D-4932-440E-91E9-77C403DD2179}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD2A88BB-9E97-4956-8D47-5C7E9A0402FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2A88BB-9E97-4956-8D47-5C7E9A0402FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD2A88BB-9E97-4956-8D47-5C7E9A0402FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2A88BB-9E97-4956-8D47-5C7E9A0402FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{177FC80D-4932-440E-91E9-77C403DD2179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{177FC80D-4932-440E-91E9-77C403DD2179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{177FC80D-4932-440E-91E9-77C403DD2179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{177FC80D-4932-440E-91E9-77C403DD2179}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
