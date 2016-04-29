@@ -8,8 +8,8 @@ namespace CustomAttributeTable
 
    public interface ICustomAttributeTable
    {
-      IEnumerable<Attribute> GetCustomAttributes(MemberInfo member, bool inherit = false);
-
+      IEnumerable<Attribute> GetCustomAttributes(Type type);
+      IEnumerable<Attribute> GetCustomAttributes(MemberInfo member);
       IEnumerable<Attribute> GetCustomAttributes(ParameterInfo parameterInfo);
    }
    

@@ -8,12 +8,22 @@ namespace CustomAttributeTable
 {
    public class CustomAttributeTableBuilder
    {
+      #region Private Fields
+
       private ImmutableDictionary<Type, TypeMetadata>.Builder m_metadata;
+
+      #endregion
+
+      #region Constructor
 
       public CustomAttributeTableBuilder()
       {
          m_metadata = ImmutableDictionary.CreateBuilder<Type, TypeMetadata>(TypeEqualityComparer.Default);
       }
+
+      #endregion
+
+      #region Public Methods
 
       public ICustomAttributeTable CreateTable()
       {
@@ -41,13 +51,17 @@ namespace CustomAttributeTable
          else if (member is MethodBase)
          {
             var method = member as MethodBase;
-            m_metadata[method.DeclaringType] = GetTypeMetadata(method.DeclaringType).AddMethodAttributes(new MethodKey(method), attributes);            
+            m_metadata[method.DeclaringType] = GetTypeMetadata(method.DeclaringType).AddMethodAttributes(new MethodKey(method), attributes);
          }
          else
          {
             AddAttributes(member.DeclaringType, member.Name, attributes);
          }
       }
+
+      #endregion
+
+      #region Private Methods
 
       private TypeMetadata GetTypeMetadata(Type type)
       {
@@ -58,6 +72,10 @@ namespace CustomAttributeTable
          }
          return metadata;
       }
+
+      #endregion
+
+      #region Nested Types
 
       private class MethodMetadata
       {
@@ -226,30 +244,12 @@ namespace CustomAttributeTable
             m_metadata = metadata;
          }
 
-         private TypeMetadata GetTypeMetadata(Type type)
+         public IEnumerable<Attribute> GetCustomAttributes(Type type)
          {
-            TypeMetadata metadata;
-            if (m_metadata.TryGetValue(type, out metadata))
-            {
-               return metadata;
-            }
-
-            return TypeMetadata.Empty;
+            return GetTypeMetadata(type).TypeAttributes;
          }
 
-         private IEnumerable<Attribute> GetMemberAttributes(MemberInfo member)
-         {
-            IImmutableList<Attribute> attributes;
-            if (GetTypeMetadata(member.DeclaringType).MemberAttributes.TryGetValue(member.Name, out attributes))
-            {
-               return attributes;
-            }
-            else
-            {
-               return ImmutableList<Attribute>.Empty;
-            }
-         }
-         public IEnumerable<Attribute> GetCustomAttributes(MemberInfo member, bool inherit = false)
+         public IEnumerable<Attribute> GetCustomAttributes(MemberInfo member)
          {
             if (member == null)
                throw new ArgumentNullException(nameof(member));
@@ -260,8 +260,8 @@ namespace CustomAttributeTable
                case MemberTypes.Field:
                case MemberTypes.Property:
                   var result = GetMemberAttributes(member);
-                  
-                  return result;                  
+
+                  return result;
 
                case MemberTypes.Method:
                case MemberTypes.Constructor:
@@ -277,11 +277,7 @@ namespace CustomAttributeTable
 
                case MemberTypes.TypeInfo:
                case MemberTypes.NestedType:
-                  Type type = (Type)member;
-                  IEnumerable<Attribute> typeAttributes = GetTypeMetadata(member as Type).TypeAttributes;
-                  
-                  return typeAttributes;
-
+                  return GetCustomAttributes((Type)member);
 
                case MemberTypes.Custom:
                default:
@@ -305,66 +301,32 @@ namespace CustomAttributeTable
                return ImmutableList<Attribute>.Empty;
             }
          }
+
+         private TypeMetadata GetTypeMetadata(Type type)
+         {
+            TypeMetadata metadata;
+            if (m_metadata.TryGetValue(type, out metadata))
+            {
+               return metadata;
+            }
+
+            return TypeMetadata.Empty;
+         }
+
+         private IEnumerable<Attribute> GetMemberAttributes(MemberInfo member)
+         {
+            IImmutableList<Attribute> attributes;
+            if (GetTypeMetadata(member.DeclaringType).MemberAttributes.TryGetValue(member.Name, out attributes))
+            {
+               return attributes;
+            }
+            else
+            {
+               return ImmutableList<Attribute>.Empty;
+            }
+         }
       }
+
+      #endregion
    }
-
-
-   //internal static Object[] GetCustomAttributes(RuntimeMethodInfo method, RuntimeType caType, bool inherit)
-   //{
-   //   Contract.Requires(method != null);
-   //   Contract.Requires(caType != null);
-
-   //   if (method.IsGenericMethod && !method.IsGenericMethodDefinition)
-   //      method = method.GetGenericMethodDefinition() as RuntimeMethodInfo;
-
-   //   int pcaCount = 0;
-   //   Attribute[] pca = PseudoCustomAttribute.GetCustomAttributes(method, caType, true, out pcaCount);
-
-   //   // if we are asked to go up the hierarchy chain we have to do it now and regardless of the
-   //   // attribute usage for the specific attribute because a derived attribute may override the usage...           
-   //   // ... however if the attribute is sealed we can rely on the attribute usage
-   //   if (!inherit || (caType.IsSealed && !CustomAttribute.GetAttributeUsage(caType).Inherited))
-   //   {
-   //      object[] attributes = GetCustomAttributes(method.GetRuntimeModule(), method.MetadataToken, pcaCount, caType, !AllowCriticalCustomAttributes(method));
-   //      if (pcaCount > 0) Array.Copy(pca, 0, attributes, attributes.Length - pcaCount, pcaCount);
-   //      return attributes;
-   //   }
-
-   //   List<object> result = new List<object>();
-   //   bool mustBeInheritable = false;
-   //   bool useObjectArray = (caType == null || caType.IsValueType || caType.ContainsGenericParameters);
-   //   Type arrayType = useObjectArray ? typeof(object) : caType;
-
-   //   while (pcaCount > 0)
-   //      result.Add(pca[--pcaCount]);
-
-   //   while (method != null)
-   //   {
-   //      object[] attributes = GetCustomAttributes(method.GetRuntimeModule(), method.MetadataToken, 0, caType, mustBeInheritable, result, !AllowCriticalCustomAttributes(method));
-   //      mustBeInheritable = true;
-   //      for (int i = 0; i < attributes.Length; i++)
-   //         result.Add(attributes[i]);
-
-   //      method = method.GetParentDefinition();
-   //   }
-
-   //   object[] typedResult = CreateAttributeArrayHelper(arrayType, result.Count);
-   //   Array.Copy(result.ToArray(), 0, typedResult, 0, result.Count);
-   //   return typedResult;
-   //}
-
-   //[System.Security.SecuritySafeCritical]  // auto-generated
-   //internal static Object[] GetCustomAttributes(RuntimeConstructorInfo ctor, RuntimeType caType)
-   //{
-   //   Contract.Requires(ctor != null);
-   //   Contract.Requires(caType != null);
-
-   //   int pcaCount = 0;
-   //   Attribute[] pca = PseudoCustomAttribute.GetCustomAttributes(ctor, caType, true, out pcaCount);
-   //   object[] attributes = GetCustomAttributes(ctor.GetRuntimeModule(), ctor.MetadataToken, pcaCount, caType, !AllowCriticalCustomAttributes(ctor));
-   //   if (pcaCount > 0) Array.Copy(pca, 0, attributes, attributes.Length - pcaCount, pcaCount);
-   //   return attributes;
-   //}
-
-
 }
