@@ -2,15 +2,26 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 
 namespace CustomAttributeTable
 {
+   public static class Decorate
+   {
+      public static T Parameter<T>(IEnumerable<Attribute> attributes)
+      {
+         return default(T);
+      }
+   }
+
    public class CustomAttributeTableBuilder
    {
       #region Private Fields
 
       private ImmutableDictionary<Type, TypeMetadata>.Builder m_metadata;
+      //private static MethodInfo s_decorateArrayMethodInfo = Reflect.GetMethod(() => Decorate.Parameter<object>(default(Attribute[]))).GetGenericMethodDefinition();
+      private static MethodInfo s_decorateEnumerableMethodInfo = Reflect.GetMethod(() => Decorate.Parameter<object>(default(IEnumerable<Attribute>))).GetGenericMethodDefinition();
 
       #endregion
 
@@ -23,19 +34,120 @@ namespace CustomAttributeTable
 
       #endregion
 
-      #region Public Methods
+      #region General Methods
 
       public ICustomAttributeTable CreateTable()
       {
          return new CustomAttributeTable(m_metadata.ToImmutable());
       }
 
-      public void AddAttributes(Type type, string memberName, IEnumerable<Attribute> attributes)
+      #endregion
+
+      #region Add Type Attributes
+
+      public CustomAttributeTableBuilder AddTypeAttributes<T>(params Attribute[] attributes)
       {
-         m_metadata[type] = GetTypeMetadata(type).AddMemberAttributes(memberName, attributes);
+         return AddTypeAttributes<T>(attributes.AsEnumerable());
       }
 
-      public void AddAttributes(MemberInfo member, IEnumerable<Attribute> attributes)
+      public CustomAttributeTableBuilder AddTypeAttributes<T>(IEnumerable<Attribute> attributes)
+      {
+         return AddMemberAttributes(typeof(T), attributes);
+      }
+
+      #endregion
+
+      #region Add Property Attributes
+
+      public CustomAttributeTableBuilder AddPropertyAttributes<T>(string propertyName, IEnumerable<Attribute> attributes)
+      {
+         PropertyInfo property = typeof(T).GetProperty(propertyName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
+         if (property == null)
+            throw new ArgumentException($"The type {typeof(T).FullName} does not contain a property named \"{propertyName}\".");
+
+         AddMemberAttributes(property, attributes);
+         return this;
+      }
+
+      #endregion
+
+      #region Add Parameter Attributes
+
+      private CustomAttributeTableBuilder AddParameterAttributes(LambdaExpression expression)
+      {
+         MethodCallExpression methodCallExpression = expression.Body as MethodCallExpression;
+         if (methodCallExpression == null)
+            throw new ArgumentException("Expression is not a single method call expression.");
+
+         MethodInfo targetMethod = methodCallExpression.Method;
+         var parameters = targetMethod.GetParameters();
+         for (int i = 0; i < parameters.Length; i++)
+         {
+            var parameter = parameters[i];
+            var argCall = methodCallExpression.Arguments[i] as MethodCallExpression;
+            if (argCall != null && argCall.Method.IsGenericMethod &&               
+               (s_decorateEnumerableMethodInfo.Equals(argCall.Method.GetGenericMethodDefinition())))
+            {
+               Expression attrArg = argCall.Arguments[0];
+               var argLamb = Expression.Lambda<Func<IEnumerable<Attribute>>>(attrArg).Compile();
+               var attributes = argLamb();               
+               AddParameterAttributes(parameter, attributes);
+            }
+         }
+
+         return this;
+      }
+
+      public CustomAttributeTableBuilder AddParameterAttributes(Expression<Action> expression)
+      {
+         return AddParameterAttributes((LambdaExpression)expression);
+      }
+
+      public CustomAttributeTableBuilder AddParameterAttributes<T>(Expression<Action<T>> expression)
+      {
+         return AddParameterAttributes((LambdaExpression)expression);
+      }
+      
+      public CustomAttributeTableBuilder AddParameterAttributes(ParameterInfo parameter, IEnumerable<Attribute> attributes)
+      {
+         if (parameter == null)
+            throw new ArgumentNullException(nameof(parameter), $"{nameof(parameter)} is null.");
+
+         if (attributes == null)
+            throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
+
+         Type type = parameter.Member.DeclaringType;
+         m_metadata[type] = GetTypeMetadata(type).AddMethodParameterAttributes(new MethodKey(parameter.Member as MethodBase), parameter.Position, attributes);
+         return this;
+      }
+
+      #endregion
+
+      #region Add Method Attributes
+
+      public CustomAttributeTableBuilder AddMethodAttributes(MethodBase method, IEnumerable<Attribute> attributes)
+      {
+         if (method == null)
+            throw new ArgumentNullException(nameof(method), $"{nameof(method)} is null.");
+
+         if (attributes == null)
+            throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
+
+         AddMemberAttributes((MemberInfo)method, attributes);
+         return this;
+      }
+
+      #endregion
+
+      #region Add Member Attributes
+
+      public CustomAttributeTableBuilder AddMemberAttributes(Type type, string memberName, IEnumerable<Attribute> attributes)
+      {
+         m_metadata[type] = GetTypeMetadata(type).AddMemberAttributes(memberName, attributes);
+         return this;
+      }
+
+      public CustomAttributeTableBuilder AddMemberAttributes(MemberInfo member, IEnumerable<Attribute> attributes)
       {
          if (member == null)
             throw new ArgumentNullException(nameof(member), $"{nameof(member)} is null.");
@@ -55,8 +167,9 @@ namespace CustomAttributeTable
          }
          else
          {
-            AddAttributes(member.DeclaringType, member.Name, attributes);
+            AddMemberAttributes(member.DeclaringType, member.Name, attributes);
          }
+         return this;
       }
 
       #endregion

@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
+using System.CodeDom.Compiler;
 
 namespace CustomAttributeTableTests
 {
 
    public static class SequenceAssert
    {
-      public static void AreEquivalent<T>(IEnumerable<T> expected, IEnumerable<T> actual)
+      public static void AreEquivalent<T>(IEnumerable<T> expected, IEnumerable<T> actual, string message = null)
       {
-         AreEquivalent<T>(expected, actual, EqualityComparer<T>.Default);
+         AreEquivalent<T>(expected, actual, EqualityComparer<T>.Default, message);
       }
 
-      public static void AreEquivalent<T>(IEnumerable<T> expected, IEnumerable<T> actual, IEqualityComparer<T> comparer)
+      public static void AreEquivalent<T>(IEnumerable<T> expected, IEnumerable<T> actual, IEqualityComparer<T> comparer, string message = null)
       {
          if (expected == null)
          {
@@ -22,7 +24,7 @@ namespace CustomAttributeTableTests
          }
          else if (actual == null)
          {
-            Assert.Fail("The sequences are not equal, expected a sequence but found <null>.");
+            Assert.Fail($"{(message == null ? "" : message + "\r\n")}The sequences are not equal, expected a sequence but found <null>.");
          }
          else
          {
@@ -30,7 +32,7 @@ namespace CustomAttributeTableTests
             T[] actualArray = actual.ToArray();
 
             if (expectedArray.Length != actualArray.Length)
-               Assert.Fail("The sequences are not equivalent; Expected a sequence of length {0}, but got a sequence of length {1}.\r\nExpected: {2}\r\nActual: {3}", expectedArray.Length, actualArray.Length, GetDisplayTextForObject(expectedArray), GetDisplayTextForObject(actualArray));
+               Assert.Fail($"{(message == null ? "" : message + "\r\n")}The sequences are not equivalent; Expected a sequence of length {expectedArray.Length}, but got a sequence of length {actualArray.Length}.\r\nExpected:\r\n{GetDisplayTextForObject(expectedArray)}\r\nActual:\r\n{GetDisplayTextForObject(actualArray)}");
 
             IEnumerable<IGrouping<T, T>> expectedGrouped = expectedArray.GroupBy(item => item, comparer);
 
@@ -41,7 +43,8 @@ namespace CustomAttributeTableTests
 
                if (actualCount != expectedCount)
                {
-                  Assert.Fail("The sequences are not equivalent; Expected {0} occurences of item <{1}>, but got {2} occurrences of that item.\r\nExpected: {2}\r\nActual: {3}", expectedCount, group.Key, actualCount, GetDisplayTextForObject(expectedArray), GetDisplayTextForObject(actualArray));
+                  string format = $"{(message == null ? "" : message + "\r\n")}The sequences are not equivalent; Expected {expectedCount} occurences of item <{group.Key}>, but got {actualCount} occurrences of that item.\r\nExpected:\r\n{GetDisplayTextForObject(expectedArray)}\r\nActual:\r\n{GetDisplayTextForObject(actualArray)}";
+                  Assert.Fail(format);
                }
             }
          }
@@ -149,7 +152,7 @@ namespace CustomAttributeTableTests
 
          const int MAX_LENGTH = 30;
          StringBuilder sb = new StringBuilder();
-         sb.Append("[");
+         sb.AppendLine("[");
          int i = 0;
          foreach (T element in sequence)
          {
@@ -183,42 +186,54 @@ namespace CustomAttributeTableTests
       private static string GetDisplayTextForObject(object value)
       {
          StringBuilder sb = new StringBuilder();
-         AppendValueToString(sb, value, true);
-         return sb.ToString();
+         using (IndentedTextWriter writer = new IndentedTextWriter(new StringWriter(sb)))
+         {
+            AppendValueToString(writer, value, true);
+            return sb.ToString();
+         }
       }
 
-      private static void AppendValueToString(StringBuilder sb, object value, bool qouteString = false)
+      private static void AppendValueToString(IndentedTextWriter sb, object value, bool qouteString = false)
       {
          if (sb == null)
             throw new ArgumentNullException("sb", "sb is null.");
+
          if (value == null)
          {
-            sb.Append("null");
+            sb.Write("null");
          }
          else if (value is string)
          {
-            if (qouteString) sb.Append('\"');
-            sb.Append(value);
-            if (qouteString) sb.Append('\"');
+            if (qouteString) sb.Write('\"');
+            sb.Write(value);
+            if (qouteString) sb.Write('\"');
          }
          else if (value is System.Collections.IEnumerable)
          {
-            sb.Append('{');
+            sb.WriteLine("[");
+            sb.Indent++;
             bool isFirst = true;
             foreach (object v in ((System.Collections.IEnumerable)value))
             {
                if (!isFirst)
-                  sb.Append(",");
+               {
+                  sb.WriteLine(",");
+               }
                else
+               {
                   isFirst = false;
+               }
 
                AppendValueToString(sb, v);
+
             }
-            sb.Append('}');
+            sb.Indent--;
+            sb.WriteLine();
+            sb.Write(']');
          }
          else
          {
-            sb.Append(value.ToString());
+            sb.Write(value.ToString());
          }
       }
    }

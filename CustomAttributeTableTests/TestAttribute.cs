@@ -3,9 +3,16 @@ using System.Linq;
 
 namespace CustomAttributeTableTests
 {
-
    public abstract class TestAttribute : Attribute
    {
+      public TestAttribute(string value)
+      {
+         Value = value;
+      }
+      public TestAttribute()
+      {
+      }
+
       public string Value { get; set; }
 
       public override bool Equals(object obj)
@@ -21,7 +28,7 @@ namespace CustomAttributeTableTests
 
       public override string ToString()
       {
-         return $"{Name}-{Value}\n";
+         return $"{Name}-{Value}";
       }
 
       public abstract string Name { get; }
@@ -31,24 +38,60 @@ namespace CustomAttributeTableTests
    [AttributeUsage(AttributeTargets.All, AllowMultiple = true, Inherited = true)]
    public sealed class InheritedMultiAttribute : TestAttribute
    {
-      public override string Name => "IMA";
+      public InheritedMultiAttribute()
+      {
+      }
+
+      public InheritedMultiAttribute(string value)
+         : base(value)
+      {
+      }
+      
+      public override string Name => "IM";
    }
 
    [AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = true)]
    public sealed class InheritedSingleAttribute : TestAttribute
    {
-      public override string Name => "ISA";
+      public InheritedSingleAttribute()
+      {
+      }
+
+      public InheritedSingleAttribute(string value)
+         : base(value)
+      {
+      }
+
+      public override string Name => "IS";
    }
 
    [AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = false)]
    public sealed class NonInheritedSingleAttribute : TestAttribute
    {
-      public override string Name => "NSA";
+      public NonInheritedSingleAttribute()
+      {
+      }
+
+      public NonInheritedSingleAttribute(string value) 
+         : base(value)
+      {
+      }
+
+      public override string Name => "NS";
    }
 
    [AttributeUsage(AttributeTargets.All, AllowMultiple = true, Inherited = false)]
    public sealed class NonInheritedMultiAttribute : TestAttribute
    {
-      public override string Name => "NMA";
+      public NonInheritedMultiAttribute()
+      {
+      }
+
+      public NonInheritedMultiAttribute(string value) 
+         : base(value)
+      {
+      }
+
+      public override string Name => "NM";
    }
 }

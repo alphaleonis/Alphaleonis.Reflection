@@ -8,6 +8,7 @@ namespace CustomAttributeTableTests
 {
    public partial class AttributeTableReflectionContext : ReflectionContext
    {
+      private readonly static AttributeUsageAttribute DefaultAttributeUsageAttribute = new AttributeUsageAttribute(AttributeTargets.All);
 
       public AttributeTableReflectionContext(ICustomAttributeTable table)
       {
@@ -40,6 +41,9 @@ namespace CustomAttributeTableTests
 
       public TypeInfo MapType(Type type)
       {
+         if (type == null)
+            return null;
+
          if (type is AttributeTableProjectedType)
             return type.GetTypeInfo();
 
@@ -56,10 +60,7 @@ namespace CustomAttributeTableTests
 
       #endregion
 
-      private object[] GetCustomAttributes(MemberInfo member, Type attributeType, bool inherit)
-      {
-         
-      }
+      
 
       private FieldInfo MapMember(FieldInfo field)
       {
@@ -108,7 +109,7 @@ namespace CustomAttributeTableTests
             return true;
 
          return member.GetCustomAttributes(typeof(AttributeTableReflectionContextIdentifierAttribute), false)
-                                     .OfType<AttributeTableReflectionContextIdentifierAttribute>()            
+                                     .OfType<AttributeTableReflectionContextIdentifierAttribute>()
                                      .Any(attr => attr.ContextId == ContextIdentifierAttribute.ContextId);
       }
 
@@ -125,7 +126,14 @@ namespace CustomAttributeTableTests
       {
          return attributes.Concat(new[] { ContextIdentifierAttribute });
       }
+
+      internal static AttributeUsageAttribute GetAttributeUsage(ICustomAttributeProvider decoratedAttribute)
+      {
+         return decoratedAttribute.GetCustomAttributes(typeof(AttributeUsageAttribute), true).OfType<AttributeUsageAttribute>().FirstOrDefault() ?? DefaultAttributeUsageAttribute;
+      }
    }
+
+
 
 
 }

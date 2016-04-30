@@ -119,7 +119,7 @@ namespace CustomAttributeTableTests
       {
          var sourceType = typeof(SourceType);
          var targetType = typeof(TargetType);
-         builder.AddAttributes(targetType, sourceType.GetCustomAttributes(false).OfType<Attribute>());
+         builder.AddMemberAttributes(targetType, sourceType.GetCustomAttributes(false).OfType<Attribute>());
 
          foreach (var sourceMethod in sourceType.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic).Where(m => !m.IsGenericMethod && m.DeclaringType.Equals(sourceType)))
          {
@@ -129,10 +129,36 @@ namespace CustomAttributeTableTests
                                  m.GetParameters().Select(p => p.ParameterType).SequenceEqual(
                                  sourceMethod.GetParameters().Select(p => p.ParameterType)));
 
-            builder.AddAttributes(targetMethod, sourceMethod.GetCustomAttributes(false).OfType<Attribute>());
+            builder.AddMemberAttributes(targetMethod, sourceMethod.GetCustomAttributes(false).OfType<Attribute>());
          }
       }
 
+      class A
+      {
+         public virtual bool Name
+         {
+            get { return false; }
+         }
+      }
+
+      class B : A
+      {
+         new public bool Name
+         {
+             get
+            {
+               return base.Name;
+            }
+
+            
+         }
+      }
+
+      [TestMethod]
+      public void IsOverride_PropertyInfo()
+      {
+         
+      }
       [TestMethod]
       public void TestMethod1()
       {
@@ -173,5 +199,5 @@ namespace CustomAttributeTableTests
       }
    }
 
-
+   
 }

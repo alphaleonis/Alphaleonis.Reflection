@@ -12,7 +12,7 @@ namespace CustomAttributeTableTests
       {
          #region Private Fields
 
-         private readonly static AttributeUsageAttribute DefaultAttributeUsageAttribute = new AttributeUsageAttribute(AttributeTargets.All);
+         
 
          #endregion
 
@@ -44,7 +44,7 @@ namespace CustomAttributeTableTests
 
          public AttributeTableReflectionContext ReflectionContext { get; }
 
-         public override Type BaseType => ReflectionContext.MapType(base.BaseType.GetTypeInfo());
+         public override Type BaseType => ReflectionContext.MapType(base.BaseType?.GetTypeInfo());
 
          public override Assembly Assembly => ReflectionContext.MapAssembly(base.Assembly);
 
@@ -74,7 +74,7 @@ namespace CustomAttributeTableTests
             }
 
             // Then get base attributes, add only if Inherit = true AND (Multiple = true OR attribute not already exists).
-            if (BaseType != null && !BaseType.Equals(typeof(object)))
+            if (inherit && BaseType != null && !BaseType.Equals(typeof(object)))
             {
                foreach (var ca in BaseType.GetCustomAttributes(attributeType, inherit))
                {
@@ -89,17 +89,35 @@ namespace CustomAttributeTableTests
             {
                arrResult[i] = result[i];
             }
+            
             return arrResult;
+         }
+
+         protected override PropertyInfo GetPropertyImpl(string name, BindingFlags bindingAttr, Binder binder, Type returnType, Type[] types, ParameterModifier[] modifiers)
+         {
+            return ReflectionContext.MapMember(base.GetPropertyImpl(name, bindingAttr, binder, returnType, types, modifiers));
+         }
+
+         public override PropertyInfo[] GetProperties(BindingFlags bindingAttr)
+         {
+            return base.GetProperties(bindingAttr).Select(prop => ReflectionContext.MapMember(prop)).ToArray();
+         }
+
+         protected override MethodInfo GetMethodImpl(string name, BindingFlags bindingAttr, Binder binder, CallingConventions callConvention, Type[] types, ParameterModifier[] modifiers)
+         {
+            return ReflectionContext.MapMember(base.GetMethodImpl(name, bindingAttr, binder, callConvention, types, modifiers));
+         }
+
+         public override MethodInfo[] GetMethods(BindingFlags bindingAttr)
+         {
+            return base.GetMethods(bindingAttr).Select(method => ReflectionContext.MapMember(method)).ToArray();
          }
 
          #endregion
 
          #region Private Methods
 
-         internal static AttributeUsageAttribute GetAttributeUsage(Type decoratedAttribute)
-         {
-            return decoratedAttribute.GetCustomAttribute<AttributeUsageAttribute>() ?? DefaultAttributeUsageAttribute;
-         }
+
 
          #endregion
       }
