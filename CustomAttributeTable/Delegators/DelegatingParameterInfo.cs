@@ -56,5 +56,9 @@ namespace CustomAttributeTable
          else
             return m_parameter.Equals(obj);
       }
+
+      public override IEnumerable<CustomAttributeData> CustomAttributes => m_parameter.CustomAttributes;
+
+      public override bool HasDefaultValue => m_parameter.HasDefaultValue;
    }
 }

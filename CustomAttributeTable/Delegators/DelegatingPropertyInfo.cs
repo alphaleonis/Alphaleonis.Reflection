@@ -6,6 +6,8 @@ using System.Reflection;
 
 namespace CustomAttributeTable
 {
+   
+
    public class DelegatingPropertyInfo : PropertyInfo
    {
       private readonly PropertyInfo m_property;
@@ -78,6 +80,6 @@ namespace CustomAttributeTable
             return other.m_property.Equals(m_property);
          else
             return m_property.Equals(obj);
-      }
-   }   
+      }      
+   }
 }

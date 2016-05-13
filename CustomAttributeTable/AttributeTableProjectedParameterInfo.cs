@@ -25,32 +25,22 @@ namespace CustomAttributeTableTests
 
          public override object[] GetCustomAttributes(Type attributeType, bool inherit)
          {
-            // Start with the table attributes.
             List<object> result = new List<object>();
 
+            // Add the context identifier attribute.
             result.Add(ReflectionContext.ContextIdentifierAttribute);
 
+            // Then add all the attributes from the attribute table.
             result.AddRange(ReflectionContext.Table.GetCustomAttributes(this).Where(attr => attributeType.IsAssignableFrom(attr.GetType())));
 
-            // Then check this type, without inheritance. Add only attributes if Multiple = true OR attribute not already exists.
+            // Then check this type, without inheritance. (Parameter attributes are not inherited). Add only attributes if Multiple = true OR attribute not already exists.
             foreach (var ca in base.GetCustomAttributes(attributeType, false))
             {
                if (GetAttributeUsage(ca.GetType()).AllowMultiple || !result.Any(attr => attr.GetType().Equals(ca.GetType())))
                   result.Add(ca);
-            }
+            }         
 
-            // TODO PP: Remove commented code.
-            //// Then get base attributes, add only if Inherit = true AND (Multiple = true OR attribute not already exists).
-            //if (inherit && BaseType != null && !BaseType.Equals(typeof(object)))
-            //{
-            //   foreach (var ca in BaseType.GetCustomAttributes(attributeType, inherit))
-            //   {
-            //      AttributeUsageAttribute attributeUsage = GetAttributeUsage(ca.GetType());
-            //      if (attributeUsage.Inherited && (attributeUsage.AllowMultiple || !result.Any(attr => attr.GetType().Equals(ca.GetType()))))
-            //         result.Add(ca);
-            //   }
-            //}
-
+            // Finally create a resulting array of the correct type.
             object[] arrResult = (object[])Array.CreateInstance(attributeType, result.Count);
             for (int i = 0; i < result.Count; i++)
             {
@@ -59,6 +49,19 @@ namespace CustomAttributeTableTests
 
             return arrResult;
          }
+
+         public override Type[] GetOptionalCustomModifiers() => ReflectionContext.MapTypes(base.GetOptionalCustomModifiers());
+
+         public override Type[] GetRequiredCustomModifiers() => ReflectionContext.MapTypes(base.GetRequiredCustomModifiers());
+
+         public override bool IsDefined(Type attributeType, bool inherit)
+         {
+            throw new NotImplementedException();
+         }
+
+         public override MemberInfo Member => ReflectionContext.MapMember(base.Member);
+
+         public override Type ParameterType => ReflectionContext.MapType(base.ParameterType);         
       }
    }
 

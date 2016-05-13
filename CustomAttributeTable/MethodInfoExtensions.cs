@@ -48,6 +48,30 @@ namespace CustomAttributeTableTests
          return baseMethod.DeclaringType.GetProperty(propertyInfo.Name, allProperties,
              null, propertyInfo.PropertyType, arguments, null);
       }
+
+      public static MemberInfo GetBaseDefinition(this MemberInfo memberInfo)
+      {
+         switch (memberInfo.MemberType)
+         {
+            case MemberTypes.Method:
+               return ((MethodInfo)memberInfo).GetBaseDefinition();
+
+            case MemberTypes.Constructor:
+               return ((ConstructorInfo)memberInfo).GetBaseDefinition();
+
+            case MemberTypes.Property:
+               return GetBaseDefinition((PropertyInfo)memberInfo);
+               
+            case MemberTypes.Event:
+            case MemberTypes.Field:
+            case MemberTypes.TypeInfo:
+            case MemberTypes.Custom:
+            case MemberTypes.NestedType:
+            case MemberTypes.All:
+            default:
+               return memberInfo;               
+         }
+      }
    }
 
    public class MyClass

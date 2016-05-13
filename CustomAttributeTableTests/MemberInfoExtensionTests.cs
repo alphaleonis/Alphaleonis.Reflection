@@ -4,6 +4,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CustomAttributeTableTests
 {
+   
+
    [TestClass]
    public class MemberInfoExtensionTests
    {

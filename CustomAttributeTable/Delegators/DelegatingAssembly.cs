@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Serialization;
 using System.Security;
 using System.Security.Policy;
 
@@ -94,7 +95,47 @@ namespace CustomAttributeTable
 
       public override Module LoadModule(string moduleName, byte[] rawModule, byte[] rawSymbolStore) => m_assembly.LoadModule(moduleName, rawModule, rawSymbolStore);
 
-      public override string ToString() => m_assembly.ToString();      
+      public override string ToString() => m_assembly.ToString();
+
+      public override IEnumerable<CustomAttributeData> CustomAttributes => m_assembly.CustomAttributes;
+
+      public override IEnumerable<TypeInfo> DefinedTypes => m_assembly.DefinedTypes;
+
+      public override bool Equals(object o)
+      {
+         DelegatingAssembly other = o as DelegatingAssembly;
+         if (other != null)
+            return m_assembly.Equals(other.m_assembly);
+         else
+            return m_assembly.Equals(o);
+      }
+
+      public override IEnumerable<Type> ExportedTypes => m_assembly.ExportedTypes;
+
+      public override int GetHashCode() => m_assembly.GetHashCode();
+
+      public override void GetObjectData(SerializationInfo info, StreamingContext context) => m_assembly.GetObjectData(info, context);
+
+      public override Type GetType(string name) => m_assembly.GetType(name);
+
+      public override Type GetType(string name, bool throwOnError) => m_assembly.GetType(name, throwOnError);
+
+      public override event ModuleResolveEventHandler ModuleResolve
+      {
+         add
+         {
+            m_assembly.ModuleResolve += value;
+         }
+
+         remove
+         {
+            m_assembly.ModuleResolve -= value;
+         }
+      }
+
+      public override IEnumerable<Module> Modules => m_assembly.Modules;
+
+      public override PermissionSet PermissionSet => m_assembly.PermissionSet;
    }
 
 

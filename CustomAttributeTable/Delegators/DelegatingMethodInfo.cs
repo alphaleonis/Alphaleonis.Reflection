@@ -91,6 +91,10 @@ namespace CustomAttributeTable
          else
             return m_method.Equals(obj);
       }
+
+      public override IEnumerable<CustomAttributeData> CustomAttributes => m_method.CustomAttributes;
+
+      public override MethodImplAttributes MethodImplementationFlags => m_method.MethodImplementationFlags;
    }
 
    

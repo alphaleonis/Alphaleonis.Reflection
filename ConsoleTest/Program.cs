@@ -34,7 +34,7 @@ namespace ConsoleTest
             Decorate.Parameter<int>(new Attribute[] { new BrowsableAttribute(false), new DisplayNameAttribute("Hello") })));
 
          var table = builder.CreateTable();
-         AttributeTableReflectionContext ctx = new AttributeTableReflectionContext(table);
+         AttributeTableReflectionContext ctx = new AttributeTableReflectionContext(table, AttributeTableReflectionContextOptions.Default);
          var type = ctx.MapType(typeof(MyClass));
          foreach (var method in type.GetMethods())
          {

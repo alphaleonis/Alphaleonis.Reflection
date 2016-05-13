@@ -48,6 +48,7 @@ namespace CustomAttributeTableTests
                }
             }
          }
+         
       }
 
       public static void AreEqual<T>(IEnumerable<T> expected, IEnumerable<T> actual)

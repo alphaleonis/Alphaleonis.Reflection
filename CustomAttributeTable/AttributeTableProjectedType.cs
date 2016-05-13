@@ -10,12 +10,6 @@ namespace CustomAttributeTableTests
    {
       private class AttributeTableProjectedType : DelegatingType, IAttributeTableProjector
       {
-         #region Private Fields
-
-         
-
-         #endregion
-
          #region Constructor
 
          public AttributeTableProjectedType(Type delegatingType, AttributeTableReflectionContext context)
@@ -114,17 +108,7 @@ namespace CustomAttributeTableTests
          }
 
          #endregion
-
-         #region Private Methods
-
-
-
-         #endregion
       }
-
-      
-
-
    }
 
    

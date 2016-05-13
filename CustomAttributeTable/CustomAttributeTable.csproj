@@ -53,12 +53,14 @@
   <ItemGroup>
     <Compile Include="AttributeTableProjectedAssembly.cs" />
     <Compile Include="AttributeTableProjectedConstructorInfo.cs" />
+    <Compile Include="AttributeTableProjectedEventInfo.cs" />
     <Compile Include="AttributeTableProjectedFieldInfo.cs" />
     <Compile Include="AttributeTableProjectedMethodInfo.cs" />
     <Compile Include="AttributeTableProjectedParameterInfo.cs" />
     <Compile Include="AttributeTableProjectedPropertyInfo.cs" />
     <Compile Include="AttributeTableReflectionContextIdentifierAttribute.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Delegators\DelegatingEventInfo.cs" />
+    <Compile Include="Reflect.cs" />
     <Compile Include="CustomAttributeTableBuilder.cs" />
     <Compile Include="Delegators\DelegatingAssembly.cs" />
     <Compile Include="Delegators\DelegatingConstructorInfo.cs" />

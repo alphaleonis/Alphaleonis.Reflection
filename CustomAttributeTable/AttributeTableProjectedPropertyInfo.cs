@@ -41,7 +41,7 @@ namespace CustomAttributeTableTests
             }
 
             // If we want also inherited attributes, we must check the base definition.
-            if (inherit)
+            if (inherit && (ReflectionContext.m_options & AttributeTableReflectionContextOptions.HonorPropertyAttributeInheritance) != 0)
             {
                // ...if it is different from the declaring type of this method, we get all attributes from there and add them as well, depending
                // on their attribute usage settings.
@@ -66,6 +66,31 @@ namespace CustomAttributeTableTests
             }
 
             return arrResult;
+         }
+
+         public override MethodInfo GetGetMethod(bool nonPublic) => ReflectionContext.MapMember(base.GetGetMethod(nonPublic));
+
+         public override MethodInfo GetSetMethod(bool nonPublic) => ReflectionContext.MapMember(base.GetGetMethod(nonPublic));
+
+         public override MethodInfo[] GetAccessors(bool nonPublic) => ReflectionContext.MapMembers(base.GetAccessors(nonPublic));
+         
+         public override Type DeclaringType => ReflectionContext.MapType(base.DeclaringType);
+
+         public override ParameterInfo[] GetIndexParameters() => ReflectionContext.MapParameters(base.GetIndexParameters());
+
+         public override Type[] GetOptionalCustomModifiers() => ReflectionContext.MapTypes(base.GetOptionalCustomModifiers());
+
+         public override Type[] GetRequiredCustomModifiers() => ReflectionContext.MapTypes(base.GetRequiredCustomModifiers());
+
+         public override Type PropertyType => ReflectionContext.MapType(base.PropertyType);
+
+         public override Type ReflectedType => ReflectionContext.MapType(base.ReflectedType);
+
+         public override MethodInfo SetMethod => ReflectionContext.MapMember(base.SetMethod);
+
+         public override bool IsDefined(Type attributeType, bool inherit)
+         {
+            throw new NotImplementedException();
          }
       }      
    }

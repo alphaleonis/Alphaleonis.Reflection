@@ -72,7 +72,9 @@ namespace CustomAttributeTable
             return delegatingFieldInfo.m_field.Equals(m_field);
          else
             return m_field.Equals(obj);
-      }      
+      }
+
+      public override IEnumerable<CustomAttributeData> CustomAttributes => m_field.CustomAttributes;
    }
 
    

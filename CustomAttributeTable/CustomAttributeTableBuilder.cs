@@ -61,13 +61,103 @@ namespace CustomAttributeTable
 
       public CustomAttributeTableBuilder AddPropertyAttributes<T>(string propertyName, IEnumerable<Attribute> attributes)
       {
-         PropertyInfo property = typeof(T).GetProperty(propertyName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
+         return AddPropertyAttributes(typeof(T), propertyName, attributes);
+      }
+
+      public CustomAttributeTableBuilder AddPropertyAttributes(Type type, string propertyName, IEnumerable<Attribute> attributes)
+      {
+         if (type == null)
+            throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
+
+         if (string.IsNullOrEmpty(propertyName))
+            throw new ArgumentException($"{nameof(propertyName)} is null or empty.", nameof(propertyName));
+
+         if (attributes == null)
+            throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
+
+         PropertyInfo property = type.GetTypeInfo().GetProperty(propertyName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
          if (property == null)
-            throw new ArgumentException($"The type {typeof(T).FullName} does not contain a property named \"{propertyName}\".");
+            throw new ArgumentException($"The type {type.FullName} does not declare a property named \"{propertyName}\".");
 
          AddMemberAttributes(property, attributes);
          return this;
       }
+
+      public CustomAttributeTableBuilder AddFieldAttributes<T>(string fieldName, IEnumerable<Attribute> attributes)
+      {
+         return AddFieldAttributes(typeof(T), fieldName, attributes);
+      }
+
+      public CustomAttributeTableBuilder AddFieldAttributes(Type type, string fieldName, IEnumerable<Attribute> attributes)
+      {
+         if (type == null)
+            throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
+
+         if (string.IsNullOrEmpty(fieldName))
+            throw new ArgumentException($"{nameof(fieldName)} is null or empty.", nameof(fieldName));
+
+         if (attributes == null)
+            throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
+
+         FieldInfo field = type.GetTypeInfo().GetField(fieldName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+         if (field == null)
+            throw new ArgumentException($"The type {type.FullName} does not declare a field named \"{fieldName}\".");
+
+         AddMemberAttributes(field, attributes);
+         return this;
+      }
+
+      public CustomAttributeTableBuilder AddEventAttributes(Type type, string eventName, IEnumerable<Attribute> attributes)
+      {
+         if (type == null)
+            throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
+
+         if (string.IsNullOrEmpty(eventName))
+            throw new ArgumentException($"{nameof(eventName)} is null or empty.", nameof(eventName));
+
+         if (attributes == null)
+            throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
+
+         EventInfo eventInfo = type.GetTypeInfo().GetEvent(eventName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+         if (eventInfo == null)
+            throw new ArgumentException($"The type {type.FullName} does not declare an event named \"{eventName}\".");
+
+         AddMemberAttributes(eventInfo, attributes);
+         return this;
+      }
+
+      public CustomAttributeTableBuilder AddEventAttributes<T>(string eventName, IEnumerable<Attribute> attributes)
+      {
+         return AddEventAttributes(typeof(T), eventName, attributes);
+      }
+
+      // TODO PP: Remove commented code.
+      //public CustomAttributeTableBuilder AddPropertyAttributes<T>(string propertyName, IEnumerable<Attribute> attributes)
+      //{
+      //   return AddPropertyAttributes(typeof(T), propertyName, attributes);
+      //}
+
+      //public CustomAttributeTableBuilder AddPropertyAttributes(PropertyInfo property, IEnumerable<Attribute> attributes)
+      //{
+      //   AddMemberAttributes(property, attributes);
+      //   return this;
+      //}
+
+      //public CustomAttributeTableBuilder AddPropertyAttributes<T>(Expression<Func<T, object>> expression, IEnumerable<Attribute> attributes)
+      //{
+      //   return AddPropertyAttributes((LambdaExpression)expression, attributes);
+      //}
+
+      //public CustomAttributeTableBuilder AddPropertyAttributes<T>(Expression<Action<T>> expression, IEnumerable<Attribute> attributes)
+      //{
+      //   return AddPropertyAttributes((LambdaExpression)expression, attributes);
+      //}
+
+      //private CustomAttributeTableBuilder AddPropertyAttributes(LambdaExpression expression, IEnumerable<Attribute> attributes)
+      //{
+      //   AddPropertyAttributes(Reflect.GetProperty(expression), attributes);
+      //   return this;
+      //}
 
       #endregion
 
@@ -123,23 +213,41 @@ namespace CustomAttributeTable
 
       #endregion
 
-      #region Add Method Attributes
+      //#region Add Method Attributes
 
-      public CustomAttributeTableBuilder AddMethodAttributes(MethodBase method, IEnumerable<Attribute> attributes)
-      {
-         if (method == null)
-            throw new ArgumentNullException(nameof(method), $"{nameof(method)} is null.");
+      //public CustomAttributeTableBuilder AddMethodAttributes(MethodBase method, IEnumerable<Attribute> attributes)
+      //{
+      //   if (method == null)
+      //      throw new ArgumentNullException(nameof(method), $"{nameof(method)} is null.");
 
-         if (attributes == null)
-            throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
+      //   if (attributes == null)
+      //      throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
 
-         AddMemberAttributes((MemberInfo)method, attributes);
-         return this;
-      }
+      //   AddMemberAttributes((MemberInfo)method, attributes);
+      //   return this;
+      //}
 
-      #endregion
+      //#endregion
 
       #region Add Member Attributes
+
+      public CustomAttributeTableBuilder AddMemberAttributes<T>(Expression<Func<T, object>> expression, IEnumerable<Attribute> attributes)
+      {
+         var member = Reflect.GetMember<T>(expression);
+         if (!member.DeclaringType.Equals(typeof(T)))
+            throw new ArgumentException($"The type '{typeof(T).FullName}' does not declare a member '{member.Name}'.");
+
+         return AddMemberAttributes(member, attributes);
+      }
+
+      public CustomAttributeTableBuilder AddMemberAttributes<T>(Expression<Action<T>> expression, IEnumerable<Attribute> attributes)
+      {
+         var member = Reflect.GetMember<T>(expression);
+         if (!member.DeclaringType.Equals(typeof(T)))
+            throw new ArgumentException($"The type '{typeof(T).FullName}' does not declare a member '{member.Name}'.");
+
+         return AddMemberAttributes(member, attributes);
+      }      
 
       public CustomAttributeTableBuilder AddMemberAttributes(Type type, string memberName, IEnumerable<Attribute> attributes)
       {
@@ -347,6 +455,8 @@ namespace CustomAttributeTable
             return MethodName.GetHashCode() + 11 * Parameters.Count.GetHashCode();
          }
       }
+
+      
 
       private class CustomAttributeTable : ICustomAttributeTable
       {

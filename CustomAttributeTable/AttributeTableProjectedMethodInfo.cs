@@ -18,6 +18,13 @@ namespace CustomAttributeTableTests
 
          public AttributeTableReflectionContext ReflectionContext { get; }
 
+         public override Type DeclaringType => ReflectionContext.MapType(base.DeclaringType);
+
+         public override MethodInfo GetBaseDefinition()
+         {
+            return ReflectionContext.MapMember(base.GetBaseDefinition());
+         }
+
          public override object[] GetCustomAttributes(bool inherit)
          {
             return GetCustomAttributes(typeof(Attribute), inherit);
@@ -26,6 +33,9 @@ namespace CustomAttributeTableTests
          public override object[] GetCustomAttributes(Type attributeType, bool inherit)
          {
             List<object> result = new List<object>();
+
+            string mName = this.Name;
+            string mDt = DeclaringType.Name;
 
             // Add the reflection context identifier attribute.
             result.Add(ReflectionContext.ContextIdentifierAttribute);
@@ -68,9 +78,31 @@ namespace CustomAttributeTableTests
             return arrResult;
          }
 
-         public override ParameterInfo[] GetParameters()
+         public override ParameterInfo[] GetParameters() => ReflectionContext.MapParameters(base.GetParameters());
+
+         public override Type[] GetGenericArguments() => ReflectionContext.MapTypes(base.GetGenericArguments());
+
+         public override MethodInfo GetGenericMethodDefinition() => ReflectionContext.MapMember(base.GetGenericMethodDefinition());
+
+         public override bool IsDefined(Type attributeType, bool inherit)
          {
-            return base.GetParameters().Select(parameter => ReflectionContext.MapParameter(parameter)).ToArray();
+            throw new NotImplementedException();
+         }
+
+         public override MethodInfo MakeGenericMethod(params Type[] typeArguments) => ReflectionContext.MapMember(base.MakeGenericMethod(ReflectionContext.MapTypes(typeArguments)));
+
+         public override Type ReflectedType => ReflectionContext.MapType(base.ReflectedType);
+
+         public override ParameterInfo ReturnParameter => ReflectionContext.MapParameter(base.ReturnParameter);
+
+         public override Type ReturnType => ReflectionContext.MapType(base.ReturnType);
+
+         public override ICustomAttributeProvider ReturnTypeCustomAttributes
+         {
+            get
+            {
+               throw new NotImplementedException();
+            }
          }
       }
    }

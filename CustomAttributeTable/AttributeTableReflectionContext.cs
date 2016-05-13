@@ -6,11 +6,20 @@ using CustomAttributeTable;
 
 namespace CustomAttributeTableTests
 {
+   [Flags]
+   public enum AttributeTableReflectionContextOptions
+   {
+      Default = 0,
+      HonorPropertyAttributeInheritance = 1,
+      HonorEventAttributeInheritance = 2
+   }
+
    public partial class AttributeTableReflectionContext : ReflectionContext
    {
       private readonly static AttributeUsageAttribute DefaultAttributeUsageAttribute = new AttributeUsageAttribute(AttributeTargets.All);
+      private readonly AttributeTableReflectionContextOptions m_options;
 
-      public AttributeTableReflectionContext(ICustomAttributeTable table)
+      public AttributeTableReflectionContext(ICustomAttributeTable table, AttributeTableReflectionContextOptions options)
       {
          if (table == null)
             throw new ArgumentNullException(nameof(table), $"{nameof(table)} is null.");
@@ -18,6 +27,7 @@ namespace CustomAttributeTableTests
          Id = Guid.NewGuid();
          ContextIdentifierAttribute = new AttributeTableReflectionContextIdentifierAttribute(Guid.NewGuid());
          Table = table;
+         m_options = options;
       }
 
       private Guid Id { get; }
@@ -60,18 +70,156 @@ namespace CustomAttributeTableTests
 
       #endregion
 
-      
+      private MemberInfo MapMember(MemberInfo member)
+      {
+         if (member == null)
+            return null;
+
+         switch (member.MemberType)
+         {
+            case MemberTypes.Constructor:
+               return MapMember((ConstructorInfo)member);
+
+            case MemberTypes.Event:
+               return MapMember((EventInfo)member);
+
+            case MemberTypes.Field:
+               return MapMember((FieldInfo)member);
+
+            case MemberTypes.Method:
+               return MapMember((MethodInfo)member);
+
+            case MemberTypes.Property:
+               return MapMember((PropertyInfo)member);
+
+            case MemberTypes.TypeInfo:
+            case MemberTypes.NestedType:
+               return MapType((Type)member);
+
+            case MemberTypes.Custom:
+            case MemberTypes.All:
+            default:
+               throw new NotSupportedException($"Cannot map a member of type {member.MemberType}");
+         }
+      }
+
+      private Type[] MapTypes(Type[] types)
+      {
+         if (types == null || types.Length == 0)
+            return types;
+
+         TypeInfo[] result = new TypeInfo[types.Length];
+
+         for (int i = 0; i < types.Length; i++)
+         {
+            result[i] = MapType(types[i]);
+         }
+
+         return result;
+      }
+
+      private FieldInfo[] MapMembers(FieldInfo[] members)
+      {
+         if (members == null || members.Length == 0)
+            return members;
+
+         FieldInfo[] result = new FieldInfo[members.Length];
+
+         for (int i = 0; i < members.Length; i++)
+         {
+            result[i] = MapMember(members[i]);
+         }
+
+         return result;
+      }
+
+      private PropertyInfo[] MapMembers(PropertyInfo[] members)
+      {
+         if (members == null || members.Length == 0)
+            return members;
+
+         PropertyInfo[] result = new PropertyInfo[members.Length];
+
+         for (int i = 0; i < members.Length; i++)
+         {
+            result[i] = MapMember(members[i]);
+         }
+
+         return result;
+      }
+
+      private EventInfo[] MapMembers(EventInfo[] members)
+      {
+         if (members == null || members.Length == 0)
+            return members;
+
+         EventInfo[] result = new EventInfo[members.Length];
+
+         for (int i = 0; i < members.Length; i++)
+         {
+            result[i] = MapMember(members[i]);
+         }
+
+         return result;
+      }
+
+      private ConstructorInfo[] MapMembers(ConstructorInfo[] members)
+      {
+         if (members == null || members.Length == 0)
+            return members;
+
+         ConstructorInfo[] result = new ConstructorInfo[members.Length];
+
+         for (int i = 0; i < members.Length; i++)
+         {
+            result[i] = MapMember(members[i]);
+         }
+
+         return result;
+      }
+
+      private MethodInfo[] MapMembers(MethodInfo[] members)
+      {
+         if (members == null || members.Length == 0)
+            return members;
+
+         MethodInfo[] result = new MethodInfo[members.Length];
+
+         for (int i = 0; i < members.Length; i++)
+         {
+            result[i] = MapMember(members[i]);
+         }
+
+         return result;
+      }
 
       private FieldInfo MapMember(FieldInfo field)
       {
+         if (field == null)
+            return null;
+
          if (IsMapped(field))
             return field;
 
          return new AttributeTableProjectedFieldInfo(field, this);
       }
 
+      private EventInfo MapMember(EventInfo member)
+      {
+         if (member == null)
+            return null;
+
+         if (IsMapped(member))
+            return member;
+
+         return new AttributeTableProjectedEventInfo(member, this);
+      }
+
       private ConstructorInfo MapMember(ConstructorInfo constructor)
       {
+         if (constructor == null)
+            return null;
+
          if (IsMapped(constructor))
             return constructor;
 
@@ -80,14 +228,35 @@ namespace CustomAttributeTableTests
 
       private ParameterInfo MapParameter(ParameterInfo parameter)
       {
+         if (parameter == null)
+            return null;
+
          if (IsMapped(parameter))
             return parameter;
 
          return new AttributeTableProjectedParameterInfo(parameter, this);
       }
 
+      private ParameterInfo[] MapParameters(ParameterInfo[] parameters)
+      {
+         if (parameters == null || parameters.Length == 0)
+            return parameters;
+
+         ParameterInfo[] result = new ParameterInfo[parameters.Length];
+
+         for (int i = 0; i < parameters.Length; i++)
+         {
+            result[i] = MapParameter(parameters[i]);
+         }
+
+         return result;
+      }
+
       private PropertyInfo MapMember(PropertyInfo property)
       {
+         if (property == null)
+            return null;
+
          if (IsMapped(property))
             return property;
 
@@ -96,6 +265,9 @@ namespace CustomAttributeTableTests
 
       private MethodInfo MapMember(MethodInfo method)
       {
+         if (method == null)
+            return null;
+
          if (IsMapped(method))
             return method;
 

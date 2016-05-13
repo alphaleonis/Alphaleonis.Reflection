@@ -66,5 +66,22 @@ namespace CustomAttributeTable
       public override bool IsDefined(Type attributeType, bool inherit) => m_constructor.IsDefined(attributeType, inherit);
 
       public override string ToString() => m_constructor.ToString();
+
+      public override IEnumerable<CustomAttributeData> CustomAttributes => m_constructor.CustomAttributes;
+
+      public override bool Equals(object obj)
+      {
+         DelegatingConstructorInfo other = obj as DelegatingConstructorInfo;
+         if (other != null)
+            return m_constructor.Equals(other.m_constructor);
+         else
+            return m_constructor.Equals(obj);
+      }
+
+      public override int GetHashCode() => m_constructor.GetHashCode();
+
+      public override MemberTypes MemberType => m_constructor.MemberType;
+
+      public override MethodImplAttributes MethodImplementationFlags => m_constructor.MethodImplementationFlags;
    }
 }
