@@ -425,8 +425,8 @@ namespace CustomAttributeTable
                throw new ArgumentNullException(nameof(method), $"{nameof(method)} is null.");
 
             MethodName = method.Name;
-            TypeArguments = method.GetGenericArguments().ToImmutableArray();
-            Parameters = method.GetParameters().Select(p => p.ParameterType).ToImmutableArray();
+            TypeArguments = method.GetGenericArguments().Select(t => t.UnderlyingSystemType).ToImmutableArray();
+            Parameters = method.GetParameters().Select(p => p.ParameterType.UnderlyingSystemType).ToImmutableArray();
          }
 
          public string MethodName { get; }
@@ -536,7 +536,7 @@ namespace CustomAttributeTable
             return TypeMetadata.Empty;
          }
 
-         private IEnumerable<Attribute> GetMemberAttributes(MemberInfo member)
+         private IImmutableList<Attribute> GetMemberAttributes(MemberInfo member)
          {
             IImmutableList<Attribute> attributes;
             if (GetTypeMetadata(member.DeclaringType).MemberAttributes.TryGetValue(member.Name, out attributes))

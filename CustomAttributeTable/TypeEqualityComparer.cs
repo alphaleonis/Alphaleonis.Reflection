@@ -1,3 +1,4 @@
+using CustomAttributeTableTests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace CustomAttributeTable
       {
          if (object.ReferenceEquals(x, null))
             return object.ReferenceEquals(y, null);
-
+         
          return x.Equals(y);
       }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Reflection;
 
 namespace CustomAttributeTableTests
 {
@@ -12,25 +13,25 @@ namespace CustomAttributeTableTests
       #region EventInfo.IsOverride() Tests
 
       [TestMethod]
-      public void EventInfo_NonOverriden_ReturnsTrue()
+      public void IsOverride_EventInfo_NonOverriden_ReturnsTrue()
       {
          Assert.IsFalse(typeof(Base).GetEvent(nameof(Base.OverriddenEvent)).IsOverride());
       }
 
       [TestMethod]
-      public void EventInfo_Overriden_ReturnsTrue()
+      public void IsOverride_EventInfo_Overriden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetEvent(nameof(Derived.OverriddenEvent)).IsOverride());
       }
 
       [TestMethod]
-      public void EventInfo_Inherited_ReturnsFalse()
+      public void IsOverride_EventInfo_Inherited_ReturnsFalse()
       {
          Assert.IsFalse(typeof(Derived).GetEvent(nameof(Derived.InheritedEvent)).IsOverride());
       }
 
       [TestMethod]
-      public void EventInfo_Hidden_ReturnsFalse()
+      public void IsOverride_EventInfo_Hidden_ReturnsFalse()
       {
          Assert.IsFalse(typeof(Derived).GetEvent(nameof(Derived.HiddenEvent)).IsOverride());
       }
@@ -41,49 +42,49 @@ namespace CustomAttributeTableTests
       #region PropertyInfo.IsOverride() Tests
 
       [TestMethod]
-      public void PropertyInfo_NonOverridden_ReturnsFalse()
+      public void IsOverride_PropertyInfo_NonOverridden_ReturnsFalse()
       {
          Assert.IsFalse(typeof(Base).GetProperty(nameof(Derived.InheritedProperty)).IsOverride());
       }
 
       [TestMethod]
-      public void PropertyInfo_Overriden_ReturnsTrue()
+      public void IsOverride_PropertyInfo_Overriden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetProperty(nameof(Derived.OverriddenProperty)).IsOverride());
       }
 
       [TestMethod]
-      public void PropertyInfo_Inherited_ReturnsFalse()
+      public void IsOverride_PropertyInfo_Inherited_ReturnsFalse()
       {
          Assert.IsFalse(typeof(Derived).GetProperty(nameof(Derived.InheritedProperty)).IsOverride());
       }
 
       [TestMethod]
-      public void PropertyInfo_Hidden_ReturnsFalse()
+      public void IsOverride_PropertyInfo_Hidden_ReturnsFalse()
       {
          Assert.IsFalse(typeof(NonVirtualDerived).GetProperty(nameof(NonVirtualDerived.NonVirtualProperty)).IsOverride());
       }
 
       [TestMethod]
-      public void PropertyInfo_InterfaceImplementation_ReturnsFalse()
+      public void IsOverride_PropertyInfo_InterfaceImplementation_ReturnsFalse()
       {
          Assert.IsFalse(typeof(Implementation).GetProperty(nameof(Implementation.InterfaceProperty)).IsOverride());
       }
 
       [TestMethod]
-      public void PropertyInfo_AbstractOverriden_ReturnsTrue()
+      public void IsOverride_PropertyInfo_AbstractOverriden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetProperty(nameof(Derived.AbstractOverriddenProperty)).IsOverride());
       }
 
       [TestMethod]
-      public void PropertyInfo_AbstractInherited_ReturnsFalse()
+      public void IsOverride_PropertyInfo_AbstractInherited_ReturnsFalse()
       {
          Assert.IsFalse(typeof(Derived).GetProperty(nameof(Derived.AbstractNonOverriddenProperty)).IsOverride());
       }
 
       [TestMethod]
-      public void PropertyInfo_SelaedOverriden_ReturnsTrue()
+      public void IsOverride_PropertyInfo_SelaedOverriden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetProperty(nameof(Derived.SealedOverriddenProperty)).IsOverride());
       }
@@ -93,33 +94,117 @@ namespace CustomAttributeTableTests
       #region MethodInfo.IsOverride() tests
 
       [TestMethod]
-      public void MethodInfo_Overriden_ReturnsTrue()
+      public void IsOverride_MethodInfo_Overriden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetMethod(nameof(Derived.OverriddenMethod)).IsOverride());
       }
 
       [TestMethod]
-      public void MethodInfo_SealedOverriden_ReturnsTrue()
+      public void IsOverride_MethodInfo_SealedOverriden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetMethod(nameof(Derived.SealedOverriddenMethod)).IsOverride());
       }
 
       [TestMethod]
-      public void MethodInfo_Inherited_ReturnsFalse()
+      public void IsOverride_MethodInfo_Inherited_ReturnsFalse()
       {
          Assert.IsFalse(typeof(Derived).GetMethod(nameof(Derived.InheritedMethod)).IsOverride());
       }
 
       [TestMethod]
-      public void MethodInfo_Hidden_ReturnsFalse()
+      public void IsOverride_MethodInfo_Hidden_ReturnsFalse()
       {
          Assert.IsFalse(typeof(NonVirtualDerived).GetMethod(nameof(NonVirtualDerived.F)).IsOverride());
       }
 
       [TestMethod]
-      public void MethodInfo_InterfaceImplementation_ReturnsFalse()
+      public void IsOverride_MethodInfo_InterfaceImplementation_ReturnsFalse()
       {
          Assert.IsFalse(typeof(Implementation).GetMethod(nameof(NonVirtualDerived.F)).IsOverride());
+      }
+
+      #endregion
+
+      #region EventInfo.GetParentDefinition() Tests
+
+      [TestMethod]
+      public void GetParentDefinition_EventInfo_OverriddenEventWithParentTwoClassesUp_ReturnsExpectedEvent()
+      {
+         EventInfo actual = typeof(SubSubDerived).GetEvent(nameof(SubSubDerived.OverriddenEvent)).GetParentDefinition();
+         EventInfo expected = typeof(Derived).GetEvent(nameof(Derived.OverriddenEvent));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void GetParentDefinition_EventInfo_OverriddenEvent_ReturnsExpectedEvent()
+      {
+         EventInfo actual = typeof(Derived).GetEvent(nameof(Derived.OverriddenEvent)).GetParentDefinition();
+         EventInfo expected = typeof(Base).GetEvent(nameof(Base.OverriddenEvent));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void GetParentDefinition_EventInfo_VirtualEventInBaseClass_ReturnsNull()
+      {
+         EventInfo actual = typeof(Base).GetEvent(nameof(Base.OverriddenEvent)).GetParentDefinition();
+         EventInfo expected = null;
+         Assert.AreEqual(expected, actual);
+      }
+
+      #endregion
+
+      #region PropertyInfo.GetParentDefinition() Tests
+
+      [TestMethod]
+      public void GetParentDefinition_PropertyInfo_OverriddenPropertyWithParentTwoClassesUp_ReturnsExpectedProperty()
+      {
+         PropertyInfo actual = typeof(SubSubDerived).GetProperty(nameof(SubSubDerived.OverriddenProperty)).GetParentDefinition();
+         PropertyInfo expected = typeof(Derived).GetProperty(nameof(Derived.OverriddenProperty));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void GetParentDefinition_PropertyInfo_OverriddenProperty_ReturnsExpectedProperty()
+      {
+         PropertyInfo actual = typeof(Derived).GetProperty(nameof(Derived.OverriddenProperty)).GetParentDefinition();
+         PropertyInfo expected = typeof(Base).GetProperty(nameof(Base.OverriddenProperty));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void GetParentDefinition_PropertyInfo_VirtualPropertyInBaseClass_ReturnsNull()
+      {
+         PropertyInfo actual = typeof(Base).GetProperty(nameof(Base.OverriddenProperty)).GetParentDefinition();
+         PropertyInfo expected = null;
+         Assert.AreEqual(expected, actual);
+      }
+
+      #endregion
+
+      #region PropertyInfo.GetParentDefinition() Tests
+
+      [TestMethod]
+      public void GetParentDefinition_MethodInfo_OverriddenMethodWithParentTwoClassesUp_ReturnsExpectedMethod()
+      {
+         MethodInfo actual = typeof(SubSubDerived).GetMethod(nameof(SubSubDerived.OverriddenMethod)).GetParentDefinition();
+         MethodInfo expected = typeof(Derived).GetMethod(nameof(Derived.OverriddenMethod));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void GetParentDefinition_MethodInfo_OverriddenMethod_ReturnsExpectedMethod()
+      {
+         MethodInfo actual = typeof(Derived).GetMethod(nameof(Derived.OverriddenMethod)).GetParentDefinition();
+         MethodInfo expected = typeof(Base).GetMethod(nameof(Base.OverriddenMethod));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void GetParentDefinition_MethodInfo_VirtualMethodInBaseClass_ReturnsNull()
+      {
+         MethodInfo actual = typeof(Base).GetMethod(nameof(Base.OverriddenMethod)).GetParentDefinition();
+         MethodInfo expected = null;
+         Assert.AreEqual(expected, actual);
       }
 
       #endregion
@@ -154,6 +239,23 @@ namespace CustomAttributeTableTests
          public override string OverriddenProperty { get; set; }
          public override string AbstractOverriddenProperty { get; set; }
          public sealed override string SealedOverriddenProperty { get; set; }
+      }
+
+      abstract class SubDerived : Derived
+      {
+
+      }
+
+      abstract class SubSubDerived : SubDerived
+      {
+         public override event EventHandler OverriddenEvent;
+
+         public override void OverriddenMethod()
+         {
+            base.OverriddenMethod();
+         }
+
+         public override string OverriddenProperty { get; set; }
       }
 
       interface Interface

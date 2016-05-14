@@ -56,7 +56,11 @@ namespace CustomAttributeTableTests
 
          public override bool IsDefined(Type attributeType, bool inherit)
          {
-            throw new NotImplementedException();
+            // Then add any attributes defined in the reflection context table.
+            if (ReflectionContext.Table.GetCustomAttributes(this).Any(attr => attributeType.IsAssignableFrom(attr.GetType())))
+               return true;
+
+            return base.IsDefined(attributeType, false);
          }
 
          public override MemberInfo Member => ReflectionContext.MapMember(base.Member);

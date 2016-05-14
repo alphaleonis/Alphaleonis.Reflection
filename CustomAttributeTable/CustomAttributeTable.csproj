@@ -72,7 +72,7 @@
     <Compile Include="ICustomAttributeTable.cs" />
     <Compile Include="AttributeTableReflectionContext.cs" />
     <Compile Include="AttributeTableProjectedType.cs" />
-    <Compile Include="MethodInfoExtensions.cs" />
+    <Compile Include="MemberInfoExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Delegators\DelegatingType.cs" />
     <Compile Include="TypeEqualityComparer.cs" />

@@ -34,9 +34,6 @@ namespace CustomAttributeTableTests
          {
             List<object> result = new List<object>();
 
-            string mName = this.Name;
-            string mDt = DeclaringType.Name;
-
             // Add the reflection context identifier attribute.
             result.Add(ReflectionContext.ContextIdentifierAttribute);
 
@@ -86,7 +83,19 @@ namespace CustomAttributeTableTests
 
          public override bool IsDefined(Type attributeType, bool inherit)
          {
-            throw new NotImplementedException();
+            // Then add any attributes defined in the reflection context table.
+            if (ReflectionContext.Table.GetCustomAttributes(this).Any(attr => attributeType.IsAssignableFrom(attr.GetType())))
+               return true;
+
+            if (base.IsDefined(attributeType, false))
+               return true;
+
+            if (inherit)
+            {
+               return this.GetParentDefinition()?.IsDefined(attributeType, true) == true;
+            }
+
+            return false;
          }
 
          public override MethodInfo MakeGenericMethod(params Type[] typeArguments) => ReflectionContext.MapMember(base.MakeGenericMethod(ReflectionContext.MapTypes(typeArguments)));

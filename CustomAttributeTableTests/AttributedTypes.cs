@@ -104,6 +104,12 @@ namespace CustomAttributeTableTests
          [NonInheritedMulti(nameof(Base))]
          public virtual object OverriddenProperty { get; set; }
 
+         [InheritedSingle(nameof(Base))]
+         [InheritedMulti(nameof(Base))]
+         [NonInheritedSingle(nameof(Base))]
+         [NonInheritedMulti(nameof(Base))]
+         public virtual object OverriddenProperty2 { get; set; }
+
          [InheritedMulti(nameof(Base))]
          [InheritedSingle(nameof(Base))]
          [NonInheritedMulti(nameof(Base))]
@@ -147,7 +153,13 @@ namespace CustomAttributeTableTests
          [InheritedMulti(nameof(Derived))]
          [NonInheritedSingle(nameof(Derived))]
          [NonInheritedMulti(nameof(Derived))]
-         public new long HiddenProperty { get; set; }         
+         public new long HiddenProperty { get; set; }
+
+         [InheritedSingle(nameof(Derived))]
+         [InheritedMulti(nameof(Derived))]
+         [NonInheritedSingle(nameof(Derived))]
+         [NonInheritedMulti(nameof(Derived))]
+         public override object OverriddenProperty2 { get; set; }
       }
 
       [InheritedSingle(nameof(SubDerived))]
@@ -161,6 +173,12 @@ namespace CustomAttributeTableTests
          [NonInheritedSingle(nameof(SubDerived))]
          [NonInheritedMulti(nameof(SubDerived))]
          public override object OverriddenProperty { get; set; }
+
+         [InheritedSingle(nameof(SubDerived))]
+         [InheritedMulti(nameof(SubDerived))]
+         [NonInheritedSingle(nameof(SubDerived))]
+         [NonInheritedMulti(nameof(SubDerived))]
+         public override object OverriddenProperty2 { get; set; }
 
          [InheritedMulti(nameof(SubDerived))]
          [InheritedSingle(nameof(SubDerived))]

@@ -48,6 +48,7 @@ namespace CustomAttributeTableTests
                .AddMemberAttributes<NonAttributedTypes.Base>(c => c.HiddenProperty, CreateTestAttributes<NonAttributedTypes.Base>())
                .AddMemberAttributes<NonAttributedTypes.Base>(c => c.ImplementedProperty, CreateTestAttributes<NonAttributedTypes.Base>())
                .AddMemberAttributes<NonAttributedTypes.Base>(c => c.OverriddenProperty, CreateTestAttributes<NonAttributedTypes.Base>())
+               .AddMemberAttributes<NonAttributedTypes.Base>(c => c.OverriddenProperty2, CreateTestAttributes<NonAttributedTypes.Base>())
                .AddMemberAttributes<NonAttributedTypes.Base>(c => c.HiddenMethod1(0), CreateTestAttributes<NonAttributedTypes.Base>())
                .AddMemberAttributes<NonAttributedTypes.Base>(c => c.ImplementedMethod1(0, 0), CreateTestAttributes<NonAttributedTypes.Base>())
                .AddMemberAttributes<NonAttributedTypes.Base>(c => c.OverriddenMethod(0, 0), CreateTestAttributes<NonAttributedTypes.Base>())
@@ -56,9 +57,11 @@ namespace CustomAttributeTableTests
 
             .AddTypeAttributes<NonAttributedTypes.Derived>(CreateTestAttributes<NonAttributedTypes.Derived>())
                .AddMemberAttributes<NonAttributedTypes.Derived>(der => der.HiddenProperty, CreateTestAttributes<NonAttributedTypes.Derived>())
+               .AddMemberAttributes<NonAttributedTypes.Derived>(der => der.OverriddenProperty2, CreateTestAttributes<NonAttributedTypes.Derived>())
 
             .AddTypeAttributes<NonAttributedTypes.SubDerived>(CreateTestAttributes<NonAttributedTypes.SubDerived>())
                .AddMemberAttributes<NonAttributedTypes.SubDerived>(der => der.OverriddenProperty, CreateTestAttributes<NonAttributedTypes.SubDerived>())
+               .AddMemberAttributes<NonAttributedTypes.SubDerived>(der => der.OverriddenProperty2, CreateTestAttributes<NonAttributedTypes.SubDerived>())
                .AddMemberAttributes<NonAttributedTypes.SubDerived>(c => c.OverloadedMethod(default(int)), CreateTestAttributes(nameof(NonAttributedTypes.SubDerived) + "int"))
                .AddMemberAttributes<NonAttributedTypes.SubDerived>(c => c.OverloadedMethod(default(long)), CreateTestAttributes(nameof(NonAttributedTypes.SubDerived) + "long"));
          builder
@@ -83,12 +86,12 @@ namespace CustomAttributeTableTests
          //Check<AttributedTypes.Derived, NonAttributedTypes.Derived>(context, false);
          //Check<AttributedTypes.SubDerived, NonAttributedTypes.SubDerived>(context, false);
 
-         context = new AttributeTableReflectionContext(CreateTable(), AttributeTableReflectionContextOptions.HonorPropertyAttributeInheritance);
-         //Check<AttributedTypes.IBase1, NonAttributedTypes.IBase1>(context, true);
-         //Check<AttributedTypes.IBase2, NonAttributedTypes.IBase2>(context, true);
-         //Check<AttributedTypes.IComposite, NonAttributedTypes.IComposite>(context, true);
-         //Check<AttributedTypes.Base, NonAttributedTypes.Base>(context, true);
-         //Check<AttributedTypes.Derived, NonAttributedTypes.Derived>(context, true);
+         context = new AttributeTableReflectionContext(CreateTable(), AttributeTableReflectionContextOptions.HonorPropertyAttributeInheritance | AttributeTableReflectionContextOptions.HonorEventAttributeInheritance);
+         Check<AttributedTypes.IBase1, NonAttributedTypes.IBase1>(context, true);
+         Check<AttributedTypes.IBase2, NonAttributedTypes.IBase2>(context, true);
+         Check<AttributedTypes.IComposite, NonAttributedTypes.IComposite>(context, true);
+         Check<AttributedTypes.Base, NonAttributedTypes.Base>(context, true);
+         Check<AttributedTypes.Derived, NonAttributedTypes.Derived>(context, true);
          Check<AttributedTypes.SubDerived, NonAttributedTypes.SubDerived>(context, true);
       }
 

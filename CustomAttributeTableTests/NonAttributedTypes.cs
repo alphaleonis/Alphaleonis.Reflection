@@ -32,6 +32,7 @@ namespace CustomAttributeTableTests
          public int HiddenProperty { get; set; }
          public int ImplementedProperty { get; private set; }
          public virtual object OverriddenProperty { get; set; }
+         public virtual object OverriddenProperty2 { get; set; }
          int IBase1.HiddenProperty { set { } }
 
          public abstract void HiddenMethod1(int a);
@@ -46,12 +47,13 @@ namespace CustomAttributeTableTests
       public abstract class Derived : Base
       {
          public new long HiddenProperty { get; set; }
-         
+         public override object OverriddenProperty2 { get; set; }
       }
 
       public abstract class SubDerived : Derived
       {
          public override object OverriddenProperty { get; set; }
+         public override object OverriddenProperty2 { get; set; }
 
          public override void OverriddenMethod(int a, int b) { }
 

@@ -193,6 +193,21 @@ namespace CustomAttributeTableTests
          return result;
       }
 
+      private MemberInfo[] MapMembers(MemberInfo[] members)
+      {
+         if (members == null || members.Length == 0)
+            return members;
+
+         MemberInfo[] result = new MemberInfo[members.Length];
+
+         for (int i = 0; i < members.Length; i++)
+         {
+            result[i] = MapMember(members[i]);
+         }
+
+         return result;
+      }
+
       private FieldInfo MapMember(FieldInfo field)
       {
          if (field == null)
@@ -303,6 +318,7 @@ namespace CustomAttributeTableTests
       {
          return decoratedAttribute.GetCustomAttributes(typeof(AttributeUsageAttribute), true).OfType<AttributeUsageAttribute>().FirstOrDefault() ?? DefaultAttributeUsageAttribute;
       }
+      
    }
 
 

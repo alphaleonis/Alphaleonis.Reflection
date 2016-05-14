@@ -45,7 +45,7 @@ namespace CustomAttributeTableTests
             {
                // ...if it is different from the declaring type of this method, we get all attributes from there and add them as well, depending
                // on their attribute usage settings.
-               PropertyInfo baseProperty = this.GetBaseDefinition();
+               MemberInfo baseProperty = this.GetParentDefinition();
 
                // Then get base attributes, add only if Inherit = true AND (Multiple = true OR attribute not already exists).
                if (baseProperty != null && !baseProperty.DeclaringType.Equals(DeclaringType))
@@ -58,7 +58,7 @@ namespace CustomAttributeTableTests
                   }
                }
             }
-
+            
             object[] arrResult = (object[])Array.CreateInstance(attributeType, result.Count);
             for (int i = 0; i < result.Count; i++)
             {
@@ -90,7 +90,19 @@ namespace CustomAttributeTableTests
 
          public override bool IsDefined(Type attributeType, bool inherit)
          {
-            throw new NotImplementedException();
+            // Then add any attributes defined in the reflection context table.
+            if (ReflectionContext.Table.GetCustomAttributes(this).Any(attr => attributeType.IsAssignableFrom(attr.GetType())))
+               return true;
+
+            if (base.IsDefined(attributeType, false))
+               return true;
+
+            if (inherit && (ReflectionContext.m_options & AttributeTableReflectionContextOptions.HonorPropertyAttributeInheritance) != 0)
+            {
+               return this.GetParentDefinition()?.IsDefined(attributeType, true) == true;
+            }
+
+            return false;
          }
       }      
    }
