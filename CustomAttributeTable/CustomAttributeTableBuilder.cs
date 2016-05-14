@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Runtime.Remoting.Messaging;
+using System.Runtime.Remoting.Proxies;
 
 namespace CustomAttributeTable
 {
@@ -58,6 +61,7 @@ namespace CustomAttributeTable
       #endregion
 
       #region Add Property Attributes
+
 
       public CustomAttributeTableBuilder AddPropertyAttributes<T>(string propertyName, IEnumerable<Attribute> attributes)
       {
@@ -130,34 +134,6 @@ namespace CustomAttributeTable
       {
          return AddEventAttributes(typeof(T), eventName, attributes);
       }
-
-      // TODO PP: Remove commented code.
-      //public CustomAttributeTableBuilder AddPropertyAttributes<T>(string propertyName, IEnumerable<Attribute> attributes)
-      //{
-      //   return AddPropertyAttributes(typeof(T), propertyName, attributes);
-      //}
-
-      //public CustomAttributeTableBuilder AddPropertyAttributes(PropertyInfo property, IEnumerable<Attribute> attributes)
-      //{
-      //   AddMemberAttributes(property, attributes);
-      //   return this;
-      //}
-
-      //public CustomAttributeTableBuilder AddPropertyAttributes<T>(Expression<Func<T, object>> expression, IEnumerable<Attribute> attributes)
-      //{
-      //   return AddPropertyAttributes((LambdaExpression)expression, attributes);
-      //}
-
-      //public CustomAttributeTableBuilder AddPropertyAttributes<T>(Expression<Action<T>> expression, IEnumerable<Attribute> attributes)
-      //{
-      //   return AddPropertyAttributes((LambdaExpression)expression, attributes);
-      //}
-
-      //private CustomAttributeTableBuilder AddPropertyAttributes(LambdaExpression expression, IEnumerable<Attribute> attributes)
-      //{
-      //   AddPropertyAttributes(Reflect.GetProperty(expression), attributes);
-      //   return this;
-      //}
 
       #endregion
 
@@ -247,12 +223,6 @@ namespace CustomAttributeTable
             throw new ArgumentException($"The type '{typeof(T).FullName}' does not declare a member '{member.Name}'.");
 
          return AddMemberAttributes(member, attributes);
-      }      
-
-      public CustomAttributeTableBuilder AddMemberAttributes(Type type, string memberName, IEnumerable<Attribute> attributes)
-      {
-         m_metadata[type] = GetTypeMetadata(type).AddMemberAttributes(memberName, attributes);
-         return this;
       }
 
       public CustomAttributeTableBuilder AddMemberAttributes(MemberInfo member, IEnumerable<Attribute> attributes)
@@ -275,7 +245,9 @@ namespace CustomAttributeTable
          }
          else
          {
-            AddMemberAttributes(member.DeclaringType, member.Name, attributes);
+            var type = member.DeclaringType;
+            m_metadata[type] = GetTypeMetadata(type).AddMemberAttributes(new MemberKey(member.MemberType, member.Name), attributes);
+            CustomAttributeTableBuilder result = this;
          }
          return this;
       }
@@ -342,12 +314,12 @@ namespace CustomAttributeTable
 
          private TypeMetadata()
          {
-            MemberAttributes = ImmutableDictionary<string, IImmutableList<Attribute>>.Empty;
+            MemberAttributes = ImmutableDictionary<MemberKey, IImmutableList<Attribute>>.Empty;
             MethodAttributes = ImmutableDictionary<MethodKey, MethodMetadata>.Empty;
             TypeAttributes = ImmutableList<Attribute>.Empty;
          }
 
-         private TypeMetadata(IImmutableList<Attribute> typeAttributes, IImmutableDictionary<string, IImmutableList<Attribute>> memberAttributes, IImmutableDictionary<MethodKey, MethodMetadata> methodAttributes)
+         private TypeMetadata(IImmutableList<Attribute> typeAttributes, IImmutableDictionary<MemberKey, IImmutableList<Attribute>> memberAttributes, IImmutableDictionary<MethodKey, MethodMetadata> methodAttributes)
          {
             MemberAttributes = memberAttributes;
             MethodAttributes = methodAttributes;
@@ -358,7 +330,7 @@ namespace CustomAttributeTable
 
          #region Properties
 
-         public IImmutableDictionary<string, IImmutableList<Attribute>> MemberAttributes { get; }
+         public IImmutableDictionary<MemberKey, IImmutableList<Attribute>> MemberAttributes { get; }
          public IImmutableDictionary<MethodKey, MethodMetadata> MethodAttributes { get; }
          public IImmutableList<Attribute> TypeAttributes { get; }
 
@@ -389,10 +361,10 @@ namespace CustomAttributeTable
             return new TypeMetadata(TypeAttributes, MemberAttributes, MethodAttributes.SetItem(method, methodMetadata));
          }
 
-         public TypeMetadata AddMemberAttributes(string memberName, IEnumerable<Attribute> attributes)
+         public TypeMetadata AddMemberAttributes(MemberKey key, IEnumerable<Attribute> attributes)
          {
             IImmutableList<Attribute> list;
-            if (!MemberAttributes.TryGetValue(memberName, out list))
+            if (!MemberAttributes.TryGetValue(key, out list))
             {
                list = ImmutableList.CreateRange<Attribute>(attributes);
             }
@@ -401,7 +373,7 @@ namespace CustomAttributeTable
                list = list.AddRange(attributes);
             }
 
-            return new TypeMetadata(TypeAttributes, MemberAttributes.SetItem(memberName, list), MethodAttributes);
+            return new TypeMetadata(TypeAttributes, MemberAttributes.SetItem(key, list), MethodAttributes);
          }
 
          private MethodMetadata GetMethodMetadata(MethodKey key)
@@ -414,10 +386,11 @@ namespace CustomAttributeTable
 
             return metadata;
          }
+
          #endregion
       }
 
-      public class MethodKey : IEquatable<MethodKey>
+      private class MethodKey : IEquatable<MethodKey>
       {
          public MethodKey(MethodBase method)
          {
@@ -453,6 +426,41 @@ namespace CustomAttributeTable
          public override int GetHashCode()
          {
             return MethodName.GetHashCode() + 11 * Parameters.Count.GetHashCode();
+         }
+      }
+
+      private sealed class MemberKey : IEquatable<MemberKey>
+      {
+         public MemberKey(MemberInfo member)
+            : this(member.MemberType, member.Name)
+         {
+         }
+
+         public MemberKey(MemberTypes memberType, string name)
+         {
+            MemberType = memberType;
+            Name = name;
+         }
+
+         public MemberTypes MemberType { get; }
+         public string Name { get; }
+
+         public bool Equals(MemberKey other)
+         {
+            if (other == null)
+               return false;
+
+            return MemberType.Equals(other.MemberType) && StringComparer.Ordinal.Equals(Name, other.Name);
+         }
+
+         public override bool Equals(object obj)
+         {
+            return Equals(obj as MemberKey);
+         }
+
+         public override int GetHashCode()
+         {
+            return MemberType.GetHashCode() + 37 * StringComparer.Ordinal.GetHashCode(Name);
          }
       }
 
@@ -539,7 +547,7 @@ namespace CustomAttributeTable
          private IImmutableList<Attribute> GetMemberAttributes(MemberInfo member)
          {
             IImmutableList<Attribute> attributes;
-            if (GetTypeMetadata(member.DeclaringType).MemberAttributes.TryGetValue(member.Name, out attributes))
+            if (GetTypeMetadata(member.DeclaringType).MemberAttributes.TryGetValue(new MemberKey(member), out attributes))
             {
                return attributes;
             }

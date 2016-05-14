@@ -1,9 +1,12 @@
 ﻿using CustomAttributeTableTests;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Runtime.Remoting.Messaging;
+using System.Runtime.Remoting.Proxies;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -57,7 +60,7 @@ namespace CustomAttributeTable
                member = body.Member;
             }
 
-            ownerType = body.Expression.Type;
+            ownerType = body.Expression?.Type ?? member.DeclaringType;
          }
 
          if (member is PropertyInfo)
@@ -139,6 +142,7 @@ namespace CustomAttributeTable
 
          return outermostExpression.Method;
       }
+      
    }
 
    public static class Reflect<TSource>

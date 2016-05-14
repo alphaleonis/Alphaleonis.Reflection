@@ -52,13 +52,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AttributedTypes.cs" />
+    <Compile Include="Reflection Targets\DecoratedTypes.cs" />
     <Compile Include="MemberInfoExtensionTests.cs" />
-    <Compile Include="NonAttributedTypes.cs" />
+    <Compile Include="Reflection Targets\UndecoratedTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectTests.cs" />
     <Compile Include="SequenceAssert.cs" />
-    <Compile Include="TestAttribute.cs" />
+    <Compile Include="Reflection Targets\TestAttribute.cs" />
     <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>

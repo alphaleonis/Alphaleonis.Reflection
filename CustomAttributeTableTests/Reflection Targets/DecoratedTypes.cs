@@ -2,7 +2,7 @@ using System;
 
 namespace CustomAttributeTableTests
 {
-   class AttributedTypes
+   class DecoratedTypes
    {
       [InheritedMulti(nameof(IBase1))]
       [InheritedSingle(nameof(IBase1))]
@@ -86,6 +86,54 @@ namespace CustomAttributeTableTests
       [NonInheritedMulti(nameof(Base))]
       public abstract class Base : IComposite
       {
+         [InheritedSingle(nameof(Base) + "_S")]
+         [InheritedMulti(nameof(Base) + "_S")]
+         [NonInheritedSingle(nameof(Base) + "_S")]
+         [NonInheritedMulti(nameof(Base) + "_S")]
+         public static event EventHandler StaticBaseEvent;
+
+         [InheritedSingle(nameof(Base) + "_V")]
+         [InheritedMulti(nameof(Base) + "_V")]
+         [NonInheritedSingle(nameof(Base) + "_V")]
+         [NonInheritedMulti(nameof(Base) + "_V")]
+         public event EventHandler NonVirtualBaseEvent;
+
+         [InheritedSingle(nameof(Base) + "_H")]
+         [InheritedMulti(nameof(Base) + "_H")]
+         [NonInheritedSingle(nameof(Base) + "_H")]
+         [NonInheritedMulti(nameof(Base) + "_H")]
+         public event EventHandler HiddenBaseEvent;
+
+         [InheritedSingle(nameof(Base) + "_O")]
+         [InheritedMulti(nameof(Base) + "_O")]
+         [NonInheritedSingle(nameof(Base) + "_O")]
+         [NonInheritedMulti(nameof(Base) + "_O")]
+         public virtual event EventHandler OverriddenEvent;
+
+         [InheritedSingle(nameof(Base))]
+         [InheritedMulti(nameof(Base))]
+         [NonInheritedSingle(nameof(Base))]
+         [NonInheritedMulti(nameof(Base))]
+         public static int s_hiddenBaseField;
+
+         [InheritedSingle(nameof(Base))]
+         [InheritedMulti(nameof(Base))]
+         [NonInheritedSingle(nameof(Base))]
+         [NonInheritedMulti(nameof(Base))]
+         public static int s_baseField;
+
+         [InheritedSingle(nameof(Base))]
+         [InheritedMulti(nameof(Base))]
+         [NonInheritedSingle(nameof(Base))]
+         [NonInheritedMulti(nameof(Base))]
+         public int m_baseField;
+
+         [InheritedSingle(nameof(Base))]
+         [InheritedMulti(nameof(Base))]
+         [NonInheritedSingle(nameof(Base))]
+         [NonInheritedMulti(nameof(Base))]
+         public int m_hiddenBaseField;
+
          [InheritedSingle(nameof(Base))]
          [InheritedMulti(nameof(Base))]
          [NonInheritedSingle(nameof(Base))]
@@ -147,7 +195,29 @@ namespace CustomAttributeTableTests
       [NonInheritedMulti(nameof(Derived))]
       public abstract class Derived : Base
       {
-         public object Field;
+         [InheritedSingle(nameof(Derived))]
+         [InheritedMulti(nameof(Derived))]
+         [NonInheritedSingle(nameof(Derived))]
+         [NonInheritedMulti(nameof(Derived))]
+         public new event EventHandler HiddenBaseEvent;
+
+         [InheritedSingle(nameof(Derived))]
+         [InheritedMulti(nameof(Derived))]
+         [NonInheritedSingle(nameof(Derived))]
+         [NonInheritedMulti(nameof(Derived))]
+         public static new int s_hiddenBaseField;
+
+         [InheritedSingle(nameof(Derived))]
+         [InheritedMulti(nameof(Derived))]
+         [NonInheritedSingle(nameof(Derived))]
+         [NonInheritedMulti(nameof(Derived))]
+         public new int m_hiddenBaseField;
+
+         [InheritedSingle(nameof(Derived))]
+         [InheritedMulti(nameof(Derived))]
+         [NonInheritedSingle(nameof(Derived))]
+         [NonInheritedMulti(nameof(Derived))]
+         public int m_derivedField;
 
          [InheritedSingle(nameof(Derived))]
          [InheritedMulti(nameof(Derived))]
@@ -168,6 +238,12 @@ namespace CustomAttributeTableTests
       [NonInheritedMulti(nameof(SubDerived))]
       public abstract class SubDerived : Derived
       {
+         [InheritedSingle(nameof(SubDerived))]
+         [InheritedMulti(nameof(SubDerived))]
+         [NonInheritedSingle(nameof(SubDerived))]
+         [NonInheritedMulti(nameof(SubDerived))]
+         public override event EventHandler OverriddenEvent;
+
          [InheritedSingle(nameof(SubDerived))]
          [InheritedMulti(nameof(SubDerived))]
          [NonInheritedSingle(nameof(SubDerived))]
@@ -197,6 +273,6 @@ namespace CustomAttributeTableTests
          [NonInheritedMulti(nameof(SubDerived) + "long")]
          [NonInheritedSingle(nameof(SubDerived) + "long")]
          public override void OverloadedMethod(long a) { }
-      }
+      }      
    }
 }

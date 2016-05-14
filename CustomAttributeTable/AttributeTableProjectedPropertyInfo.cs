@@ -41,7 +41,7 @@ namespace CustomAttributeTableTests
             }
 
             // If we want also inherited attributes, we must check the base definition.
-            if (inherit && (ReflectionContext.m_options & AttributeTableReflectionContextOptions.HonorPropertyAttributeInheritance) != 0)
+            if (inherit && (ReflectionContext.Options & AttributeTableReflectionContextOptions.HonorPropertyAttributeInheritance) != 0)
             {
                // ...if it is different from the declaring type of this method, we get all attributes from there and add them as well, depending
                // on their attribute usage settings.
@@ -97,7 +97,7 @@ namespace CustomAttributeTableTests
             if (base.IsDefined(attributeType, false))
                return true;
 
-            if (inherit && (ReflectionContext.m_options & AttributeTableReflectionContextOptions.HonorPropertyAttributeInheritance) != 0)
+            if (inherit && (ReflectionContext.Options & AttributeTableReflectionContextOptions.HonorPropertyAttributeInheritance) != 0)
             {
                return this.GetParentDefinition()?.IsDefined(attributeType, true) == true;
             }

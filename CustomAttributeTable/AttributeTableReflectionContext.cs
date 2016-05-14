@@ -17,7 +17,6 @@ namespace CustomAttributeTableTests
    public partial class AttributeTableReflectionContext : ReflectionContext
    {
       private readonly static AttributeUsageAttribute DefaultAttributeUsageAttribute = new AttributeUsageAttribute(AttributeTargets.All);
-      private readonly AttributeTableReflectionContextOptions m_options;
 
       public AttributeTableReflectionContext(ICustomAttributeTable table, AttributeTableReflectionContextOptions options)
       {
@@ -27,12 +26,13 @@ namespace CustomAttributeTableTests
          Id = Guid.NewGuid();
          ContextIdentifierAttribute = new AttributeTableReflectionContextIdentifierAttribute(Guid.NewGuid());
          Table = table;
-         m_options = options;
+         Options = options;
       }
 
       private Guid Id { get; }
       private ICustomAttributeTable Table { get; }
       private AttributeTableReflectionContextIdentifierAttribute ContextIdentifierAttribute { get; }
+      public AttributeTableReflectionContextOptions Options { get; }
 
       #region Public Methods
 

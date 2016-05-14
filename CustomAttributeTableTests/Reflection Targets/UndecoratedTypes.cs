@@ -2,7 +2,7 @@ using System;
 
 namespace CustomAttributeTableTests
 {
-   class NonAttributedTypes
+   class UndecoratedTypes
    {
       public interface IBase1
       {
@@ -29,6 +29,17 @@ namespace CustomAttributeTableTests
 
       public abstract class Base : IComposite
       {
+         public static event EventHandler StaticBaseEvent;
+         public event EventHandler NonVirtualBaseEvent;
+         public event EventHandler HiddenBaseEvent;
+         public virtual event EventHandler OverriddenEvent;
+
+         public static int s_hiddenBaseField;
+         public static int s_baseField;
+
+         public int m_baseField;
+         public int m_hiddenBaseField;
+
          public int HiddenProperty { get; set; }
          public int ImplementedProperty { get; private set; }
          public virtual object OverriddenProperty { get; set; }
@@ -46,12 +57,20 @@ namespace CustomAttributeTableTests
 
       public abstract class Derived : Base
       {
+         public new event EventHandler HiddenBaseEvent;
+
+         public new int m_hiddenBaseField;
+         public int m_derivedField;
+         public static new int s_hiddenBaseField;
+
          public new long HiddenProperty { get; set; }
          public override object OverriddenProperty2 { get; set; }
       }
 
       public abstract class SubDerived : Derived
       {
+         public override event EventHandler OverriddenEvent;
+
          public override object OverriddenProperty { get; set; }
          public override object OverriddenProperty2 { get; set; }
 

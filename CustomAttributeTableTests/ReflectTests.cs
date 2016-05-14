@@ -12,24 +12,25 @@ namespace CustomAttributeTableTests
       [TestMethod]
       public void Test()
       {
-         var member = Reflect.GetMember<AttributedTypes.Derived>(c => c.ImplementedMethod1(1, 2));
+
+         var member = Reflect.GetMember<DecoratedTypes.Derived>(c => c.ImplementedMethod1(1, 2));
          Assert.IsNotNull(member);
-         Assert.AreEqual(member.DeclaringType, typeof(AttributedTypes.Base));
+         Assert.AreEqual(member.DeclaringType, typeof(DecoratedTypes.Base));
          Assert.IsInstanceOfType(member, typeof(MethodInfo));
 
-         member = Reflect.GetMember<AttributedTypes.Derived>(c => c.OverriddenMethod(1, 2));
+         member = Reflect.GetMember<DecoratedTypes.Derived>(c => c.OverriddenMethod(1, 2));
          Assert.IsNotNull(member);
-         Assert.AreEqual(member.DeclaringType, typeof(AttributedTypes.Base));
+         Assert.AreEqual(member.DeclaringType, typeof(DecoratedTypes.Base));
          Assert.IsInstanceOfType(member, typeof(MethodInfo));
 
-         member = Reflect.GetMember<AttributedTypes.SubDerived>(c => c.OverriddenMethod(1, 2));
+         member = Reflect.GetMember<DecoratedTypes.SubDerived>(c => c.OverriddenMethod(1, 2));
          Assert.IsNotNull(member);
-         Assert.AreEqual(member.DeclaringType, typeof(AttributedTypes.SubDerived ));
+         Assert.AreEqual(member.DeclaringType, typeof(DecoratedTypes.SubDerived ));
          Assert.IsInstanceOfType(member, typeof(MethodInfo));
 
-         member = Reflect.GetMember<AttributedTypes.Derived>(c => (string)c.Field);
+         member = Reflect.GetMember<DecoratedTypes.Derived>(c => c.m_derivedField);
          Assert.IsNotNull(member);
-         Assert.AreEqual(member.DeclaringType, typeof(AttributedTypes.Derived));
+         Assert.AreEqual(member.DeclaringType, typeof(DecoratedTypes.Derived));
          Assert.IsInstanceOfType(member, typeof(FieldInfo));
       }
    }
