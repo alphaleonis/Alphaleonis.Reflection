@@ -20,6 +20,39 @@ namespace CustomAttributeTable
 
    public class CustomAttributeTableBuilder
    {
+      private class TypeEqualityComparer : IEqualityComparer<Type>
+      {
+         public static readonly IEqualityComparer<Type> Default = new TypeEqualityComparer();
+
+         public bool Equals(Type x, Type y)
+         {
+            if (x == null)
+               return y == null;
+
+            if (y == null)
+               return false;
+
+            if (x.IsGenericType)
+               x = x.GetGenericTypeDefinition();
+
+            if (y.IsGenericType)
+               y = y.GetGenericTypeDefinition();
+
+            return x.UnderlyingSystemType.Equals(y.UnderlyingSystemType);
+         }
+
+         public int GetHashCode(Type obj)
+         {
+            if (obj == null)
+               return 0;
+
+            if (obj.IsGenericType)
+               obj = obj.GetGenericTypeDefinition();
+
+            return obj.GetHashCode();
+         }
+      }
+
       #region Private Fields
 
       private ImmutableDictionary<Type, TypeMetadata>.Builder m_metadata;
@@ -47,6 +80,16 @@ namespace CustomAttributeTable
       #endregion
 
       #region Add Type Attributes
+
+      public CustomAttributeTableBuilder AddTypeAttributes(Type type, params Attribute[] attributes)
+      {
+         return AddMemberAttributes(type, attributes);
+      }
+
+      public CustomAttributeTableBuilder AddTypeAttributes(Type type, IEnumerable<Attribute> attributes)
+      {
+         return AddMemberAttributes(type, attributes);
+      }
 
       public CustomAttributeTableBuilder AddTypeAttributes<T>(params Attribute[] attributes)
       {
@@ -249,6 +292,7 @@ namespace CustomAttributeTable
             m_metadata[type] = GetTypeMetadata(type).AddMemberAttributes(new MemberKey(member.MemberType, member.Name), attributes);
             CustomAttributeTableBuilder result = this;
          }
+
          return this;
       }
 
@@ -397,14 +441,27 @@ namespace CustomAttributeTable
             if (method == null)
                throw new ArgumentNullException(nameof(method), $"{nameof(method)} is null.");
 
+            bool stop = method.DeclaringType.IsGenericType;
+            MethodInfo methodInfo = method as MethodInfo;
+            if (methodInfo != null && method.IsGenericMethod && !method.IsGenericMethodDefinition)
+            {
+               method = methodInfo.GetGenericMethodDefinition();
+            }
+
+            // If the MethodInfo comes from a closed generic type, we need to get the MethodInfo belonging to the open generic type.
+            if (method.DeclaringType.IsGenericType && !method.DeclaringType.IsGenericTypeDefinition)
+            {
+               method = MethodBase.GetMethodFromHandle(method.MethodHandle, method.DeclaringType.GetGenericTypeDefinition().TypeHandle);
+            }
+
             MethodName = method.Name;
-            TypeArguments = method.GetGenericArguments().Select(t => t.UnderlyingSystemType).ToImmutableArray();
+            TypeArguments = method.GetGenericArguments().Length;            
             Parameters = method.GetParameters().Select(p => p.ParameterType.UnderlyingSystemType).ToImmutableArray();
          }
 
          public string MethodName { get; }
 
-         public IImmutableList<Type> TypeArguments { get; }
+         public int TypeArguments { get; }
 
          public IImmutableList<Type> Parameters { get; }
 
@@ -414,8 +471,8 @@ namespace CustomAttributeTable
                return false;
 
             return MethodName.Equals(other.MethodName) &&
-                   TypeArguments.SequenceEqual(other.TypeArguments) &&
-                   Parameters.SequenceEqual(other.Parameters);
+                   TypeArguments == other.TypeArguments &&
+                   Parameters.SequenceEqual(other.Parameters, ParameterInfoComparer.Default);
          }
 
          public override bool Equals(object obj)
@@ -426,6 +483,44 @@ namespace CustomAttributeTable
          public override int GetHashCode()
          {
             return MethodName.GetHashCode() + 11 * Parameters.Count.GetHashCode();
+         }
+
+         private class ParameterInfoComparer : IEqualityComparer<Type>
+         {
+            public static readonly ParameterInfoComparer Default = new ParameterInfoComparer();
+
+            public bool Equals(Type x, Type y)
+            {
+               if (x == null)
+                  return y == null;
+
+               if (y == null)
+                  return false;
+
+
+               if (x.IsGenericParameter)
+               {
+                  if (!y.IsGenericParameter)
+                     return false;
+
+                  return x.GenericParameterPosition == y.GenericParameterPosition;
+               }
+               else
+               {
+                  return x.UnderlyingSystemType.Equals(y.UnderlyingSystemType);
+               }
+            }
+
+            public int GetHashCode(Type obj)
+            {
+               if (obj == null)
+                  return 0;
+
+               if (obj.IsGenericParameter)
+                  return obj.GenericParameterPosition.GetHashCode();
+
+               return obj.UnderlyingSystemType.GetHashCode();
+            }
          }
       }
 

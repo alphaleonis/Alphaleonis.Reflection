@@ -59,7 +59,7 @@
     <Compile Include="ReflectTests.cs" />
     <Compile Include="SequenceAssert.cs" />
     <Compile Include="Reflection Targets\TestAttribute.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="AttributeTableReflectionContextTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomAttributeTable\CustomAttributeTable.csproj">

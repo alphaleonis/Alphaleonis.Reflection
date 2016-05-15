@@ -17,6 +17,11 @@ namespace CustomAttributeTableTests
          return CreateTestAttributes(typeof(T).Name);
       }
 
+      private IEnumerable<TestAttribute> CreateTestAttributes(Type type)
+      {
+         return CreateTestAttributes(type.Name);
+      }
+
       private IEnumerable<TestAttribute> CreateTestAttributes(string name)
       {
          return new TestAttribute[] {
@@ -64,6 +69,23 @@ namespace CustomAttributeTableTests
                .AddEventAttributes<UndecoratedTypes.Base>(nameof(UndecoratedTypes.Base.NonVirtualBaseEvent), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "_V"))
                .AddEventAttributes<UndecoratedTypes.Base>(nameof(UndecoratedTypes.Base.HiddenBaseEvent), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "_H"))
                .AddEventAttributes<UndecoratedTypes.Base>(nameof(UndecoratedTypes.Base.OverriddenEvent), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "_O"))
+               ;
+
+            builder.AddMemberAttributes<UndecoratedTypes.Base>(c => c.GenericMethod(default(long), default(int)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "void"))
+            ;   
+
+            builder.AddParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod(Decorate.Parameter<long>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "int")),
+                                                                                       Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "long"))))
+
+               ;
+
+         builder.AddMemberAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string>(default(int), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "T"));
+
+         builder.AddParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string>(Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "int")),
+                                                                                                 (Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "T")))))
+
+               .AddMemberAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string, string>(default(string), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "TU"))
+
 
             .AddTypeAttributes<UndecoratedTypes.Derived>(CreateTestAttributes<UndecoratedTypes.Derived>())
                .AddMemberAttributes<UndecoratedTypes.Derived>(der => der.HiddenProperty, CreateTestAttributes<UndecoratedTypes.Derived>())
@@ -80,8 +102,11 @@ namespace CustomAttributeTableTests
                .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverloadedMethod(default(long)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "long"))
                .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverriddenMethod(0, 0), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
                .AddEventAttributes<UndecoratedTypes.SubDerived>(nameof(UndecoratedTypes.SubDerived.OverriddenEvent), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
-               
 
+            .AddTypeAttributes<UndecoratedTypes.GenericDerived>(CreateTestAttributes<UndecoratedTypes.GenericDerived>())
+            .AddTypeAttributes(typeof(UndecoratedTypes.GenericDerived<>), CreateTestAttributes("GenericDerived<TType>"))
+            ;
+            builder.AddMemberAttributes<UndecoratedTypes.GenericDerived<object>>(cls => cls.GenericMethod(null, null), CreateTestAttributes("GenericDerived<TType>"))
          ;
          return builder.CreateTable();
       }
@@ -104,6 +129,7 @@ namespace CustomAttributeTableTests
          action(TestInfo.Create<DecoratedTypes.Base, UndecoratedTypes.Base>(context));
          action(TestInfo.Create<DecoratedTypes.Derived, UndecoratedTypes.Derived>(context));
          action(TestInfo.Create<DecoratedTypes.SubDerived, UndecoratedTypes.SubDerived>(context));
+         action(TestInfo.Create(typeof(DecoratedTypes.GenericDerived<>), typeof(UndecoratedTypes.GenericDerived<>), context));            
       }
 
       private IEnumerable<T> FilterAttributes<T>(IEnumerable<T> list)
@@ -127,6 +153,11 @@ namespace CustomAttributeTableTests
          public static TestInfo Create<SourceType, TargetType>(AttributeTableReflectionContext reflectionContext)
          {
             return new TestInfo(typeof(SourceType), reflectionContext.MapType(typeof(TargetType)), reflectionContext);
+         }
+
+         public static TestInfo Create(Type sourceType, Type targetType, AttributeTableReflectionContext reflectionContext)
+         {
+            return new TestInfo(sourceType, reflectionContext.MapType(targetType), reflectionContext);
          }
 
          public readonly Type SourceType;
@@ -241,12 +272,57 @@ namespace CustomAttributeTableTests
 
             foreach (var sourceMethod in sourceMethods)
             {
-               var targetMethod = info.TargetType.GetMethod(sourceMethod.Name, sourceMethod.GetParameters().Select(p => p.ParameterType).ToArray());
+               bool stop = sourceMethod.Name == "GenericMethod" && sourceMethod.IsGenericMethod;
+               var targetMethod = info.TargetType.GetMethods().SingleOrDefault(method =>
+                  method.Name == sourceMethod.Name &&
+                  method.GetParameters().SequenceEqual(sourceMethod.GetParameters(), ParameterInfoComparer.Default) &&
+                  method.GetGenericArguments().Length == sourceMethod.GetGenericArguments().Length
+               );
+
+               //(sourceMethod.Name, sourceMethod.GetParameters().Select(p => p.ParameterType).ToArray());
                Assert.IsNotNull(targetMethod, $"Method {sourceMethod.Name} was not found in class {info.TargetType.Name}");
+               bool stop2 = sourceMethod.IsGenericMethod;
                SequenceAssert.AreEquivalent(sourceMethod.GetCustomAttributes(false), FilterAttributes(targetMethod.GetCustomAttributes(false)), $"Attribute mismatch och method {sourceMethod.DeclaringType.Name}.{sourceMethod.Name}({String.Join(",", sourceMethod.GetParameters().Select(p => p.ParameterType.Name))}) (inherit=false)");
                SequenceAssert.AreEquivalent(sourceMethod.GetCustomAttributes(true), FilterAttributes(targetMethod.GetCustomAttributes(true)), $"Attribute mismatch och method {sourceMethod.DeclaringType.Name}.{sourceMethod.Name}({String.Join(",", sourceMethod.GetParameters().Select(p => p.ParameterType.Name))}) (inherit=true)");
             }
          });
+      }
+
+      private class ParameterInfoComparer : IEqualityComparer<ParameterInfo>
+      {
+         public static readonly ParameterInfoComparer Default = new ParameterInfoComparer();
+
+         public bool Equals(ParameterInfo x, ParameterInfo y)
+         {
+            if (x == null)
+               return y == null;
+
+            if (y == null)
+               return false;
+
+            if (x.Position != y.Position)
+               return false;
+
+            Type xType = x.ParameterType;
+            Type yType = y.ParameterType;
+
+            if (xType.IsGenericParameter)
+            {
+               if (!yType.IsGenericParameter)
+                  return false;
+
+               return xType.GenericParameterPosition == yType.GenericParameterPosition;
+            }
+            else
+            {
+               return xType.Equals(yType) && x.Position == y.Position;
+            }
+         }
+
+         public int GetHashCode(ParameterInfo obj)
+         {
+            throw new NotImplementedException();
+         }
       }
       #endregion
    }

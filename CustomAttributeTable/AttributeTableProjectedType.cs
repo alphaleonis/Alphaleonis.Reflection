@@ -33,6 +33,7 @@ namespace CustomAttributeTableTests
 
          public override object[] GetCustomAttributes(Type attributeType, bool inherit)
          {
+            bool stop = this.IsGenericType;
             // Start with the table attributes.
             List<object> result = new List<object>();
 

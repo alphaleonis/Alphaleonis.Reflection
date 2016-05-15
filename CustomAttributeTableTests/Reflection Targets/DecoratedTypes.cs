@@ -187,6 +187,59 @@ namespace CustomAttributeTableTests
          [NonInheritedMulti(nameof(Base) + "long")]
          [NonInheritedSingle(nameof(Base) + "long")]
          public abstract void OverloadedMethod(long a);
+
+         [InheritedMulti(nameof(Base) + "void")]
+         [InheritedSingle(nameof(Base) + "void")]
+         [NonInheritedMulti(nameof(Base) + "void")]
+         [NonInheritedSingle(nameof(Base) + "void")]
+         public abstract void GenericMethod([InheritedMulti(nameof(Base) + "long")]
+                                            [InheritedSingle(nameof(Base) + "long")]
+                                            [NonInheritedMulti(nameof(Base) + "long")]
+                                            [NonInheritedSingle(nameof(Base) + "long")]
+                                            long param1,
+                                            [InheritedMulti(nameof(Base) + "int")]
+                                            [InheritedSingle(nameof(Base) + "int")]
+                                            [NonInheritedMulti(nameof(Base) + "int")]
+                                            [NonInheritedSingle(nameof(Base) + "int")]
+                                            int param2);
+
+         [InheritedMulti(nameof(Base) + "T")]
+         [InheritedSingle(nameof(Base) + "T")]
+         [NonInheritedMulti(nameof(Base) + "T")]
+         [NonInheritedSingle(nameof(Base) + "T")]
+         [return: InheritedMulti(nameof(Base) + "T")]
+         [return: InheritedSingle(nameof(Base) + "T")]
+         [return: NonInheritedMulti(nameof(Base) + "T")]
+         [return: NonInheritedSingle(nameof(Base) + "T")]
+         public abstract T GenericMethod<T>([InheritedMulti(nameof(Base) + "long")]
+                                            [InheritedSingle(nameof(Base) + "long")]
+                                            [NonInheritedMulti(nameof(Base) + "long")]
+                                            [NonInheritedSingle(nameof(Base) + "long")]
+                                            long param1,
+                                            [InheritedMulti(nameof(Base) + "T")]
+                                            [InheritedSingle(nameof(Base) + "T")]
+                                            [NonInheritedMulti(nameof(Base) + "T")]
+                                            [NonInheritedSingle(nameof(Base) + "T")]
+                                            T param2);
+
+         [InheritedMulti(nameof(Base) + "TU")]
+         [InheritedSingle(nameof(Base) + "TU")]
+         [NonInheritedMulti(nameof(Base) + "TU")]
+         [NonInheritedSingle(nameof(Base) + "TU")]
+         [return: InheritedMulti(nameof(Base) + "TU")]
+         [return: InheritedSingle(nameof(Base) + "TU")]
+         [return: NonInheritedMulti(nameof(Base) + "TU")]
+         [return: NonInheritedSingle(nameof(Base) + "TU")]
+         public abstract T GenericMethod<T, U>([InheritedMulti(nameof(Base) + "U")]
+                                            [InheritedSingle(nameof(Base) + "U")]
+                                            [NonInheritedMulti(nameof(Base) + "U")]
+                                            [NonInheritedSingle(nameof(Base) + "U")]
+                                            U param1,
+                                            [InheritedMulti(nameof(Base) + "T")]
+                                            [InheritedSingle(nameof(Base) + "T")]
+                                            [NonInheritedMulti(nameof(Base) + "T")]
+                                            [NonInheritedSingle(nameof(Base) + "T")]
+                                            T param2);
       }
 
       [InheritedSingle(nameof(Derived))]
@@ -273,6 +326,63 @@ namespace CustomAttributeTableTests
          [NonInheritedMulti(nameof(SubDerived) + "long")]
          [NonInheritedSingle(nameof(SubDerived) + "long")]
          public override void OverloadedMethod(long a) { }
-      }      
+
+         public override void GenericMethod([InheritedMulti(nameof(SubDerived) + "long")]
+                                            [InheritedSingle(nameof(SubDerived) + "long")]
+                                            [NonInheritedMulti(nameof(SubDerived) + "long")]
+                                            [NonInheritedSingle(nameof(SubDerived) + "long")]
+                                            long param1,
+                                        [InheritedMulti(nameof(SubDerived) + "int")]
+                                            [InheritedSingle(nameof(SubDerived) + "int")]
+                                            [NonInheritedMulti(nameof(SubDerived) + "int")]
+                                            [NonInheritedSingle(nameof(SubDerived) + "int")]
+                                            int param2)
+         { }
+
+         [return: InheritedMulti(nameof(Derived) + "T")]
+         [return: InheritedSingle(nameof(Derived) + "T")]
+         [return: NonInheritedMulti(nameof(Derived) + "T")]
+         [return: NonInheritedSingle(nameof(Derived) + "T")]
+         public override T GenericMethod<T>(long param1,
+                                            [InheritedMulti(nameof(SubDerived) + "T")]
+                                            [InheritedSingle(nameof(SubDerived) + "T")]
+                                            [NonInheritedMulti(nameof(SubDerived) + "T")]
+                                            [NonInheritedSingle(nameof(SubDerived) + "T")]
+                                            T param2) => default(T);
+
+         public override T GenericMethod<T, U>([InheritedMulti(nameof(SubDerived) + "U")]
+                                            [InheritedSingle(nameof(SubDerived) + "U")]
+                                            [NonInheritedMulti(nameof(SubDerived) + "U")]
+                                            [NonInheritedSingle(nameof(SubDerived) + "U")]
+                                            U param1,
+                                            [InheritedMulti(nameof(SubDerived) + "T")]
+                                            [InheritedSingle(nameof(SubDerived) + "T")]
+                                            [NonInheritedMulti(nameof(SubDerived) + "T")]
+                                            [NonInheritedSingle(nameof(SubDerived) + "T")]
+                                            T param2) => default(T);
+      }
+
+      [InheritedMulti(nameof(GenericDerived))]
+      [InheritedSingle(nameof(GenericDerived))]
+      [NonInheritedMulti(nameof(GenericDerived))]
+      [NonInheritedSingle(nameof(GenericDerived))]
+      public abstract class GenericDerived : Base
+      {
+      }
+
+      [InheritedMulti("GenericDerived<TType>")]
+      [InheritedSingle("GenericDerived<TType>")]
+      [NonInheritedMulti("GenericDerived<TType>")]
+      [NonInheritedSingle("GenericDerived<TType>")]
+      public abstract class GenericDerived<TType> : Base
+      {
+         [InheritedMulti("GenericDerived<TType>")]
+         [InheritedSingle("GenericDerived<TType>")]
+         [NonInheritedMulti("GenericDerived<TType>")]
+         [NonInheritedSingle("GenericDerived<TType>")]
+         public TType GenericMethod(TType param1, TType param2) => default(TType);
+      }
    }
+
+   
 }

@@ -31,10 +31,15 @@ namespace CustomAttributeTable
 
       public static MemberInfo GetMember(LambdaExpression expression)
       {
+         return GetMemberInternal(expression.Body);
+      }
+
+      private static MemberInfo GetMemberInternal(Expression expression)
+      {
          MemberInfo member = null;
          Type ownerType;
 
-         MethodCallExpression methodCallExpr = expression.Body as MethodCallExpression;
+         MethodCallExpression methodCallExpr = expression as MethodCallExpression;
          if (methodCallExpr != null)
          {
             member = methodCallExpr.Method;
@@ -42,13 +47,14 @@ namespace CustomAttributeTable
          }
          else
          {
-            MemberExpression body = expression.Body as MemberExpression;
+            MemberExpression body = expression as MemberExpression;
             if (body == null)
             {
-               UnaryExpression ubody = expression.Body as UnaryExpression;
+               UnaryExpression ubody = expression as UnaryExpression;
                if (ubody == null)
                   throw new ArgumentException($"Expression '{expression}' does not refer to a property, field or event.");
 
+               return GetMemberInternal(ubody.Operand);
                body = ubody.Operand as MemberExpression;
                if (body == null)
                   throw new ArgumentException($"Expression '{expression}' does not refer to a property, field or event.");

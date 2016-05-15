@@ -1,5 +1,9 @@
 using System;
 
+// TODO: Add tests for parameter attributes
+// TODO: Add tests for return parameter attributes
+// TODO: Add tests for IsDefined
+// TODO: Add tests for Generic+NonGeneric method.
 namespace CustomAttributeTableTests
 {
    class UndecoratedTypes
@@ -53,6 +57,12 @@ namespace CustomAttributeTableTests
 
          public abstract void OverloadedMethod(long a);
          public abstract void OverloadedMethod(int a);
+
+         public abstract void GenericMethod(long param1, int param2);
+
+         public abstract T GenericMethod<T>(long param1, T param2);
+
+         public abstract T GenericMethod<T, U>(U param1, T param2);
       }
 
       public abstract class Derived : Base
@@ -79,6 +89,21 @@ namespace CustomAttributeTableTests
          public override void OverloadedMethod(long a) { }
          public override void OverloadedMethod(int a) { }
 
+         public override void GenericMethod(long param1, int param2) { }
+
+         public override T GenericMethod<T>(long param1, T param2) => default(T);
+
+         public override T GenericMethod<T, U>(U param1, T param2) => default(T);
       }
+
+      public abstract class GenericDerived : Base
+      {
+      }
+
+      public abstract class GenericDerived<TType> : Base
+      {
+         public TType GenericMethod(TType param1, TType param2) => default(TType);
+      }
+
    }
 }
