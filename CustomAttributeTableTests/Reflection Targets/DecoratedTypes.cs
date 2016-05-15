@@ -332,7 +332,7 @@ namespace CustomAttributeTableTests
                                             [NonInheritedMulti(nameof(SubDerived) + "long")]
                                             [NonInheritedSingle(nameof(SubDerived) + "long")]
                                             long param1,
-                                        [InheritedMulti(nameof(SubDerived) + "int")]
+                                            [InheritedMulti(nameof(SubDerived) + "int")]
                                             [InheritedSingle(nameof(SubDerived) + "int")]
                                             [NonInheritedMulti(nameof(SubDerived) + "int")]
                                             [NonInheritedSingle(nameof(SubDerived) + "int")]

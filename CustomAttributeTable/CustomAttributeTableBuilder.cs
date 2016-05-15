@@ -182,20 +182,37 @@ namespace CustomAttributeTable
 
       #region Add Parameter Attributes
 
+      private static MethodCallExpression GetMethodCallExpression(Expression expression)
+      {
+         MethodCallExpression methodCallExpression = expression as MethodCallExpression;
+         if (methodCallExpression != null)
+         {
+            return methodCallExpression;
+         }
+
+         UnaryExpression unaryExpression = expression as UnaryExpression;
+         if (unaryExpression != null)
+         {
+            return GetMethodCallExpression(unaryExpression.Operand);
+         }
+
+         return null;
+      }
+
       private CustomAttributeTableBuilder AddParameterAttributes(LambdaExpression expression)
       {
          MethodCallExpression methodCallExpression = expression.Body as MethodCallExpression;
          if (methodCallExpression == null)
             throw new ArgumentException("Expression is not a single method call expression.");
 
-         MethodInfo targetMethod = methodCallExpression.Method;
+         MethodInfo targetMethod = (MethodInfo)Reflect.GetMemberInternal(methodCallExpression, true);
          var parameters = targetMethod.GetParameters();
          for (int i = 0; i < parameters.Length; i++)
          {
             var parameter = parameters[i];
-            var argCall = methodCallExpression.Arguments[i] as MethodCallExpression;
-            if (argCall != null && argCall.Method.IsGenericMethod &&               
-               (s_decorateEnumerableMethodInfo.Equals(argCall.Method.GetGenericMethodDefinition())))
+            var argCall = GetMethodCallExpression(methodCallExpression.Arguments[i]);            
+
+            if (argCall != null && argCall.Method.IsGenericMethod && (s_decorateEnumerableMethodInfo.Equals(argCall.Method.GetGenericMethodDefinition())))
             {
                Expression attrArg = argCall.Arguments[0];
                var argLamb = Expression.Lambda<Func<IEnumerable<Attribute>>>(attrArg).Compile();
@@ -230,26 +247,11 @@ namespace CustomAttributeTable
          return this;
       }
 
-      #endregion
-
-      //#region Add Method Attributes
-
-      //public CustomAttributeTableBuilder AddMethodAttributes(MethodBase method, IEnumerable<Attribute> attributes)
-      //{
-      //   if (method == null)
-      //      throw new ArgumentNullException(nameof(method), $"{nameof(method)} is null.");
-
-      //   if (attributes == null)
-      //      throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
-
-      //   AddMemberAttributes((MemberInfo)method, attributes);
-      //   return this;
-      //}
-
-      //#endregion
+      #endregion      
 
       #region Add Member Attributes
 
+      // TODO PP: We need to ensure that the member in the expression is declared on the type T. Otherwise things become a bit strange to say the least.
       public CustomAttributeTableBuilder AddMemberAttributes<T>(Expression<Func<T, object>> expression, IEnumerable<Attribute> attributes)
       {
          var member = Reflect.GetMember<T>(expression);

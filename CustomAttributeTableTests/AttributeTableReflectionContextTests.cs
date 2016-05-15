@@ -69,23 +69,15 @@ namespace CustomAttributeTableTests
                .AddEventAttributes<UndecoratedTypes.Base>(nameof(UndecoratedTypes.Base.NonVirtualBaseEvent), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "_V"))
                .AddEventAttributes<UndecoratedTypes.Base>(nameof(UndecoratedTypes.Base.HiddenBaseEvent), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "_H"))
                .AddEventAttributes<UndecoratedTypes.Base>(nameof(UndecoratedTypes.Base.OverriddenEvent), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "_O"))
-               ;
-
-            builder.AddMemberAttributes<UndecoratedTypes.Base>(c => c.GenericMethod(default(long), default(int)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "void"))
-            ;   
-
-            builder.AddParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod(Decorate.Parameter<long>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "int")),
-                                                                                       Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "long"))))
-
-               ;
-
-         builder.AddMemberAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string>(default(int), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "T"));
-
-         builder.AddParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string>(Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "int")),
-                                                                                                 (Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "T")))))
-
+               .AddMemberAttributes<UndecoratedTypes.Base>(c => c.GenericMethod(default(long), default(int)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "void"))
+                  .AddParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod(Decorate.Parameter<long>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "long")),
+                                                                                       Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "int"))))
+               .AddMemberAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string>(default(int), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "T"))
+                  .AddParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string>(Decorate.Parameter<long>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "long")),
+                                                                                             (Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "T")))))
                .AddMemberAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string, string>(default(string), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "TU"))
-
+                  .AddParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string, string>(Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "U")),
+                                                                                                      Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "T"))))
 
             .AddTypeAttributes<UndecoratedTypes.Derived>(CreateTestAttributes<UndecoratedTypes.Derived>())
                .AddMemberAttributes<UndecoratedTypes.Derived>(der => der.HiddenProperty, CreateTestAttributes<UndecoratedTypes.Derived>())
@@ -94,20 +86,28 @@ namespace CustomAttributeTableTests
                .AddMemberAttributes<UndecoratedTypes.Derived>(c => c.m_hiddenBaseField, CreateTestAttributes(nameof(UndecoratedTypes.Derived)))
                .AddMemberAttributes<UndecoratedTypes.Derived>(c => UndecoratedTypes.Derived.s_hiddenBaseField, CreateTestAttributes(nameof(UndecoratedTypes.Derived)))
                .AddEventAttributes<UndecoratedTypes.Derived>(nameof(UndecoratedTypes.Derived.HiddenBaseEvent), CreateTestAttributes(nameof(UndecoratedTypes.Derived)))
-
-            .AddTypeAttributes<UndecoratedTypes.SubDerived>(CreateTestAttributes<UndecoratedTypes.SubDerived>())
-               .AddMemberAttributes<UndecoratedTypes.SubDerived>(der => der.OverriddenProperty, CreateTestAttributes<UndecoratedTypes.SubDerived>())
-               .AddMemberAttributes<UndecoratedTypes.SubDerived>(der => der.OverriddenProperty2, CreateTestAttributes<UndecoratedTypes.SubDerived>())
-               .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverloadedMethod(default(int)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "int"))
-               .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverloadedMethod(default(long)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "long"))
-               .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverriddenMethod(0, 0), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
-               .AddEventAttributes<UndecoratedTypes.SubDerived>(nameof(UndecoratedTypes.SubDerived.OverriddenEvent), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
-
-            .AddTypeAttributes<UndecoratedTypes.GenericDerived>(CreateTestAttributes<UndecoratedTypes.GenericDerived>())
-            .AddTypeAttributes(typeof(UndecoratedTypes.GenericDerived<>), CreateTestAttributes("GenericDerived<TType>"))
             ;
-            builder.AddMemberAttributes<UndecoratedTypes.GenericDerived<object>>(cls => cls.GenericMethod(null, null), CreateTestAttributes("GenericDerived<TType>"))
+
+         builder.AddTypeAttributes<UndecoratedTypes.SubDerived>(CreateTestAttributes<UndecoratedTypes.SubDerived>())
+            .AddMemberAttributes<UndecoratedTypes.SubDerived>(der => der.OverriddenProperty, CreateTestAttributes<UndecoratedTypes.SubDerived>())
+            .AddMemberAttributes<UndecoratedTypes.SubDerived>(der => der.OverriddenProperty2, CreateTestAttributes<UndecoratedTypes.SubDerived>())
+            .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverloadedMethod(default(int)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "int"))
+            .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverloadedMethod(default(long)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "long"))
+            .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverriddenMethod(0, 0), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
+            .AddEventAttributes<UndecoratedTypes.SubDerived>(nameof(UndecoratedTypes.SubDerived.OverriddenEvent), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
+            ;
+
+         builder.AddParameterAttributes<UndecoratedTypes.SubDerived>(c => c.GenericMethod(Decorate.Parameter<long>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "long")), Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "int"))));
+         builder.AddParameterAttributes<UndecoratedTypes.SubDerived>(c => c.GenericMethod<object>(default(long), Decorate.Parameter<object>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "T"))));
+         builder.AddParameterAttributes<UndecoratedTypes.SubDerived>(c => c.GenericMethod<string, string>(Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "U")),
+                                                                                                         Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "T"))))
          ;
+
+         builder.AddTypeAttributes<UndecoratedTypes.GenericDerived>(CreateTestAttributes<UndecoratedTypes.GenericDerived>())
+         .AddTypeAttributes(typeof(UndecoratedTypes.GenericDerived<>), CreateTestAttributes("GenericDerived<TType>"))
+         ;
+         builder.AddMemberAttributes<UndecoratedTypes.GenericDerived<object>>(cls => cls.GenericMethod(null, null), CreateTestAttributes("GenericDerived<TType>"))
+      ;
          return builder.CreateTable();
       }
 
@@ -129,7 +129,7 @@ namespace CustomAttributeTableTests
          action(TestInfo.Create<DecoratedTypes.Base, UndecoratedTypes.Base>(context));
          action(TestInfo.Create<DecoratedTypes.Derived, UndecoratedTypes.Derived>(context));
          action(TestInfo.Create<DecoratedTypes.SubDerived, UndecoratedTypes.SubDerived>(context));
-         action(TestInfo.Create(typeof(DecoratedTypes.GenericDerived<>), typeof(UndecoratedTypes.GenericDerived<>), context));            
+         action(TestInfo.Create(typeof(DecoratedTypes.GenericDerived<>), typeof(UndecoratedTypes.GenericDerived<>), context));
       }
 
       private IEnumerable<T> FilterAttributes<T>(IEnumerable<T> list)
@@ -243,7 +243,7 @@ namespace CustomAttributeTableTests
             EventInfo[] sourceEvents = info.SourceType.GetEvents(BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
 
             foreach (var sourceEvent in sourceEvents)
-            {               
+            {
                var targetProperty = info.TargetType.GetEvents(BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
                   .SingleOrDefault(ev => ev.Name == sourceEvent.Name && ev.DeclaringType.Name == sourceEvent.DeclaringType.Name);
 
@@ -272,7 +272,6 @@ namespace CustomAttributeTableTests
 
             foreach (var sourceMethod in sourceMethods)
             {
-               bool stop = sourceMethod.Name == "GenericMethod" && sourceMethod.IsGenericMethod;
                var targetMethod = info.TargetType.GetMethods().SingleOrDefault(method =>
                   method.Name == sourceMethod.Name &&
                   method.GetParameters().SequenceEqual(sourceMethod.GetParameters(), ParameterInfoComparer.Default) &&
@@ -284,6 +283,35 @@ namespace CustomAttributeTableTests
                bool stop2 = sourceMethod.IsGenericMethod;
                SequenceAssert.AreEquivalent(sourceMethod.GetCustomAttributes(false), FilterAttributes(targetMethod.GetCustomAttributes(false)), $"Attribute mismatch och method {sourceMethod.DeclaringType.Name}.{sourceMethod.Name}({String.Join(",", sourceMethod.GetParameters().Select(p => p.ParameterType.Name))}) (inherit=false)");
                SequenceAssert.AreEquivalent(sourceMethod.GetCustomAttributes(true), FilterAttributes(targetMethod.GetCustomAttributes(true)), $"Attribute mismatch och method {sourceMethod.DeclaringType.Name}.{sourceMethod.Name}({String.Join(",", sourceMethod.GetParameters().Select(p => p.ParameterType.Name))}) (inherit=true)");
+            }
+         });
+      }
+
+      [TestMethod]
+      public void GetCustomAttributes_ParameterInfo_ReturnsCorrectAttributes()
+      {
+         TestAll(info =>
+         {
+            var sourceMethods = info.SourceType.GetMethods(BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public)
+                                          .Where(m => m.IsSpecialName == false && !m.DeclaringType.Equals(typeof(object)));
+
+            foreach (var sourceMethod in sourceMethods)
+            {
+               var targetMethod = info.TargetType.GetMethods().SingleOrDefault(method =>
+                  method.Name == sourceMethod.Name &&
+                  method.GetParameters().SequenceEqual(sourceMethod.GetParameters(), ParameterInfoComparer.Default) &&
+                  method.GetGenericArguments().Length == sourceMethod.GetGenericArguments().Length
+               );
+
+               Assert.IsNotNull(targetMethod, $"Method {sourceMethod.Name} was not found in class {info.TargetType.Name}");
+
+               foreach (var sourceParameter in sourceMethod.GetParameters())
+               {
+                  var targetParameter = targetMethod.GetParameters()[sourceParameter.Position];
+
+                  SequenceAssert.AreEquivalent(sourceParameter.GetCustomAttributes(false), FilterAttributes(targetParameter.GetCustomAttributes(false)), $"Attribute mismatch on parameter {sourceParameter.Name} of method {sourceMethod.DeclaringType.Name}.{sourceMethod.Name}({String.Join(",", sourceMethod.GetParameters().Select(p => p.ParameterType.Name))}) (inherit=false)");
+                  SequenceAssert.AreEquivalent(sourceParameter.GetCustomAttributes(true), FilterAttributes(targetParameter.GetCustomAttributes(true)), $"Attribute mismatch on parameter {sourceParameter.Name} of method {sourceMethod.DeclaringType.Name}.{sourceMethod.Name}({String.Join(",", sourceMethod.GetParameters().Select(p => p.ParameterType.Name))}) (inherit=true)");
+               }
             }
          });
       }

@@ -31,10 +31,10 @@ namespace CustomAttributeTable
 
       public static MemberInfo GetMember(LambdaExpression expression)
       {
-         return GetMemberInternal(expression.Body);
+         return GetMemberInternal(expression.Body, false);
       }
 
-      private static MemberInfo GetMemberInternal(Expression expression)
+      internal static MemberInfo GetMemberInternal(Expression expression, bool declaredOnly)
       {
          MemberInfo member = null;
          Type ownerType;
@@ -54,12 +54,7 @@ namespace CustomAttributeTable
                if (ubody == null)
                   throw new ArgumentException($"Expression '{expression}' does not refer to a property, field or event.");
 
-               return GetMemberInternal(ubody.Operand);
-               body = ubody.Operand as MemberExpression;
-               if (body == null)
-                  throw new ArgumentException($"Expression '{expression}' does not refer to a property, field or event.");
-
-               member = body.Member;
+               return GetMemberInternal(ubody.Operand, declaredOnly);              
             }
             else
             {
@@ -75,8 +70,15 @@ namespace CustomAttributeTable
             {
                // We are accessing the property in one type, but the PropertyInfo we got is from a base type. 
                // So we need to check if this property exists on the derived type as well.
-               member = ownerType.GetProperties(BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-                  .FirstOrDefault(p => p.GetBaseDefinition()?.Equals(member) == true) ?? member;
+               var declaredMember = ownerType.GetProperties(BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | (declaredOnly ? BindingFlags.DeclaredOnly : 0))
+                  .FirstOrDefault(p => p.GetBaseDefinition()?.Equals(member) == true);
+
+               if (declaredMember == null && declaredOnly)
+               {
+                  throw new ArgumentException($"The property {member.Name} is not declared on type {ownerType}, it's base declaration is on {member.DeclaringType}.");
+               }
+               else if (declaredMember != null)
+                  member = declaredMember;
             }
          }
          else if (member is MethodInfo)
@@ -85,8 +87,16 @@ namespace CustomAttributeTable
             {
                // We are accessing the property in one type, but the PropertyInfo we got is from a base type. 
                // So we need to check if this property exists on the derived type as well.
-               member = ownerType.GetMethods(BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-                  .FirstOrDefault(p => p.GetBaseDefinition()?.Equals(member) == true) ?? member;
+               var declaredMember = ownerType.GetMethods(BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | (declaredOnly ? BindingFlags.DeclaredOnly : 0))
+                  .FirstOrDefault(p => p.GetBaseDefinition()?.Equals(member.GetBaseDefinition()) == true);
+
+               if (declaredMember == null && declaredOnly)
+               {
+                  throw new ArgumentException($"The method {member} is not declared on type {ownerType}, it's base declaration is on {member.DeclaringType}.");
+               }
+               else if (declaredMember != null)
+                  member = declaredMember;
+
             }
          }
 
@@ -96,7 +106,7 @@ namespace CustomAttributeTable
       public static PropertyInfo GetProperty(LambdaExpression expression)
       {
          MemberInfo member = null;
-         
+
          MemberExpression body = expression.Body as MemberExpression;
          if (body == null)
          {
@@ -148,7 +158,7 @@ namespace CustomAttributeTable
 
          return outermostExpression.Method;
       }
-      
+
    }
 
    public static class Reflect<TSource>

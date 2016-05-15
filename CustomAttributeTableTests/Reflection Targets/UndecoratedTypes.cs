@@ -1,9 +1,8 @@
 using System;
 
-// TODO: Add tests for parameter attributes
 // TODO: Add tests for return parameter attributes
 // TODO: Add tests for IsDefined
-// TODO: Add tests for Generic+NonGeneric method.
+// TODO: Perhaps allow parameter decorations in a call to AddMemberAttributes (or AddMethodAttributes as it should become.)
 namespace CustomAttributeTableTests
 {
    class UndecoratedTypes
@@ -58,7 +57,7 @@ namespace CustomAttributeTableTests
          public abstract void OverloadedMethod(long a);
          public abstract void OverloadedMethod(int a);
 
-         public abstract void GenericMethod(long param1, int param2);
+         public abstract void GenericMethod(long p1, int p2);
 
          public abstract T GenericMethod<T>(long param1, T param2);
 
