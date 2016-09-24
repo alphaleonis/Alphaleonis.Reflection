@@ -247,6 +247,25 @@ namespace CustomAttributeTable
          return this;
       }
 
+      public CustomAttributeTableBuilder AddReturnParameterAttributes(Expression<Action> expression, params Attribute[] attributes)
+      {
+         return AddReturnParameterAttributes((LambdaExpression)expression, attributes);
+      }
+
+      public CustomAttributeTableBuilder AddReturnParameterAttributes<T>(Expression<Action<T>> expression, params Attribute[] attributes)
+      {
+         return AddReturnParameterAttributes((LambdaExpression)expression, attributes);
+      }
+
+      private CustomAttributeTableBuilder AddReturnParameterAttributes(LambdaExpression expression, IEnumerable<Attribute> attributes)
+      {
+         // TODO PP: Doesn't work properly probably... need to check for declaredonly!
+         var member = Reflect.GetMethod(expression);
+         var method = member as MethodInfo;
+         m_metadata[method.DeclaringType] = GetTypeMetadata(method.DeclaringType).AddMethodReturnParameterAttributes(new MethodKey(method), attributes);
+         return this;
+      }
+
       #endregion      
 
       #region Add Member Attributes
@@ -622,7 +641,10 @@ namespace CustomAttributeTable
             MethodMetadata methodMetadata;
             if (typeMetadata.MethodAttributes.TryGetValue(new MethodKey(parameterInfo.Member as MethodBase), out methodMetadata))
             {
-               return methodMetadata.ParameterAttributes[parameterInfo.Position];
+               if (parameterInfo.Position == -1)
+                  return methodMetadata.ReturnParameterAttributes;
+               else
+                  return methodMetadata.ParameterAttributes[parameterInfo.Position];
             }
             else
             {
@@ -657,4 +679,9 @@ namespace CustomAttributeTable
 
       #endregion
    }
+
+   // TODO PP: Add a simplified builder that is specific to a type, eg. builder.ForType<MyType>().AddMemberAttributes(c => c.MyProperty);
+   //                                                                                                                ^ Note: No generic argument here!
+
+   // TODO PP: Change AddMemberAttribute to specific methods instead, it seems that it may be needed.
 }

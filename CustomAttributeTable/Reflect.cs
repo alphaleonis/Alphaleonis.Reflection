@@ -12,11 +12,32 @@ using System.Threading.Tasks;
 
 namespace CustomAttributeTable
 {
+   // TODO PP: Clean up this class. It probably needs a bit more checks and stuff.
+   // TODO PP: Perhaps we should have a "DeclaredOnly" flag to all these methods?
    public static class Reflect
    {
+      public static PropertyInfo GetProperty<T, U>(Expression<Func<U, T>> expression)
+      {
+         return GetProperty((LambdaExpression)expression);
+      }
+
+      public static PropertyInfo GetProperty<T>(Expression<Func<T>> expression)
+      {
+         return GetProperty((LambdaExpression)expression);
+      }
+
       public static PropertyInfo GetProperty<T>(Expression<Action<T>> expression)
       {
          return GetProperty((LambdaExpression)expression);
+      }
+      
+      internal static PropertyInfo GetProperty(LambdaExpression expression)
+      {
+         var memberInfo = GetMemberInternal(expression.Body, false) as PropertyInfo;
+         if (memberInfo == null)
+            throw new ArgumentException($"The expression {expression} does not reference a property.");
+
+         return memberInfo;
       }
 
       public static MemberInfo GetMember<T>(Expression<Action<T>> expression)
@@ -78,7 +99,9 @@ namespace CustomAttributeTable
                   throw new ArgumentException($"The property {member.Name} is not declared on type {ownerType}, it's base declaration is on {member.DeclaringType}.");
                }
                else if (declaredMember != null)
+               {
                   member = declaredMember;
+               }
             }
          }
          else if (member is MethodInfo)
@@ -95,49 +118,16 @@ namespace CustomAttributeTable
                   throw new ArgumentException($"The method {member} is not declared on type {ownerType}, it's base declaration is on {member.DeclaringType}.");
                }
                else if (declaredMember != null)
+               {
                   member = declaredMember;
-
+               }
             }
          }
 
          return member;
       }
 
-      public static PropertyInfo GetProperty(LambdaExpression expression)
-      {
-         MemberInfo member = null;
-
-         MemberExpression body = expression.Body as MemberExpression;
-         if (body == null)
-         {
-            UnaryExpression ubody = expression.Body as UnaryExpression;
-            if (ubody == null)
-               throw new ArgumentException($"Expression '{expression}' does not refer to a property.");
-
-            body = ubody.Operand as MemberExpression;
-            if (body == null)
-               throw new ArgumentException($"Expression '{expression}' does not refer to a property.", "propertyLambda");
-
-            member = body.Member;
-         }
-         else
-         {
-            member = body.Member;
-         }
-
-         PropertyInfo property = member as PropertyInfo;
-         if (property == null)
-            throw new ArgumentException($"Expression '{expression}' does not refer to a property.");
-
-         if (!property.DeclaringType.Equals(body.Expression.Type))
-         {
-            // We are accessing the property in one type, but the PropertyInfo we got is from a base type. 
-            // So we need to check if this property exists on the derived type as well.
-            property = body.Expression.Type.GetProperties(BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).FirstOrDefault(p => p.GetBaseDefinition()?.Equals(property) == true) ?? property;
-         }
-
-         return property;
-      }
+      
 
       public static MethodInfo GetMethod(Expression<Action> expression)
       {
