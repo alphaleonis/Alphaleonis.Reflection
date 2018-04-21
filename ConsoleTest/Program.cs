@@ -1,5 +1,4 @@
-﻿using CustomAttributeTable;
-using CustomAttributeTableTests;
+﻿using Alphaleonis.Reflection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +11,7 @@ using System.Threading.Tasks;
 namespace ConsoleTest
 {
 
+   [Category("My Category")]
    class MyClass
    {
       public static void MyMethod(int a, int b)
@@ -34,20 +34,29 @@ namespace ConsoleTest
             Decorate.Parameter<int>(new Attribute[] { new BrowsableAttribute(false), new DisplayNameAttribute("Hello") })));
 
          var table = builder.CreateTable();
+         
+         foreach (var attr in table.GetCustomAttributes(typeof(MyClass)))
+            Console.WriteLine(attr.GetType().FullName);
+
          AttributeTableReflectionContext ctx = new AttributeTableReflectionContext(table, AttributeTableReflectionContextOptions.Default);
          var type = ctx.MapType(typeof(MyClass));
-         foreach (var method in type.GetMethods())
-         {
-            Console.WriteLine(method.Name);
-            foreach (var parameter in method.GetParameters())
-            {
-               Console.WriteLine("  Parameter: {0}", parameter.Name);
-               foreach (var attr in parameter.GetCustomAttributes())
-               {
-                  Console.WriteLine($"    Attribute {attr.GetType().Name}");
-               }
-            }
-         }
+
+         Console.WriteLine("Reflection Context:");
+         foreach (var attr in type.GetCustomAttributes())
+            Console.WriteLine(attr.GetType().FullName);
+         //var type = ctx.MapType(typeof(MyClass));
+         //foreach (var method in type.GetMethods())
+         //{
+         //   Console.WriteLine(method.Name);
+         //   foreach (var parameter in method.GetParameters())
+         //   {
+         //      Console.WriteLine("  Parameter: {0}", parameter.Name);
+         //      foreach (var attr in parameter.GetCustomAttributes())
+         //      {
+         //         Console.WriteLine($"    Attribute {attr.GetType().Name}");
+         //      }
+         //   }
+         //}
       }
       
 

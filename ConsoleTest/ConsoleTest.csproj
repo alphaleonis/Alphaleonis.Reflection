@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomAttributeTable\CustomAttributeTable.csproj">
+    <ProjectReference Include="..\src\Alphaleonis.Reflection.csproj">
       <Project>{fd2a88bb-9e97-4956-8d47-5c7e9a0402ff}</Project>
-      <Name>CustomAttributeTable</Name>
+      <Name>Alphaleonis.Reflection</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
