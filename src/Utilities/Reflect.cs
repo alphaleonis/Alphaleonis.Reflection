@@ -140,6 +140,10 @@ namespace Alphaleonis.Reflection
       public static MethodInfo GetMethod(LambdaExpression expression)
       {
          MethodCallExpression methodCallExpression = expression.Body as MethodCallExpression ?? throw new ArgumentException("Invalid Expression. Expression should consist of a Method call only.");
+
+         // When using expressions the member returned always seems to point to the base definition of the method. Here we need to have
+         // the one referring to the derived type, to mimic what you would get if you did typeof(T).GetMethod(...). So in case the type
+         // of the object used is different from the declaring type of the member, we need to find the method in the object type.
          if (methodCallExpression.Object != null && !methodCallExpression.Method.DeclaringType.Equals(methodCallExpression.Object.Type))
          {
             var bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;

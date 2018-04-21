@@ -240,6 +240,12 @@ namespace Tests.Alphaleonis.Reflection
                                             [NonInheritedMulti(nameof(Base) + "T")]
                                             [NonInheritedSingle(nameof(Base) + "T")]
                                             T param2);
+
+         [InheritedMulti(nameof(Base))]
+         [InheritedSingle(nameof(Base))]
+         [NonInheritedMulti(nameof(Base))]
+         [NonInheritedSingle(nameof(Base))]
+         public static int StaticMethod(int arg1) { return 0; }
       }
 
       [InheritedSingle(nameof(Derived))]

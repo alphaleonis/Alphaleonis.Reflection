@@ -10,6 +10,7 @@ using System.Runtime.Remoting.Proxies;
 
 namespace Alphaleonis.Reflection
 {
+   // TODO PP (2018-04-22): Consider creating most of these Add-methods as extension methods instead, to separate concerns somewhat.
    public partial class CustomAttributeTableBuilder
    {
       /// <summary>A type equality comparer that ignores type parameters.</summary>
@@ -48,7 +49,7 @@ namespace Alphaleonis.Reflection
 
       #region Private Fields
 
-      private ImmutableDictionary<Type, TypeMetadata>.Builder m_metadata;
+      private readonly ImmutableDictionary<Type, TypeMetadata>.Builder m_metadata;
       //private static MethodInfo s_decorateArrayMethodInfo = Reflect.GetMethod(() => Decorate.Parameter<object>(default(Attribute[]))).GetGenericMethodDefinition();
       private static MethodInfo s_decorateEnumerableMethodInfo = Reflect.GetMethod(() => Decorate.Parameter<object>(default(IEnumerable<Attribute>))).GetGenericMethodDefinition();
 
@@ -242,7 +243,7 @@ namespace Alphaleonis.Reflection
 
          if (attributes == null)
             throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
-
+         
          Type type = parameter.Member.DeclaringType;
          m_metadata[type] = GetTypeMetadata(type).AddMethodParameterAttributes(new MethodKey(parameter.Member as MethodBase), parameter.Position, attributes);
          return this;
@@ -250,24 +251,29 @@ namespace Alphaleonis.Reflection
 
       public CustomAttributeTableBuilder AddReturnParameterAttributes(Expression<Action> expression, params Attribute[] attributes)
       {
-         return AddReturnParameterAttributes((LambdaExpression)expression, attributes);
+         var method = Reflect.GetMethod(expression);
+
+         return AddParameterAttributes(method.ReturnParameter, attributes);
       }
 
       public CustomAttributeTableBuilder AddReturnParameterAttributes<T>(Expression<Action<T>> expression, params Attribute[] attributes)
       {
-         return AddReturnParameterAttributes((LambdaExpression)expression, attributes);
+         var method = Reflect.GetMethod<T>(expression);
+         if (!method.DeclaringType.Equals(typeof(T)))
+            throw new ArgumentException($"The type '{typeof(T).FullName}' does not declare a method '{method.Name}'.");
+
+         return AddParameterAttributes(method.ReturnParameter, attributes);
       }
 
-      private CustomAttributeTableBuilder AddReturnParameterAttributes(LambdaExpression expression, IEnumerable<Attribute> attributes)
-      {
-         var method = Reflect.GetMethod(expression);
-         m_metadata[method.DeclaringType] = GetTypeMetadata(method.DeclaringType).AddMethodReturnParameterAttributes(new MethodKey(method), attributes);
-         return this;
-      }
-
-      #endregion      
+      #endregion
 
       #region Add Member Attributes
+
+      public CustomAttributeTableBuilder AddMemberAttributes(Expression<Action> expression, IEnumerable<Attribute> attributes)
+      {
+         var member = Reflect.GetMember(expression);
+         return AddMemberAttributes(member, attributes);
+      }
 
       public CustomAttributeTableBuilder AddMemberAttributes<T>(Expression<Func<T, object>> expression, IEnumerable<Attribute> attributes)
       {

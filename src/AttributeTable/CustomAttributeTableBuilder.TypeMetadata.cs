@@ -57,6 +57,9 @@ namespace Alphaleonis.Reflection
 
          public TypeMetadata AddMethodParameterAttributes(MethodKey method, int parameterIndex, IEnumerable<Attribute> attributes)
          {
+            if (parameterIndex == -1)
+               return AddMethodReturnParameterAttributes(method, attributes);
+
             var methodMetadata = GetMethodMetadata(method).AddParameterAttributes(parameterIndex, attributes);
             return new TypeMetadata(TypeAttributes, MemberAttributes, MethodAttributes.SetItem(method, methodMetadata));
          }

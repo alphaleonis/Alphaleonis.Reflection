@@ -9,6 +9,26 @@ using System.Diagnostics;
 namespace Tests.Alphaleonis.Reflection
 {
    [TestClass]
+   public class AttributeTableBuilderTests
+   {
+      [TestMethod]
+      [ExpectedException(typeof(ArgumentException))]
+      public void AddMemberAttributes_MethodFromBaseClassIsNotOverriddenInSpecifiedClass_ThrowsArgumentException()
+      {
+         CustomAttributeTableBuilder builder = new CustomAttributeTableBuilder();
+         builder.AddMemberAttributes<UndecoratedTypes.Derived>(m => m.GenericMethod(0, ""), new[] { new NonInheritedSingleAttribute() });
+      }
+
+      [TestMethod]
+      [ExpectedException(typeof(ArgumentException))]
+      public void AddReturnParameterAttributes_MethodFromBaseClassIsNotOverriddenInSpecifiedClass_ThrowsArgumentException()
+      {
+         CustomAttributeTableBuilder builder = new CustomAttributeTableBuilder();
+         builder.AddReturnParameterAttributes<UndecoratedTypes.Derived>(m => m.GenericMethod(0, ""), new NonInheritedSingleAttribute());
+      }
+   }
+
+   [TestClass]
    public class AttributeTableReflectionContextTests
    {
       #region Utility Methods
@@ -83,6 +103,7 @@ namespace Tests.Alphaleonis.Reflection
                   .AddParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string, string>(Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "U")),
                                                                                                       Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "T"))))
                   .AddReturnParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string, string>(default(string), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "TU").ToArray())
+               .AddMemberAttributes(() => UndecoratedTypes.Base.StaticMethod(default(int)), CreateTestAttributes(nameof(UndecoratedTypes.Base)))
 
             .AddTypeAttributes<UndecoratedTypes.Derived>(CreateTestAttributes<UndecoratedTypes.Derived>())
                .AddMemberAttributes<UndecoratedTypes.Derived>(der => der.HiddenProperty, CreateTestAttributes<UndecoratedTypes.Derived>())
@@ -331,6 +352,7 @@ namespace Tests.Alphaleonis.Reflection
             var sourceMethods = info.SourceType.GetMethods(BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public)
                                           .Where(m => m.IsSpecialName == false && !m.DeclaringType.Equals(typeof(object)));
 
+            var infoName = info.SourceType.Name;
             foreach (var sourceMethod in sourceMethods)
             {
                var targetMethod = info.TargetType.GetMethods().SingleOrDefault(method =>

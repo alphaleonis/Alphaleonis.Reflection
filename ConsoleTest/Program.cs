@@ -79,7 +79,7 @@ namespace ConsoleTest
          //   Decorate.Parameter<int>(new Attribute[] { new BrowsableAttribute(false), new DisplayNameAttribute("Hello") })));
 
          builder.AddReturnParameterAttributes<MyBase>(b => b.MyMethod<int>(0), new InheritedMultiAttribute("Base"), new NonInheritedMultiAttribute("Base"));
-         builder.AddReturnParameterAttributes<MySubChild>(b => b.MyMethod<int>(0), new InheritedMultiAttribute("SubChild"), new NonInheritedMultiAttribute("SubChild"));
+         builder.AddReturnParameterAttributes<MyChild>(b => b.MyMethod<int>(0), new InheritedMultiAttribute("SubChild"), new NonInheritedMultiAttribute("SubChild"));
          var table = builder.CreateTable();
          
          AttributeTableReflectionContext ctx = new AttributeTableReflectionContext(table, AttributeTableReflectionContextOptions.Default);

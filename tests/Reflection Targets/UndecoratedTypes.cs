@@ -62,6 +62,8 @@ namespace Tests.Alphaleonis.Reflection
          public abstract T GenericMethod<T>(long param1, T param2);
 
          public abstract T GenericMethod<T, U>(U param1, T param2);
+
+         public static int StaticMethod(int arg1) { return 0;  }
       }
 
       public abstract class Derived : Base
