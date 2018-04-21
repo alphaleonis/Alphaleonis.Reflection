@@ -6,8 +6,6 @@ using Alphaleonis.Reflection;
 
 namespace Tests.Alphaleonis.Reflection
 {
-   
-
    [TestClass]
    public class MemberInfoExtensionTests
    {

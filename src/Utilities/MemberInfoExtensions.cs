@@ -6,21 +6,30 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection
 {
-   // TODO PP (2018-04-21): Document
+   /// <summary>Defines useful reflection extension methods.</summary>
    public static class MemberInfoExtensions
    {
       #region IsOverride
 
+      /// <summary>Determines if this method is an override of a method declared in a base class.</summary>
+      /// <param name="method">The method to check.</param>
+      /// <returns><see langword="true"/> if <paramref name="method"/> refers to a method overriding a method from a base class, <see langword="false"/> otherwise.</returns>
       public static bool IsOverride(this MethodInfo method)
       {
          return method.GetBaseDefinition().DeclaringType != method.DeclaringType;
       }
 
+      /// <summary>Determines if the specified property is an override of a property declared in a base class.</summary>
+      /// <param name="property">The property to check.</param>
+      /// <returns><see langword="true"/> if <paramref name="property"/> refers to a property overriding a property from a base class, <see langword="false"/> otherwise.</returns>
       public static bool IsOverride(this PropertyInfo property)
       {
          return property.GetGetMethod(true)?.IsOverride() == true || property.GetSetMethod(true)?.IsOverride() == true;
       }
 
+      /// <summary>Determines if the specified event is an override of an event declared in a base class.</summary>
+      /// <param name="eventInfo">The event to check.</param>
+      /// <returns><see langword="true"/> if <paramref name="eventInfo"/> refers to an event overriding an event from a base class, <see langword="false"/> otherwise.</returns>
       public static bool IsOverride(this EventInfo eventInfo)
       {
          return eventInfo.GetAddMethod(true)?.IsOverride() == true ||
@@ -36,7 +45,7 @@ namespace Alphaleonis.Reflection
       /// method on the direct or indirect base class in which the property represented 
       /// by this instance was first declared. 
       /// </summary>
-      /// <returns>A <see cref="PropertyInfo"/> object for the first implementation of this property.</returns>
+      /// <returns>A <see cref="PropertyInfo"/> object for the top-most declaration of this property in the inheritance chain.</returns>
       public static PropertyInfo GetBaseDefinition(this PropertyInfo propertyInfo)
       {
          var method = propertyInfo.GetAccessors(true)[0];
@@ -53,10 +62,10 @@ namespace Alphaleonis.Reflection
 
       /// <summary>
       /// Returns the <see cref="EventInfo"/> object for the 
-      /// method on the direct or indirect base class in which the event represented 
+      /// event on the direct or indirect base class in which the event represented 
       /// by this instance was first declared. 
       /// </summary>
-      /// <returns>A <see cref="propertyInfo"/> object for the first implementation of this event.</returns>
+      /// <returns>A <see cref="propertyInfo"/> object for the top-most declaration of this event in the inheritance chain.</returns>
       public static EventInfo GetBaseDefinition(this EventInfo eventInfo)
       {
          var method = eventInfo.GetAddMethod(true) ?? eventInfo.GetRemoveMethod(true);
@@ -71,6 +80,12 @@ namespace Alphaleonis.Reflection
          return baseMethod.DeclaringType.GetEvent(eventInfo.Name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
       }
 
+      /// <summary>
+      /// Returns the <see cref="MemberInfo"/> object for the 
+      /// member on the direct or indirect base class in which the member represented 
+      /// by this instance was first declared. 
+      /// </summary>
+      /// <returns>A <see cref="MemberInfo"/> object for the top-most declaration of this member in the inheritance chain.</returns>
       public static MemberInfo GetBaseDefinition(this MemberInfo memberInfo)
       {
          switch (memberInfo.MemberType)
@@ -103,6 +118,7 @@ namespace Alphaleonis.Reflection
 
       #region GetParentDefinition
 
+      // TODO PP (2018-04-21): Document GetParentDefinition
       public static EventInfo GetParentDefinition(this EventInfo eventInfo)
       {
          var eventMethod = eventInfo.AddMethod ?? eventInfo.RemoveMethod;

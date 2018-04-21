@@ -4,7 +4,10 @@ using System.Linq;
 
 namespace Alphaleonis.Reflection
 {
-   // TODO PP (2018-04-21): Document
+   /// <summary>
+   /// An equality comparer that will compare two <see langword="Type"/> instances for equality by 
+   /// returning <see langword="true"/> if the underlying system type of the two instances are equal.
+   /// </summary>
    [Serializable]
    public sealed class TypeEqualityComparer : IEqualityComparer<Type>
    {
