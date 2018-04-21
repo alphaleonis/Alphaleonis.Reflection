@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Linq;
 using System.Collections.Generic;
 using Alphaleonis.Reflection;
+using System.Diagnostics;
 
 namespace Tests.Alphaleonis.Reflection
 {
@@ -344,6 +345,8 @@ namespace Tests.Alphaleonis.Reflection
                var sourceParameter = sourceMethod.ReturnParameter;
                var targetParameter = targetMethod.ReturnParameter;
 
+               if (!sourceParameter.GetCustomAttributes(false).SequenceEqual(FilterAttributes(targetParameter.GetCustomAttributes(false))))
+                  Debugger.Break();
                SequenceAssert.AreEquivalent(sourceParameter.GetCustomAttributes(false), FilterAttributes(targetParameter.GetCustomAttributes(false)), $"Attribute mismatch on return parameter of method {sourceMethod.DeclaringType.Name}.{sourceMethod.Name}({String.Join(",", sourceMethod.GetParameters().Select(p => p.ParameterType.Name))}) (inherit=false)");
                SequenceAssert.AreEquivalent(sourceParameter.GetCustomAttributes(true), FilterAttributes(targetParameter.GetCustomAttributes(true)), $"Attribute mismatch on return parameter of method {sourceMethod.DeclaringType.Name}.{sourceMethod.Name}({String.Join(",", sourceMethod.GetParameters().Select(p => p.ParameterType.Name))}) (inherit=true)");
             }

@@ -260,9 +260,7 @@ namespace Alphaleonis.Reflection
 
       private CustomAttributeTableBuilder AddReturnParameterAttributes(LambdaExpression expression, IEnumerable<Attribute> attributes)
       {
-         // TODO PP: Doesn't work properly probably... need to check for declaredonly!
-         var member = Reflect.GetMethod(expression);
-         var method = member as MethodInfo;
+         var method = Reflect.GetMethod(expression);
          m_metadata[method.DeclaringType] = GetTypeMetadata(method.DeclaringType).AddMethodReturnParameterAttributes(new MethodKey(method), attributes);
          return this;
       }

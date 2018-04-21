@@ -30,7 +30,7 @@ namespace Alphaleonis.Reflection
       {
          return GetProperty((LambdaExpression)expression);
       }
-      
+
       internal static PropertyInfo GetProperty(LambdaExpression expression)
       {
          var memberInfo = GetMemberInternal(expression.Body, false) as PropertyInfo;
@@ -75,7 +75,7 @@ namespace Alphaleonis.Reflection
                if (ubody == null)
                   throw new ArgumentException($"Expression '{expression}' does not refer to a property, field or event.");
 
-               return GetMemberInternal(ubody.Operand, declaredOnly);              
+               return GetMemberInternal(ubody.Operand, declaredOnly);
             }
             else
             {
@@ -132,19 +132,24 @@ namespace Alphaleonis.Reflection
          return GetMethod((LambdaExpression)expression);
       }
 
-      public static MethodInfo GetMethod<T>(Expression<Func<T>> expression)
+      public static MethodInfo GetMethod<T>(Expression<Action<T>> expression)
       {
          return GetMethod((LambdaExpression)expression);
       }
 
       public static MethodInfo GetMethod(LambdaExpression expression)
       {
-         MethodCallExpression outermostExpression = expression.Body as MethodCallExpression;
+         MethodCallExpression methodCallExpression = expression.Body as MethodCallExpression ?? throw new ArgumentException("Invalid Expression. Expression should consist of a Method call only.");
+         if (methodCallExpression.Object != null && !methodCallExpression.Method.DeclaringType.Equals(methodCallExpression.Object.Type))
+         {
+            var bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
 
-         if (outermostExpression == null)
-            throw new ArgumentException("Invalid Expression. Expression should consist of a Method call only.");
+            var result = methodCallExpression.Object.Type.GetMethods(bindingFlags).FirstOrDefault(m => m.GetBaseDefinition().Equals(methodCallExpression.Method.GetBaseDefinition()));
 
-         return outermostExpression.Method;
+            return result;
+         }
+
+         return methodCallExpression.Method;
       }
 
    }

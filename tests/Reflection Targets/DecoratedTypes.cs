@@ -339,10 +339,10 @@ namespace Tests.Alphaleonis.Reflection
                                             int param2)
          { }
 
-         [return: InheritedMulti(nameof(Derived) + "T")]
-         [return: InheritedSingle(nameof(Derived) + "T")]
-         [return: NonInheritedMulti(nameof(Derived) + "T")]
-         [return: NonInheritedSingle(nameof(Derived) + "T")]
+         [return: InheritedMulti(nameof(SubDerived) + "T")]
+         [return: InheritedSingle(nameof(SubDerived) + "T")]
+         [return: NonInheritedMulti(nameof(SubDerived) + "T")]
+         [return: NonInheritedSingle(nameof(SubDerived) + "T")]
          public override T GenericMethod<T>(long param1,
                                             [InheritedMulti(nameof(SubDerived) + "T")]
                                             [InheritedSingle(nameof(SubDerived) + "T")]

@@ -257,7 +257,11 @@ namespace Tests.Alphaleonis.Reflection
 
       #region GetMethod Tests
 
-      // TODO PP: Implement
+      [TestMethod]
+      public void Test3()
+      {         
+         var mm = Reflect.GetMethod<DecoratedTypes.Derived>(m => m.GenericMethod<string>(1, ""));
+      }
 
       #endregion
 

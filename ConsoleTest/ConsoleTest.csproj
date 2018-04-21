@@ -54,6 +54,10 @@
       <Project>{fd2a88bb-9e97-4956-8d47-5c7e9a0402ff}</Project>
       <Name>Alphaleonis.Reflection</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tests\Tests.Alphaleonis.Reflection.csproj">
+      <Project>{177fc80d-4932-440e-91e9-77c403dd2179}</Project>
+      <Name>Tests.Alphaleonis.Reflection</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

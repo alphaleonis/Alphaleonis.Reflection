@@ -63,9 +63,9 @@
     <Compile Include="AttributeTable\AttributeTableReflectionContextIdentifierAttribute.cs" />
     <Compile Include="AttributeTable\AttributeTableReflectionContextOptions.cs" />
     <Compile Include="AttributeTable\CustomAttributeTableBuilder.CustomAttributeTable.cs" />
+    <Compile Include="AttributeTable\CustomAttributeTableBuilder.ImmutableMethodMetadata.cs" />
     <Compile Include="AttributeTable\CustomAttributeTableBuilder.MemberKey.cs" />
     <Compile Include="AttributeTable\CustomAttributeTableBuilder.MethodKey.cs" />
-    <Compile Include="AttributeTable\CustomAttributeTableBuilder.MethodMetadata.cs" />
     <Compile Include="AttributeTable\CustomAttributeTableBuilder.TypeMetadata.cs" />
     <Compile Include="AttributeTable\Decorate.cs" />
     <Compile Include="Delegators\DelegatingEventInfo.cs" />
