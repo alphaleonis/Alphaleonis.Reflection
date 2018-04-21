@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace Alphaleonis.Reflection
 {
+   // TODO PP (2018-04-21): Document
    [Serializable]
    public sealed class TypeEqualityComparer : IEqualityComparer<Type>
    {

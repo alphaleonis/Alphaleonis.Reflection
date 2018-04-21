@@ -10,6 +10,7 @@ using System.Security.Policy;
 
 namespace Alphaleonis.Reflection
 {
+   // TODO PP (2018-04-21): Document
    public class DelegatingAssembly : Assembly
    {
       private readonly Assembly m_assembly;

@@ -6,6 +6,7 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection
 {
+   // TODO PP (2018-04-21): Document
    public class DelegatingMethodInfo : MethodInfo
    {
       private readonly MethodInfo m_method;

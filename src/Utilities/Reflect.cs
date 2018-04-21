@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Alphaleonis.Reflection
 {
+   // TODO PP (2018-04-21): Document
    // TODO PP: Clean up this class. It probably needs a bit more checks and stuff.
    // TODO PP: Perhaps we should have a "DeclaredOnly" flag to all these methods?
    public static class Reflect

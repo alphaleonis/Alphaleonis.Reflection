@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 
 namespace Alphaleonis.Reflection
 {
+   // TODO PP (2018-04-21): Document
    public class DelegatingType : TypeDelegator
    {
       public DelegatingType(Type delegatingType)

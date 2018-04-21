@@ -5,17 +5,12 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection
 {
-   [Flags]
-   public enum AttributeTableReflectionContextOptions
-   {
-      Default = 0,
-      HonorPropertyAttributeInheritance = 1,
-      HonorEventAttributeInheritance = 2
-   }
-
+   // TODO PP (2018-04-21): Document
    public partial class AttributeTableReflectionContext : ReflectionContext
    {
       private readonly static AttributeUsageAttribute DefaultAttributeUsageAttribute = new AttributeUsageAttribute(AttributeTargets.All);
+
+      #region Construction
 
       public AttributeTableReflectionContext(ICustomAttributeTable table, AttributeTableReflectionContextOptions options)
       {
@@ -28,10 +23,19 @@ namespace Alphaleonis.Reflection
          Options = options;
       }
 
+      #endregion
+
+      #region Properties
+
       private Guid Id { get; }
+
       private ICustomAttributeTable Table { get; }
+
       private AttributeTableReflectionContextIdentifierAttribute ContextIdentifierAttribute { get; }
+
       public AttributeTableReflectionContextOptions Options { get; }
+      
+      #endregion
 
       #region Public Methods
 
@@ -68,6 +72,8 @@ namespace Alphaleonis.Reflection
       }
 
       #endregion
+
+      #region Private MapMember methods
 
       private MemberInfo MapMember(MemberInfo member)
       {
@@ -288,11 +294,15 @@ namespace Alphaleonis.Reflection
          return new AttributeTableProjectedMethodInfo(method, this);
       }
 
+      #endregion
+
+      #region Private Utility Methods
+
       private bool IsMapped(ICustomAttributeProvider member)
       {
-         IAttributeTableProjector otherType = member as IAttributeTableProjector;
-         if (otherType?.ReflectionContext.Id == Id)
-            return true;
+         // Shortcut which is faster than using reflection when not necessary.
+         if (member is IAttributeTableProjector projector)
+            return projector.ReflectionContext.Id == Id;
 
          return member.GetCustomAttributes(typeof(AttributeTableReflectionContextIdentifierAttribute), false)
                                      .OfType<AttributeTableReflectionContextIdentifierAttribute>()
@@ -313,11 +323,12 @@ namespace Alphaleonis.Reflection
          return attributes.Concat(new[] { ContextIdentifierAttribute });
       }
 
-      internal static AttributeUsageAttribute GetAttributeUsage(ICustomAttributeProvider decoratedAttribute)
+      private static AttributeUsageAttribute GetAttributeUsage(ICustomAttributeProvider decoratedAttribute)
       {
          return decoratedAttribute.GetCustomAttributes(typeof(AttributeUsageAttribute), true).OfType<AttributeUsageAttribute>().FirstOrDefault() ?? DefaultAttributeUsageAttribute;
       }
-      
+
+      #endregion
    }
 
 

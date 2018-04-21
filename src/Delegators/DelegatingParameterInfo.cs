@@ -5,6 +5,7 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection
 {
+   // TODO PP (2018-04-21): Document
    public class DelegatingParameterInfo : ParameterInfo
    {
       private readonly ParameterInfo m_parameter;
