@@ -1,3 +1,7 @@
+#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#define NETFX
+#endif
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -6,7 +10,9 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
 using System.Security;
+#if NETFX
 using System.Security.Policy;
+#endif
 
 namespace Alphaleonis.Reflection
 {
@@ -26,7 +32,9 @@ namespace Alphaleonis.Reflection
 
       public override string EscapedCodeBase => m_assembly.EscapedCodeBase;
 
+#if NETFX
       public override Evidence Evidence => m_assembly.Evidence;
+#endif
 
       public override string FullName => m_assembly.FullName;
 
@@ -136,7 +144,10 @@ namespace Alphaleonis.Reflection
 
       public override IEnumerable<Module> Modules => m_assembly.Modules;
 
+#if NETFX
       public override PermissionSet PermissionSet => m_assembly.PermissionSet;
+#endif
+
    }
 
 

@@ -78,14 +78,17 @@ namespace ConsoleTest
          //builder.AddParameterAttributes<MyClass>(c => c.MyMethod(1, 2, 
          //   Decorate.Parameter<int>(new Attribute[] { new BrowsableAttribute(false), new DisplayNameAttribute("Hello") })));
 
-         builder.AddReturnParameterAttributes<MyBase>(b => b.MyMethod<int>(0), new InheritedMultiAttribute("Base"), new NonInheritedMultiAttribute("Base"));
-         builder.AddReturnParameterAttributes<MyChild>(b => b.MyMethod<int>(0), new InheritedMultiAttribute("SubChild"), new NonInheritedMultiAttribute("SubChild"));
+         //builder.AddReturnParameterAttributes<MyBase>(b => b.MyMethod<int>(0), new InheritedMultiAttribute("Base"), new NonInheritedMultiAttribute("Base"));
+         //builder.AddReturnParameterAttributes<MyChild>(b => b.MyMethod<int>(0), new InheritedMultiAttribute("SubChild"), new NonInheritedMultiAttribute("SubChild"));
          var table = builder.CreateTable();
          
          AttributeTableReflectionContext ctx = new AttributeTableReflectionContext(table, AttributeTableReflectionContextOptions.Default);
 
          var systemType = typeof(MyActualChild);
          var type = ctx.MapType(typeof(MyChild));
+
+         var ev = type.Assembly.Evidence;
+         return;
 
          var returnParam = type.GetMethod(nameof(MyBase.MyMethod), BindingFlags.Public | BindingFlags.Instance).ReturnParameter;
          var attrs = returnParam.GetCustomAttributes(true);
