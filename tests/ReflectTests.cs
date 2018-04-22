@@ -39,14 +39,13 @@ namespace Tests.Alphaleonis.Reflection
 
          public static object StaticField;
 
-         public object HiddenInstanceField;
+         public object MyHiddenInstanceField;
 
          public static object MyStaticProperty { get; set; }   
          
          public virtual object VirtualProperty { get; set; }
          
          public virtual object HiddenVirtualProperty { get; set; }
-
 
          public void VoidInstanceMethod() => throw new NotImplementedException();
 
@@ -170,7 +169,7 @@ namespace Tests.Alphaleonis.Reflection
       }
 
       [TestMethod]
-      public void Reflect_GetProperty_NonOverriddeVirtualPropertyFromSubClass_ReturnsExpectedProperty()
+      public void Reflect_GetProperty_NonOverriddenVirtualPropertyFromSubClass_ReturnsExpectedProperty()
       {
          PropertyInfo expected = typeof(SubClass).GetProperty(nameof(SubClass.VirtualProperty));
          PropertyInfo actual = Reflect.GetProperty((SubClass cls) => cls.VirtualProperty);
@@ -212,7 +211,7 @@ namespace Tests.Alphaleonis.Reflection
       }
 
       [TestMethod]
-      public void Reflect_GetProperty_NoArg_NonOverriddeVirtualPropertyFromSubClass_ReturnsExpectedProperty()
+      public void Reflect_GetProperty_NoArg_NonOverriddenVirtualPropertyFromSubClass_ReturnsExpectedProperty()
       {
          PropertyInfo expected = typeof(SubClass).GetProperty(nameof(SubClass.VirtualProperty));
          SubClass cls = new SubClass();
@@ -256,7 +255,7 @@ namespace Tests.Alphaleonis.Reflection
       }
 
       [TestMethod]
-      public void ReflectT_GetProperty_NonOverriddeVirtualPropertyFromSubClass_ReturnsExpectedProperty()
+      public void ReflectT_GetProperty_NonOverriddenVirtualPropertyFromSubClass_ReturnsExpectedProperty()
       {
          PropertyInfo expected = typeof(SubClass).GetProperty(nameof(SubClass.VirtualProperty));
          PropertyInfo actual = Reflect<SubClass>.GetProperty(cls => cls.VirtualProperty);

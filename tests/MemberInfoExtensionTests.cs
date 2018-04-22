@@ -12,13 +12,13 @@ namespace Tests.Alphaleonis.Reflection
       #region EventInfo.IsOverride() Tests
 
       [TestMethod]
-      public void IsOverride_EventInfo_NonOverriden_ReturnsTrue()
+      public void IsOverride_EventInfo_NonOverridden_ReturnsTrue()
       {
          Assert.IsFalse(typeof(Base).GetEvent(nameof(Base.OverriddenEvent)).IsOverride());
       }
 
       [TestMethod]
-      public void IsOverride_EventInfo_Overriden_ReturnsTrue()
+      public void IsOverride_EventInfo_Overridden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetEvent(nameof(Derived.OverriddenEvent)).IsOverride());
       }
@@ -47,7 +47,7 @@ namespace Tests.Alphaleonis.Reflection
       }
 
       [TestMethod]
-      public void IsOverride_PropertyInfo_Overriden_ReturnsTrue()
+      public void IsOverride_PropertyInfo_Overridden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetProperty(nameof(Derived.OverriddenProperty)).IsOverride());
       }
@@ -71,7 +71,7 @@ namespace Tests.Alphaleonis.Reflection
       }
 
       [TestMethod]
-      public void IsOverride_PropertyInfo_AbstractOverriden_ReturnsTrue()
+      public void IsOverride_PropertyInfo_AbstractOverridden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetProperty(nameof(Derived.AbstractOverriddenProperty)).IsOverride());
       }
@@ -83,7 +83,7 @@ namespace Tests.Alphaleonis.Reflection
       }
 
       [TestMethod]
-      public void IsOverride_PropertyInfo_SelaedOverriden_ReturnsTrue()
+      public void IsOverride_PropertyInfo_SealedOverridden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetProperty(nameof(Derived.SealedOverriddenProperty)).IsOverride());
       }
@@ -93,13 +93,13 @@ namespace Tests.Alphaleonis.Reflection
       #region MethodInfo.IsOverride() tests
 
       [TestMethod]
-      public void IsOverride_MethodInfo_Overriden_ReturnsTrue()
+      public void IsOverride_MethodInfo_Overridden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetMethod(nameof(Derived.OverriddenMethod)).IsOverride());
       }
 
       [TestMethod]
-      public void IsOverride_MethodInfo_SealedOverriden_ReturnsTrue()
+      public void IsOverride_MethodInfo_SealedOverridden_ReturnsTrue()
       {
          Assert.IsTrue(typeof(Derived).GetMethod(nameof(Derived.SealedOverriddenMethod)).IsOverride());
       }

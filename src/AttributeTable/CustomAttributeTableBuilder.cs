@@ -10,8 +10,18 @@ using System.Runtime.Remoting.Proxies;
 
 namespace Alphaleonis.Reflection
 {
-   // TODO PP (2018-04-22): Consider creating most of these Add-methods as extension methods instead, to separate concerns somewhat.
-   public partial class CustomAttributeTableBuilder
+   public interface ICustomAttributeTableBuilder
+   {
+      ICustomAttributeTableBuilder AddEventAttributes(Type type, string eventName, IEnumerable<Attribute> attributes);
+      ICustomAttributeTableBuilder AddFieldAttributes(Type type, string fieldName, IEnumerable<Attribute> attributes);
+      ICustomAttributeTableBuilder AddMemberAttributes(MemberInfo member, IEnumerable<Attribute> attributes);
+      ICustomAttributeTableBuilder AddParameterAttributes(ParameterInfo parameter, IEnumerable<Attribute> attributes);
+      ICustomAttributeTableBuilder AddPropertyAttributes(Type type, string propertyName, IEnumerable<Attribute> attributes);
+      ICustomAttributeTableBuilder AddTypeAttributes(Type type, IEnumerable<Attribute> attributes);
+      ICustomAttributeTable CreateTable();
+   }
+
+   public partial class CustomAttributeTableBuilder : ICustomAttributeTableBuilder
    {
       /// <summary>A type equality comparer that ignores type parameters.</summary>
       private class TypeEqualityComparerIgnoringTypeParameters : IEqualityComparer<Type>
@@ -50,8 +60,6 @@ namespace Alphaleonis.Reflection
       #region Private Fields
 
       private readonly ImmutableDictionary<Type, TypeMetadata>.Builder m_metadata;
-      //private static MethodInfo s_decorateArrayMethodInfo = Reflect.GetMethod(() => Decorate.Parameter<object>(default(Attribute[]))).GetGenericMethodDefinition();
-      private static MethodInfo s_decorateEnumerableMethodInfo = Reflect.GetMethod(() => Decorate.Parameter<object>(default(IEnumerable<Attribute>))).GetGenericMethodDefinition();
 
       #endregion
 
@@ -73,39 +81,14 @@ namespace Alphaleonis.Reflection
 
       #endregion
 
-      #region Add Type Attributes
+      #region Add Attributes
 
-      public CustomAttributeTableBuilder AddTypeAttributes(Type type, params Attribute[] attributes)
+      public ICustomAttributeTableBuilder AddTypeAttributes(Type type, IEnumerable<Attribute> attributes)
       {
          return AddMemberAttributes(type, attributes);
       }
 
-      public CustomAttributeTableBuilder AddTypeAttributes(Type type, IEnumerable<Attribute> attributes)
-      {
-         return AddMemberAttributes(type, attributes);
-      }
-
-      public CustomAttributeTableBuilder AddTypeAttributes<T>(params Attribute[] attributes)
-      {
-         return AddTypeAttributes<T>(attributes.AsEnumerable());
-      }
-
-      public CustomAttributeTableBuilder AddTypeAttributes<T>(IEnumerable<Attribute> attributes)
-      {
-         return AddMemberAttributes(typeof(T), attributes);
-      }
-
-      #endregion
-
-      #region Add Property Attributes
-
-
-      public CustomAttributeTableBuilder AddPropertyAttributes<T>(string propertyName, IEnumerable<Attribute> attributes)
-      {
-         return AddPropertyAttributes(typeof(T), propertyName, attributes);
-      }
-
-      public CustomAttributeTableBuilder AddPropertyAttributes(Type type, string propertyName, IEnumerable<Attribute> attributes)
+      public ICustomAttributeTableBuilder AddPropertyAttributes(Type type, string propertyName, IEnumerable<Attribute> attributes)
       {
          if (type == null)
             throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
@@ -124,11 +107,7 @@ namespace Alphaleonis.Reflection
          return this;
       }
 
-      #endregion
-
-      #region AddEventAttributes
-
-      public CustomAttributeTableBuilder AddEventAttributes(Type type, string eventName, IEnumerable<Attribute> attributes)
+      public ICustomAttributeTableBuilder AddEventAttributes(Type type, string eventName, IEnumerable<Attribute> attributes)
       {
          if (type == null)
             throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
@@ -147,21 +126,7 @@ namespace Alphaleonis.Reflection
          return this;
       }
 
-      public CustomAttributeTableBuilder AddEventAttributes<T>(string eventName, IEnumerable<Attribute> attributes)
-      {
-         return AddEventAttributes(typeof(T), eventName, attributes);
-      }
-
-      #endregion
-
-      #region AddFieldAttributes
-
-      public CustomAttributeTableBuilder AddFieldAttributes<T>(string fieldName, IEnumerable<Attribute> attributes)
-      {
-         return AddFieldAttributes(typeof(T), fieldName, attributes);
-      }
-
-      public CustomAttributeTableBuilder AddFieldAttributes(Type type, string fieldName, IEnumerable<Attribute> attributes)
+      public ICustomAttributeTableBuilder AddFieldAttributes(Type type, string fieldName, IEnumerable<Attribute> attributes)
       {
          if (type == null)
             throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
@@ -180,120 +145,20 @@ namespace Alphaleonis.Reflection
          return this;
       }
 
-      #endregion  
-
-      #region Add Parameter Attributes
-
-      private static MethodCallExpression GetMethodCallExpression(Expression expression)
-      {
-         MethodCallExpression methodCallExpression = expression as MethodCallExpression;
-         if (methodCallExpression != null)
-         {
-            return methodCallExpression;
-         }
-
-         UnaryExpression unaryExpression = expression as UnaryExpression;
-         if (unaryExpression != null)
-         {
-            return GetMethodCallExpression(unaryExpression.Operand);
-         }
-
-         return null;
-      }
-
-      private CustomAttributeTableBuilder AddParameterAttributes(LambdaExpression expression)
-      {
-         MethodCallExpression methodCallExpression = expression.Body as MethodCallExpression;
-         if (methodCallExpression == null)
-            throw new ArgumentException("Expression is not a single method call expression.");
-
-         MethodInfo targetMethod = (MethodInfo)Reflect.GetMemberInternal(methodCallExpression, true);
-         var parameters = targetMethod.GetParameters();
-         for (int i = 0; i < parameters.Length; i++)
-         {
-            var parameter = parameters[i];
-            var argCall = GetMethodCallExpression(methodCallExpression.Arguments[i]);            
-
-            if (argCall != null && argCall.Method.IsGenericMethod && (s_decorateEnumerableMethodInfo.Equals(argCall.Method.GetGenericMethodDefinition())))
-            {
-               Expression attrArg = argCall.Arguments[0];
-               var argLamb = Expression.Lambda<Func<IEnumerable<Attribute>>>(attrArg).Compile();
-               var attributes = argLamb();               
-               AddParameterAttributes(parameter, attributes);
-            }
-         }
-
-         return this;
-      }
-
-      public CustomAttributeTableBuilder AddParameterAttributes(Expression<Action> expression)
-      {
-         return AddParameterAttributes((LambdaExpression)expression);
-      }
-
-      public CustomAttributeTableBuilder AddParameterAttributes<T>(Expression<Action<T>> expression)
-      {
-         return AddParameterAttributes((LambdaExpression)expression);
-      }
-      
-      public CustomAttributeTableBuilder AddParameterAttributes(ParameterInfo parameter, IEnumerable<Attribute> attributes)
+      public ICustomAttributeTableBuilder AddParameterAttributes(ParameterInfo parameter, IEnumerable<Attribute> attributes)
       {
          if (parameter == null)
             throw new ArgumentNullException(nameof(parameter), $"{nameof(parameter)} is null.");
 
          if (attributes == null)
             throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
-         
+
          Type type = parameter.Member.DeclaringType;
          m_metadata[type] = GetTypeMetadata(type).AddMethodParameterAttributes(new MethodKey(parameter.Member as MethodBase), parameter.Position, attributes);
          return this;
       }
 
-      public CustomAttributeTableBuilder AddReturnParameterAttributes(Expression<Action> expression, params Attribute[] attributes)
-      {
-         var method = Reflect.GetMethod(expression);
-
-         return AddParameterAttributes(method.ReturnParameter, attributes);
-      }
-
-      public CustomAttributeTableBuilder AddReturnParameterAttributes<T>(Expression<Action<T>> expression, params Attribute[] attributes)
-      {
-         var method = Reflect.GetMethod<T>(expression);
-         if (!method.DeclaringType.Equals(typeof(T)))
-            throw new ArgumentException($"The type '{typeof(T).FullName}' does not declare a method '{method.Name}'.");
-
-         return AddParameterAttributes(method.ReturnParameter, attributes);
-      }
-
-      #endregion
-
-      #region Add Member Attributes
-
-      public CustomAttributeTableBuilder AddMemberAttributes(Expression<Action> expression, IEnumerable<Attribute> attributes)
-      {
-         var member = Reflect.GetMember(expression);
-         return AddMemberAttributes(member, attributes);
-      }
-
-      public CustomAttributeTableBuilder AddMemberAttributes<T>(Expression<Func<T, object>> expression, IEnumerable<Attribute> attributes)
-      {
-         var member = Reflect.GetMember<T>(expression);
-         if (!member.DeclaringType.Equals(typeof(T)))
-            throw new ArgumentException($"The type '{typeof(T).FullName}' does not declare a member '{member.Name}'.");
-
-         return AddMemberAttributes(member, attributes);
-      }
-
-      public CustomAttributeTableBuilder AddMemberAttributes<T>(Expression<Action<T>> expression, IEnumerable<Attribute> attributes)
-      {
-         var member = Reflect.GetMember<T>(expression);
-         if (!member.DeclaringType.Equals(typeof(T)))
-            throw new ArgumentException($"The type '{typeof(T).FullName}' does not declare a member '{member.Name}'.");
-
-         return AddMemberAttributes(member, attributes);
-      }
-
-      public CustomAttributeTableBuilder AddMemberAttributes(MemberInfo member, IEnumerable<Attribute> attributes)
+      public ICustomAttributeTableBuilder AddMemberAttributes(MemberInfo member, IEnumerable<Attribute> attributes)
       {
          if (member == null)
             throw new ArgumentNullException(nameof(member), $"{nameof(member)} is null.");
@@ -336,11 +201,9 @@ namespace Alphaleonis.Reflection
          return metadata;
       }
 
-#endregion
+      #endregion
    }
 
    // TODO PP: Add a simplified builder that is specific to a type, eg. builder.ForType<MyType>().AddMemberAttributes(c => c.MyProperty);
    //                                                                                                                ^ Note: No generic argument here!
-
-   // TODO PP: Change AddMemberAttribute to specific methods instead, it seems that it may be needed. Why!?
 }

@@ -8,8 +8,7 @@ using System.CodeDom.Compiler;
 
 namespace Tests.Alphaleonis.Reflection
 {
-
-   public static class SequenceAssert
+   internal static class SequenceAssert
    {
       public static void AreEquivalent<T>(IEnumerable<T> expected, IEnumerable<T> actual, string message = null)
       {
@@ -43,7 +42,7 @@ namespace Tests.Alphaleonis.Reflection
 
                if (actualCount != expectedCount)
                {
-                  string format = $"{(message == null ? "" : message + "\r\n")}The sequences are not equivalent; Expected {expectedCount} occurences of item <{group.Key}>, but got {actualCount} occurrences of that item.\r\nExpected:\r\n{GetDisplayTextForObject(expectedArray)}\r\nActual:\r\n{GetDisplayTextForObject(actualArray)}";
+                  string format = $"{(message == null ? "" : message + "\r\n")}The sequences are not equivalent; Expected {expectedCount} occurrences of item <{group.Key}>, but got {actualCount} occurrences of that item.\r\nExpected:\r\n{GetDisplayTextForObject(expectedArray)}\r\nActual:\r\n{GetDisplayTextForObject(actualArray)}";
                   Assert.Fail(format);
                }
             }
