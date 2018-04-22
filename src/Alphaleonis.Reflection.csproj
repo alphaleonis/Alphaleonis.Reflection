@@ -22,15 +22,17 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin\debug\Alphaleonis.Reflection.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\debug\</OutputPath>
+    <OutputPath>..\bin\release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin\release\Alphaleonis.Reflection.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -88,6 +90,7 @@
     <Compile Include="Utilities\TypeEqualityComparer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Alphaleonis.Reflection.nuspec" />
     <None Include="Alphaleonis.snk" />
     <None Include="App.config" />
   </ItemGroup>
