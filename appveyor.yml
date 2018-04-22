@@ -42,7 +42,7 @@ deploy:
    api_key:
       secure: PnuQGphn/9gGaVZRnUejvcijO8H5cJyoYPAekBvC4n8=
    skip_symbols: true
-   artifact: /.*\.nupkyg/
+   artifact: /.*\.nupkg/
 
 #deploy:
 #- provider: NuGet
