@@ -23,14 +23,14 @@ nuget:
   disable_publish_on_pr: true
 
 before_build:
-- cmd: nuget restore
+- cmd: dotnet restore
 
 build:
   publish_nuget: false
   verbosity: minimal
 
 after_build:
-- ps: nuget pack src\Alphaleonis.Reflection\Alphaleonis.Reflection.nuspec -OutputDirectory .\artifacts -version "$env:nugetVersion"
+- ps: dotnet pack src\Alphaleonis.Reflection -o .\artifacts --version "$env:nugetVersion"
 
 artifacts:
 - path: '**\*.nupkg'
