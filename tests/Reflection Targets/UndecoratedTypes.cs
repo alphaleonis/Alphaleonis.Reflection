@@ -1,4 +1,5 @@
 using System;
+#pragma warning disable 0649,0067
 
 // TODO: Add tests for return parameter attributes
 // TODO: Add tests for IsDefined
@@ -107,4 +108,6 @@ namespace Tests.Alphaleonis.Reflection
       }
 
    }
+#pragma warning restore 0649, 0067
 }
+

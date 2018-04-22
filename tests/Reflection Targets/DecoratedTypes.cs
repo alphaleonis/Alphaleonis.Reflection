@@ -1,4 +1,5 @@
 using System;
+#pragma warning disable 0649,0067
 
 namespace Tests.Alphaleonis.Reflection
 {
@@ -390,5 +391,6 @@ namespace Tests.Alphaleonis.Reflection
       }
    }
 
-   
+#pragma warning restore 0649,0067
+
 }
