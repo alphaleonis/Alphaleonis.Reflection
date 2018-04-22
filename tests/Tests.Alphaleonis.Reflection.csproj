@@ -78,6 +78,11 @@
       <Link>Alphaleonis.snk</Link>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Moq">
+      <Version>4.8.2</Version>
+    </PackageReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

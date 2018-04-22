@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
 using Alphaleonis.Reflection;
+using Moq;
 
 namespace Tests.Alphaleonis.Reflection
 {
@@ -20,17 +21,60 @@ namespace Tests.Alphaleonis.Reflection
 
       public object InstanceField;
 
+      public event EventHandler InstanceEvent;
+
+      public static event EventHandler StaticEvent;
+
       class BaseClass
-      {         
+      {
+         public event EventHandler MyInstanceEvent;
+
+         public virtual event EventHandler MyVirtualInstanceEvent;
+
+         public virtual event EventHandler MyHiddenVirtualInstanceEvent;
+
+         public event EventHandler MyHiddenInstanceEvent;
+
+         public static event EventHandler MyStaticEvent;
+
+         public static object StaticField;
+
+         public object HiddenInstanceField;
+
          public static object MyStaticProperty { get; set; }   
          
          public virtual object VirtualProperty { get; set; }
          
-         public virtual object HiddenVirtualProperty { get; set; }         
+         public virtual object HiddenVirtualProperty { get; set; }
+
+
+         public void VoidInstanceMethod() => throw new NotImplementedException();
+
+         public virtual void VoidVirtualMethod() => throw new NotImplementedException();
+
+         public int IntOverloadedMethod(string arg1) => 0;
+
+         public int IntOverloadedMethod(int arg1) => 1;
+
+         public void HiddenMethod() => throw new NotImplementedException();
+
+         public virtual void GenericVoidMethod<T>(T a) => throw new NotImplementedException();
+
+         public virtual void GenericVoidMethod<T,U>(T a, U b) => throw new NotImplementedException();
+
+         public virtual T GenericMethod<T>(T a) => throw new NotImplementedException();
+
+         public virtual U GenericMethod<T, U>(T a, U b) => throw new NotImplementedException();
       }
 
       class SubClass : BaseClass
       {
+         public new event EventHandler MyHiddenVirtualInstanceEvent;
+
+         public new event EventHandler MyHiddenInstanceEvent;
+         
+         public new object MyHiddenInstanceField;
+
          public object MyProperty { get; set; }
 
          public new object HiddenVirtualProperty { get; set; }
@@ -39,6 +83,13 @@ namespace Tests.Alphaleonis.Reflection
       class SubSubClass : SubClass
       {
          public override object VirtualProperty { get; set; }
+
+         public override event EventHandler MyVirtualInstanceEvent;
+
+         public override T GenericMethod<T>(T a) => base.GenericMethod(a);
+         public override U GenericMethod<T, U>(T a, U b) => base.GenericMethod<T, U>(a, b);
+         public override void GenericVoidMethod<T>(T a) => base.GenericVoidMethod(a);
+         public override void GenericVoidMethod<T, U>(T a, U b) => base.GenericVoidMethod<T, U>(a, b);         
       }
 
       class SubSubSubClass : SubSubClass
@@ -47,6 +98,8 @@ namespace Tests.Alphaleonis.Reflection
 
       class GenericBase<T> 
       {
+         public static T MyStaticField;
+
          public static T MyStaticProperty { get; set; }
       }
 
@@ -245,57 +298,215 @@ namespace Tests.Alphaleonis.Reflection
 
       #region GetField Tests
 
-      // TODO PP: Implement
-
-      #endregion
-
-      #region GetEvent Tests
-
-      // TODO PP: Implement
-
-      #endregion
-
-      #region GetMethod Tests
+      [TestMethod]
+      [ExpectedException(typeof(ArgumentException))]
+      public void Reflect_GetField_StaticPropertyFromThisClass_ThrowsArgumentException()
+      {
+         Reflect.GetField(() => StaticProperty);
+      }
 
       [TestMethod]
-      public void Test3()
-      {         
-         var mm = Reflect.GetMethod<DecoratedTypes.Derived>(m => m.GenericMethod<string>(1, ""));
+      [ExpectedException(typeof(ArgumentException))]
+      public void Reflect_GetField_InstancePropertyFromThisClass_ThrowsArgumentException()
+      {
+         Reflect.GetField(() => InstanceProperty);
+      }
+
+      [TestMethod]
+      public void Reflect_GetField_StaticFieldFromThisClass_ReturnsCorrectField()
+      {
+         FieldInfo expected = GetType().GetField(nameof(StaticField));
+         FieldInfo actual = Reflect.GetField(() => StaticField);
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetField_InstanceFieldFromThisClass_ReturnsCorrectField()
+      {
+         FieldInfo expected = GetType().GetField(nameof(InstanceField));
+         FieldInfo actual = Reflect.GetField(() => InstanceField);
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetField_StaticFieldFromDeclaringClass_ReturnsCorrectField()
+      {
+         FieldInfo expected = typeof(BaseClass).GetField(nameof(BaseClass.StaticField));
+         FieldInfo actual = Reflect.GetField(() => BaseClass.StaticField);
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetField_StaticFieldFromDerivedClass_ReturnsFieldFromDeclaringClass()
+      {
+         FieldInfo expected = typeof(BaseClass).GetField(nameof(BaseClass.StaticField));
+         FieldInfo actual = Reflect.GetField(() => SubClass.StaticField);
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetField_StaticFieldFromClosedGenericBaseClass_ReturnsFieldFromDeclaringClass()
+      {
+         FieldInfo expected = typeof(GenericBase<object>).GetField(nameof(GenericBase<object>.MyStaticField));
+         FieldInfo actual = Reflect.GetField(() => GenericBase<object>.MyStaticField);
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      [ExpectedException(typeof(ArgumentException))]
+      public void ReflectT_GetField_InstancePropertyFromThisClass_ThrowsArgumentException()
+      {
+         Reflect<ReflectTests>.GetField(cls => cls.InstanceProperty);
       }
 
       #endregion
 
       #region GetMember Tests
 
-      // TODO PP: Implement
-
-      #endregion
-      // TODO: Add a lot of tests here, esp. with regards to generics/non-generics.
-
+      [TestMethod]
+      public void Reflect_GetMember_InstancePropertyFromThisClass_ReturnsExpectedResult()
+      {
+         var expected = typeof(ReflectTests).GetProperty(nameof(ReflectTests.InstanceProperty));
+         var actual = Reflect.GetMember(() => InstanceProperty);
+         Assert.AreEqual(expected, actual);
+      }
 
       [TestMethod]
-      public void Test()
+      public void Reflect_GetMember_StaticPropertyFromThisClass_ReturnsExpectedResult()
       {
-
-         var member = Reflect.GetMember<DecoratedTypes.Derived>(c => c.ImplementedMethod1(1, 2));
-         Assert.IsNotNull(member);
-         Assert.AreEqual(member.DeclaringType, typeof(DecoratedTypes.Base));
-         Assert.IsInstanceOfType(member, typeof(MethodInfo));
-
-         member = Reflect.GetMember<DecoratedTypes.Derived>(c => c.OverriddenMethod(1, 2));
-         Assert.IsNotNull(member);
-         Assert.AreEqual(member.DeclaringType, typeof(DecoratedTypes.Base));
-         Assert.IsInstanceOfType(member, typeof(MethodInfo));
-
-         member = Reflect.GetMember<DecoratedTypes.SubDerived>(c => c.OverriddenMethod(1, 2));
-         Assert.IsNotNull(member);
-         Assert.AreEqual(member.DeclaringType, typeof(DecoratedTypes.SubDerived ));
-         Assert.IsInstanceOfType(member, typeof(MethodInfo));
-
-         member = Reflect.GetMember<DecoratedTypes.Derived>(c => c.m_derivedField);
-         Assert.IsNotNull(member);
-         Assert.AreEqual(member.DeclaringType, typeof(DecoratedTypes.Derived));
-         Assert.IsInstanceOfType(member, typeof(FieldInfo));
+         var expected = typeof(ReflectTests).GetProperty(nameof(ReflectTests.StaticProperty));
+         var actual = Reflect.GetMember(() => StaticProperty);
+         Assert.AreEqual(expected, actual);
       }
+
+      [TestMethod]
+      public void Reflect_GetMember_InstanceFieldFromThisClass_ReturnsExpectedResult()
+      {
+         var expected = typeof(ReflectTests).GetField(nameof(ReflectTests.InstanceField));
+         var actual = Reflect.GetMember(() => InstanceField);
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMember_StaticFieldFromThisClass_ReturnsExpectedResult()
+      {
+         var expected = typeof(ReflectTests).GetField(nameof(ReflectTests.StaticField));
+         var actual = Reflect.GetMember(() => StaticField);
+         Assert.AreEqual(expected, actual);
+      }
+
+      #endregion
+
+      #region GetMethod Tests
+
+      [TestMethod]
+      public void Reflect_GetMethod_GenericMethodFromBaseClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(BaseClass).GetMethods()
+            .Single(m => m.Name == nameof(BaseClass.GenericMethod) && m.GetGenericArguments().Length == 1);
+         var actual = Reflect.GetMethod<BaseClass>(b => b.GenericMethod<int>(0));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMethod_GenericMethodWithTwoTypeArgumentsFromBaseClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(BaseClass).GetMethods()
+            .Single(m => m.Name == nameof(BaseClass.GenericMethod) && m.GetGenericArguments().Length == 2);
+         var actual = Reflect.GetMethod<BaseClass>(b => b.GenericMethod<int,string>(0,""));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMethod_GenericVoidMethodFromBaseClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(BaseClass).GetMethods()
+            .Single(m => m.Name == nameof(BaseClass.GenericVoidMethod) && m.GetGenericArguments().Length == 1);
+         var actual = Reflect.GetMethod<BaseClass>(b => b.GenericVoidMethod<int>(0));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMethod_GenericVoidMethodWithTwoTypeArgumentsFromBaseClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(BaseClass).GetMethods()
+            .Single(m => m.Name == nameof(BaseClass.GenericVoidMethod) && m.GetGenericArguments().Length == 2);
+         var actual = Reflect.GetMethod<BaseClass>(b => b.GenericVoidMethod<int, string>(0, ""));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMethod_GenericMethodFromChildClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(SubClass).GetMethods()
+            .Single(m => m.Name == nameof(SubClass.GenericMethod) && m.GetGenericArguments().Length == 1);
+         var actual = Reflect.GetMethod<SubClass>(b => b.GenericMethod<int>(0));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMethod_GenericMethodWithTwoTypeArgumentsFromChildClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(SubClass).GetMethods()
+            .Single(m => m.Name == nameof(SubClass.GenericMethod) && m.GetGenericArguments().Length == 2);
+         var actual = Reflect.GetMethod<SubClass>(b => b.GenericMethod<int, string>(0, ""));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMethod_GenericVoidMethodFromChildClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(SubClass).GetMethods()
+            .Single(m => m.Name == nameof(SubClass.GenericVoidMethod) && m.GetGenericArguments().Length == 1);
+         var actual = Reflect.GetMethod<SubClass>(b => b.GenericVoidMethod<int>(0));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMethod_GenericVoidMethodWithTwoTypeArgumentsFromChildClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(SubClass).GetMethods()
+            .Single(m => m.Name == nameof(SubClass.GenericVoidMethod) && m.GetGenericArguments().Length == 2);
+         var actual = Reflect.GetMethod<SubClass>(b => b.GenericVoidMethod<int, string>(0, ""));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMethod_OverriddenGenericMethodFromChildClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(SubSubClass).GetMethods()
+            .Single(m => m.Name == nameof(SubSubClass.GenericMethod) && m.GetGenericArguments().Length == 1);
+         var actual = Reflect.GetMethod<SubSubClass>(b => b.GenericMethod<int>(0));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMethod_OverriddenGenericMethodWithTwoTypeArgumentsFromChildClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(SubSubClass).GetMethods()
+            .Single(m => m.Name == nameof(SubSubClass.GenericMethod) && m.GetGenericArguments().Length == 2);
+         var actual = Reflect.GetMethod<SubSubClass>(b => b.GenericMethod<int, string>(0, ""));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMethod_OverriddenGenericVoidMethodFromChildClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(SubSubClass).GetMethods()
+            .Single(m => m.Name == nameof(SubSubClass.GenericVoidMethod) && m.GetGenericArguments().Length == 1);
+         var actual = Reflect.GetMethod<SubSubClass>(b => b.GenericVoidMethod<int>(0));
+         Assert.AreEqual(expected, actual);
+      }
+
+      [TestMethod]
+      public void Reflect_GetMethod_OverriddenGenericVoidMethodWithTwoTypeArgumentsFromChildClass_ReturnsExpectedValue()
+      {
+         var expected = typeof(SubSubClass).GetMethods()
+            .Single(m => m.Name == nameof(SubSubClass.GenericVoidMethod) && m.GetGenericArguments().Length == 2);
+         var actual = Reflect.GetMethod<SubSubClass>(b => b.GenericVoidMethod<int, string>(0, ""));
+         Assert.AreEqual(expected, actual);
+      }
+
+      #endregion
    }
 }

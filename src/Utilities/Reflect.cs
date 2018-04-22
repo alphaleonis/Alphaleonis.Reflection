@@ -16,6 +16,8 @@ namespace Alphaleonis.Reflection
    // TODO PP: Perhaps we should have a "DeclaredOnly" flag to all these methods?
    public static class Reflect
    {
+      #region GetProperty
+
       public static PropertyInfo GetProperty<T, U>(Expression<Func<U, T>> expression)
       {
          return GetProperty((LambdaExpression)expression);
@@ -40,6 +42,38 @@ namespace Alphaleonis.Reflection
          return memberInfo;
       }
 
+      #endregion
+
+      #region GetField
+
+      public static FieldInfo GetField<T, U>(Expression<Func<U, T>> expression)
+      {
+         return GetField((LambdaExpression)expression);
+      }
+
+      public static FieldInfo GetField<T>(Expression<Func<T>> expression)
+      {
+         return GetField((LambdaExpression)expression);
+      }
+
+      public static FieldInfo GetField<T>(Expression<Action<T>> expression)
+      {
+         return GetField((LambdaExpression)expression);
+      }
+
+      internal static FieldInfo GetField(LambdaExpression expression)
+      {
+         var memberInfo = GetMemberInternal(expression.Body, false) as FieldInfo;
+         if (memberInfo == null)
+            throw new ArgumentException($"The expression {expression} does not reference a Field.");
+
+         return memberInfo;
+      }
+
+      #endregion     
+
+      #region GetMember
+
       public static MemberInfo GetMember<T>(Expression<Action<T>> expression)
       {
          return GetMember((LambdaExpression)expression);
@@ -50,7 +84,17 @@ namespace Alphaleonis.Reflection
          return GetMember((LambdaExpression)expression);
       }
 
-      public static MemberInfo GetMember(LambdaExpression expression)
+      public static MemberInfo GetMember<T>(Expression<Action> expression)
+      {
+         return GetMember((LambdaExpression)expression);
+      }
+
+      public static MemberInfo GetMember<T>(Expression<Func<T>> expression)
+      {
+         return GetMember((LambdaExpression)expression);
+      }
+
+      internal static MemberInfo GetMember(LambdaExpression expression)
       {
          return GetMemberInternal(expression.Body, false);
       }
@@ -127,6 +171,10 @@ namespace Alphaleonis.Reflection
          return member;
       }
 
+      #endregion
+
+      #region GetMethod
+
       public static MethodInfo GetMethod(Expression<Action> expression)
       {
          return GetMethod((LambdaExpression)expression);
@@ -144,7 +192,8 @@ namespace Alphaleonis.Reflection
          // When using expressions the member returned always seems to point to the base definition of the method. Here we need to have
          // the one referring to the derived type, to mimic what you would get if you did typeof(T).GetMethod(...). So in case the type
          // of the object used is different from the declaring type of the member, we need to find the method in the object type.
-         if (methodCallExpression.Object != null && !methodCallExpression.Method.DeclaringType.Equals(methodCallExpression.Object.Type))
+         if (methodCallExpression.Object != null && (!methodCallExpression.Method.DeclaringType.Equals(methodCallExpression.Object.Type) 
+            || methodCallExpression.Method.IsGenericMethod && !methodCallExpression.Method.IsGenericMethodDefinition))
          {
             var bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
 
@@ -156,10 +205,16 @@ namespace Alphaleonis.Reflection
          return methodCallExpression.Method;
       }
 
+      #endregion
    }
 
    public static class Reflect<TSource>
    {
+      public static FieldInfo GetField<T>(Expression<Func<TSource, T>> expression)
+      {
+         return Reflect.GetField((LambdaExpression)expression);
+      }
+     
       public static PropertyInfo GetProperty<T>(Expression<Func<TSource, T>> expression)
       {
          return Reflect.GetProperty((LambdaExpression)expression);
