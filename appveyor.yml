@@ -33,7 +33,7 @@ after_build:
 - ps: nuget pack src\Alphaleonis.Reflection\Alphaleonis.Reflection.nuspec -OutputDirectory .\artifacts -version "$env:nugetVersion"
 
 artifacts:
-- path: '*.nupkg'
+- path: '**\*.nupkg'
   name: nuget-package
 
 #deploy:
