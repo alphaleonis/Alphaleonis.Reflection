@@ -6,7 +6,7 @@ environment:
    packageVersion: 0.1.0
 
 init:
-- ps: $env:buildVersion = "$env:packageVersion.$env:appveyor_build_number"
+- ps: $env:buildVersion = "$env:packageVersion.{0:00000}" -f [convert]::ToInt32("0" + $env:APPVEYOR_BUILD_NUMBER, 10)
 - ps: $env:nugetVersion = @{ $false = "$env:packageVersion-beta-$env:appveyor_build_number"; $true = "$env:packageVersion" }[ $env:APPVEYOR_REPO_BRANCH -eq "master" ]
 - ps: Update-AppveyorBuild -Version $env:buildVersion
 
