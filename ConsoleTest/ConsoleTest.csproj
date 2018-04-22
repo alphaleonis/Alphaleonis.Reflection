@@ -51,7 +51,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\Alphaleonis.Reflection.csproj">
+    <ProjectReference Include="..\src\Alphaleonis.Reflection\Alphaleonis.Reflection.csproj">
       <Project>{fd2a88bb-9e97-4956-8d47-5c7e9a0402ff}</Project>
       <Name>Alphaleonis.Reflection</Name>
     </ProjectReference>

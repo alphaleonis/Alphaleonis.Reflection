@@ -2,14 +2,14 @@
 <package >
    <metadata>
       <id>Alphaleonis.Reflection</id>
-      <version>1.0.0</version>
+      <version>$version$</version>
       <title>Alphaleonis.Reflection</title>
       <authors>Peter Palotas</authors>
       <owners>Peter Palotas</owners>
       <licenseUrl>https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/LICENSE.md</licenseUrl>
       <projectUrl>https://github.com/alphaleonis/Alphaleonis.Reflection</projectUrl>
       <requireLicenseAcceptance>true</requireLicenseAcceptance>
-      <description>$description$</description>
+      <description>Work in progress.</description>
       <releaseNotes>Work in progress.</releaseNotes>
       <copyright>Copyright 2018 Peter Palotas</copyright>
       <tags>reflection</tags>
@@ -18,7 +18,7 @@
       </dependencies>
    </metadata>
    <files>
-      <file src="..\bin\Release\Alphaleonis.Reflection.dll" target="lib\net46" />
-      <file src="..\bin\Release\Alphaleonis.Reflection.xml" target="lib\net46" />
+      <file src="..\..\bin\Release\Alphaleonis.Reflection.dll" target="lib\net46" />
+      <file src="..\..\bin\Release\Alphaleonis.Reflection.xml" target="lib\net46" />
    </files>
 </package>

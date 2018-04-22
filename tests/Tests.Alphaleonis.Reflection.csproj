@@ -40,7 +40,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\src\Alphaleonis.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\src\Alphaleonis.Reflection\Alphaleonis.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -70,20 +70,20 @@
     <Compile Include="AttributeTableReflectionContextTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\Alphaleonis.Reflection.csproj">
-      <Project>{fd2a88bb-9e97-4956-8d47-5c7e9a0402ff}</Project>
-      <Name>Alphaleonis.Reflection</Name>
-    </ProjectReference>
+    <PackageReference Include="Moq">
+      <Version>4.8.2</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\src\Alphaleonis.snk">
+    <None Include="..\src\Alphaleonis.Reflection\Alphaleonis.snk">
       <Link>Alphaleonis.snk</Link>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Moq">
-      <Version>4.8.2</Version>
-    </PackageReference>
+    <ProjectReference Include="..\src\Alphaleonis.Reflection\Alphaleonis.Reflection.csproj">
+      <Project>{fd2a88bb-9e97-4956-8d47-5c7e9a0402ff}</Project>
+      <Name>Alphaleonis.Reflection</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
