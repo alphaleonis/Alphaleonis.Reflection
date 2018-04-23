@@ -18,13 +18,6 @@ init:
 #  assembly_file_version: '{version}'
 #  assembly_informational_version: '{version}'
 
-dotnet_csproj:
-   patch: true
-   file: '**\*.csproj'
-   assembly_version: '{packageVersion}.0'
-   file_version: '{version}'
-   informational_version: '{version}'
-
 nuget:
   account_feed: false
   project_feed: false
