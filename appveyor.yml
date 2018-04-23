@@ -24,8 +24,11 @@ nuget:
   project_feed: true
   disable_publish_on_pr: true
 
-before_build:
-- cmd: nuget restore
+  install:
+  - cmd: dotnet restore
+
+#before_build:
+#- cmd: nuget restore
 
 build:
   publish_nuget: false
