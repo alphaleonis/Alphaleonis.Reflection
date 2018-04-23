@@ -12,6 +12,9 @@ init:
 - ps: Update-AppveyorBuild -Version $env:buildVersion
 - cmd: dotnet --version
 
+dotnet_csproj:
+   patch: false
+
 #assembly_info:
 #  patch: true
 #  file: '**\AssemblyInfo.*'
@@ -26,7 +29,6 @@ nuget:
 
 install:
 - cmd: dotnet restore --verbosity m
-
 
 build_script:
 - ps: 'dotnet build -p:Version="$($env:buildVersion)" -p:AssemblyVersion="$($env:packageVersion).0" -p:FileVersion=$env:buildVersion'
