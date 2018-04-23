@@ -34,7 +34,7 @@ build:
   verbosity: minimal
 
 after_build:
-- ps: 'dotnet pack src\Alphaleonis.Reflection --version-suffix "$env:nugetVersionSuffix" --no-restore --no-build -p:VersionPrefix=$env:packageVersion'
+- ps: 'dotnet pack src\Alphaleonis.Reflection --version-suffix "$($env:nugetVersionSuffix)" --no-restore --no-build -p:VersionPrefix="$($env:packageVersion)'
 
 artifacts:
 - path: '**\*.nupkg'
