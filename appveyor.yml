@@ -10,6 +10,7 @@ init:
 - ps: 'Write-Host "buildVersion: $($env:buildVersion)"'
 - ps: 'Write-Host "nugetVersionSuffix: $($env:nugetVersionSuffix)"'
 - ps: Update-AppveyorBuild -Version $env:buildVersion
+- cmd: dotnet --version
 
 #assembly_info:
 #  patch: true
@@ -26,11 +27,9 @@ nuget:
 install:
 - cmd: dotnet restore --verbosity m
 
-before_build:
-- cmd: dotnet --version
 
 build_script:
-- ps: 'dotnet build -p:Version=$env:buildVersion -p:AssemblyVersion="$($env:buildVersion).0" -p:FileVersion=$env:buildVersion'
+- ps: 'dotnet build -p:Version="$($env:buildVersion)" -p:AssemblyVersion="$($env:packageVersion).0" -p:FileVersion=$env:buildVersion'
 
 after_build:
 - ps: 'dotnet pack src\Alphaleonis.Reflection --version-suffix "$($env:nugetVersionSuffix)" --no-restore --no-build -p:VersionPrefix="$($env:packageVersion)"'
