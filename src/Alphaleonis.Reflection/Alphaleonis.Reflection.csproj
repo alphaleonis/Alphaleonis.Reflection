@@ -4,7 +4,17 @@
     <TargetFrameworks>netstandard2.0;net45;net46;net461;net462;net47;net471</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Alphaleonis.snk</AssemblyOriginatorKeyFile>
-     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>     
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+
+     <PackageId>Alphaleonis.Reflection</PackageId>
+     <Authors>Alphaleonis</Authors>
+     <Description>Reflection utilities for .NET.</Description>
+     <Copyright>Copyright (C) 2018 Peter Palotas</Copyright>
+     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+     <PackageLicenseUrl>https://raw.githubusercontent.com/alphaleonis/Alphaleonis.Reflection/dev/LICENSE.md</PackageLicenseUrl>
+     <PackageTags>reflection</PackageTags>
+     <PackageOutputPath>..\..\artifacts</PackageOutputPath>
+     <RepositoryUrl>https://github.com/alphaleonis/Alphaleonis.Reflection</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
