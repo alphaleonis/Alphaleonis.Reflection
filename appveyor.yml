@@ -6,7 +6,7 @@ environment:
 
 init:
 - ps: $env:buildVersion = "$env:packageVersion.$env:APPVEYOR_BUILD_NUMBER"
-- ps: $env:nugetVersionSuffix = @{ $false = "beta-{0:00000}" -f [convert]::ToInt32("0" + $env:APPVEYOR_BUILD_NUMBER, 10); $true = "" }[ $env:APPVEYOR_REPO_BRANCH -eq "master" ]
+- ps: $env:nugetVersionSuffix = @{ $false = "$($env:APPVEYOR_REPO_BRANCH)-{0:00000}" -f [convert]::ToInt32("0" + $env:APPVEYOR_BUILD_NUMBER, 10); $true = "" }[ $env:APPVEYOR_REPO_BRANCH -eq "master" ]
 - ps: 'Write-Host "buildVersion: $($env:buildVersion)"'
 - ps: 'Write-Host "nugetVersionSuffix: $($env:nugetVersionSuffix)"'
 - ps: Update-AppveyorBuild -Version $env:buildVersion
@@ -24,14 +24,13 @@ nuget:
   disable_publish_on_pr: true
 
 install:
-- cmd: dotnet restore
+- cmd: dotnet restore --verbosity m
+
+before_build:
+- cmd: dotnet --version
 
 build_script:
 - ps: 'dotnet build -p:Version=$env:buildVersion -p:AssemblyVersion="$($env:buildVersion).0" -p:FileVersion=$env:buildVersion'
-
-build:
-  publish_nuget: false
-  verbosity: minimal
 
 after_build:
 - ps: 'dotnet pack src\Alphaleonis.Reflection --version-suffix "$($env:nugetVersionSuffix)" --no-restore --no-build -p:VersionPrefix="$($env:packageVersion)"'
