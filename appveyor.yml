@@ -8,8 +8,8 @@ environment:
 init:
 - ps: $env:buildVersion = "$env:packageVersion.$env:APPVEYOR_BUILD_NUMBER"
 - ps: $env:nugetVersionSuffix = @{ $false = "beta-{0:00000}" -f [convert]::ToInt32("0" + $env:APPVEYOR_BUILD_NUMBER, 10); $true = "" }[ $env:APPVEYOR_REPO_BRANCH -eq "master" ]
-- ps: Write-Host "buildVersion: $($env:buildVersion)"
-- ps: Write-Host "nugetVersionSuffix: $($env:nugetVersionSuffix)"
+- ps: 'Write-Host "buildVersion: $($env:buildVersion)"'
+- ps: 'Write-Host "nugetVersionSuffix: $($env:nugetVersionSuffix)"'
 - ps: Update-AppveyorBuild -Version $env:buildVersion
 
 assembly_info:
