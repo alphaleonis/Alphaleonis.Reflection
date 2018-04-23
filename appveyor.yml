@@ -22,14 +22,14 @@ init:
 dotnet_csproj:
    patch: true
    file: '**\*.csproj'
-   version: '{packageVersion}'
+   version_prefix: '{packageVersion}'
    assembly_version: '{version}'
    file_version: '{version}'
    informational_version: '{version}'
 
 nuget:
-  account_feed: true
-  project_feed: true
+  account_feed: false
+  project_feed: false
   disable_publish_on_pr: true
 
 install:
