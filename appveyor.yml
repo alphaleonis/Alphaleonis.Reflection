@@ -34,6 +34,7 @@ build_script:
 - ps: 'dotnet build -p:Version="$($env:buildVersion)" -p:AssemblyVersion="$($env:packageVersion).0" -p:FileVersion=$env:buildVersion'
 
 after_build:
+- ps: 'Get-Content src\Alphaleonis.Reflection\Alphaleonis.Reflection.csproj'
 - ps: 'dotnet pack src\Alphaleonis.Reflection --version-suffix "pre" --no-restore --no-build -p:VersionPrefix="1.3.6"' #"$($env:packageVersion)"'
 
 artifacts:
