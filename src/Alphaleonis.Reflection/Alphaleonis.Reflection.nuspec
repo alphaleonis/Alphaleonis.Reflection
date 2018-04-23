@@ -9,7 +9,7 @@
       <licenseUrl>https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/LICENSE.md</licenseUrl>
       <projectUrl>https://github.com/alphaleonis/Alphaleonis.Reflection</projectUrl>
       <requireLicenseAcceptance>true</requireLicenseAcceptance>
-      <description>Work in progress.</description>
+      <description>Worke in progress.</description>
       <releaseNotes>Work in progress.</releaseNotes>
       <copyright>Copyright 2018 Peter Palotas</copyright>
       <tags>reflection</tags>
@@ -17,8 +17,4 @@
          <dependency id="System.Collections.Immutable" version="1.2.0" />
       </dependencies>
    </metadata>
-   <files>
-      <file src="..\..\bin\Release\Alphaleonis.Reflection.dll" target="lib\net452" />
-      <file src="..\..\bin\Release\Alphaleonis.Reflection.xml" target="lib\net452" />
-   </files>
 </package>
