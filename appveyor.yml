@@ -31,7 +31,7 @@ install:
 - cmd: dotnet restore --verbosity m
 
 build_script:
-- ps: 'dotnet build -p:Version="$($env:buildVersion)" -p:AssemblyVersion="$($env:packageVersion).0" -p:FileVersion=$env:buildVersion'
+- ps: 'dotnet build -p:VersionPrefix="7.6.5.3" -p:AssemblyVersion="$($env:packageVersion).0" -p:FileVersion=$env:buildVersion'
 
 after_build:
 - ps: 'Get-Content src\Alphaleonis.Reflection\Alphaleonis.Reflection.csproj'
