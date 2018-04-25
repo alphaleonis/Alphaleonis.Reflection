@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Alphaleonis.Reflection
 {
 
-   public partial class CustomAttributeTableBuilder
+   public partial class AttributeTableBuilder
    {
       /// <summary>A type equality comparer that ignores type parameters.</summary>
       private class TypeEqualityComparerIgnoringTypeParameters : IEqualityComparer<Type>

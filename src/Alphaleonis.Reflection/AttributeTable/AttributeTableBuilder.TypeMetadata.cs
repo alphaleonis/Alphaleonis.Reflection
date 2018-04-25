@@ -4,7 +4,7 @@ using System.Collections.Immutable;
 
 namespace Alphaleonis.Reflection
 {
-   public partial class CustomAttributeTableBuilder
+   public partial class AttributeTableBuilder
    {
       private class TypeMetadata
       {

@@ -12,7 +12,7 @@ namespace Alphaleonis.Reflection
 
       #region Construction
 
-      public AttributeTableReflectionContext(ICustomAttributeTable table, AttributeTableReflectionContextOptions options)
+      public AttributeTableReflectionContext(IAttributeTable table, AttributeTableReflectionContextOptions options)
       {
          if (table == null)
             throw new ArgumentNullException(nameof(table), $"{nameof(table)} is null.");
@@ -29,7 +29,7 @@ namespace Alphaleonis.Reflection
 
       private Guid Id { get; }
 
-      private ICustomAttributeTable Table { get; }
+      private IAttributeTable Table { get; }
 
       private AttributeTableReflectionContextIdentifierAttribute ContextIdentifierAttribute { get; }
 
@@ -44,7 +44,7 @@ namespace Alphaleonis.Reflection
          if (IsMapped(assembly))
             return assembly;
 
-         return new AttributeTableProjectedAssembly(assembly, this);
+         return new ProjectedAssembly(assembly, this);
       }
 
       public IEnumerable<TypeInfo> MapTypes(IEnumerable<Type> types)
@@ -57,13 +57,13 @@ namespace Alphaleonis.Reflection
          if (type == null)
             return null;
 
-         if (type is AttributeTableProjectedType)
+         if (type is ProjectedType)
             return type.GetTypeInfo();
 
          if (IsMapped(type))
             return type.GetTypeInfo();
 
-         return new AttributeTableProjectedType(type, this);
+         return new ProjectedType(type, this);
       }
 
       public override TypeInfo MapType(TypeInfo type)
@@ -221,7 +221,7 @@ namespace Alphaleonis.Reflection
          if (IsMapped(field))
             return field;
 
-         return new AttributeTableProjectedFieldInfo(field, this);
+         return new ProjectedFieldInfo(field, this);
       }
 
       private EventInfo MapMember(EventInfo member)
@@ -232,7 +232,7 @@ namespace Alphaleonis.Reflection
          if (IsMapped(member))
             return member;
 
-         return new AttributeTableProjectedEventInfo(member, this);
+         return new ProjectedEventInfo(member, this);
       }
 
       private ConstructorInfo MapMember(ConstructorInfo constructor)
@@ -243,7 +243,7 @@ namespace Alphaleonis.Reflection
          if (IsMapped(constructor))
             return constructor;
 
-         return new AttributeTableProjectedConstructorInfo(constructor, this);
+         return new ProjectedConstructorInfo(constructor, this);
       }
 
       private ParameterInfo MapParameter(ParameterInfo parameter)
@@ -254,7 +254,7 @@ namespace Alphaleonis.Reflection
          if (IsMapped(parameter))
             return parameter;
 
-         return new AttributeTableProjectedParameterInfo(parameter, this);
+         return new ProjectedParameterInfo(parameter, this);
       }
 
       private ParameterInfo[] MapParameters(ParameterInfo[] parameters)
@@ -280,7 +280,7 @@ namespace Alphaleonis.Reflection
          if (IsMapped(property))
             return property;
 
-         return new AttributeTableProjectedPropertyInfo(property, this);
+         return new ProjectedPropertyInfo(property, this);
       }
 
       private MethodInfo MapMember(MethodInfo method)
@@ -291,7 +291,7 @@ namespace Alphaleonis.Reflection
          if (IsMapped(method))
             return method;
 
-         return new AttributeTableProjectedMethodInfo(method, this);
+         return new ProjectedMethodInfo(method, this);
       }
 
       #endregion

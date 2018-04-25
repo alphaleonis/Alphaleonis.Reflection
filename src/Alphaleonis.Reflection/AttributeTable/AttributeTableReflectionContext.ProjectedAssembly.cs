@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
@@ -8,9 +8,9 @@ namespace Alphaleonis.Reflection
 {
    public partial class AttributeTableReflectionContext 
    {
-      private class AttributeTableProjectedAssembly : DelegatingAssembly, IAttributeTableProjector
+      private class ProjectedAssembly : DelegatingAssembly, IAttributeTableProjector
       {
-         public AttributeTableProjectedAssembly(Assembly assembly, AttributeTableReflectionContext context) : base(assembly)
+         public ProjectedAssembly(Assembly assembly, AttributeTableReflectionContext context) : base(assembly)
          {
             ReflectionContext = context;
          }

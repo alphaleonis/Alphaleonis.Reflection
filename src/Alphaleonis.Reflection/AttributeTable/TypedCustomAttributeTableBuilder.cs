@@ -1,17 +1,17 @@
 ﻿namespace Alphaleonis.Reflection
 {
-   public static partial class CustomAttributeTableBuilderExtensions
+   public static partial class AttributeTableBuilderExtensions
    {
-      private class TypedCustomAttributeTableBuilder<T> : ITypedCustomAttributeTableBuilder<T>
+      private class TypedAttributeTableBuilder<T> : ITypedAttributeTableBuilder<T>
       {
-         private readonly ICustomAttributeTableBuilder m_builder;
+         private readonly IAttributeTableBuilder m_builder;
 
-         public TypedCustomAttributeTableBuilder(ICustomAttributeTableBuilder builder)
+         public TypedAttributeTableBuilder(IAttributeTableBuilder builder)
          {
             m_builder = builder;
          }
 
-         public ICustomAttributeTableBuilder Builder => m_builder;
+         public IAttributeTableBuilder Builder => m_builder;
       }
    }
 }

@@ -6,24 +6,24 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection
 {
-   public static partial class CustomAttributeTableBuilderExtensions
+   public static partial class AttributeTableBuilderExtensions
    {
       private static MethodInfo s_decorateEnumerableMethodInfo = Reflect.GetMethod(() => Decorate.Parameter<object>(default(IEnumerable<Attribute>))).GetGenericMethodDefinition();
       private static MethodInfo s_decorateParamsMethodInfo = Reflect.GetMethod(() => Decorate.Parameter<object>(default(Attribute[]))).GetGenericMethodDefinition();
 
       #region Property Attributes
 
-      public static ICustomAttributeTableBuilder AddPropertyAttributes<T>(this ICustomAttributeTableBuilder builder, string propertyName, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddPropertyAttributes<T>(this IAttributeTableBuilder builder, string propertyName, IEnumerable<Attribute> attributes)
       {
          return AddPropertyAttributes(builder, typeof(T), propertyName, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddPropertyAttributes<T>(this ICustomAttributeTableBuilder builder, string propertyName, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddPropertyAttributes<T>(this IAttributeTableBuilder builder, string propertyName, params Attribute[] attributes)
       {
          return AddPropertyAttributes(builder, typeof(T), propertyName, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddPropertyAttributes(this ICustomAttributeTableBuilder builder, Type type, string propertyName, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddPropertyAttributes(this IAttributeTableBuilder builder, Type type, string propertyName, IEnumerable<Attribute> attributes)
       {
          if (type == null)
             throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
@@ -41,7 +41,7 @@ namespace Alphaleonis.Reflection
          return builder.AddMemberAttributes(property, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddPropertyAttributes<T>(this ICustomAttributeTableBuilder builder, Type type, string propertyName, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddPropertyAttributes<T>(this IAttributeTableBuilder builder, Type type, string propertyName, params Attribute[] attributes)
       {
          return AddPropertyAttributes(builder, type, propertyName, attributes.AsEnumerable());
       }
@@ -50,17 +50,17 @@ namespace Alphaleonis.Reflection
 
       #region Event Attributes
 
-      public static ICustomAttributeTableBuilder AddEventAttributes<T>(this ICustomAttributeTableBuilder builder, string eventName, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddEventAttributes<T>(this IAttributeTableBuilder builder, string eventName, IEnumerable<Attribute> attributes)
       {
          return AddEventAttributes(builder, typeof(T), eventName, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddEventAttributes<T>(this ICustomAttributeTableBuilder builder, string eventName, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddEventAttributes<T>(this IAttributeTableBuilder builder, string eventName, params Attribute[] attributes)
       {
          return AddEventAttributes(builder, typeof(T), eventName, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddEventAttributes(this ICustomAttributeTableBuilder builder, Type type, string eventName, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddEventAttributes(this IAttributeTableBuilder builder, Type type, string eventName, IEnumerable<Attribute> attributes)
       {
          if (type == null)
             throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
@@ -78,7 +78,7 @@ namespace Alphaleonis.Reflection
          return builder.AddMemberAttributes(eventInfo, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddEventAttributes(this ICustomAttributeTableBuilder builder, Type type, string eventName, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddEventAttributes(this IAttributeTableBuilder builder, Type type, string eventName, params Attribute[] attributes)
       {
          return AddEventAttributes(builder, type, eventName, attributes.AsEnumerable());
       }
@@ -87,17 +87,17 @@ namespace Alphaleonis.Reflection
 
       #region Field Attributes
 
-      public static ICustomAttributeTableBuilder AddFieldAttributes<T>(this ICustomAttributeTableBuilder builder, string fieldName, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddFieldAttributes<T>(this IAttributeTableBuilder builder, string fieldName, IEnumerable<Attribute> attributes)
       {
          return AddFieldAttributes(builder, typeof(T), fieldName, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddFieldAttributes<T>(this ICustomAttributeTableBuilder builder, string fieldName, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddFieldAttributes<T>(this IAttributeTableBuilder builder, string fieldName, params Attribute[] attributes)
       {
          return AddFieldAttributes(builder, typeof(T), fieldName, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddFieldAttributes(this ICustomAttributeTableBuilder builder, Type type, string fieldName, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddFieldAttributes(this IAttributeTableBuilder builder, Type type, string fieldName, IEnumerable<Attribute> attributes)
       {
          if (type == null)
             throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
@@ -115,7 +115,7 @@ namespace Alphaleonis.Reflection
          return builder.AddMemberAttributes(field, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddFieldAttributes(this ICustomAttributeTableBuilder builder, Type type, string fieldName, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddFieldAttributes(this IAttributeTableBuilder builder, Type type, string fieldName, params Attribute[] attributes)
       {
          return AddFieldAttributes(builder, type, fieldName, attributes.AsEnumerable());
       }
@@ -141,7 +141,7 @@ namespace Alphaleonis.Reflection
          return null;
       }
 
-      private static ICustomAttributeTableBuilder AddParameterAttributes(ICustomAttributeTableBuilder builder, LambdaExpression expression)
+      private static IAttributeTableBuilder AddParameterAttributes(IAttributeTableBuilder builder, LambdaExpression expression)
       {
          MethodCallExpression methodCallExpression = expression.Body as MethodCallExpression;
          if (methodCallExpression == null)
@@ -176,33 +176,33 @@ namespace Alphaleonis.Reflection
          return builder;
       }
 
-      public static ICustomAttributeTableBuilder AddParameterAttributes(this ICustomAttributeTableBuilder builder, Expression<Action> expression)
+      public static IAttributeTableBuilder AddParameterAttributes(this IAttributeTableBuilder builder, Expression<Action> expression)
       {
          return AddParameterAttributes(builder, (LambdaExpression)expression);
       }
 
-      public static ICustomAttributeTableBuilder AddParameterAttributes<T>(this ICustomAttributeTableBuilder builder, Expression<Action<T>> expression)
+      public static IAttributeTableBuilder AddParameterAttributes<T>(this IAttributeTableBuilder builder, Expression<Action<T>> expression)
       {
          return AddParameterAttributes(builder, (LambdaExpression)expression);
       }
 
-      public static ICustomAttributeTableBuilder AddReturnParameterAttributes(this ICustomAttributeTableBuilder builder, Expression<Action> expression, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddReturnParameterAttributes(this IAttributeTableBuilder builder, Expression<Action> expression, params Attribute[] attributes)
       {
          return AddReturnParameterAttributes(builder, expression, attributes.AsEnumerable());
       }
 
-      public static ICustomAttributeTableBuilder AddReturnParameterAttributes(this ICustomAttributeTableBuilder builder, Expression<Action> expression, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddReturnParameterAttributes(this IAttributeTableBuilder builder, Expression<Action> expression, IEnumerable<Attribute> attributes)
       {
          var method = Reflect.GetMethod(expression);
          return builder.AddParameterAttributes(method.ReturnParameter, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddReturnParameterAttributes<T>(this ICustomAttributeTableBuilder builder, Expression<Action<T>> expression, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddReturnParameterAttributes<T>(this IAttributeTableBuilder builder, Expression<Action<T>> expression, params Attribute[] attributes)
       {
          return AddReturnParameterAttributes(builder, expression, attributes.AsEnumerable());
       }
 
-      public static ICustomAttributeTableBuilder AddReturnParameterAttributes<T>(this ICustomAttributeTableBuilder builder, Expression<Action<T>> expression, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddReturnParameterAttributes<T>(this IAttributeTableBuilder builder, Expression<Action<T>> expression, IEnumerable<Attribute> attributes)
       {
          var method = Reflect.GetMethod<T>(expression);
          if (!method.DeclaringType.Equals(typeof(T)))
@@ -215,23 +215,23 @@ namespace Alphaleonis.Reflection
 
       #region Member Attributes
 
-      public static ICustomAttributeTableBuilder AddMemberAttributes(this ICustomAttributeTableBuilder builder, Expression<Action> expression, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddMemberAttributes(this IAttributeTableBuilder builder, Expression<Action> expression, params Attribute[] attributes)
       {
          return AddMemberAttributes(builder, expression, attributes.AsEnumerable());
       }
 
-      public static ICustomAttributeTableBuilder AddMemberAttributes(this ICustomAttributeTableBuilder builder, Expression<Action> expression, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddMemberAttributes(this IAttributeTableBuilder builder, Expression<Action> expression, IEnumerable<Attribute> attributes)
       {
          var member = Reflect.GetMember(expression);
          return builder.AddMemberAttributes(member, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddMemberAttributes<T>(this ICustomAttributeTableBuilder builder, Expression<Func<T, object>> expression, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddMemberAttributes<T>(this IAttributeTableBuilder builder, Expression<Func<T, object>> expression, params Attribute[] attributes)
       {
          return AddMemberAttributes(builder, expression, attributes.AsEnumerable());
       }
 
-      public static ICustomAttributeTableBuilder AddMemberAttributes<T>(this ICustomAttributeTableBuilder builder, Expression<Func<T, object>> expression, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddMemberAttributes<T>(this IAttributeTableBuilder builder, Expression<Func<T, object>> expression, IEnumerable<Attribute> attributes)
       {
          var member = Reflect.GetMember<T>(expression);
          if (!member.DeclaringType.Equals(typeof(T)))
@@ -240,12 +240,12 @@ namespace Alphaleonis.Reflection
          return builder.AddMemberAttributes(member, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddMemberAttributes<T>(this ICustomAttributeTableBuilder builder, Expression<Action<T>> expression, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddMemberAttributes<T>(this IAttributeTableBuilder builder, Expression<Action<T>> expression, params Attribute[] attributes)
       {
          return AddMemberAttributes(builder, expression, attributes.AsEnumerable());
       }
 
-      public static ICustomAttributeTableBuilder AddMemberAttributes<T>(this ICustomAttributeTableBuilder builder, Expression<Action<T>> expression, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddMemberAttributes<T>(this IAttributeTableBuilder builder, Expression<Action<T>> expression, IEnumerable<Attribute> attributes)
       {
          var member = Reflect.GetMember<T>(expression);
          if (!member.DeclaringType.Equals(typeof(T)))
@@ -258,22 +258,22 @@ namespace Alphaleonis.Reflection
 
       #region Type Attributes
 
-      public static ICustomAttributeTableBuilder AddTypeAttributes(this ICustomAttributeTableBuilder builder, Type type, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddTypeAttributes(this IAttributeTableBuilder builder, Type type, params Attribute[] attributes)
       {
          return builder.AddMemberAttributes(type, attributes.AsEnumerable());
       }
 
-      public static ICustomAttributeTableBuilder AddTypeAttributes(this ICustomAttributeTableBuilder builder, Type type, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddTypeAttributes(this IAttributeTableBuilder builder, Type type, IEnumerable<Attribute> attributes)
       {
          return builder.AddMemberAttributes(type, attributes);
       }
 
-      public static ICustomAttributeTableBuilder AddTypeAttributes<T>(this ICustomAttributeTableBuilder builder, params Attribute[] attributes)
+      public static IAttributeTableBuilder AddTypeAttributes<T>(this IAttributeTableBuilder builder, params Attribute[] attributes)
       {
          return AddTypeAttributes<T>(builder, attributes.AsEnumerable());
       }
 
-      public static ICustomAttributeTableBuilder AddTypeAttributes<T>(this ICustomAttributeTableBuilder builder, IEnumerable<Attribute> attributes)
+      public static IAttributeTableBuilder AddTypeAttributes<T>(this IAttributeTableBuilder builder, IEnumerable<Attribute> attributes)
       {
          return builder.AddMemberAttributes(typeof(T), attributes);
       }
@@ -282,9 +282,9 @@ namespace Alphaleonis.Reflection
 
       #region ForType
 
-      public static ICustomAttributeTableBuilder ForType<T>(this ICustomAttributeTableBuilder builder, Action<ITypedCustomAttributeTableBuilder<T>> action)
+      public static IAttributeTableBuilder ForType<T>(this IAttributeTableBuilder builder, Action<ITypedAttributeTableBuilder<T>> action)
       {
-         action(new TypedCustomAttributeTableBuilder<T>(builder));
+         action(new TypedAttributeTableBuilder<T>(builder));
          return builder;
       }
 

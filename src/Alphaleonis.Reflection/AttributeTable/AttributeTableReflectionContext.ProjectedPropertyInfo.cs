@@ -1,5 +1,4 @@
-using Alphaleonis.Reflection;
-using System;
+﻿using System;
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
@@ -8,22 +7,15 @@ namespace Alphaleonis.Reflection
 {
    public partial class AttributeTableReflectionContext
    {
-      public class AttributeTableProjectedMethodInfo : DelegatingMethodInfo, IAttributeTableProjector
+      private class ProjectedPropertyInfo : DelegatingPropertyInfo, IAttributeTableProjector
       {
-         public AttributeTableProjectedMethodInfo(MethodInfo method, AttributeTableReflectionContext reflectionContext)
-            : base(method)
+         public ProjectedPropertyInfo(PropertyInfo property, AttributeTableReflectionContext reflectionContext)
+            : base(property)
          {
             ReflectionContext = reflectionContext;
          }
 
          public AttributeTableReflectionContext ReflectionContext { get; }
-
-         public override Type DeclaringType => ReflectionContext.MapType(base.DeclaringType);
-
-         public override MethodInfo GetBaseDefinition()
-         {
-            return ReflectionContext.MapMember(base.GetBaseDefinition());
-         }
 
          public override object[] GetCustomAttributes(bool inherit)
          {
@@ -48,16 +40,16 @@ namespace Alphaleonis.Reflection
             }
 
             // If we want also inherited attributes, we must check the base definition.
-            if (inherit)
+            if (inherit && (ReflectionContext.Options & AttributeTableReflectionContextOptions.HonorPropertyAttributeInheritance) != 0)
             {
                // ...if it is different from the declaring type of this method, we get all attributes from there and add them as well, depending
                // on their attribute usage settings.
-               MethodInfo baseMethod = GetBaseDefinition();
-               
+               MemberInfo baseProperty = this.GetParentDefinition();
+
                // Then get base attributes, add only if Inherit = true AND (Multiple = true OR attribute not already exists).
-               if (baseMethod != null && !baseMethod.DeclaringType.Equals(DeclaringType))
+               if (baseProperty != null && !baseProperty.DeclaringType.Equals(DeclaringType))
                {
-                  foreach (var ca in baseMethod.GetCustomAttributes(attributeType, true))
+                  foreach (var ca in baseProperty.GetCustomAttributes(attributeType, true))
                   {
                      AttributeUsageAttribute attributeUsage = GetAttributeUsage(ca.GetType());
                      if (attributeUsage.Inherited && (attributeUsage.AllowMultiple || !result.Any(attr => attr.GetType().Equals(ca.GetType()))))
@@ -65,7 +57,7 @@ namespace Alphaleonis.Reflection
                   }
                }
             }
-
+            
             object[] arrResult = (object[])Array.CreateInstance(attributeType, result.Count);
             for (int i = 0; i < result.Count; i++)
             {
@@ -75,11 +67,25 @@ namespace Alphaleonis.Reflection
             return arrResult;
          }
 
-         public override ParameterInfo[] GetParameters() => ReflectionContext.MapParameters(base.GetParameters());
+         public override MethodInfo GetGetMethod(bool nonPublic) => ReflectionContext.MapMember(base.GetGetMethod(nonPublic));
 
-         public override Type[] GetGenericArguments() => ReflectionContext.MapTypes(base.GetGenericArguments());
+         public override MethodInfo GetSetMethod(bool nonPublic) => ReflectionContext.MapMember(base.GetGetMethod(nonPublic));
 
-         public override MethodInfo GetGenericMethodDefinition() => ReflectionContext.MapMember(base.GetGenericMethodDefinition());
+         public override MethodInfo[] GetAccessors(bool nonPublic) => ReflectionContext.MapMembers(base.GetAccessors(nonPublic));
+         
+         public override Type DeclaringType => ReflectionContext.MapType(base.DeclaringType);
+
+         public override ParameterInfo[] GetIndexParameters() => ReflectionContext.MapParameters(base.GetIndexParameters());
+
+         public override Type[] GetOptionalCustomModifiers() => ReflectionContext.MapTypes(base.GetOptionalCustomModifiers());
+
+         public override Type[] GetRequiredCustomModifiers() => ReflectionContext.MapTypes(base.GetRequiredCustomModifiers());
+
+         public override Type PropertyType => ReflectionContext.MapType(base.PropertyType);
+
+         public override Type ReflectedType => ReflectionContext.MapType(base.ReflectedType);
+
+         public override MethodInfo SetMethod => ReflectionContext.MapMember(base.SetMethod);
 
          public override bool IsDefined(Type attributeType, bool inherit)
          {
@@ -90,29 +96,15 @@ namespace Alphaleonis.Reflection
             if (base.IsDefined(attributeType, false))
                return true;
 
-            if (inherit)
+            if (inherit && (ReflectionContext.Options & AttributeTableReflectionContextOptions.HonorPropertyAttributeInheritance) != 0)
             {
                return this.GetParentDefinition()?.IsDefined(attributeType, true) == true;
             }
 
             return false;
          }
-
-         public override MethodInfo MakeGenericMethod(params Type[] typeArguments) => ReflectionContext.MapMember(base.MakeGenericMethod(ReflectionContext.MapTypes(typeArguments)));
-
-         public override Type ReflectedType => ReflectionContext.MapType(base.ReflectedType);
-
-         public override ParameterInfo ReturnParameter => ReflectionContext.MapParameter(base.ReturnParameter);
-
-         public override Type ReturnType => ReflectionContext.MapType(base.ReturnType);
-
-         public override ICustomAttributeProvider ReturnTypeCustomAttributes
-         {
-            get
-            {
-               throw new NotImplementedException();
-            }
-         }
-      }
+      }      
    }
+
+   
 }

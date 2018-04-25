@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Alphaleonis.Reflection
 {
-   public partial class CustomAttributeTableBuilder
+   public partial class AttributeTableBuilder
    {
       private struct MethodMetadata
       {

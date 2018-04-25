@@ -12,7 +12,7 @@ namespace Tests.Alphaleonis.Reflection
       [ExpectedException(typeof(ArgumentException))]
       public void AddMemberAttributes_MethodFromBaseClassIsNotOverriddenInSpecifiedClass_ThrowsArgumentException()
       {
-         CustomAttributeTableBuilder builder = new CustomAttributeTableBuilder();
+         AttributeTableBuilder builder = new AttributeTableBuilder();
          builder.AddMemberAttributes<UndecoratedTypes.Derived>(m => m.GenericMethod(0, ""), new[] { new NonInheritedSingleAttribute() });
       }
 
@@ -20,7 +20,7 @@ namespace Tests.Alphaleonis.Reflection
       [ExpectedException(typeof(ArgumentException))]
       public void AddReturnParameterAttributes_MethodFromBaseClassIsNotOverriddenInSpecifiedClass_ThrowsArgumentException()
       {
-         CustomAttributeTableBuilder builder = new CustomAttributeTableBuilder();
+         AttributeTableBuilder builder = new AttributeTableBuilder();
          builder.AddReturnParameterAttributes<UndecoratedTypes.Derived>(m => m.GenericMethod(0, ""), new NonInheritedSingleAttribute());
       }
    }

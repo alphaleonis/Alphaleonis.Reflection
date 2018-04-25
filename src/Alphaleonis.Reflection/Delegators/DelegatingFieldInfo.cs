@@ -6,76 +6,90 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection
 {
-   // TODO PP (2018-04-21): Document
+   /// <summary>
+   /// Wraps a <see cref="FieldInfo"/> instance and delegates all method calls to that
+   /// <see cref="FieldInfo" />.
+   /// </summary>
+   /// <remarks>
+   /// <para>Derive from this type and override only those members you have to provide customization
+   /// in.</para>
+   /// <para><see cref="DelegatingFieldInfo"/> derives from <see cref="FieldInfo"/> and implements most
+   /// of the properties and methods of <see cref="FieldInfo"/>. For
+   ///       each member it implements, <see cref="DelegatingFieldInfo"/> automatically delegates to
+   ///       the corresponding member of the internal <see cref="FieldInfo"/>
+   ///       object which was supplied as the argument to the constructor.  This internal
+   ///       <see cref="FieldInfo"/> is exposed to deriving classes by the <see langword="protected" />
+   ///       <see cref="m_fieldImpl"/> field.</para>
+   /// </remarks>
    public class DelegatingFieldInfo : FieldInfo
    {
-      private readonly FieldInfo m_field;
+      private readonly FieldInfo m_fieldImpl;
 
       public DelegatingFieldInfo(FieldInfo field)
       {
-         m_field = field;
+         m_fieldImpl = field;
       }
 
-      public override FieldAttributes Attributes => m_field.Attributes;
+      public override FieldAttributes Attributes => m_fieldImpl.Attributes;
 
-      public override Type DeclaringType => m_field.DeclaringType;
+      public override Type DeclaringType => m_fieldImpl.DeclaringType;
 
-      public override RuntimeFieldHandle FieldHandle => m_field.FieldHandle;
+      public override RuntimeFieldHandle FieldHandle => m_fieldImpl.FieldHandle;
 
-      public override Type FieldType => m_field.FieldType;
+      public override Type FieldType => m_fieldImpl.FieldType;
 
-      public override bool IsSecurityCritical => m_field.IsSecurityCritical;
+      public override bool IsSecurityCritical => m_fieldImpl.IsSecurityCritical;
 
-      public override bool IsSecuritySafeCritical => m_field.IsSecuritySafeCritical;
+      public override bool IsSecuritySafeCritical => m_fieldImpl.IsSecuritySafeCritical;
 
-      public override bool IsSecurityTransparent => m_field.IsSecurityTransparent;
+      public override bool IsSecurityTransparent => m_fieldImpl.IsSecurityTransparent;
 
-      public override int MetadataToken => m_field.MetadataToken;
+      public override int MetadataToken => m_fieldImpl.MetadataToken;
 
-      public override Module Module => m_field.Module;
+      public override Module Module => m_fieldImpl.Module;
 
-      public override string Name => m_field.Name;
+      public override string Name => m_fieldImpl.Name;
 
-      public override Type ReflectedType => m_field.ReflectedType;
+      public override Type ReflectedType => m_fieldImpl.ReflectedType;
 
-      public FieldInfo UnderlyingField => m_field;
+      public FieldInfo UnderlyingField => m_fieldImpl;
 
-      public override object[] GetCustomAttributes(bool inherit) => m_field.GetCustomAttributes(inherit);
+      public override object[] GetCustomAttributes(bool inherit) => m_fieldImpl.GetCustomAttributes(inherit);
 
-      public override object[] GetCustomAttributes(Type attributeType, bool inherit) => m_field.GetCustomAttributes(attributeType, inherit);
+      public override object[] GetCustomAttributes(Type attributeType, bool inherit) => m_fieldImpl.GetCustomAttributes(attributeType, inherit);
 
-      public override IList<CustomAttributeData> GetCustomAttributesData() => m_field.GetCustomAttributesData();
+      public override IList<CustomAttributeData> GetCustomAttributesData() => m_fieldImpl.GetCustomAttributesData();
 
-      public override Type[] GetOptionalCustomModifiers() => m_field.GetOptionalCustomModifiers();
+      public override Type[] GetOptionalCustomModifiers() => m_fieldImpl.GetOptionalCustomModifiers();
 
-      public override object GetRawConstantValue() => m_field.GetRawConstantValue();
+      public override object GetRawConstantValue() => m_fieldImpl.GetRawConstantValue();
 
-      public override Type[] GetRequiredCustomModifiers() => m_field.GetRequiredCustomModifiers();
+      public override Type[] GetRequiredCustomModifiers() => m_fieldImpl.GetRequiredCustomModifiers();
 
-      public override object GetValue(object obj) => m_field.GetValue(obj);
+      public override object GetValue(object obj) => m_fieldImpl.GetValue(obj);
 
-      public override object GetValueDirect(TypedReference obj) => m_field.GetValueDirect(obj);
+      public override object GetValueDirect(TypedReference obj) => m_fieldImpl.GetValueDirect(obj);
 
-      public override bool IsDefined(Type attributeType, bool inherit) => m_field.IsDefined(attributeType, inherit);
+      public override bool IsDefined(Type attributeType, bool inherit) => m_fieldImpl.IsDefined(attributeType, inherit);
 
-      public override void SetValue(object obj, object value, BindingFlags invokeAttr, Binder binder, CultureInfo culture) => m_field.SetValue(obj, value, invokeAttr, binder, culture);
+      public override void SetValue(object obj, object value, BindingFlags invokeAttr, Binder binder, CultureInfo culture) => m_fieldImpl.SetValue(obj, value, invokeAttr, binder, culture);
 
-      public override void SetValueDirect(TypedReference obj, object value) => m_field.SetValueDirect(obj, value);
+      public override void SetValueDirect(TypedReference obj, object value) => m_fieldImpl.SetValueDirect(obj, value);
 
-      public override string ToString() => m_field.ToString();
+      public override string ToString() => m_fieldImpl.ToString();
 
-      public override int GetHashCode() => m_field.GetHashCode();
+      public override int GetHashCode() => m_fieldImpl.GetHashCode();
 
       public override bool Equals(object obj)
       {
          DelegatingFieldInfo delegatingFieldInfo = obj as DelegatingFieldInfo;
          if (delegatingFieldInfo != null)
-            return delegatingFieldInfo.m_field.Equals(m_field);
+            return delegatingFieldInfo.m_fieldImpl.Equals(m_fieldImpl);
          else
-            return m_field.Equals(obj);
+            return m_fieldImpl.Equals(obj);
       }
 
-      public override IEnumerable<CustomAttributeData> CustomAttributes => m_field.CustomAttributes;
+      public override IEnumerable<CustomAttributeData> CustomAttributes => m_fieldImpl.CustomAttributes;
    }
 
    

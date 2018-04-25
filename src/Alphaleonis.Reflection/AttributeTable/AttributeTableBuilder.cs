@@ -9,7 +9,7 @@ using System.Reflection;
 namespace Alphaleonis.Reflection
 {
    // TODO PP (2018-04-25): Document
-   public partial class CustomAttributeTableBuilder : ICustomAttributeTableBuilder
+   public partial class AttributeTableBuilder : IAttributeTableBuilder
    {
       #region Private Fields
 
@@ -19,7 +19,7 @@ namespace Alphaleonis.Reflection
 
       #region Constructor
 
-      public CustomAttributeTableBuilder()
+      public AttributeTableBuilder()
       {
          m_metadata = ImmutableDictionary.CreateBuilder<Type, TypeMetadata>(TypeEqualityComparerIgnoringTypeParameters.Default);
       }
@@ -28,16 +28,16 @@ namespace Alphaleonis.Reflection
 
       #region General Methods
 
-      public ICustomAttributeTable CreateTable()
+      public IAttributeTable CreateTable()
       {
-         return new CustomAttributeTable(m_metadata.ToImmutable());
+         return new AttributeTable(m_metadata.ToImmutable());
       }
 
       #endregion
 
       #region Add Attributes
 
-      public ICustomAttributeTableBuilder AddParameterAttributes(ParameterInfo parameter, IEnumerable<Attribute> attributes)
+      public IAttributeTableBuilder AddParameterAttributes(ParameterInfo parameter, IEnumerable<Attribute> attributes)
       {
          if (parameter == null)
             throw new ArgumentNullException(nameof(parameter), $"{nameof(parameter)} is null.");
@@ -50,7 +50,7 @@ namespace Alphaleonis.Reflection
          return this;
       }
 
-      public ICustomAttributeTableBuilder AddMemberAttributes(MemberInfo member, IEnumerable<Attribute> attributes)
+      public IAttributeTableBuilder AddMemberAttributes(MemberInfo member, IEnumerable<Attribute> attributes)
       {         
          if (member == null)
             throw new ArgumentNullException(nameof(member), $"{nameof(member)} is null.");
@@ -72,7 +72,7 @@ namespace Alphaleonis.Reflection
             default:
                var declaringType = member.DeclaringType;
                m_metadata[declaringType] = GetTypeMetadata(declaringType).AddMemberAttributes(new MemberKey(member.MemberType, member.Name), attributes);
-               CustomAttributeTableBuilder result = this;
+               AttributeTableBuilder result = this;
                break;
          }
 

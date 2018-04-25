@@ -6,7 +6,7 @@ using System.Reflection;
 namespace Alphaleonis.Reflection
 {
    // TODO PP (2018-04-21): Document
-   public interface ICustomAttributeTable
+   public interface IAttributeTable
    {
       IReadOnlyList<Attribute> GetCustomAttributes(MemberInfo member);
       IReadOnlyList<Attribute> GetCustomAttributes(ParameterInfo parameterInfo);

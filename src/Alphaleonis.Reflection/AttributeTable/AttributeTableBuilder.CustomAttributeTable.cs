@@ -5,13 +5,13 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection
 {
-   public partial class CustomAttributeTableBuilder
+   public partial class AttributeTableBuilder
    {
-      private class CustomAttributeTable : ICustomAttributeTable
+      private class AttributeTable : IAttributeTable
       {
          private readonly IImmutableDictionary<Type, TypeMetadata> m_metadata;
 
-         public CustomAttributeTable(IImmutableDictionary<Type, TypeMetadata> metadata)
+         public AttributeTable(IImmutableDictionary<Type, TypeMetadata> metadata)
          {
             m_metadata = metadata;
          }

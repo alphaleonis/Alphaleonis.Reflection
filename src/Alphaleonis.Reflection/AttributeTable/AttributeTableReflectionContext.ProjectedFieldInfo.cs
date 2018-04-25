@@ -1,5 +1,4 @@
-using Alphaleonis.Reflection;
-using System;
+﻿using System;
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
@@ -8,9 +7,9 @@ namespace Alphaleonis.Reflection
 {
    public partial class AttributeTableReflectionContext
    {
-      private class AttributeTableProjectedFieldInfo : DelegatingFieldInfo, IAttributeTableProjector
+      private class ProjectedFieldInfo : DelegatingFieldInfo, IAttributeTableProjector
       {
-         public AttributeTableProjectedFieldInfo(FieldInfo field, AttributeTableReflectionContext reflectionContext)
+         public ProjectedFieldInfo(FieldInfo field, AttributeTableReflectionContext reflectionContext)
             : base(field)
          {
             ReflectionContext = reflectionContext;

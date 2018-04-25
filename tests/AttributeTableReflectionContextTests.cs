@@ -34,10 +34,10 @@ namespace Tests.Alphaleonis.Reflection
          };
       }
 
-      private ICustomAttributeTable CreateTable()
+      private IAttributeTable CreateTable()
       {
          // TODO PP: Tidy up this method.
-         CustomAttributeTableBuilder builder = new CustomAttributeTableBuilder();
+         AttributeTableBuilder builder = new AttributeTableBuilder();
          builder
             .AddTypeAttributes<UndecoratedTypes.IBase1>(CreateTestAttributes<UndecoratedTypes.IBase1>())
                .AddPropertyAttributes<UndecoratedTypes.IBase1>(nameof(UndecoratedTypes.IBase1.ImplementedProperty), CreateTestAttributes<UndecoratedTypes.IBase1>())

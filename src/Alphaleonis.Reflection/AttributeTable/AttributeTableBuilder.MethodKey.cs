@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection
 {
-   public partial class CustomAttributeTableBuilder
+   public partial class AttributeTableBuilder
    {
       private struct MethodKey : IEquatable<MethodKey>
       {
