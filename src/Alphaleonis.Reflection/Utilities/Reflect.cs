@@ -102,29 +102,23 @@ namespace Alphaleonis.Reflection
          MemberInfo member = null;
          Type ownerType;
 
-         MethodCallExpression methodCallExpr = expression as MethodCallExpression;
-         if (methodCallExpr != null)
+         switch (expression)
          {
-            member = methodCallExpr.Method;
-            ownerType = methodCallExpr.Object == null ? methodCallExpr.Method.DeclaringType : methodCallExpr.Object.Type;
-         }
-         else
-         {
-            MemberExpression body = expression as MemberExpression;
-            if (body == null)
-            {
-               UnaryExpression ubody = expression as UnaryExpression;
-               if (ubody == null)
-                  throw new ArgumentException($"Expression '{expression}' does not refer to a property, field or event.");
+            case MethodCallExpression methodCallExpr:
+               member = methodCallExpr.Method;
+               ownerType = methodCallExpr.Object == null ? methodCallExpr.Method.DeclaringType : methodCallExpr.Object.Type;
+               break;
 
-               return GetMemberInternal(ubody.Operand, declaredOnly);
-            }
-            else
-            {
-               member = body.Member;
-            }
+            case MemberExpression memberExpression:
+               member = memberExpression.Member;
+               ownerType = memberExpression.Expression?.Type ?? member.DeclaringType;
+               break;
 
-            ownerType = body.Expression?.Type ?? member.DeclaringType;
+            case UnaryExpression unaryExpression:
+               return GetMemberInternal(unaryExpression.Operand, declaredOnly);
+
+            default:
+               throw new ArgumentException($"Expression '{expression}' does not refer to a property, field or event.");
          }
 
          if (member is PropertyInfo)

@@ -8,8 +8,7 @@ namespace Alphaleonis.Reflection
    // TODO PP (2018-04-21): Document
    public interface ICustomAttributeTable
    {
-      IEnumerable<Attribute> GetCustomAttributes(Type type);
-      IEnumerable<Attribute> GetCustomAttributes(MemberInfo member);
-      IEnumerable<Attribute> GetCustomAttributes(ParameterInfo parameterInfo);
+      IReadOnlyList<Attribute> GetCustomAttributes(MemberInfo member);
+      IReadOnlyList<Attribute> GetCustomAttributes(ParameterInfo parameterInfo);
    }
 }

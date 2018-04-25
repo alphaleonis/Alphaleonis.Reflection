@@ -15,11 +15,11 @@ namespace Alphaleonis.Reflection
          private TypeMetadata()
          {
             MemberAttributes = ImmutableDictionary<MemberKey, IImmutableList<Attribute>>.Empty;
-            MethodAttributes = ImmutableDictionary<MethodKey, ImmutableMethodMetadata>.Empty;
+            MethodAttributes = ImmutableDictionary<MethodKey, MethodMetadata>.Empty;
             TypeAttributes = ImmutableList<Attribute>.Empty;
          }
 
-         private TypeMetadata(IImmutableList<Attribute> typeAttributes, IImmutableDictionary<MemberKey, IImmutableList<Attribute>> memberAttributes, IImmutableDictionary<MethodKey, ImmutableMethodMetadata> methodAttributes)
+         private TypeMetadata(IImmutableList<Attribute> typeAttributes, IImmutableDictionary<MemberKey, IImmutableList<Attribute>> memberAttributes, IImmutableDictionary<MethodKey, MethodMetadata> methodAttributes)
          {
             MemberAttributes = memberAttributes;
             MethodAttributes = methodAttributes;
@@ -31,7 +31,7 @@ namespace Alphaleonis.Reflection
          #region Properties
 
          public IImmutableDictionary<MemberKey, IImmutableList<Attribute>> MemberAttributes { get; }
-         public IImmutableDictionary<MethodKey, ImmutableMethodMetadata> MethodAttributes { get; }
+         public IImmutableDictionary<MethodKey, MethodMetadata> MethodAttributes { get; }
          public IImmutableList<Attribute> TypeAttributes { get; }
 
          #endregion
@@ -79,12 +79,12 @@ namespace Alphaleonis.Reflection
             return new TypeMetadata(TypeAttributes, MemberAttributes.SetItem(key, list), MethodAttributes);
          }
 
-         private ImmutableMethodMetadata GetMethodMetadata(MethodKey key)
+         private MethodMetadata GetMethodMetadata(MethodKey key)
          {
-            ImmutableMethodMetadata metadata;
+            MethodMetadata metadata;
             if (!MethodAttributes.TryGetValue(key, out metadata))
             {
-               metadata = new ImmutableMethodMetadata(key.Parameters.Count);
+               metadata = new MethodMetadata(key.Parameters.Count);
             }
 
             return metadata;

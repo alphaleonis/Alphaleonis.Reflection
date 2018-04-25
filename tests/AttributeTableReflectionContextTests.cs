@@ -8,25 +8,6 @@ using System.Diagnostics;
 
 namespace Tests.Alphaleonis.Reflection
 {
-   [TestClass]
-   public class AttributeTableBuilderTests
-   {
-      [TestMethod]
-      [ExpectedException(typeof(ArgumentException))]
-      public void AddMemberAttributes_MethodFromBaseClassIsNotOverriddenInSpecifiedClass_ThrowsArgumentException()
-      {
-         CustomAttributeTableBuilder builder = new CustomAttributeTableBuilder();
-         builder.AddMemberAttributes<UndecoratedTypes.Derived>(m => m.GenericMethod(0, ""), new[] { new NonInheritedSingleAttribute() });
-      }
-
-      [TestMethod]
-      [ExpectedException(typeof(ArgumentException))]
-      public void AddReturnParameterAttributes_MethodFromBaseClassIsNotOverriddenInSpecifiedClass_ThrowsArgumentException()
-      {
-         CustomAttributeTableBuilder builder = new CustomAttributeTableBuilder();
-         builder.AddReturnParameterAttributes<UndecoratedTypes.Derived>(m => m.GenericMethod(0, ""), new NonInheritedSingleAttribute());
-      }
-   }
 
    [TestClass]
    public class AttributeTableReflectionContextTests
@@ -43,7 +24,7 @@ namespace Tests.Alphaleonis.Reflection
          return CreateTestAttributes(type.Name);
       }
 
-      private IEnumerable<TestAttribute> CreateTestAttributes(string name)
+      private TestAttribute[] CreateTestAttributes(string name)
       {
          return new TestAttribute[] {
                new InheritedMultiAttribute(name),
@@ -75,12 +56,14 @@ namespace Tests.Alphaleonis.Reflection
 
             .AddTypeAttributes<UndecoratedTypes.Base>(CreateTestAttributes<UndecoratedTypes.Base>())
                .AddMemberAttributes<UndecoratedTypes.Base>(c => c.HiddenProperty, CreateTestAttributes<UndecoratedTypes.Base>())
-               .AddMemberAttributes<UndecoratedTypes.Base>(c => c.ImplementedProperty, CreateTestAttributes<UndecoratedTypes.Base>())
-               .AddMemberAttributes<UndecoratedTypes.Base>(c => c.OverriddenProperty, CreateTestAttributes<UndecoratedTypes.Base>())
-               .AddMemberAttributes<UndecoratedTypes.Base>(c => c.OverriddenProperty2, CreateTestAttributes<UndecoratedTypes.Base>())
-               .AddMemberAttributes<UndecoratedTypes.Base>(c => c.HiddenMethod1(0), CreateTestAttributes<UndecoratedTypes.Base>())
-               .AddMemberAttributes<UndecoratedTypes.Base>(c => c.ImplementedMethod1(0, 0), CreateTestAttributes<UndecoratedTypes.Base>())
-               .AddMemberAttributes<UndecoratedTypes.Base>(c => c.OverriddenMethod(0, 0), CreateTestAttributes<UndecoratedTypes.Base>())
+               .ForType<UndecoratedTypes.Base>(b => b
+                  .AddMemberAttributes(c => c.ImplementedProperty, CreateTestAttributes<UndecoratedTypes.Base>())
+                  .AddMemberAttributes(c => c.OverriddenProperty, CreateTestAttributes<UndecoratedTypes.Base>())
+                  .AddMemberAttributes(c => c.OverriddenProperty2, CreateTestAttributes<UndecoratedTypes.Base>())
+                  .AddMemberAttributes(c => c.HiddenMethod1(0), CreateTestAttributes<UndecoratedTypes.Base>())
+                  .AddMemberAttributes(c => c.OverriddenMethod(0, 0), CreateTestAttributes<UndecoratedTypes.Base>())
+               )
+               .AddMemberAttributes<UndecoratedTypes.Base>(c => c.ImplementedMethod1(0, 0), CreateTestAttributes<UndecoratedTypes.Base>())               
                .AddMemberAttributes<UndecoratedTypes.Base>(c => c.OverloadedMethod(default(int)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "int"))
                .AddMemberAttributes<UndecoratedTypes.Base>(c => c.OverloadedMethod(default(long)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "long"))
                .AddMemberAttributes<UndecoratedTypes.Base>(c => c.m_baseField, CreateTestAttributes(nameof(UndecoratedTypes.Base)))
@@ -93,7 +76,7 @@ namespace Tests.Alphaleonis.Reflection
                .AddEventAttributes<UndecoratedTypes.Base>(nameof(UndecoratedTypes.Base.OverriddenEvent), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "_O"))
                .AddMemberAttributes<UndecoratedTypes.Base>(c => c.GenericMethod(default(long), default(int)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "void"))
                   .AddParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod(Decorate.Parameter<long>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "long")),
-                                                                                       Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "int"))))
+                                                                                       Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "int").AsEnumerable())))
                .AddMemberAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string>(default(int), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "T"))
                   .AddParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string>(Decorate.Parameter<long>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "long")),
                                                                                              (Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "T")))))
@@ -103,10 +86,10 @@ namespace Tests.Alphaleonis.Reflection
                   .AddParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string, string>(Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "U")),
                                                                                                       Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.Base) + "T"))))
                   .AddReturnParameterAttributes<UndecoratedTypes.Base>(c => c.GenericMethod<string, string>(default(string), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "TU").ToArray())
-               .AddMemberAttributes(() => UndecoratedTypes.Base.StaticMethod(default(int)), CreateTestAttributes(nameof(UndecoratedTypes.Base)))
+               .AddMemberAttributes(() => UndecoratedTypes.Base.StaticMethod(default(int)), CreateTestAttributes(nameof(UndecoratedTypes.Base)).AsEnumerable())
 
             .AddTypeAttributes<UndecoratedTypes.Derived>(CreateTestAttributes<UndecoratedTypes.Derived>())
-               .AddMemberAttributes<UndecoratedTypes.Derived>(der => der.HiddenProperty, CreateTestAttributes<UndecoratedTypes.Derived>())
+               .AddMemberAttributes<UndecoratedTypes.Derived>(der => der.HiddenProperty, CreateTestAttributes<UndecoratedTypes.Derived>().AsEnumerable())
                .AddMemberAttributes<UndecoratedTypes.Derived>(der => der.OverriddenProperty2, CreateTestAttributes<UndecoratedTypes.Derived>())
                .AddMemberAttributes<UndecoratedTypes.Derived>(c => c.m_derivedField, CreateTestAttributes(nameof(UndecoratedTypes.Derived)))
                .AddMemberAttributes<UndecoratedTypes.Derived>(c => c.m_hiddenBaseField, CreateTestAttributes(nameof(UndecoratedTypes.Derived)))
@@ -120,11 +103,12 @@ namespace Tests.Alphaleonis.Reflection
             .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverloadedMethod(default(int)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "int"))
             .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverloadedMethod(default(long)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "long"))
             .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverriddenMethod(0, 0), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
-            .AddEventAttributes<UndecoratedTypes.SubDerived>(nameof(UndecoratedTypes.SubDerived.OverriddenEvent), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
-            .AddReturnParameterAttributes<UndecoratedTypes.SubDerived>(c => c.GenericMethod<string>(default(long), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "T").ToArray())
-            ;
-
-         builder.AddParameterAttributes<UndecoratedTypes.SubDerived>(c => c.GenericMethod(Decorate.Parameter<long>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "long")), Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "int"))));
+            .ForType<UndecoratedTypes.SubDerived>(b => 
+               b.AddEventAttributes(nameof(UndecoratedTypes.SubDerived.OverriddenEvent), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
+                .AddReturnParameterAttributes(c => c.GenericMethod<string>(default(long), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "T").ToArray())
+                .AddParameterAttributes(c => c.GenericMethod(Decorate.Parameter<long>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "long")), Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "int"))))
+            );
+         
          builder.AddParameterAttributes<UndecoratedTypes.SubDerived>(c => c.GenericMethod<object>(default(long), Decorate.Parameter<object>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "T"))));
          builder.AddParameterAttributes<UndecoratedTypes.SubDerived>(c => c.GenericMethod<string, string>(Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "U")),
                                                                                                          Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "T"))))

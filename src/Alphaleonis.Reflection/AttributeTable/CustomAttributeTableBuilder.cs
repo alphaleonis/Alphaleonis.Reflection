@@ -8,53 +8,9 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection
 {
-   public interface ICustomAttributeTableBuilder
-   {
-      ICustomAttributeTableBuilder AddEventAttributes(Type type, string eventName, IEnumerable<Attribute> attributes);
-      ICustomAttributeTableBuilder AddFieldAttributes(Type type, string fieldName, IEnumerable<Attribute> attributes);
-      ICustomAttributeTableBuilder AddMemberAttributes(MemberInfo member, IEnumerable<Attribute> attributes);
-      ICustomAttributeTableBuilder AddParameterAttributes(ParameterInfo parameter, IEnumerable<Attribute> attributes);
-      ICustomAttributeTableBuilder AddPropertyAttributes(Type type, string propertyName, IEnumerable<Attribute> attributes);
-      ICustomAttributeTableBuilder AddTypeAttributes(Type type, IEnumerable<Attribute> attributes);
-      ICustomAttributeTable CreateTable();
-   }
-
+   // TODO PP (2018-04-25): Document
    public partial class CustomAttributeTableBuilder : ICustomAttributeTableBuilder
    {
-      /// <summary>A type equality comparer that ignores type parameters.</summary>
-      private class TypeEqualityComparerIgnoringTypeParameters : IEqualityComparer<Type>
-      {
-         public static readonly IEqualityComparer<Type> Default = new TypeEqualityComparerIgnoringTypeParameters();
-
-         public bool Equals(Type x, Type y)
-         {
-            if (x == null)
-               return y == null;
-
-            if (y == null)
-               return false;
-
-            if (x.IsGenericType)
-               x = x.GetGenericTypeDefinition();
-
-            if (y.IsGenericType)
-               y = y.GetGenericTypeDefinition();
-
-            return x.UnderlyingSystemType.Equals(y.UnderlyingSystemType);
-         }
-
-         public int GetHashCode(Type obj)
-         {
-            if (obj == null)
-               return 0;
-
-            if (obj.IsGenericType)
-               obj = obj.GetGenericTypeDefinition();
-
-            return obj.GetHashCode();
-         }
-      }
-
       #region Private Fields
 
       private readonly ImmutableDictionary<Type, TypeMetadata>.Builder m_metadata;
@@ -81,68 +37,6 @@ namespace Alphaleonis.Reflection
 
       #region Add Attributes
 
-      public ICustomAttributeTableBuilder AddTypeAttributes(Type type, IEnumerable<Attribute> attributes)
-      {
-         return AddMemberAttributes(type, attributes);
-      }
-
-      public ICustomAttributeTableBuilder AddPropertyAttributes(Type type, string propertyName, IEnumerable<Attribute> attributes)
-      {
-         if (type == null)
-            throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
-
-         if (string.IsNullOrEmpty(propertyName))
-            throw new ArgumentException($"{nameof(propertyName)} is null or empty.", nameof(propertyName));
-
-         if (attributes == null)
-            throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
-
-         PropertyInfo property = type.GetTypeInfo().GetProperty(propertyName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-         if (property == null)
-            throw new ArgumentException($"The type {type.FullName} does not declare a property named \"{propertyName}\".");
-
-         AddMemberAttributes(property, attributes);
-         return this;
-      }
-
-      public ICustomAttributeTableBuilder AddEventAttributes(Type type, string eventName, IEnumerable<Attribute> attributes)
-      {
-         if (type == null)
-            throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
-
-         if (string.IsNullOrEmpty(eventName))
-            throw new ArgumentException($"{nameof(eventName)} is null or empty.", nameof(eventName));
-
-         if (attributes == null)
-            throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
-
-         EventInfo eventInfo = type.GetTypeInfo().GetEvent(eventName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-         if (eventInfo == null)
-            throw new ArgumentException($"The type {type.FullName} does not declare an event named \"{eventName}\".");
-
-         AddMemberAttributes(eventInfo, attributes);
-         return this;
-      }
-
-      public ICustomAttributeTableBuilder AddFieldAttributes(Type type, string fieldName, IEnumerable<Attribute> attributes)
-      {
-         if (type == null)
-            throw new ArgumentNullException(nameof(type), $"{nameof(type)} is null.");
-
-         if (string.IsNullOrEmpty(fieldName))
-            throw new ArgumentException($"{nameof(fieldName)} is null or empty.", nameof(fieldName));
-
-         if (attributes == null)
-            throw new ArgumentNullException(nameof(attributes), $"{nameof(attributes)} is null.");
-
-         FieldInfo field = type.GetTypeInfo().GetField(fieldName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-         if (field == null)
-            throw new ArgumentException($"The type {type.FullName} does not declare a field named \"{fieldName}\".");
-
-         AddMemberAttributes(field, attributes);
-         return this;
-      }
-
       public ICustomAttributeTableBuilder AddParameterAttributes(ParameterInfo parameter, IEnumerable<Attribute> attributes)
       {
          if (parameter == null)
@@ -157,7 +51,7 @@ namespace Alphaleonis.Reflection
       }
 
       public ICustomAttributeTableBuilder AddMemberAttributes(MemberInfo member, IEnumerable<Attribute> attributes)
-      {
+      {         
          if (member == null)
             throw new ArgumentNullException(nameof(member), $"{nameof(member)} is null.");
 
@@ -201,7 +95,4 @@ namespace Alphaleonis.Reflection
 
       #endregion
    }
-
-   // TODO PP: Add a simplified builder that is specific to a type, eg. builder.ForType<MyType>().AddMemberAttributes(c => c.MyProperty);
-   //                                                                                                                ^ Note: No generic argument here!
 }

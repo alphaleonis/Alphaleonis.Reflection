@@ -108,9 +108,4 @@ namespace Alphaleonis.Reflection
          }
       }
    }
-
-   // TODO PP: Add a simplified builder that is specific to a type, eg. builder.ForType<MyType>().AddMemberAttributes(c => c.MyProperty);
-   //                                                                                                                ^ Note: No generic argument here!
-
-   // TODO PP: Change AddMemberAttribute to specific methods instead, it seems that it may be needed. Why!?
 }

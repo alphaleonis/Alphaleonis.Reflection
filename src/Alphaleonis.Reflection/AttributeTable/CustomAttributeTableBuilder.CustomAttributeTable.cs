@@ -9,19 +9,14 @@ namespace Alphaleonis.Reflection
    {
       private class CustomAttributeTable : ICustomAttributeTable
       {
-         private ImmutableDictionary<Type, TypeMetadata> m_metadata;
+         private readonly IImmutableDictionary<Type, TypeMetadata> m_metadata;
 
-         public CustomAttributeTable(ImmutableDictionary<Type, TypeMetadata> metadata)
+         public CustomAttributeTable(IImmutableDictionary<Type, TypeMetadata> metadata)
          {
             m_metadata = metadata;
          }
 
-         public IEnumerable<Attribute> GetCustomAttributes(Type type)
-         {
-            return GetTypeMetadata(type).TypeAttributes;
-         }
-
-         public IEnumerable<Attribute> GetCustomAttributes(MemberInfo member)
+         public IReadOnlyList<Attribute> GetCustomAttributes(MemberInfo member)
          {
             if (member == null)
                throw new ArgumentNullException(nameof(member));
@@ -37,7 +32,7 @@ namespace Alphaleonis.Reflection
 
                case MemberTypes.Method:
                case MemberTypes.Constructor:
-                  ImmutableMethodMetadata methodMetadata;
+                  MethodMetadata methodMetadata;
                   if (GetTypeMetadata(member.DeclaringType).MethodAttributes.TryGetValue(new MethodKey(member as MethodBase), out methodMetadata))
                   {
                      return methodMetadata.MethodAttributes;
@@ -49,7 +44,7 @@ namespace Alphaleonis.Reflection
 
                case MemberTypes.TypeInfo:
                case MemberTypes.NestedType:
-                  return GetCustomAttributes((Type)member);
+                  return GetTypeMetadata((Type)member).TypeAttributes;
 
                case MemberTypes.Custom:
                default:
@@ -57,13 +52,13 @@ namespace Alphaleonis.Reflection
             }
          }
 
-         public IEnumerable<Attribute> GetCustomAttributes(ParameterInfo parameterInfo)
+         public IReadOnlyList<Attribute> GetCustomAttributes(ParameterInfo parameterInfo)
          {
             if (parameterInfo == null)
                throw new ArgumentNullException(nameof(parameterInfo));
 
             var typeMetadata = GetTypeMetadata(parameterInfo.Member.DeclaringType);
-            ImmutableMethodMetadata methodMetadata;
+            MethodMetadata methodMetadata;
             if (typeMetadata.MethodAttributes.TryGetValue(new MethodKey(parameterInfo.Member as MethodBase), out methodMetadata))
             {
                if (parameterInfo.Position == -1)
