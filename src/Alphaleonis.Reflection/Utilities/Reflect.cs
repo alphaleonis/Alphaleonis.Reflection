@@ -9,23 +9,49 @@ using System.Threading.Tasks;
 
 namespace Alphaleonis.Reflection
 {
-   // TODO PP (2018-04-21): Document
-   // TODO PP: Clean up this class. It probably needs a bit more checks and stuff.
-   // TODO PP: Perhaps we should have a "DeclaredOnly" flag to all these methods?
+   /// <summary>Defines methods to get reflection information based on lambda expressions.</summary>
    public static class Reflect
    {
       #region GetProperty
 
+      /// <summary>
+      /// Gets the <see cref="PropertyInfo" /> representing the property accessed in the
+      /// <see cref="expression"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the property.</typeparam>
+      /// <typeparam name="U">The declaring type of the property.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// property.</param>
+      /// <returns>The <see cref="PropertyInfo"/> representing the property.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a property</exception>      
       public static PropertyInfo GetProperty<T, U>(Expression<Func<U, T>> expression)
       {
          return GetProperty((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="PropertyInfo" /> representing the property accessed in the
+      /// <see cref="expression"/>.
+      /// </summary>
+      /// <exception cref="ArgumentException">The expression does not reference a property.</exception>
+      /// <typeparam name="T">The type of the property.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// property.</param>
+      /// <returns>The <see cref="PropertyInfo"/> representing the property.</returns>
       public static PropertyInfo GetProperty<T>(Expression<Func<T>> expression)
       {
          return GetProperty((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="PropertyInfo" /> representing the property accessed in the
+      /// <see cref="expression"/>.
+      /// </summary>
+      /// <exception cref="ArgumentException">The expression does not reference a property.</exception>
+      /// <typeparam name="T">The type of the property.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// property.</param>
+      /// <returns>The <see cref="PropertyInfo"/> representing the property.</returns>
       public static PropertyInfo GetProperty<T>(Expression<Action<T>> expression)
       {
          return GetProperty((LambdaExpression)expression);
