@@ -144,7 +144,7 @@ namespace Tests.Alphaleonis.Reflection
          action(TestInfo.Create(typeof(DecoratedTypes.GenericDerived), typeof(UndecoratedTypes.GenericDerived), context));
       }
 
-      private IEnumerable<T> FilterAttributes<T>(IEnumerable<T> list)
+      private static IEnumerable<T> FilterAttributes<T>(IEnumerable<T> list)
       {
          return list.Where(attr => !(attr is AttributeTableReflectionContextIdentifierAttribute));
       }
@@ -180,6 +180,34 @@ namespace Tests.Alphaleonis.Reflection
       #endregion
 
       #region GetCustomAttributes Tests
+
+      [TestMethod]
+      public void GetCustomAttributes_DuplicateAttributesWereAddedToTable_TableAttributesDisallowingMultipleOverwritesExistingAttributes()
+      {
+         AttributeTableBuilder builder = new AttributeTableBuilder();
+         builder.ForType<DecoratedTypes.Base>(b => b.
+            AddTypeAttributes(new InheritedSingleAttribute("Q"), new InheritedMultiAttribute("Q"), new NonInheritedSingleAttribute("Q"), new NonInheritedMultiAttribute("Q"))
+         );
+
+         var table = builder.CreateTable();
+         var context = new AttributeTableReflectionContext(table, AttributeTableReflectionContextOptions.Default);
+
+         var originalType = typeof(DecoratedTypes.Base);
+         var mappedType = context.MapType(originalType);
+
+         var expected = new Attribute[] {
+            new InheritedMultiAttribute("Q"),
+            new InheritedSingleAttribute("Q"),
+            new NonInheritedMultiAttribute("Q"),
+            new NonInheritedSingleAttribute("Q"),
+            new InheritedMultiAttribute(nameof(DecoratedTypes.Base)),
+            new NonInheritedMultiAttribute(nameof(DecoratedTypes.Base))
+         };
+
+         var actual = FilterAttributes(mappedType.GetCustomAttributes(true));
+
+         SequenceAssert.AreEquivalent(expected, actual);
+      }
 
       [TestMethod]
       public void GetCustomAttributes_Type_InheritIsTrue_ReturnsCorrectAttributes()
@@ -358,6 +386,8 @@ namespace Tests.Alphaleonis.Reflection
             }
          });
       }
+
+
 
       private class ParameterInfoComparer : IEqualityComparer<ParameterInfo>
       {
