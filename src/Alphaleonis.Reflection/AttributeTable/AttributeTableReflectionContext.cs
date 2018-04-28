@@ -57,9 +57,6 @@ namespace Alphaleonis.Reflection
          if (type == null)
             return null;
 
-         if (type is ProjectedType)
-            return type.GetTypeInfo();
-
          if (IsMapped(type))
             return type.GetTypeInfo();
 
@@ -301,8 +298,8 @@ namespace Alphaleonis.Reflection
       private bool IsMapped(ICustomAttributeProvider member)
       {
          // Shortcut which is faster than using reflection when not necessary.
-         if (member is IAttributeTableProjector projector)
-            return projector.ReflectionContext.Id == Id;
+         if (member is IAttributeTableProjector projector && projector.ReflectionContext.Id == Id)
+            return true;
 
          return member.GetCustomAttributes(typeof(AttributeTableReflectionContextIdentifierAttribute), false)
                                      .OfType<AttributeTableReflectionContextIdentifierAttribute>()

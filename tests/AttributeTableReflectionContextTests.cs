@@ -182,6 +182,121 @@ namespace Tests.Alphaleonis.Reflection
       #region GetCustomAttributes Tests
 
       [TestMethod]
+      public void GetCustomAttributes_ChainedReflectionContextsMappedMultipleTimes_DuplicateMappingsIgnoredAndReturnsExpectedAttributes()
+      {
+         AttributeTableBuilder builderA = new AttributeTableBuilder();
+         builderA.ForType<DecoratedTypes.Base>(b => b
+            .AddTypeAttributes(new InheritedSingleAttribute("Q"), new InheritedMultiAttribute("Q"), new NonInheritedSingleAttribute("Q"), new NonInheritedMultiAttribute("Q"))
+            .AddMemberAttributes(t => t.OverriddenProperty, new InheritedSingleAttribute("Q"), new InheritedMultiAttribute("Q"), new NonInheritedSingleAttribute("Q"), new NonInheritedMultiAttribute("Q"))
+         );
+
+         var tableA = builderA.CreateTable();
+         var contextA = new AttributeTableReflectionContext(tableA, AttributeTableReflectionContextOptions.Default);
+
+         var originalType = typeof(DecoratedTypes.Base);
+         var mappedTypeA = contextA.MapType(originalType);
+
+         AttributeTableBuilder builderB = new AttributeTableBuilder();
+         builderB.ForType<DecoratedTypes.Base>(b => b
+            .AddTypeAttributes(new InheritedSingleAttribute("2"), new InheritedMultiAttribute("2"), new NonInheritedSingleAttribute("2"), new NonInheritedMultiAttribute("2"))
+            .AddMemberAttributes(t => t.OverriddenProperty, new InheritedSingleAttribute("2"), new InheritedMultiAttribute("2"), new NonInheritedSingleAttribute("2"), new NonInheritedMultiAttribute("2"))
+         );
+
+         var tableB = builderB.CreateTable();
+         var contextB = new AttributeTableReflectionContext(tableB, AttributeTableReflectionContextOptions.Default);
+
+         var mappedTypeComposite = contextA.MapType(contextB.MapType(mappedTypeA));
+
+         var actual = FilterAttributes(mappedTypeComposite.GetCustomAttributes());
+         var expected = new Attribute[]
+            {
+               new NonInheritedMultiAttribute(nameof(DecoratedTypes.Base)),
+               new InheritedMultiAttribute(nameof(DecoratedTypes.Base)),
+               new InheritedMultiAttribute("Q"),
+               new NonInheritedMultiAttribute("Q"),
+               new InheritedSingleAttribute("2"),
+               new InheritedMultiAttribute("2"),
+               new NonInheritedSingleAttribute("2"),
+               new NonInheritedMultiAttribute("2")
+            };
+
+         SequenceAssert.AreEquivalent(expected, actual);
+
+         actual = FilterAttributes(mappedTypeComposite.GetProperty(nameof(UndecoratedTypes.Base.OverriddenProperty)).GetCustomAttributes());
+         expected = new Attribute[]
+            {
+               new NonInheritedMultiAttribute(nameof(DecoratedTypes.Base)),
+               new InheritedMultiAttribute(nameof(DecoratedTypes.Base)),
+               new InheritedMultiAttribute("Q"),
+               new NonInheritedMultiAttribute("Q"),
+               new InheritedSingleAttribute("2"),
+               new InheritedMultiAttribute("2"),
+               new NonInheritedSingleAttribute("2"),
+               new NonInheritedMultiAttribute("2")
+            };
+
+         SequenceAssert.AreEquivalent(expected, actual);
+      }
+
+      [TestMethod]
+      public void GetCustomAttributes_ChainedReflectionContexts_ReturnsExpectedAttributes()
+      {
+         AttributeTableBuilder builderA = new AttributeTableBuilder();
+         builderA.ForType<DecoratedTypes.Base>(b => b
+            .AddTypeAttributes(new InheritedSingleAttribute("Q"), new InheritedMultiAttribute("Q"), new NonInheritedSingleAttribute("Q"), new NonInheritedMultiAttribute("Q"))
+            .AddMemberAttributes(t => t.OverriddenProperty, new InheritedSingleAttribute("Q"), new InheritedMultiAttribute("Q"), new NonInheritedSingleAttribute("Q"), new NonInheritedMultiAttribute("Q"))
+         );
+
+         var tableA = builderA.CreateTable();
+         var contextA = new AttributeTableReflectionContext(tableA, AttributeTableReflectionContextOptions.Default);
+
+         var originalType = typeof(DecoratedTypes.Base);
+         var mappedTypeA = contextA.MapType(originalType);
+
+         AttributeTableBuilder builderB = new AttributeTableBuilder();
+         builderB.ForType<DecoratedTypes.Base>(b => b
+            .AddTypeAttributes(new InheritedSingleAttribute("2"), new InheritedMultiAttribute("2"), new NonInheritedSingleAttribute("2"), new NonInheritedMultiAttribute("2"))
+            .AddMemberAttributes(t => t.OverriddenProperty, new InheritedSingleAttribute("2"), new InheritedMultiAttribute("2"), new NonInheritedSingleAttribute("2"), new NonInheritedMultiAttribute("2"))
+         );
+
+         var tableB = builderB.CreateTable();
+         var contextB = new AttributeTableReflectionContext(tableB, AttributeTableReflectionContextOptions.Default);
+
+         var mappedTypeComposite = contextB.MapType(mappedTypeA);
+
+         var actual = FilterAttributes(mappedTypeComposite.GetCustomAttributes());
+         var expected = new Attribute[]
+            {
+               new NonInheritedMultiAttribute(nameof(DecoratedTypes.Base)),
+               new InheritedMultiAttribute(nameof(DecoratedTypes.Base)),
+               new InheritedMultiAttribute("Q"),
+               new NonInheritedMultiAttribute("Q"),
+               new InheritedSingleAttribute("2"),
+               new InheritedMultiAttribute("2"),
+               new NonInheritedSingleAttribute("2"),
+               new NonInheritedMultiAttribute("2")
+            };
+
+         SequenceAssert.AreEquivalent(expected, actual);
+
+         actual = FilterAttributes(mappedTypeComposite.GetProperty(nameof(UndecoratedTypes.Base.OverriddenProperty)).GetCustomAttributes());
+         expected = new Attribute[]
+            {
+               new NonInheritedMultiAttribute(nameof(DecoratedTypes.Base)),
+               new InheritedMultiAttribute(nameof(DecoratedTypes.Base)),
+               new InheritedMultiAttribute("Q"),
+               new NonInheritedMultiAttribute("Q"),
+               new InheritedSingleAttribute("2"),
+               new InheritedMultiAttribute("2"),
+               new NonInheritedSingleAttribute("2"),
+               new NonInheritedMultiAttribute("2")
+            };
+
+         SequenceAssert.AreEquivalent(expected, actual);
+      }
+
+
+      [TestMethod]
       public void GetCustomAttributes_DuplicateAttributesWereAddedToTable_TableAttributesDisallowingMultipleOverwritesExistingAttributes()
       {
          AttributeTableBuilder builder = new AttributeTableBuilder();
