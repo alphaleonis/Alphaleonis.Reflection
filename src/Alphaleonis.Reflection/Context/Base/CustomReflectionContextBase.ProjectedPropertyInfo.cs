@@ -39,7 +39,7 @@ namespace Alphaleonis.Reflection.Context
 
          public override MethodInfo GetGetMethod(bool nonPublic) => ReflectionContext.MapMember(base.GetGetMethod(nonPublic));
 
-         public override MethodInfo GetSetMethod(bool nonPublic) => ReflectionContext.MapMember(base.GetGetMethod(nonPublic));
+         public override MethodInfo GetSetMethod(bool nonPublic) => ReflectionContext.MapMember(base.GetSetMethod(nonPublic));
 
          public override MethodInfo[] GetAccessors(bool nonPublic) => ReflectionContext.MapMembers(base.GetAccessors(nonPublic));
          

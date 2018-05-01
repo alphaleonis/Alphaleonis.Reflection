@@ -180,6 +180,24 @@ namespace Tests.Alphaleonis.Reflection
       #region GetCustomAttributes Tests
 
       [TestMethod]
+      public void GetCustomAttributes_SpecificAttributeType_CorrectlyFiltersAttributes()
+      {
+         ReflectionTableBuilder builderA = new ReflectionTableBuilder();
+         builderA.ForType<UndecoratedTypes.Base>(b => b
+            .AddTypeAttributes(CreateTestAttributes(nameof(UndecoratedTypes.Base)))
+         );
+
+         var tableA = builderA.CreateTable();
+         var contextA = new TableReflectionContext(tableA, TableReflectionContextOptions.Default);
+
+         var actual = contextA.MapType(typeof(UndecoratedTypes.Base)).GetCustomAttributes(typeof(InheritedSingleAttribute), true);
+         var expected = typeof(DecoratedTypes.Base).GetCustomAttributes(typeof(InheritedSingleAttribute), true);
+
+         Assert.AreEqual(expected.GetType(), actual.GetType());
+         SequenceAssert.AreEquivalent(expected, actual);
+      }
+
+      [TestMethod]
       public void GetCustomAttributes_ChainedReflectionContextsMappedMultipleTimes_DuplicateMappingsIgnoredAndReturnsExpectedAttributes()
       {
          ReflectionTableBuilder builderA = new ReflectionTableBuilder();
@@ -354,6 +372,32 @@ namespace Tests.Alphaleonis.Reflection
                Assert.IsNotNull(targetProperty, $"Property {sourceProperty.Name} was not found in class {info.TargetType.Name}");
 
                SequenceAssert.AreEquivalent(sourceProperty.GetCustomAttributes(false), FilterAttributes(targetProperty.GetCustomAttributes(false)), $"Attribute mismatch och property {sourceProperty.DeclaringType.Name}.{sourceProperty.Name} (inherit=false)");
+
+               bool honorInheritance = info.ReflectionContext.Options.HasFlag(TableReflectionContextOptions.HonorPropertyAttributeInheritance);
+
+               // The default PropertyInfo.GetCustomAttributes ignores the inherit flag, so we need to use the Attribute.GetCustomAttributes method
+               // to get inheritance behavior. However, this method can only be used with RuntimeTypes, so we cannot use it for the target type. Instead
+               // this is controlled via the reflection context options.
+               object[] expectedInherited = honorInheritance ? Attribute.GetCustomAttributes(sourceProperty, true) : sourceProperty.GetCustomAttributes(true);
+               SequenceAssert.AreEquivalent(expectedInherited, FilterAttributes(targetProperty.GetCustomAttributes(true)), $"Attribute mismatch och property {sourceProperty.DeclaringType.Name}.{sourceProperty.Name} (inherit=true)");
+            }
+         });
+      }
+
+      [TestMethod]
+      public void GetCustomAttributes_PropertyInfoSpecificAttribute_ReturnsCorrectAttributes()
+      {
+         TestAll(info =>
+         {
+            PropertyInfo[] sourceProperties = info.SourceType.GetProperties(BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+
+            foreach (var sourceProperty in sourceProperties)
+            {
+               var targetProperty = info.TargetType.GetProperty(sourceProperty.Name, sourceProperty.PropertyType, sourceProperty.GetIndexParameters().Select(p => p.ParameterType).ToArray());
+
+               Assert.IsNotNull(targetProperty, $"Property {sourceProperty.Name} was not found in class {info.TargetType.Name}");
+
+               SequenceAssert.AreEquivalent(sourceProperty.GetCustomAttributes(typeof(TestAttribute), false), targetProperty.GetCustomAttributes(typeof(TestAttribute), false), $"Attribute mismatch och property {sourceProperty.DeclaringType.Name}.{sourceProperty.Name} (inherit=false)");
 
                bool honorInheritance = info.ReflectionContext.Options.HasFlag(TableReflectionContextOptions.HonorPropertyAttributeInheritance);
 

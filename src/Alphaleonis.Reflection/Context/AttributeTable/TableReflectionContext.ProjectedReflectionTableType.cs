@@ -24,8 +24,6 @@ namespace Alphaleonis.Reflection.Context
             // Start with the table attributes.
             List<object> result = new List<object>();
 
-            result.Add(ReflectionContext.ContextIdentifierAttribute);
-
             result.AddRange(ReflectionContext.Table.GetCustomAttributes(this).Where(attr => attributeType.IsAssignableFrom(attr.GetType())));
 
             // Then check this type, without inheritance. Add only attributes if Multiple = true OR attribute not already exists.
