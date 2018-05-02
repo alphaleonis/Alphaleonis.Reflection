@@ -27,7 +27,7 @@ namespace Alphaleonis.Reflection.Context
             // Then check this type, without inheritance. (Parameter attributes are not inherited). Add only attributes if Multiple = true OR attribute not already exists.
             foreach (var ca in base.GetCustomAttributes(attributeType, false))
             {
-               if (GetAttributeUsage(ca.GetType()).AllowMultiple || !result.Any(attr => attr.GetType().Equals(ca.GetType())))
+               if (AttributeUtil.GetAttributeUsage(ca.GetType()).AllowMultiple || !result.Any(attr => attr.GetType().Equals(ca.GetType())))
                   result.Add(ca);
             }
 

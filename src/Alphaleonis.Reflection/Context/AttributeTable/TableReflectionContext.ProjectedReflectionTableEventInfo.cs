@@ -25,7 +25,7 @@ namespace Alphaleonis.Reflection.Context
             // Then check this method, without inheritance. Add only attributes if Multiple = true OR attribute not already exists.
             foreach (var ca in base.GetCustomAttributes(attributeType, false))
             {
-               if (GetAttributeUsage(ca.GetType()).AllowMultiple || !result.Any(attr => attr.GetType().Equals(ca.GetType())))
+               if (AttributeUtil.GetAttributeUsage(ca.GetType()).AllowMultiple || !result.Any(attr => attr.GetType().Equals(ca.GetType())))
                   result.Add(ca);
             }
 
@@ -41,7 +41,7 @@ namespace Alphaleonis.Reflection.Context
                {
                   foreach (var ca in baseEvent.GetCustomAttributes(attributeType, true))
                   {
-                     AttributeUsageAttribute attributeUsage = GetAttributeUsage(ca.GetType());
+                     AttributeUsageAttribute attributeUsage = AttributeUtil.GetAttributeUsage(ca.GetType());
                      if (attributeUsage.Inherited && (attributeUsage.AllowMultiple || !result.Any(attr => attr.GetType().Equals(ca.GetType()))))
                         result.Add(ca);
                   }

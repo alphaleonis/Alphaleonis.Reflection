@@ -9,8 +9,6 @@ namespace Alphaleonis.Reflection.Context
    // TODO PP (2018-04-21): Document
    public partial class TableReflectionContext : CustomReflectionContextBase
    {
-      private readonly static AttributeUsageAttribute DefaultAttributeUsageAttribute = new AttributeUsageAttribute(AttributeTargets.All);
-
       #region Construction
 
       public TableReflectionContext(IReflectionTable table, TableReflectionContextOptions options)
@@ -54,15 +52,13 @@ namespace Alphaleonis.Reflection.Context
 
       #region Private Utility Methods
 
-      private static AttributeUsageAttribute GetAttributeUsage(ICustomAttributeProvider decoratedAttribute)
-      {
-         return decoratedAttribute.GetCustomAttributes(typeof(AttributeUsageAttribute), true).OfType<AttributeUsageAttribute>().FirstOrDefault() ?? DefaultAttributeUsageAttribute;
-      }
+      //private static AttributeUsageAttribute GetAttributeUsage(ICustomAttributeProvider decoratedAttribute)
+      //{
+      //   return AttributeUtil.GetAttributeUsage(decoratedAttribute);
+      //}
 
       #endregion
+
+
    }
-
-
-
-
 }
