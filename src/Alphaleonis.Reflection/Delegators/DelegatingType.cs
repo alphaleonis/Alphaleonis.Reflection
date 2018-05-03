@@ -14,6 +14,26 @@ namespace Alphaleonis.Reflection
       {
       }
 
+      public override bool ContainsGenericParameters => typeImpl.ContainsGenericParameters;
+
+      public override IEnumerable<CustomAttributeData> CustomAttributes => typeImpl.CustomAttributes;
+
+      public override Type[] FindInterfaces(TypeFilter filter, object filterCriteria) => typeImpl.FindInterfaces(filter, filterCriteria);
+
+      public override MemberInfo[] FindMembers(MemberTypes memberType, BindingFlags bindingAttr, MemberFilter filter, object filterCriteria) => typeImpl.FindMembers(memberType, bindingAttr, filter, filterCriteria);
+
+      public override Type[] GenericTypeArguments => typeImpl.GenericTypeArguments;
+
+      public override Type GetEnumUnderlyingType() => typeImpl.GetEnumUnderlyingType();
+
+      public override bool IsEnumDefined(object value) => typeImpl.IsEnumDefined(value);
+
+      public override bool IsInstanceOfType(object o) => typeImpl.IsInstanceOfType(o);
+
+      public override bool IsSubclassOf(Type c) => typeImpl.IsSubclassOf(c);
+
+      public override bool IsEnum => typeImpl.IsEnum;
+
       public override Type DeclaringType => typeImpl.DeclaringType;
 
       public override GenericParameterAttributes GenericParameterAttributes => typeImpl.GenericParameterAttributes;
