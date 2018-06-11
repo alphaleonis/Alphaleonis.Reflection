@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Alphaleonis.Reflection.Context
@@ -9,6 +10,8 @@ namespace Alphaleonis.Reflection.Context
    // TODO PP (2018-04-30): Document
    public abstract partial class CustomReflectionContextBase : ReflectionContext
    {
+      //private readonly ConditionalWeakTable<object, object> m_tbl = new ConditionalWeakTable<object, object>();
+
       public CustomReflectionContextBase()
       {
          Id = Guid.NewGuid();
@@ -38,10 +41,12 @@ namespace Alphaleonis.Reflection.Context
          if (type == null)
             return null;
 
-         if (IsMapped(type))
-            return type.GetTypeInfo();
+         //return (TypeInfo)m_tbl.GetValue(type, t => {
+            if (IsMapped(type))
+               return type.GetTypeInfo();
 
-         return MapTypeCore(type).GetTypeInfo();
+            return MapTypeCore(type).GetTypeInfo();
+         //});
             
       }
 
@@ -291,6 +296,7 @@ namespace Alphaleonis.Reflection.Context
 
       protected virtual PropertyInfo MapPropertyCore(PropertyInfo property)
       {
+         //return (PropertyInfo)m_tbl.GetValue(property, p => new ProjectedPropertyInfo<CustomReflectionContextBase>((PropertyInfo)p, this));
          return new ProjectedPropertyInfo<CustomReflectionContextBase>(property, this);
       }
 
@@ -336,11 +342,34 @@ namespace Alphaleonis.Reflection.Context
          return AddContextIdentifierAttribute(attributes);
       }
 
-      protected bool IsMapped(ICustomAttributeProvider member)
+      private static Type pi = Type.GetType("System.Reflection.RuntimePropertyInfo");
+
+      private static readonly HashSet<string> m_systemMemberTypeNames = new HashSet<string>()
       {
+         "System.Reflection.RuntimePropertyInfo",
+         "System.Reflection.RuntimeFieldInfo",
+         "System.Reflection.RuntimeMethodInfo",
+         "System.Reflection.RuntimeParameterInfo",
+         "System.Reflection.RuntimeConstructorInfo",
+         "System.Reflection.RuntimeAssembly",
+         "System.Reflection.RuntimeEventInfo",
+         "System.RuntimeType",
+      };
+
+      protected bool IsSystemMemberInfo(ICustomAttributeProvider member)
+      {
+         string typeName = member.GetType().FullName;
+         return m_systemMemberTypeNames.Contains(typeName);
+      }
+
+      protected bool IsMapped(ICustomAttributeProvider member)
+      {         
          // Shortcut which is faster than using reflection when not necessary.
          if (member is IProjector projector && projector.ReflectionContext.Id == Id)
             return true;
+
+         if (IsSystemMemberInfo(member))
+            return false;
 
          return member.GetCustomAttributes(typeof(CustomReflectionContextIdAttribute), false)
                                      .OfType<CustomReflectionContextIdAttribute>()

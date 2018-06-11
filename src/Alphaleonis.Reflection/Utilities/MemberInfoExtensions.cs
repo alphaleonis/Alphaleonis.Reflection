@@ -164,6 +164,8 @@ namespace Alphaleonis.Reflection
          return null;
       }
 
+      // TODO PP (2018-06-11): This documentation does not seem correct. We return null if there is no parent definition?
+      
       /// <summary>Gets the most derived override of this method up the inheritance chain.</summary>
       /// <param name="methodInfo">The method to check.</param>
       /// <remarks>Returns override of the specified method in the most derived class that is a base class of the declaring type
@@ -172,8 +174,12 @@ namespace Alphaleonis.Reflection
       ///          </remarks>
       /// <returns>The most derived definition of the specified <paramref name="methodInfo"/> in a base class.</returns>
       public static MethodInfo GetParentDefinition(this MethodInfo method)
-      {
+      {         
          var baseDefinition = method.GetBaseDefinition();
+
+         if (baseDefinition == method)
+            return null;
+
          var type = method.DeclaringType.BaseType;
 
          while (type != null)
