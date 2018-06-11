@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Alphaleonis.Reflection.Context
@@ -10,8 +9,6 @@ namespace Alphaleonis.Reflection.Context
    // TODO PP (2018-04-30): Document
    public abstract partial class CustomReflectionContextBase : ReflectionContext
    {
-      //private readonly ConditionalWeakTable<object, object> m_tbl = new ConditionalWeakTable<object, object>();
-
       public CustomReflectionContextBase()
       {
          Id = Guid.NewGuid();
