@@ -342,8 +342,6 @@ namespace Alphaleonis.Reflection.Context
          return AddContextIdentifierAttribute(attributes);
       }
 
-      private static Type pi = Type.GetType("System.Reflection.RuntimePropertyInfo");
-
       private static readonly HashSet<string> m_systemMemberTypeNames = new HashSet<string>()
       {
          "System.Reflection.RuntimePropertyInfo",
