@@ -15,6 +15,7 @@
      <PackageTags>reflection</PackageTags>
      <PackageOutputPath>..\..\artifacts</PackageOutputPath>
      <RepositoryUrl>https://github.com/alphaleonis/Alphaleonis.Reflection</RepositoryUrl>
+     <DelaySign>false</DelaySign>
   </PropertyGroup>
 
   <ItemGroup>

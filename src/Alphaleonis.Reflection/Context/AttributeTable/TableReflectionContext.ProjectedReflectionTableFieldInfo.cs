@@ -19,9 +19,6 @@ namespace Alphaleonis.Reflection.Context
          {
             List<object> result = new List<object>();
 
-            // Add the context identifier attribute.
-            result.Add(ReflectionContext.ContextIdentifierAttribute);
-
             // Then add all the attributes from the attribute table.
             result.AddRange(ReflectionContext.Table.GetCustomAttributes(this).Where(attr => attributeType.IsAssignableFrom(attr.GetType())));
 

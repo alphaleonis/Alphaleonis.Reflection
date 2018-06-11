@@ -263,7 +263,6 @@ paket-files/
 *.sln.iml
 
 # CodeRush
-.cr/
 
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
@@ -271,3 +270,4 @@ __pycache__/
 
 ### VisualStudio Patch ###
 build/
+/Alphaleonis.Reflection.projectSets.json
