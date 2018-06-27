@@ -33,10 +33,19 @@ artifacts:
 - path: '**\*.nupkg'
   name: nuget-package
 
+# Deploy on appveyor feed
 deploy:
-   provider: NuGet
-   server: https://ci.appveyor.com/nuget/alphaleonis-rsgpyjhi2c6t/api/v2/package
-   api_key:
-      secure: PnuQGphn/9gGaVZRnUejvcijO8H5cJyoYPAekBvC4n8=
-   skip_symbols: true
-   artifact: /.*\.nupkg/
+   - provider: NuGet
+     server: https://ci.appveyor.com/nuget/alphaleonis-rsgpyjhi2c6t/api/v2/package
+     api_key:
+        secure: PnuQGphn/9gGaVZRnUejvcijO8H5cJyoYPAekBvC4n8=
+     skip_symbols: true
+     artifact: /.*\.nupkg/
+
+   # Deploy master branch to NuGet
+   - provider: NuGet
+     api_key:
+        secure: kKYxxjMz8YoTTjZ6ccVtkPXhadPrXgW2SWYxwcDlFDx75i+xVm4veu4p1QJQBSOF
+     skip_symbols: true
+     on:
+        branch: master
