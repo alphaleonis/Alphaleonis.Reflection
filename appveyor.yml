@@ -2,11 +2,11 @@ image: Visual Studio 2017
 configuration: Release
 
 environment:
-   semVersion: 0.1.0
+   semVersion: 0.2.0
 
 init:
 - ps: $env:buildVersion = "$env:semVersion.$env:APPVEYOR_BUILD_NUMBER"
-- ps: $env:nugetVersionSuffix = @{ $false = "pre-{0:00000}" -f [convert]::ToInt32("0" + $env:APPVEYOR_BUILD_NUMBER, 10); $true = "" }[ $env:APPVEYOR_REPO_BRANCH -eq "master" ]
+- ps: $env:nugetVersionSuffix = @{ $false = "dev-{0:00000}" -f [convert]::ToInt32("0" + $env:APPVEYOR_BUILD_NUMBER, 10); $true = "beta" }[ $env:APPVEYOR_REPO_BRANCH -eq "master" ]
 - ps: 'Write-Host "buildVersion: $($env:buildVersion)"'
 - ps: 'Write-Host "nugetVersionSuffix: $($env:nugetVersionSuffix)"'
 - ps: Update-AppveyorBuild -Version $env:buildVersion
@@ -14,13 +14,6 @@ init:
 
 dotnet_csproj:
    patch: false
-
-#assembly_info:
-#  patch: true
-#  file: '**\AssemblyInfo.*'
-#  assembly_version: '{version}'
-#  assembly_file_version: '{version}'
-#  assembly_informational_version: '{version}'
 
 nuget:
   account_feed: false
@@ -47,11 +40,3 @@ deploy:
       secure: PnuQGphn/9gGaVZRnUejvcijO8H5cJyoYPAekBvC4n8=
    skip_symbols: true
    artifact: /.*\.nupkg/
-
-#deploy:
-#- provider: NuGet
-#  api_key:
-#    secure: kKYxxjMz8YoTTjZ6ccVtkPXhadPrXgW2SWYxwcDlFDx75i+xVm4veu4p1QJQBSOF
-#  skip_symbols: true
-#  on:
-#    branch: master
