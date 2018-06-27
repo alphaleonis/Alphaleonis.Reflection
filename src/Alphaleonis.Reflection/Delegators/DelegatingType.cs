@@ -6,16 +6,42 @@ using System.Runtime.InteropServices;
 
 namespace Alphaleonis.Reflection
 {
-   // TODO PP (2018-04-21): Document
+   /// <summary>Wraps a <see cref="Type"/> and delegates all methods to that Type.</summary>
+   /// <remarks>
+   /// This class extends <see cref="TypeDelegator"/> which is missing several overrides to delegate
+   /// method calls to the wrapped type.
+   /// </remarks>
    public class DelegatingType : TypeDelegator
    {
       public DelegatingType(Type delegatingType)
          : base(delegatingType)
       {
       }
+      
+      public override bool ContainsGenericParameters => typeImpl.ContainsGenericParameters;
+
+      public override IEnumerable<CustomAttributeData> CustomAttributes => typeImpl.CustomAttributes;
+
+      public override MethodBase DeclaringMethod => typeImpl.DeclaringMethod;
+
+      public override Type[] FindInterfaces(TypeFilter filter, object filterCriteria) => typeImpl.FindInterfaces(filter, filterCriteria);
+
+      public override MemberInfo[] FindMembers(MemberTypes memberType, BindingFlags bindingAttr, MemberFilter filter, object filterCriteria) => typeImpl.FindMembers(memberType, bindingAttr, filter, filterCriteria);
+
+      public override Type[] GenericTypeArguments => typeImpl.GenericTypeArguments;
+
+      public override Type GetEnumUnderlyingType() => typeImpl.GetEnumUnderlyingType();
+
+      public override bool IsEnumDefined(object value) => typeImpl.IsEnumDefined(value);
+
+      public override bool IsInstanceOfType(object o) => typeImpl.IsInstanceOfType(o);
+
+      public override bool IsSubclassOf(Type c) => typeImpl.IsSubclassOf(c);
+
+      public override bool IsEnum => typeImpl.IsEnum;
 
       public override Type DeclaringType => typeImpl.DeclaringType;
-
+      
       public override GenericParameterAttributes GenericParameterAttributes => typeImpl.GenericParameterAttributes;
 
       public override int GenericParameterPosition => typeImpl.GenericParameterPosition;
@@ -74,7 +100,11 @@ namespace Alphaleonis.Reflection
 
       public override Type MakePointerType() => typeImpl.MakePointerType();
 
+      public override bool IsSerializable => typeImpl.IsSerializable;
+
       public override string ToString() => typeImpl.ToString();
+
+      public override MemberTypes MemberType => typeImpl.MemberType;
 
       public override bool Equals(object o)
       {

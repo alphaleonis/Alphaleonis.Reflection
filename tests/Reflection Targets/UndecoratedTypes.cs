@@ -1,8 +1,8 @@
 using System;
+#pragma warning disable 0649,0067
 
 // TODO: Add tests for return parameter attributes
 // TODO: Add tests for IsDefined
-// TODO: Perhaps allow parameter decorations in a call to AddMemberAttributes (or AddMethodAttributes as it should become.)
 namespace Tests.Alphaleonis.Reflection
 {
    class UndecoratedTypes
@@ -107,4 +107,6 @@ namespace Tests.Alphaleonis.Reflection
       }
 
    }
+#pragma warning restore 0649, 0067
 }
+

@@ -4,30 +4,54 @@ using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Runtime.Remoting.Messaging;
-using System.Runtime.Remoting.Proxies;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Alphaleonis.Reflection
 {
-   // TODO PP (2018-04-21): Document
-   // TODO PP: Clean up this class. It probably needs a bit more checks and stuff.
-   // TODO PP: Perhaps we should have a "DeclaredOnly" flag to all these methods?
+   /// <summary>Defines methods to get reflection information based on lambda expressions.</summary>
    public static class Reflect
    {
       #region GetProperty
 
+      /// <summary>
+      /// Gets the <see cref="PropertyInfo" /> representing the property accessed in the
+      /// <see cref="expression"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the property.</typeparam>
+      /// <typeparam name="U">The declaring type of the property.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// property.</param>
+      /// <returns>The <see cref="PropertyInfo"/> representing the property.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a property</exception>      
       public static PropertyInfo GetProperty<T, U>(Expression<Func<U, T>> expression)
       {
          return GetProperty((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="PropertyInfo" /> representing the property accessed in the
+      /// <see cref="expression"/>.
+      /// </summary>
+      /// <exception cref="ArgumentException">The expression does not reference a property.</exception>
+      /// <typeparam name="T">The type of the property.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// property.</param>
+      /// <returns>The <see cref="PropertyInfo"/> representing the property.</returns>
       public static PropertyInfo GetProperty<T>(Expression<Func<T>> expression)
       {
          return GetProperty((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="PropertyInfo" /> representing the property accessed in the
+      /// <see cref="expression"/>.
+      /// </summary>
+      /// <exception cref="ArgumentException">The expression does not reference a property.</exception>
+      /// <typeparam name="T">The type of the property.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// property.</param>
+      /// <returns>The <see cref="PropertyInfo"/> representing the property.</returns>
       public static PropertyInfo GetProperty<T>(Expression<Action<T>> expression)
       {
          return GetProperty((LambdaExpression)expression);
@@ -104,29 +128,23 @@ namespace Alphaleonis.Reflection
          MemberInfo member = null;
          Type ownerType;
 
-         MethodCallExpression methodCallExpr = expression as MethodCallExpression;
-         if (methodCallExpr != null)
+         switch (expression)
          {
-            member = methodCallExpr.Method;
-            ownerType = methodCallExpr.Object == null ? methodCallExpr.Method.DeclaringType : methodCallExpr.Object.Type;
-         }
-         else
-         {
-            MemberExpression body = expression as MemberExpression;
-            if (body == null)
-            {
-               UnaryExpression ubody = expression as UnaryExpression;
-               if (ubody == null)
-                  throw new ArgumentException($"Expression '{expression}' does not refer to a property, field or event.");
+            case MethodCallExpression methodCallExpr:
+               member = methodCallExpr.Method;
+               ownerType = methodCallExpr.Object == null ? methodCallExpr.Method.DeclaringType : methodCallExpr.Object.Type;
+               break;
 
-               return GetMemberInternal(ubody.Operand, declaredOnly);
-            }
-            else
-            {
-               member = body.Member;
-            }
+            case MemberExpression memberExpression:
+               member = memberExpression.Member;
+               ownerType = memberExpression.Expression?.Type ?? member.DeclaringType;
+               break;
 
-            ownerType = body.Expression?.Type ?? member.DeclaringType;
+            case UnaryExpression unaryExpression:
+               return GetMemberInternal(unaryExpression.Operand, declaredOnly);
+
+            default:
+               throw new ArgumentException($"Expression '{expression}' does not refer to a property, field or event.");
          }
 
          if (member is PropertyInfo)

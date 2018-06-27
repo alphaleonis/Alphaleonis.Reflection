@@ -3,10 +3,10 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
 using Alphaleonis.Reflection;
-using Moq;
 
 namespace Tests.Alphaleonis.Reflection
 {
+#pragma warning disable 0649,0067
 
    [TestClass]
    public class ReflectTests
@@ -508,4 +508,6 @@ namespace Tests.Alphaleonis.Reflection
 
       #endregion
    }
+#pragma warning restore 0649,0067
+
 }
