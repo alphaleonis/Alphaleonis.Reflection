@@ -3,9 +3,10 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection.Context
 {
-   public partial class ReflectionTableBuilder
+   public partial class ReflectionTableBase
    {
-      private struct MemberKey : IEquatable<MemberKey>
+      [Serializable]
+      protected struct MemberKey : IEquatable<MemberKey>
       {
          public MemberKey(MemberInfo member)
             : this(member.MemberType, member.Name)

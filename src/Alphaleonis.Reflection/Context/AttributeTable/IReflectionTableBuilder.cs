@@ -6,7 +6,7 @@ using System.Reflection;
 namespace Alphaleonis.Reflection.Context
 {   
    /// <summary>Represents a type that is used to build an immutable <see cref="IReflectionTable"/>.</summary>
-   public interface IReflectionTableBuilder
+   public interface IReflectionTableBuilder : IReflectionTable
    {
       /// <summary>Adds the specified <paramref name="attributes"/> to the specified <paramref name="member"/>.</summary>
       /// <param name="member">The member to add the attributes to.</param>

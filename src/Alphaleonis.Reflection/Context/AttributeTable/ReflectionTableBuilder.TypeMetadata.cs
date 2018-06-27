@@ -4,9 +4,9 @@ using System.Collections.Immutable;
 
 namespace Alphaleonis.Reflection.Context
 {
-   public partial class ReflectionTableBuilder
+   public partial class ReflectionTableBase
    {
-      private class TypeMetadata
+      protected class TypeMetadata
       {
          public static readonly TypeMetadata Empty = new TypeMetadata();
 

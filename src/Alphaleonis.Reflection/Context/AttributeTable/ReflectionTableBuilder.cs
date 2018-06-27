@@ -87,7 +87,7 @@ namespace Alphaleonis.Reflection.Context
 
       #region Private Methods
 
-      private TypeMetadata GetTypeMetadata(Type type)
+      protected override TypeMetadata GetTypeMetadata(Type type)
       {
          TypeMetadata metadata;
          if (!m_metadata.TryGetValue(type, out metadata))

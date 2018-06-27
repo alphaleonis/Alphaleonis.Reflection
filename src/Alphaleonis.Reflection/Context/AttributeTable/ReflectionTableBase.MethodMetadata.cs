@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace Alphaleonis.Reflection.Context
 {
-   public partial class ReflectionTableBuilder
+   public partial class ReflectionTableBase
    {
-      private struct MethodMetadata
+      protected struct MethodMetadata
       {
          public MethodMetadata(int parameterCount)
          {

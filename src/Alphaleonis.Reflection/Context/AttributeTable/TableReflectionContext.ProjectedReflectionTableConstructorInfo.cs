@@ -13,6 +13,7 @@ namespace Alphaleonis.Reflection.Context
          public ProjectedReflectionTableConstructorInfo(ConstructorInfo constructor, TableReflectionContext reflectionContext) 
             : base(constructor, reflectionContext)
          {
+             m_parentDefinition = new Lazy<MemberInfo>(() => this.GetParentDefinition());
          }
          
          public override object[] GetCustomAttributes(Type attributeType, bool inherit)
@@ -38,6 +39,8 @@ namespace Alphaleonis.Reflection.Context
             return arrResult;
          }
 
+         private Lazy<MemberInfo> m_parentDefinition;
+
          public override bool IsDefined(Type attributeType, bool inherit)
          {
             List<object> result = new List<object>();
@@ -52,7 +55,7 @@ namespace Alphaleonis.Reflection.Context
 
             if (inherit)
             {
-               return this.GetParentDefinition()?.IsDefined(attributeType, true) == true;
+               return m_parentDefinition.Value?.IsDefined(attributeType, true) == true;
             }
 
             return false;

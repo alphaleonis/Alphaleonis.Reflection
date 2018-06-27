@@ -1,4 +1,6 @@
-﻿namespace Alphaleonis.Reflection.Context
+﻿using System;
+
+namespace Alphaleonis.Reflection.Context
 {
    public static partial class ReflectionTableBuilderExtensions
    {
@@ -12,6 +14,22 @@
          }
 
          public IReflectionTableBuilder Builder => m_builder;
+      }
+
+      private class MappedTypedReflectionTableBuilder<T> : IMappedTypedReflectionTableBuilder<T>
+      {
+         private readonly IReflectionTableBuilder m_builder;
+         private readonly Type m_concreteType;
+
+         public MappedTypedReflectionTableBuilder(IReflectionTableBuilder builder, Type concreteType)
+         {
+            m_concreteType = concreteType;
+            m_builder = builder;
+         }
+
+         public IReflectionTableBuilder Builder => m_builder;
+
+         public Type TargetType => m_concreteType;
       }
    }
 }

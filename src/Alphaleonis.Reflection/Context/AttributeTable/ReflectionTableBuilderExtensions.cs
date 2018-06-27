@@ -282,12 +282,39 @@ namespace Alphaleonis.Reflection.Context
 
       #region ForType
 
-      public static IReflectionTableBuilder ForType<T>(this IReflectionTableBuilder builder, Action<ITypedReflectionTableBuilder<T>> action)
+      public static ITypedReflectionTableBuilder<T> ForType<T>(this IReflectionTableBuilder builder)
       {
-         action(new TypedReflectionTableBuilder<T>(builder));
-         return builder;
+         return new TypedReflectionTableBuilder<T>(builder);         
+      }
+
+      /// <summary>Used to return a builder that will add attributes to the type specified by <paramref name="implementationType"/>, but allows
+      ///          strong typing using the type <typeparamref name="TInterface"/>. Usable when you want to add attributes to a concrete type, but you
+      ///          only have compile time access to an interface of that type.</summary>
+      /// <exception cref="NotSupportedException">Thrown when the requested operation is not supported.</exception>
+      /// <typeparam name="TInterface">Type of the interface.</typeparam>
+      /// <param name="builder">The builder to act on.</param>
+      /// <param name="implementationType">The implementation type to actually add the attributes to.</param>      
+      public static IMappedTypedReflectionTableBuilder<TInterface> ForType<TInterface>(this IReflectionTableBuilder builder, Type implementationType)
+      {
+         if (!typeof(TInterface).IsAssignableFrom(implementationType))
+            throw new NotSupportedException($"The {nameof(implementationType)} must derive from- or implement the type {typeof(TInterface).FullName} to be used in the reflection table builder.");
+
+         return new MappedTypedReflectionTableBuilder<TInterface>(builder, implementationType);
+      }
+
+      public static ITypedReflectionTableBuilder<T> ForType<T>(this ITypedReflectionTableBuilder builder)
+      {
+         return new TypedReflectionTableBuilder<T>(builder.Builder);
       }
 
       #endregion
+   }
+
+   public static class Param
+   {
+      public static T OfType<T>()
+      {
+         return default(T);
+      }
    }
 }

@@ -54,13 +54,13 @@ namespace Tests.Alphaleonis.Reflection
 
             .AddTypeAttributes<UndecoratedTypes.Base>(CreateTestAttributes<UndecoratedTypes.Base>())
                .AddMemberAttributes<UndecoratedTypes.Base>(c => c.HiddenProperty, CreateTestAttributes<UndecoratedTypes.Base>())
-               .ForType<UndecoratedTypes.Base>(b => b
+               .ForType<UndecoratedTypes.Base>()
                   .AddMemberAttributes(c => c.ImplementedProperty, CreateTestAttributes<UndecoratedTypes.Base>())
                   .AddMemberAttributes(c => c.OverriddenProperty, CreateTestAttributes<UndecoratedTypes.Base>())
                   .AddMemberAttributes(c => c.OverriddenProperty2, CreateTestAttributes<UndecoratedTypes.Base>())
                   .AddMemberAttributes(c => c.HiddenMethod1(0), CreateTestAttributes<UndecoratedTypes.Base>())
                   .AddMemberAttributes(c => c.OverriddenMethod(0, 0), CreateTestAttributes<UndecoratedTypes.Base>())
-               )
+               .Builder
                .AddMemberAttributes<UndecoratedTypes.Base>(c => c.ImplementedMethod1(0, 0), CreateTestAttributes<UndecoratedTypes.Base>())
                .AddMemberAttributes<UndecoratedTypes.Base>(c => c.OverloadedMethod(default(int)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "int"))
                .AddMemberAttributes<UndecoratedTypes.Base>(c => c.OverloadedMethod(default(long)), CreateTestAttributes(nameof(UndecoratedTypes.Base) + "long"))
@@ -101,11 +101,11 @@ namespace Tests.Alphaleonis.Reflection
             .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverloadedMethod(default(int)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "int"))
             .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverloadedMethod(default(long)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "long"))
             .AddMemberAttributes<UndecoratedTypes.SubDerived>(c => c.OverriddenMethod(0, 0), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
-            .ForType<UndecoratedTypes.SubDerived>(b =>
-               b.AddEventAttributes(nameof(UndecoratedTypes.SubDerived.OverriddenEvent), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
-                .AddReturnParameterAttributes(c => c.GenericMethod<string>(default(long), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "T").ToArray())
-                .AddParameterAttributes(c => c.GenericMethod(Decorate.Parameter<long>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "long")), Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "int"))))
-            );
+            .ForType<UndecoratedTypes.SubDerived>()
+               .AddEventAttributes(nameof(UndecoratedTypes.SubDerived.OverriddenEvent), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived)))
+               .AddReturnParameterAttributes(c => c.GenericMethod<string>(default(long), default(string)), CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "T").ToArray())
+               .AddParameterAttributes(c => c.GenericMethod(Decorate.Parameter<long>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "long")), Decorate.Parameter<int>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "int"))))
+            ;
 
          builder.AddParameterAttributes<UndecoratedTypes.SubDerived>(c => c.GenericMethod<object>(default(long), Decorate.Parameter<object>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "T"))));
          builder.AddParameterAttributes<UndecoratedTypes.SubDerived>(c => c.GenericMethod<string, string>(Decorate.Parameter<string>(CreateTestAttributes(nameof(UndecoratedTypes.SubDerived) + "U")),
@@ -120,6 +120,17 @@ namespace Tests.Alphaleonis.Reflection
          return builder.CreateTable();
       }
 
+
+      [TestMethod]
+      public void Test()
+      {
+         TableReflectionContext context = new TableReflectionContext(CreateTable(), TableReflectionContextOptions.Default);
+         var elementType = context.MapType(typeof(UndecoratedTypes.Derived));
+         Assert.IsTrue(typeof(UndecoratedTypes.Derived).Equals(elementType));
+         //var ifcType = context.MapType(typeof(IEnumerable<>)).MakeGenericType(elementType);
+         //var ifcs = ifcType.GetInterfaces();
+
+      }
 
       private void TestAll(Action<TestInfo> action)
       {
@@ -183,9 +194,8 @@ namespace Tests.Alphaleonis.Reflection
       public void GetCustomAttributes_SpecificAttributeType_CorrectlyFiltersAttributes()
       {
          ReflectionTableBuilder builderA = new ReflectionTableBuilder();
-         builderA.ForType<UndecoratedTypes.Base>(b => b
-            .AddTypeAttributes(CreateTestAttributes(nameof(UndecoratedTypes.Base)))
-         );
+         builderA.ForType<UndecoratedTypes.Base>()
+            .AddTypeAttributes(CreateTestAttributes(nameof(UndecoratedTypes.Base)));
 
          var tableA = builderA.CreateTable();
          var contextA = new TableReflectionContext(tableA, TableReflectionContextOptions.Default);
@@ -201,10 +211,10 @@ namespace Tests.Alphaleonis.Reflection
       public void GetCustomAttributes_ChainedReflectionContextsMappedMultipleTimes_DuplicateMappingsIgnoredAndReturnsExpectedAttributes()
       {
          ReflectionTableBuilder builderA = new ReflectionTableBuilder();
-         builderA.ForType<DecoratedTypes.Base>(b => b
+         builderA.ForType<DecoratedTypes.Base>()
             .AddTypeAttributes(new InheritedSingleAttribute("Q"), new InheritedMultiAttribute("Q"), new NonInheritedSingleAttribute("Q"), new NonInheritedMultiAttribute("Q"))
             .AddMemberAttributes(t => t.OverriddenProperty, new InheritedSingleAttribute("Q"), new InheritedMultiAttribute("Q"), new NonInheritedSingleAttribute("Q"), new NonInheritedMultiAttribute("Q"))
-         );
+         ;
 
          var tableA = builderA.CreateTable();
          var contextA = new TableReflectionContext(tableA, TableReflectionContextOptions.Default);
@@ -213,10 +223,10 @@ namespace Tests.Alphaleonis.Reflection
          var mappedTypeA = contextA.MapType(originalType);
 
          ReflectionTableBuilder builderB = new ReflectionTableBuilder();
-         builderB.ForType<DecoratedTypes.Base>(b => b
+         builderB.ForType<DecoratedTypes.Base>()
             .AddTypeAttributes(new InheritedSingleAttribute("2"), new InheritedMultiAttribute("2"), new NonInheritedSingleAttribute("2"), new NonInheritedMultiAttribute("2"))
             .AddMemberAttributes(t => t.OverriddenProperty, new InheritedSingleAttribute("2"), new InheritedMultiAttribute("2"), new NonInheritedSingleAttribute("2"), new NonInheritedMultiAttribute("2"))
-         );
+         ;
 
          var tableB = builderB.CreateTable();
          var contextB = new TableReflectionContext(tableB, TableReflectionContextOptions.Default);
@@ -258,10 +268,10 @@ namespace Tests.Alphaleonis.Reflection
       public void GetCustomAttributes_ChainedReflectionContexts_ReturnsExpectedAttributes()
       {
          ReflectionTableBuilder builderA = new ReflectionTableBuilder();
-         builderA.ForType<DecoratedTypes.Base>(b => b
+         builderA.ForType<DecoratedTypes.Base>()
             .AddTypeAttributes(new InheritedSingleAttribute("Q"), new InheritedMultiAttribute("Q"), new NonInheritedSingleAttribute("Q"), new NonInheritedMultiAttribute("Q"))
             .AddMemberAttributes(t => t.OverriddenProperty, new InheritedSingleAttribute("Q"), new InheritedMultiAttribute("Q"), new NonInheritedSingleAttribute("Q"), new NonInheritedMultiAttribute("Q"))
-         );
+         ;
 
          var tableA = builderA.CreateTable();
          var contextA = new TableReflectionContext(tableA, TableReflectionContextOptions.Default);
@@ -270,10 +280,10 @@ namespace Tests.Alphaleonis.Reflection
          var mappedTypeA = contextA.MapType(originalType);
 
          ReflectionTableBuilder builderB = new ReflectionTableBuilder();
-         builderB.ForType<DecoratedTypes.Base>(b => b
+         builderB.ForType<DecoratedTypes.Base>()
             .AddTypeAttributes(new InheritedSingleAttribute("2"), new InheritedMultiAttribute("2"), new NonInheritedSingleAttribute("2"), new NonInheritedMultiAttribute("2"))
             .AddMemberAttributes(t => t.OverriddenProperty, new InheritedSingleAttribute("2"), new InheritedMultiAttribute("2"), new NonInheritedSingleAttribute("2"), new NonInheritedMultiAttribute("2"))
-         );
+         ;
 
          var tableB = builderB.CreateTable();
          var contextB = new TableReflectionContext(tableB, TableReflectionContextOptions.Default);
@@ -316,9 +326,9 @@ namespace Tests.Alphaleonis.Reflection
       public void GetCustomAttributes_DuplicateAttributesWereAddedToTable_TableAttributesDisallowingMultipleOverwritesExistingAttributes()
       {
          ReflectionTableBuilder builder = new ReflectionTableBuilder();
-         builder.ForType<DecoratedTypes.Base>(b => b.
-            AddTypeAttributes(new InheritedSingleAttribute("Q"), new InheritedMultiAttribute("Q"), new NonInheritedSingleAttribute("Q"), new NonInheritedMultiAttribute("Q"))
-         );
+         builder.ForType<DecoratedTypes.Base>()
+            .AddTypeAttributes(new InheritedSingleAttribute("Q"), new InheritedMultiAttribute("Q"), new NonInheritedSingleAttribute("Q"), new NonInheritedMultiAttribute("Q"))
+         ;
 
          var table = builder.CreateTable();
          var context = new TableReflectionContext(table, TableReflectionContextOptions.Default);

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Reflection;
 
 namespace Alphaleonis.Reflection.Context
-{
-   public partial class ReflectionTableBuilder
+{   
+   public partial class ReflectionTableBase
    {
-      private struct MethodKey : IEquatable<MethodKey>
+      protected struct MethodKey : IEquatable<MethodKey>
       {
          public MethodKey(MethodBase method)
          {
@@ -29,7 +29,7 @@ namespace Alphaleonis.Reflection.Context
             }
 
             MethodName = method.Name;
-            TypeArguments = method.GetGenericArguments().Length;            
+            TypeArguments = method.IsGenericMethod ? method.GetGenericArguments().Length : 0;
             Parameters = method.GetParameters().Select(p => p.ParameterType.UnderlyingSystemType).ToImmutableArray();
          }
 
