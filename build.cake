@@ -147,7 +147,7 @@ void UploadTestResults()
     {
         foreach (var trx in GetFiles("./**/*.trx"))
         {
-            //PublishAppVeyorTestResult(trx, AppVeyorApiBaseUrl);            
+            PublishAppVeyorTestResult(trx, AppVeyorApiBaseUrl);            
         }
     }
 }
