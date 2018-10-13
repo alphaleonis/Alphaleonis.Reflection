@@ -11,14 +11,21 @@ namespace Alphaleonis.Reflection.Context
 
    public partial class TableReflectionContext
    {
+      /// <summary>Projector used for <see cref="ConstructorInfo"/> instances in this reflection context.</summary>
       protected class ProjectedReflectionTableConstructorInfo : ProjectedConstructorInfo<TableReflectionContext>
       {
+         private Lazy<MemberInfo> m_parentDefinition;
+
+         /// <summary>Constructor.</summary>
+         /// <param name="constructor">The constructor to wrap.</param>
+         /// <param name="reflectionContext">The parent reflection context.</param>
          public ProjectedReflectionTableConstructorInfo(ConstructorInfo constructor, TableReflectionContext reflectionContext) 
             : base(constructor, reflectionContext)
          {
              m_parentDefinition = new Lazy<MemberInfo>(() => this.GetParentDefinition());
          }
-         
+
+         /// <inheritdoc />
          public override object[] GetCustomAttributes(Type attributeType, bool inherit)
          {
             List<object> result = new List<object>();
@@ -42,8 +49,7 @@ namespace Alphaleonis.Reflection.Context
             return arrResult;
          }
 
-         private Lazy<MemberInfo> m_parentDefinition;
-
+         /// <inheritdoc />
          public override bool IsDefined(Type attributeType, bool inherit)
          {
             List<object> result = new List<object>();

@@ -11,13 +11,18 @@ namespace Alphaleonis.Reflection.Context
 {
    public partial class TableReflectionContext
    {
+      /// <summary>Projector used for <see cref="EventInfo"/> instances in this reflection context.</summary>
       protected class ProjectedReflectionTableEventInfo : ProjectedEventInfo<TableReflectionContext>
       {
+         /// <summary>Constructor.</summary>
+         /// <param name="eventInfo">The event to wrap.</param>
+         /// <param name="reflectionContext">The parent reflection context.</param>
          public ProjectedReflectionTableEventInfo(EventInfo eventInfo, TableReflectionContext reflectionContext) 
             : base(eventInfo, reflectionContext)
          {
          }
 
+         /// <inheritdoc />
          public override object[] GetCustomAttributes(Type attributeType, bool inherit)
          {
             List<object> result = new List<object>();
@@ -60,6 +65,7 @@ namespace Alphaleonis.Reflection.Context
             return arrResult;
          }
 
+         /// <inheritdoc />
          public override bool IsDefined(Type attributeType, bool inherit)
          {
             // Then add any attributes defined in the reflection context table.

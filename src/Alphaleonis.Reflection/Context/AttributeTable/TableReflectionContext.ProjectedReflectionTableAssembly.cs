@@ -7,9 +7,13 @@ namespace Alphaleonis.Reflection.Context
 {
    public partial class TableReflectionContext
    {
-      // TODO PP (2018-04-30): Add support for adding assembly attributes to the table perhaps?
+      /// <summary>Projector used for <see cref="Assembly"/> instances in this reflection context.</summary>
+      /// <remarks>Adding attributes on an assembly level is currently not supported.</remarks>
       protected class ProjectedReflectionTableAssembly : ProjectedAssembly<TableReflectionContext>
       {
+         /// <summary>Constructor.</summary>
+         /// <param name="assembly">The assembly to wrap.</param>
+         /// <param name="context">The parent reflection context.</param>
          public ProjectedReflectionTableAssembly(Assembly assembly, TableReflectionContext context) 
             : base(assembly, context)
          {

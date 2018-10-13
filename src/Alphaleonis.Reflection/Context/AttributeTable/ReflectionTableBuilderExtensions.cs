@@ -9,6 +9,7 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection.Context
 {
+   /// <summary>Provides extension methods for working with a <see cref="IReflectionTableBuilder"/>.</summary>
    public static partial class ReflectionTableBuilderExtensions
    {
       private static MethodInfo s_decorateEnumerableMethodInfo = Reflect.GetMethod(() => Decorate.Parameter<object>(default(IEnumerable<Attribute>))).GetGenericMethodDefinition();
@@ -16,16 +17,46 @@ namespace Alphaleonis.Reflection.Context
 
       #region Property Attributes
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the property with the given name in the type <typeparamref name="T"/>.
+      /// </summary>
+      /// <typeparam name="T">The type to act on.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="propertyName">The name of the property to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the property.</param>
+      /// <returns>The <paramref name="builder"/> instance. Useful for chaining multiple calls.</returns>
       public static IReflectionTableBuilder AddPropertyAttributes<T>(this IReflectionTableBuilder builder, string propertyName, IEnumerable<Attribute> attributes)
       {
          return AddPropertyAttributes(builder, typeof(T), propertyName, attributes);
       }
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the property with the given name in the type <typeparamref name="T"/>.
+      /// </summary>
+      /// <typeparam name="T">The type to act on.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="propertyName">The name of the property to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the property.</param>
+      /// <returns>The <paramref name="builder"/> instance. Useful for chaining multiple calls.</returns>
       public static IReflectionTableBuilder AddPropertyAttributes<T>(this IReflectionTableBuilder builder, string propertyName, params Attribute[] attributes)
       {
          return AddPropertyAttributes(builder, typeof(T), propertyName, attributes);
       }
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the property with the given name in the
+      /// specified type.
+      /// </summary>
+      /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+      /// <exception cref="ArgumentException">Thrown when one or more arguments have unsupported or
+      /// illegal values.</exception>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="type">The type in which the property resides.</param>
+      /// <param name="propertyName">The name of the property to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the property.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddPropertyAttributes(this IReflectionTableBuilder builder, Type type, string propertyName, IEnumerable<Attribute> attributes)
       {
          if (type == null)
@@ -44,7 +75,21 @@ namespace Alphaleonis.Reflection.Context
          return builder.AddMemberAttributes(property, attributes);
       }
 
-      public static IReflectionTableBuilder AddPropertyAttributes<T>(this IReflectionTableBuilder builder, Type type, string propertyName, params Attribute[] attributes)
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the property with the given name in the
+      /// specified type.
+      /// </summary>
+      /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+      /// <exception cref="ArgumentException">Thrown when one or more arguments have unsupported or
+      /// illegal values.</exception>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="type">The type in which the property resides.</param>
+      /// <param name="propertyName">The name of the property to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the property.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
+      public static IReflectionTableBuilder AddPropertyAttributes(this IReflectionTableBuilder builder, Type type, string propertyName, params Attribute[] attributes)
       {
          return AddPropertyAttributes(builder, type, propertyName, attributes.AsEnumerable());
       }
@@ -53,16 +98,46 @@ namespace Alphaleonis.Reflection.Context
 
       #region Event Attributes
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the event with the given name in the type <typeparamref name="T"/>.
+      /// </summary>
+      /// <typeparam name="T">The type to act on.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="eventName">The name of the event to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the event.</param>
+      /// <returns>The <paramref name="builder"/> instance. Useful for chaining multiple calls.</returns>
       public static IReflectionTableBuilder AddEventAttributes<T>(this IReflectionTableBuilder builder, string eventName, IEnumerable<Attribute> attributes)
       {
          return AddEventAttributes(builder, typeof(T), eventName, attributes);
       }
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the event with the given name in the type <typeparamref name="T"/>.
+      /// </summary>
+      /// <typeparam name="T">The type to act on.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="eventName">The name of the event to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the event.</param>
+      /// <returns>The <paramref name="builder"/> instance. Useful for chaining multiple calls.</returns>
       public static IReflectionTableBuilder AddEventAttributes<T>(this IReflectionTableBuilder builder, string eventName, params Attribute[] attributes)
       {
          return AddEventAttributes(builder, typeof(T), eventName, attributes);
       }
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the event with the given name in the
+      /// specified type.
+      /// </summary>
+      /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+      /// <exception cref="ArgumentException">Thrown when one or more arguments have unsupported or
+      /// illegal values.</exception>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="type">The type in which the property resides.</param>
+      /// <param name="eventName">The name of the event to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the event.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddEventAttributes(this IReflectionTableBuilder builder, Type type, string eventName, IEnumerable<Attribute> attributes)
       {
          if (type == null)
@@ -81,6 +156,20 @@ namespace Alphaleonis.Reflection.Context
          return builder.AddMemberAttributes(eventInfo, attributes);
       }
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the event with the given name in the
+      /// specified type.
+      /// </summary>
+      /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+      /// <exception cref="ArgumentException">Thrown when one or more arguments have unsupported or
+      /// illegal values.</exception>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="type">The type in which the property resides.</param>
+      /// <param name="eventName">The name of the event to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the event.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddEventAttributes(this IReflectionTableBuilder builder, Type type, string eventName, params Attribute[] attributes)
       {
          return AddEventAttributes(builder, type, eventName, attributes.AsEnumerable());
@@ -90,16 +179,46 @@ namespace Alphaleonis.Reflection.Context
 
       #region Field Attributes
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the field with the given name in the type <typeparamref name="T"/>.
+      /// </summary>
+      /// <typeparam name="T">The type to act on.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="fieldName">The name of the field to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the field.</param>
+      /// <returns>The <paramref name="builder"/> instance. Useful for chaining multiple calls.</returns>
       public static IReflectionTableBuilder AddFieldAttributes<T>(this IReflectionTableBuilder builder, string fieldName, IEnumerable<Attribute> attributes)
       {
          return AddFieldAttributes(builder, typeof(T), fieldName, attributes);
       }
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the field with the given name in the type <typeparamref name="T"/>.
+      /// </summary>
+      /// <typeparam name="T">The type to act on.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="fieldName">The name of the field to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the field.</param>
+      /// <returns>The <paramref name="builder"/> instance. Useful for chaining multiple calls.</returns>
       public static IReflectionTableBuilder AddFieldAttributes<T>(this IReflectionTableBuilder builder, string fieldName, params Attribute[] attributes)
       {
          return AddFieldAttributes(builder, typeof(T), fieldName, attributes);
       }
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the field with the given name in the
+      /// specified type.
+      /// </summary>
+      /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+      /// <exception cref="ArgumentException">Thrown when one or more arguments have unsupported or
+      /// illegal values.</exception>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="type">The type in which the field resides.</param>
+      /// <param name="fieldName">The name of the field to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the field.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddFieldAttributes(this IReflectionTableBuilder builder, Type type, string fieldName, IEnumerable<Attribute> attributes)
       {
          if (type == null)
@@ -118,6 +237,20 @@ namespace Alphaleonis.Reflection.Context
          return builder.AddMemberAttributes(field, attributes);
       }
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the field with the given name in the
+      /// specified type.
+      /// </summary>
+      /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+      /// <exception cref="ArgumentException">Thrown when one or more arguments have unsupported or
+      /// illegal values.</exception>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="type">The type in which the field resides.</param>
+      /// <param name="fieldName">The name of the field to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the field.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddFieldAttributes(this IReflectionTableBuilder builder, Type type, string fieldName, params Attribute[] attributes)
       {
          return AddFieldAttributes(builder, type, fieldName, attributes.AsEnumerable());
@@ -179,32 +312,89 @@ namespace Alphaleonis.Reflection.Context
          return builder;
       }
 
+      /// <summary>Adds attributes to the parameters of a method.</summary>
+      /// <exception cref="ArgumentException">Thrown when one or more arguments have unsupported or
+      /// illegal values.</exception>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing a method invocation, where parameters are
+      /// decorated using the <see cref="Decorate"/> class as placeholders for the parameters to which
+      /// to add attributes, and <see cref="Param"/> for any parameters to ignore.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddParameterAttributes(this IReflectionTableBuilder builder, Expression<Action> expression)
       {
          return AddParameterAttributes(builder, (LambdaExpression)expression);
       }
 
+      /// <summary>Adds attributes to the parameters of a method.</summary>
+      /// <exception cref="ArgumentException">Thrown when one or more arguments have unsupported or
+      /// illegal values.</exception>
+      /// <typeparam name="T">The type of the object in which the method resides.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing a method invocation, where parameters are
+      /// decorated using the <see cref="Decorate"/> class as placeholders for the parameters to which
+      /// to add attributes, and <see cref="Param"/> for any parameters to ignore.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddParameterAttributes<T>(this IReflectionTableBuilder builder, Expression<Action<T>> expression)
       {
          return AddParameterAttributes(builder, (LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Adds attributes to the return parameter of a method.
+      /// </summary>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing a method invocation.</param>         
+      /// <param name="attributes">The attributes to add to the return parameter.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddReturnParameterAttributes(this IReflectionTableBuilder builder, Expression<Action> expression, params Attribute[] attributes)
       {
          return AddReturnParameterAttributes(builder, expression, attributes.AsEnumerable());
       }
 
+      /// <summary>
+      /// Adds attributes to the return parameter of a method.
+      /// </summary>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing a method invocation.</param>         
+      /// <param name="attributes">The attributes to add to the return parameter.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddReturnParameterAttributes(this IReflectionTableBuilder builder, Expression<Action> expression, IEnumerable<Attribute> attributes)
       {
          var method = Reflect.GetMethod(expression);
          return builder.AddParameterAttributes(method.ReturnParameter, attributes);
       }
 
+      /// <summary>Adds attributes to the return parameter of a method.</summary>
+      /// <typeparam name="T">The type of the object in which the method resides.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing a method invocation.</param>
+      /// <param name="attributes">The attributes to add to the return parameter.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddReturnParameterAttributes<T>(this IReflectionTableBuilder builder, Expression<Action<T>> expression, params Attribute[] attributes)
       {
          return AddReturnParameterAttributes(builder, expression, attributes.AsEnumerable());
       }
 
+      /// <summary>
+      /// Adds attributes to the return parameter of a method.
+      /// </summary>
+      /// <typeparam name="T">The type of the object in which the method resides.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing a method invocation.</param>         
+      /// <param name="attributes">The attributes to add to the return parameter.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddReturnParameterAttributes<T>(this IReflectionTableBuilder builder, Expression<Action<T>> expression, IEnumerable<Attribute> attributes)
       {
          var method = Reflect.GetMethod<T>(expression);
@@ -218,22 +408,56 @@ namespace Alphaleonis.Reflection.Context
 
       #region Member Attributes
 
+      /// <summary>
+      /// Adds attributes to the member of a class.
+      /// </summary>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing an invocation of the member.</param>
+      /// <param name="attributes">The attributes to add to the member.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddMemberAttributes(this IReflectionTableBuilder builder, Expression<Action> expression, params Attribute[] attributes)
       {
          return AddMemberAttributes(builder, expression, attributes.AsEnumerable());
       }
 
+      /// <summary>
+      /// Adds attributes to the member of a class.
+      /// </summary>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing an invocation of the member.</param>
+      /// <param name="attributes">The attributes to add to the member.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddMemberAttributes(this IReflectionTableBuilder builder, Expression<Action> expression, IEnumerable<Attribute> attributes)
       {
          var member = Reflect.GetMember(expression);
          return builder.AddMemberAttributes(member, attributes);
       }
 
+      /// <summary>Adds attributes to the member of a class.</summary>
+      /// <typeparam name="T">The type of the object in which the member resides.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing an invocation of the member.</param>
+      /// <param name="attributes">The attributes to add to the member.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddMemberAttributes<T>(this IReflectionTableBuilder builder, Expression<Func<T, object>> expression, params Attribute[] attributes)
       {
          return AddMemberAttributes(builder, expression, attributes.AsEnumerable());
       }
 
+      /// <summary>Adds attributes to the member of a class.</summary>
+      /// <typeparam name="T">The type of the object in which the member resides.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing an invocation of the member.</param>
+      /// <param name="attributes">The attributes to add to the member.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddMemberAttributes<T>(this IReflectionTableBuilder builder, Expression<Func<T, object>> expression, IEnumerable<Attribute> attributes)
       {
          var member = Reflect.GetMember<T>(expression);
@@ -243,11 +467,27 @@ namespace Alphaleonis.Reflection.Context
          return builder.AddMemberAttributes(member, attributes);
       }
 
+      /// <summary>Adds attributes to the member of a class.</summary>
+      /// <typeparam name="T">The type of the object in which the member resides.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing an invocation of the member.</param>
+      /// <param name="attributes">The attributes to add to the member.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddMemberAttributes<T>(this IReflectionTableBuilder builder, Expression<Action<T>> expression, params Attribute[] attributes)
       {
          return AddMemberAttributes(builder, expression, attributes.AsEnumerable());
       }
 
+      /// <summary>Adds attributes to the member of a class.</summary>
+      /// <typeparam name="T">The type of the object in which the member resides.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="expression">An expression representing an invocation of the member.</param>
+      /// <param name="attributes">The attributes to add to the member.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddMemberAttributes<T>(this IReflectionTableBuilder builder, Expression<Action<T>> expression, IEnumerable<Attribute> attributes)
       {
          var member = Reflect.GetMember<T>(expression);
@@ -261,21 +501,58 @@ namespace Alphaleonis.Reflection.Context
 
       #region Type Attributes
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the specified <paramref name="type"/>.
+      /// </summary>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="type">The type to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the type.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddTypeAttributes(this IReflectionTableBuilder builder, Type type, params Attribute[] attributes)
       {
          return builder.AddMemberAttributes(type, attributes.AsEnumerable());
       }
 
+      ///
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the specified <paramref name="type"/>.
+      /// </summary>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="type">The type to add attributes to.</param>
+      /// <param name="attributes">The attributes to add to the type.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddTypeAttributes(this IReflectionTableBuilder builder, Type type, IEnumerable<Attribute> attributes)
       {
          return builder.AddMemberAttributes(type, attributes);
       }
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the specified type <typeparamref name="T"/>.
+      /// </summary>
+      /// <typeparam name="T">The type to add attributes to.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="attributes">The attributes to add to the type.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddTypeAttributes<T>(this IReflectionTableBuilder builder, params Attribute[] attributes)
       {
          return AddTypeAttributes<T>(builder, attributes.AsEnumerable());
       }
 
+      /// <summary>
+      /// Adds the specified <paramref name="attributes"/> to the specified type <typeparamref name="T"/>.
+      /// </summary>
+      /// <typeparam name="T">The type to add attributes to.</typeparam>
+      /// <param name="builder">The reflection table builder.</param>
+      /// <param name="attributes">The attributes to add to the type.</param>
+      /// <returns>
+      /// The <paramref name="builder"/> instance. Useful for chaining multiple calls.
+      /// </returns>
       public static IReflectionTableBuilder AddTypeAttributes<T>(this IReflectionTableBuilder builder, IEnumerable<Attribute> attributes)
       {
          return builder.AddMemberAttributes(typeof(T), attributes);
@@ -285,9 +562,17 @@ namespace Alphaleonis.Reflection.Context
 
       #region ForType
 
+      /// <summary>
+      /// Returns a new <see cref="ITypedReflectionTableBuilder{T}"/> that can be used to work on a
+      /// single type. This may be convenient if many attributes are to be added to various members of
+      /// the same type to avoid having to specify the type as an argument to every method.
+      /// </summary>
+      /// <typeparam name="T">The type to bind the builder to.</typeparam>
+      /// <param name="builder">The builder to use.</param>
+      /// <returns>An <see cref="ITypedReflectionTableBuilder{T}"/> that can be used to add attributes to the specified type and its members.</returns>
       public static ITypedReflectionTableBuilder<T> ForType<T>(this IReflectionTableBuilder builder)
       {
-         return new TypedReflectionTableBuilder<T>(builder);         
+         return new TypedReflectionTableBuilder<T>(builder);
       }
 
       /// <summary>Used to return a builder that will add attributes to the type specified by <paramref name="implementationType"/>, but allows
@@ -305,19 +590,18 @@ namespace Alphaleonis.Reflection.Context
          return new MappedTypedReflectionTableBuilder<TInterface>(builder, implementationType);
       }
 
+      /// <summary>
+      /// Changes the type a specific <see cref="ITypedReflectionTableBuilder"/> is bound to. Useful when chaining calls together to 
+      /// start adding attributes to a new type.
+      /// </summary>
+      /// <typeparam name="T">The new type to bind the builder to.</typeparam>
+      /// <param name="builder">The builder to use.</param>
+      /// <returns>An <see cref="ITypedReflectionTableBuilder"/> that can be used to add attributes to the specified type and its members.</returns>
       public static ITypedReflectionTableBuilder<T> ForType<T>(this ITypedReflectionTableBuilder builder)
       {
          return new TypedReflectionTableBuilder<T>(builder.Builder);
       }
 
       #endregion
-   }
-
-   public static class Param
-   {
-      public static T OfType<T>()
-      {
-         return default(T);
-      }
    }
 }

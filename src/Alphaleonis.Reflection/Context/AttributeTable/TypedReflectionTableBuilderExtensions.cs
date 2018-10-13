@@ -9,6 +9,7 @@ using System.Reflection;
 
 namespace Alphaleonis.Reflection.Context
 {
+   /// <summary>Provides extension methods for an <see cref="ITypedReflectionTableBuilder"/>.</summary>
    public static class TypedReflectionTableBuilderExtensions
    {
       #region AddPropertyAttributes

@@ -9,18 +9,24 @@ namespace Alphaleonis.Reflection.Context
 {
    public partial class TableReflectionContext
    {
+      /// <summary>Projector used for <see cref="Type"/> instances in this reflection context.</summary>
       protected class ProjectedReflectionTableType : ProjectedType<TableReflectionContext>
       {
-         public ProjectedReflectionTableType(Type delegatingType, TableReflectionContext context) 
-            : base(delegatingType, context)
+         /// <summary>Constructor.</summary>
+         /// <param name="type">The type to wrap.</param>
+         /// <param name="reflectionContext">The parent reflection context.</param>
+         public ProjectedReflectionTableType(Type type, TableReflectionContext reflectionContext) 
+            : base(type, reflectionContext)
          {
          }
 
+         /// <inheritdoc />
          public override object[] GetCustomAttributes(bool inherit)
          {
             return GetCustomAttributes(typeof(Attribute), inherit);
          }
 
+         /// <inheritdoc />
          public override object[] GetCustomAttributes(Type attributeType, bool inherit)
          {
             bool stop = this.IsGenericType;
@@ -56,6 +62,7 @@ namespace Alphaleonis.Reflection.Context
             return arrResult;
          }
 
+         /// <inheritdoc />
          public override bool IsDefined(Type attributeType, bool inherit)
          {
             return GetCustomAttributes(attributeType, inherit).Length > 0;

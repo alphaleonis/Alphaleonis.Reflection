@@ -10,15 +10,21 @@ namespace Alphaleonis.Reflection.Context
 {
    public partial class TableReflectionContext
    {
+      /// <summary>Projector used for <see cref="MethodInfo"/> instances in this reflection context.</summary>
       protected class ProjectedReflectionTableMethodInfo : ProjectedMethodInfo<TableReflectionContext>
       {
+         /// <summary>Constructor.</summary>
+         /// <param name="method">The method to wrap.</param>
+         /// <param name="reflectionContext">The parent reflection context.</param>
          public ProjectedReflectionTableMethodInfo(MethodInfo method, TableReflectionContext reflectionContext) 
             : base(method, reflectionContext)
          {
          }
 
+         /// <inheritdoc />
          public override object[] GetCustomAttributes(bool inherit) => GetCustomAttributes(typeof(Attribute), inherit);
 
+         /// <inheritdoc />
          public override object[] GetCustomAttributes(Type attributeType, bool inherit)
          {
             List<object> result = new List<object>();
@@ -61,6 +67,7 @@ namespace Alphaleonis.Reflection.Context
             return arrResult;
          }
 
+         /// <inheritdoc />
          public override bool IsDefined(Type attributeType, bool inherit)
          {
             // Then add any attributes defined in the reflection context table.
