@@ -15,20 +15,14 @@ namespace Alphaleonis.Reflection.Context
       Default = 0,
 
       /// <summary>
-      /// If specified, attribute inheritance will be respected with regards to properties. 
+      /// If specified, attribute inheritance will be respected with regards to properties.  Note that this is different from how normal reflection works. Calling for example <see cref="MemberInfo.GetCustomAttributes(bool)"/> on a property specifying <see langword="true"/> for the `inherit` flag, inheritance will still be ignored.
       /// </summary>
-      /// <remarks>
-      /// This is different from how normal reflection works. Calling for example <see cref="MemberInfo.GetCustomAttributes(bool)"/> on a property specifying <see langword="true"/> for the `inherit` flag, inheritance will still be ignored.
-      /// </remarks>
       HonorPropertyAttributeInheritance = 1,
 
       /// <summary>
-      /// If specified, attribute inheritance will be respected with regards to events. 
-      /// </summary>
-      /// <remarks>
-      /// This is different from how normal reflection works. Calling for example <see cref="MemberInfo.GetCustomAttributes(bool)"/> on an <see cref="EventInfo"/> 
+      /// If specified, attribute inheritance will be respected with regards to events. Note that this is different from how normal reflection works. Calling for example <see cref="MemberInfo.GetCustomAttributes(bool)"/> on an <see cref="EventInfo"/>
       /// instance specifying <see langword="true"/> for the `inherit` flag, inheritance will still be ignored.
-      /// </remarks>
+      /// </summary>
       HonorEventAttributeInheritance = 2
    }
 }
