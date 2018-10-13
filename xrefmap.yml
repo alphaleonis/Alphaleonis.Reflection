@@ -90,51 +90,6 @@ references:
   isSpec: "True"
   fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.Id
   nameWithType: CustomReflectionContextBase.Id
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector
-  name: CustomReflectionContextBase.IProjector
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.html
-  commentId: T:Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector
-  nameWithType: CustomReflectionContextBase.IProjector
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.ReflectionContext
-  name: ReflectionContext
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_IProjector_ReflectionContext
-  commentId: P:Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.ReflectionContext
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.ReflectionContext
-  nameWithType: CustomReflectionContextBase.IProjector.ReflectionContext
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.ReflectionContext*
-  name: ReflectionContext
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_IProjector_ReflectionContext_
-  commentId: Overload:Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.ReflectionContext
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.ReflectionContext
-  nameWithType: CustomReflectionContextBase.IProjector.ReflectionContext
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector`1
-  name: CustomReflectionContextBase.IProjector<TContext>
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.html
-  commentId: T:Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector`1
-  name.vb: CustomReflectionContextBase.IProjector(Of TContext)
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector<TContext>
-  fullName.vb: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector(Of TContext)
-  nameWithType: CustomReflectionContextBase.IProjector<TContext>
-  nameWithType.vb: CustomReflectionContextBase.IProjector(Of TContext)
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector`1.ReflectionContext
-  name: ReflectionContext
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_IProjector_1_ReflectionContext
-  commentId: P:Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector`1.ReflectionContext
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector<TContext>.ReflectionContext
-  fullName.vb: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector(Of TContext).ReflectionContext
-  nameWithType: CustomReflectionContextBase.IProjector<TContext>.ReflectionContext
-  nameWithType.vb: CustomReflectionContextBase.IProjector(Of TContext).ReflectionContext
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector`1.ReflectionContext*
-  name: ReflectionContext
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_IProjector_1_ReflectionContext_
-  commentId: Overload:Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector`1.ReflectionContext
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector<TContext>.ReflectionContext
-  fullName.vb: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector(Of TContext).ReflectionContext
-  nameWithType: CustomReflectionContextBase.IProjector<TContext>.ReflectionContext
-  nameWithType.vb: CustomReflectionContextBase.IProjector(Of TContext).ReflectionContext
 - uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IsMapped(System.Reflection.ICustomAttributeProvider)
   name: IsMapped(ICustomAttributeProvider)
   href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_IsMapped_System_Reflection_ICustomAttributeProvider_
@@ -1759,6 +1714,23 @@ references:
   fullName.vb: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo(Of TContext).GetIndexParameters
   nameWithType: CustomReflectionContextBase.ProjectedPropertyInfo<TContext>.GetIndexParameters
   nameWithType.vb: CustomReflectionContextBase.ProjectedPropertyInfo(Of TContext).GetIndexParameters
+- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo`1.GetMethod
+  name: GetMethod
+  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo-1.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedPropertyInfo_1_GetMethod
+  commentId: P:Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo`1.GetMethod
+  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo<TContext>.GetMethod
+  fullName.vb: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo(Of TContext).GetMethod
+  nameWithType: CustomReflectionContextBase.ProjectedPropertyInfo<TContext>.GetMethod
+  nameWithType.vb: CustomReflectionContextBase.ProjectedPropertyInfo(Of TContext).GetMethod
+- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo`1.GetMethod*
+  name: GetMethod
+  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo-1.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedPropertyInfo_1_GetMethod_
+  commentId: Overload:Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo`1.GetMethod
+  isSpec: "True"
+  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo<TContext>.GetMethod
+  fullName.vb: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo(Of TContext).GetMethod
+  nameWithType: CustomReflectionContextBase.ProjectedPropertyInfo<TContext>.GetMethod
+  nameWithType.vb: CustomReflectionContextBase.ProjectedPropertyInfo(Of TContext).GetMethod
 - uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo`1.GetOptionalCustomModifiers
   name: GetOptionalCustomModifiers()
   href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo-1.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedPropertyInfo_1_GetOptionalCustomModifiers
@@ -2992,490 +2964,6 @@ references:
   isSpec: "True"
   fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.GetCustomAttributes
   nameWithType: ReflectionTableBase.GetCustomAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.GetTypeMetadata(System.Type)
-  name: GetTypeMetadata(Type)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.html#Alphaleonis_Reflection_Context_ReflectionTableBase_GetTypeMetadata_System_Type_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.GetTypeMetadata(System.Type)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.GetTypeMetadata(System.Type)
-  nameWithType: ReflectionTableBase.GetTypeMetadata(Type)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.GetTypeMetadata*
-  name: GetTypeMetadata
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.html#Alphaleonis_Reflection_Context_ReflectionTableBase_GetTypeMetadata_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.GetTypeMetadata
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.GetTypeMetadata
-  nameWithType: ReflectionTableBase.GetTypeMetadata
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey
-  name: ReflectionTableBase.MemberKey
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html
-  commentId: T:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey
-  nameWithType: ReflectionTableBase.MemberKey
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.#ctor(System.Reflection.MemberInfo)
-  name: MemberKey(MemberInfo)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey__ctor_System_Reflection_MemberInfo_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.#ctor(System.Reflection.MemberInfo)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.MemberKey(System.Reflection.MemberInfo)
-  nameWithType: ReflectionTableBase.MemberKey.MemberKey(MemberInfo)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.#ctor(System.Reflection.MemberTypes,System.String)
-  name: MemberKey(MemberTypes, String)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey__ctor_System_Reflection_MemberTypes_System_String_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.#ctor(System.Reflection.MemberTypes,System.String)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.MemberKey(System.Reflection.MemberTypes, System.String)
-  nameWithType: ReflectionTableBase.MemberKey.MemberKey(MemberTypes, String)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.#ctor*
-  name: MemberKey
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey__ctor_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.#ctor
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.MemberKey
-  nameWithType: ReflectionTableBase.MemberKey.MemberKey
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Equals(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey)
-  name: Equals(ReflectionTableBase.MemberKey)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_Equals_Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Equals(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Equals(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey)
-  nameWithType: ReflectionTableBase.MemberKey.Equals(ReflectionTableBase.MemberKey)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Equals(System.Object)
-  name: Equals(Object)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_Equals_System_Object_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Equals(System.Object)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Equals(System.Object)
-  nameWithType: ReflectionTableBase.MemberKey.Equals(Object)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Equals*
-  name: Equals
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_Equals_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Equals
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Equals
-  nameWithType: ReflectionTableBase.MemberKey.Equals
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.GetHashCode
-  name: GetHashCode()
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_GetHashCode
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.GetHashCode
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.GetHashCode()
-  nameWithType: ReflectionTableBase.MemberKey.GetHashCode()
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.GetHashCode*
-  name: GetHashCode
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_GetHashCode_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.GetHashCode
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.GetHashCode
-  nameWithType: ReflectionTableBase.MemberKey.GetHashCode
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.MemberType
-  name: MemberType
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_MemberType
-  commentId: P:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.MemberType
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.MemberType
-  nameWithType: ReflectionTableBase.MemberKey.MemberType
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.MemberType*
-  name: MemberType
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_MemberType_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.MemberType
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.MemberType
-  nameWithType: ReflectionTableBase.MemberKey.MemberType
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Name
-  name: Name
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_Name
-  commentId: P:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Name
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Name
-  nameWithType: ReflectionTableBase.MemberKey.Name
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Name*
-  name: Name
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_Name_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Name
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Name
-  nameWithType: ReflectionTableBase.MemberKey.Name
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.op_Equality(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey,Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey)
-  name: Equality(ReflectionTableBase.MemberKey, ReflectionTableBase.MemberKey)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_op_Equality_Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.op_Equality(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey,Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Equality(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey, Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey)
-  nameWithType: ReflectionTableBase.MemberKey.Equality(ReflectionTableBase.MemberKey, ReflectionTableBase.MemberKey)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.op_Equality*
-  name: Equality
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_op_Equality_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.op_Equality
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Equality
-  nameWithType: ReflectionTableBase.MemberKey.Equality
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.op_Inequality(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey,Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey)
-  name: Inequality(ReflectionTableBase.MemberKey, ReflectionTableBase.MemberKey)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_op_Inequality_Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.op_Inequality(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey,Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Inequality(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey, Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey)
-  nameWithType: ReflectionTableBase.MemberKey.Inequality(ReflectionTableBase.MemberKey, ReflectionTableBase.MemberKey)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.op_Inequality*
-  name: Inequality
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_op_Inequality_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.op_Inequality
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.Inequality
-  nameWithType: ReflectionTableBase.MemberKey.Inequality
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey
-  name: ReflectionTableBase.MethodKey
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html
-  commentId: T:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey
-  nameWithType: ReflectionTableBase.MethodKey
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.#ctor(System.Reflection.MethodBase)
-  name: MethodKey(MethodBase)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey__ctor_System_Reflection_MethodBase_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.#ctor(System.Reflection.MethodBase)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.MethodKey(System.Reflection.MethodBase)
-  nameWithType: ReflectionTableBase.MethodKey.MethodKey(MethodBase)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.#ctor*
-  name: MethodKey
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey__ctor_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.#ctor
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.MethodKey
-  nameWithType: ReflectionTableBase.MethodKey.MethodKey
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Equals(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey)
-  name: Equals(ReflectionTableBase.MethodKey)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_Equals_Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Equals(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Equals(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey)
-  nameWithType: ReflectionTableBase.MethodKey.Equals(ReflectionTableBase.MethodKey)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Equals(System.Object)
-  name: Equals(Object)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_Equals_System_Object_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Equals(System.Object)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Equals(System.Object)
-  nameWithType: ReflectionTableBase.MethodKey.Equals(Object)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Equals*
-  name: Equals
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_Equals_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Equals
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Equals
-  nameWithType: ReflectionTableBase.MethodKey.Equals
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.GetHashCode
-  name: GetHashCode()
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_GetHashCode
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.GetHashCode
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.GetHashCode()
-  nameWithType: ReflectionTableBase.MethodKey.GetHashCode()
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.GetHashCode*
-  name: GetHashCode
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_GetHashCode_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.GetHashCode
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.GetHashCode
-  nameWithType: ReflectionTableBase.MethodKey.GetHashCode
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.MethodName
-  name: MethodName
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_MethodName
-  commentId: P:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.MethodName
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.MethodName
-  nameWithType: ReflectionTableBase.MethodKey.MethodName
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.MethodName*
-  name: MethodName
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_MethodName_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.MethodName
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.MethodName
-  nameWithType: ReflectionTableBase.MethodKey.MethodName
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.op_Equality(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey,Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey)
-  name: Equality(ReflectionTableBase.MethodKey, ReflectionTableBase.MethodKey)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_op_Equality_Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.op_Equality(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey,Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Equality(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey, Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey)
-  nameWithType: ReflectionTableBase.MethodKey.Equality(ReflectionTableBase.MethodKey, ReflectionTableBase.MethodKey)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.op_Equality*
-  name: Equality
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_op_Equality_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.op_Equality
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Equality
-  nameWithType: ReflectionTableBase.MethodKey.Equality
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.op_Inequality(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey,Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey)
-  name: Inequality(ReflectionTableBase.MethodKey, ReflectionTableBase.MethodKey)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_op_Inequality_Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.op_Inequality(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey,Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Inequality(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey, Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey)
-  nameWithType: ReflectionTableBase.MethodKey.Inequality(ReflectionTableBase.MethodKey, ReflectionTableBase.MethodKey)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.op_Inequality*
-  name: Inequality
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_op_Inequality_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.op_Inequality
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Inequality
-  nameWithType: ReflectionTableBase.MethodKey.Inequality
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Parameters
-  name: Parameters
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_Parameters
-  commentId: P:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Parameters
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Parameters
-  nameWithType: ReflectionTableBase.MethodKey.Parameters
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Parameters*
-  name: Parameters
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_Parameters_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Parameters
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.Parameters
-  nameWithType: ReflectionTableBase.MethodKey.Parameters
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.TypeArguments
-  name: TypeArguments
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_TypeArguments
-  commentId: P:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.TypeArguments
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.TypeArguments
-  nameWithType: ReflectionTableBase.MethodKey.TypeArguments
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.TypeArguments*
-  name: TypeArguments
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_TypeArguments_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.TypeArguments
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.TypeArguments
-  nameWithType: ReflectionTableBase.MethodKey.TypeArguments
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata
-  name: ReflectionTableBase.MethodMetadata
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html
-  commentId: T:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata
-  nameWithType: ReflectionTableBase.MethodMetadata
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.#ctor(System.Collections.Immutable.IImmutableList{System.Collections.Immutable.IImmutableList{System.Attribute}},System.Collections.Immutable.IImmutableList{System.Attribute},System.Collections.Immutable.IImmutableList{System.Attribute})
-  name: MethodMetadata(IImmutableList<IImmutableList<Attribute>>, IImmutableList<Attribute>, IImmutableList<Attribute>)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata__ctor_System_Collections_Immutable_IImmutableList_System_Collections_Immutable_IImmutableList_System_Attribute___System_Collections_Immutable_IImmutableList_System_Attribute__System_Collections_Immutable_IImmutableList_System_Attribute__
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.#ctor(System.Collections.Immutable.IImmutableList{System.Collections.Immutable.IImmutableList{System.Attribute}},System.Collections.Immutable.IImmutableList{System.Attribute},System.Collections.Immutable.IImmutableList{System.Attribute})
-  name.vb: MethodMetadata(IImmutableList(Of IImmutableList(Of Attribute)), IImmutableList(Of Attribute), IImmutableList(Of Attribute))
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.MethodMetadata(System.Collections.Immutable.IImmutableList<System.Collections.Immutable.IImmutableList<System.Attribute>>, System.Collections.Immutable.IImmutableList<System.Attribute>, System.Collections.Immutable.IImmutableList<System.Attribute>)
-  fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.MethodMetadata(System.Collections.Immutable.IImmutableList(Of System.Collections.Immutable.IImmutableList(Of System.Attribute)), System.Collections.Immutable.IImmutableList(Of System.Attribute), System.Collections.Immutable.IImmutableList(Of System.Attribute))
-  nameWithType: ReflectionTableBase.MethodMetadata.MethodMetadata(IImmutableList<IImmutableList<Attribute>>, IImmutableList<Attribute>, IImmutableList<Attribute>)
-  nameWithType.vb: ReflectionTableBase.MethodMetadata.MethodMetadata(IImmutableList(Of IImmutableList(Of Attribute)), IImmutableList(Of Attribute), IImmutableList(Of Attribute))
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.#ctor(System.Int32)
-  name: MethodMetadata(Int32)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata__ctor_System_Int32_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.#ctor(System.Int32)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.MethodMetadata(System.Int32)
-  nameWithType: ReflectionTableBase.MethodMetadata.MethodMetadata(Int32)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.#ctor*
-  name: MethodMetadata
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata__ctor_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.#ctor
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.MethodMetadata
-  nameWithType: ReflectionTableBase.MethodMetadata.MethodMetadata
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddMethodAttributes(System.Collections.Generic.IEnumerable{System.Attribute})
-  name: AddMethodAttributes(IEnumerable<Attribute>)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_AddMethodAttributes_System_Collections_Generic_IEnumerable_System_Attribute__
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddMethodAttributes(System.Collections.Generic.IEnumerable{System.Attribute})
-  name.vb: AddMethodAttributes(IEnumerable(Of Attribute))
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddMethodAttributes(System.Collections.Generic.IEnumerable<System.Attribute>)
-  fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddMethodAttributes(System.Collections.Generic.IEnumerable(Of System.Attribute))
-  nameWithType: ReflectionTableBase.MethodMetadata.AddMethodAttributes(IEnumerable<Attribute>)
-  nameWithType.vb: ReflectionTableBase.MethodMetadata.AddMethodAttributes(IEnumerable(Of Attribute))
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddMethodAttributes*
-  name: AddMethodAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_AddMethodAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddMethodAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddMethodAttributes
-  nameWithType: ReflectionTableBase.MethodMetadata.AddMethodAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddParameterAttributes(System.Int32,System.Collections.Generic.IEnumerable{System.Attribute})
-  name: AddParameterAttributes(Int32, IEnumerable<Attribute>)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_AddParameterAttributes_System_Int32_System_Collections_Generic_IEnumerable_System_Attribute__
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddParameterAttributes(System.Int32,System.Collections.Generic.IEnumerable{System.Attribute})
-  name.vb: AddParameterAttributes(Int32, IEnumerable(Of Attribute))
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddParameterAttributes(System.Int32, System.Collections.Generic.IEnumerable<System.Attribute>)
-  fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddParameterAttributes(System.Int32, System.Collections.Generic.IEnumerable(Of System.Attribute))
-  nameWithType: ReflectionTableBase.MethodMetadata.AddParameterAttributes(Int32, IEnumerable<Attribute>)
-  nameWithType.vb: ReflectionTableBase.MethodMetadata.AddParameterAttributes(Int32, IEnumerable(Of Attribute))
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddParameterAttributes*
-  name: AddParameterAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_AddParameterAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddParameterAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddParameterAttributes
-  nameWithType: ReflectionTableBase.MethodMetadata.AddParameterAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddReturnParameterAttributes(System.Collections.Generic.IEnumerable{System.Attribute})
-  name: AddReturnParameterAttributes(IEnumerable<Attribute>)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_AddReturnParameterAttributes_System_Collections_Generic_IEnumerable_System_Attribute__
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddReturnParameterAttributes(System.Collections.Generic.IEnumerable{System.Attribute})
-  name.vb: AddReturnParameterAttributes(IEnumerable(Of Attribute))
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddReturnParameterAttributes(System.Collections.Generic.IEnumerable<System.Attribute>)
-  fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddReturnParameterAttributes(System.Collections.Generic.IEnumerable(Of System.Attribute))
-  nameWithType: ReflectionTableBase.MethodMetadata.AddReturnParameterAttributes(IEnumerable<Attribute>)
-  nameWithType.vb: ReflectionTableBase.MethodMetadata.AddReturnParameterAttributes(IEnumerable(Of Attribute))
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddReturnParameterAttributes*
-  name: AddReturnParameterAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_AddReturnParameterAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddReturnParameterAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.AddReturnParameterAttributes
-  nameWithType: ReflectionTableBase.MethodMetadata.AddReturnParameterAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.MethodAttributes
-  name: MethodAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_MethodAttributes
-  commentId: P:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.MethodAttributes
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.MethodAttributes
-  nameWithType: ReflectionTableBase.MethodMetadata.MethodAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.MethodAttributes*
-  name: MethodAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_MethodAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.MethodAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.MethodAttributes
-  nameWithType: ReflectionTableBase.MethodMetadata.MethodAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ParameterAttributes
-  name: ParameterAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_ParameterAttributes
-  commentId: P:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ParameterAttributes
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ParameterAttributes
-  nameWithType: ReflectionTableBase.MethodMetadata.ParameterAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ParameterAttributes*
-  name: ParameterAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_ParameterAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ParameterAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ParameterAttributes
-  nameWithType: ReflectionTableBase.MethodMetadata.ParameterAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ReturnParameterAttributes
-  name: ReturnParameterAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_ReturnParameterAttributes
-  commentId: P:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ReturnParameterAttributes
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ReturnParameterAttributes
-  nameWithType: ReflectionTableBase.MethodMetadata.ReturnParameterAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ReturnParameterAttributes*
-  name: ReturnParameterAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_MethodMetadata_ReturnParameterAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ReturnParameterAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.ReturnParameterAttributes
-  nameWithType: ReflectionTableBase.MethodMetadata.ReturnParameterAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata
-  name: ReflectionTableBase.TypeMetadata
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html
-  commentId: T:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata
-  nameWithType: ReflectionTableBase.TypeMetadata
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMemberAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey,System.Collections.Generic.IEnumerable{System.Attribute})
-  name: AddMemberAttributes(ReflectionTableBase.MemberKey, IEnumerable<Attribute>)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_AddMemberAttributes_Alphaleonis_Reflection_Context_ReflectionTableBase_MemberKey_System_Collections_Generic_IEnumerable_System_Attribute__
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMemberAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey,System.Collections.Generic.IEnumerable{System.Attribute})
-  name.vb: AddMemberAttributes(ReflectionTableBase.MemberKey, IEnumerable(Of Attribute))
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMemberAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey, System.Collections.Generic.IEnumerable<System.Attribute>)
-  fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMemberAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey, System.Collections.Generic.IEnumerable(Of System.Attribute))
-  nameWithType: ReflectionTableBase.TypeMetadata.AddMemberAttributes(ReflectionTableBase.MemberKey, IEnumerable<Attribute>)
-  nameWithType.vb: ReflectionTableBase.TypeMetadata.AddMemberAttributes(ReflectionTableBase.MemberKey, IEnumerable(Of Attribute))
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMemberAttributes*
-  name: AddMemberAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_AddMemberAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMemberAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMemberAttributes
-  nameWithType: ReflectionTableBase.TypeMetadata.AddMemberAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey,System.Collections.Generic.IEnumerable{System.Attribute})
-  name: AddMethodAttributes(ReflectionTableBase.MethodKey, IEnumerable<Attribute>)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_AddMethodAttributes_Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_System_Collections_Generic_IEnumerable_System_Attribute__
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey,System.Collections.Generic.IEnumerable{System.Attribute})
-  name.vb: AddMethodAttributes(ReflectionTableBase.MethodKey, IEnumerable(Of Attribute))
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey, System.Collections.Generic.IEnumerable<System.Attribute>)
-  fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey, System.Collections.Generic.IEnumerable(Of System.Attribute))
-  nameWithType: ReflectionTableBase.TypeMetadata.AddMethodAttributes(ReflectionTableBase.MethodKey, IEnumerable<Attribute>)
-  nameWithType.vb: ReflectionTableBase.TypeMetadata.AddMethodAttributes(ReflectionTableBase.MethodKey, IEnumerable(Of Attribute))
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodAttributes*
-  name: AddMethodAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_AddMethodAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodAttributes
-  nameWithType: ReflectionTableBase.TypeMetadata.AddMethodAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodParameterAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey,System.Int32,System.Collections.Generic.IEnumerable{System.Attribute})
-  name: AddMethodParameterAttributes(ReflectionTableBase.MethodKey, Int32, IEnumerable<Attribute>)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_AddMethodParameterAttributes_Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_System_Int32_System_Collections_Generic_IEnumerable_System_Attribute__
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodParameterAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey,System.Int32,System.Collections.Generic.IEnumerable{System.Attribute})
-  name.vb: AddMethodParameterAttributes(ReflectionTableBase.MethodKey, Int32, IEnumerable(Of Attribute))
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodParameterAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey, System.Int32, System.Collections.Generic.IEnumerable<System.Attribute>)
-  fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodParameterAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey, System.Int32, System.Collections.Generic.IEnumerable(Of System.Attribute))
-  nameWithType: ReflectionTableBase.TypeMetadata.AddMethodParameterAttributes(ReflectionTableBase.MethodKey, Int32, IEnumerable<Attribute>)
-  nameWithType.vb: ReflectionTableBase.TypeMetadata.AddMethodParameterAttributes(ReflectionTableBase.MethodKey, Int32, IEnumerable(Of Attribute))
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodParameterAttributes*
-  name: AddMethodParameterAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_AddMethodParameterAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodParameterAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodParameterAttributes
-  nameWithType: ReflectionTableBase.TypeMetadata.AddMethodParameterAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodReturnParameterAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey,System.Collections.Generic.IEnumerable{System.Attribute})
-  name: AddMethodReturnParameterAttributes(ReflectionTableBase.MethodKey, IEnumerable<Attribute>)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_AddMethodReturnParameterAttributes_Alphaleonis_Reflection_Context_ReflectionTableBase_MethodKey_System_Collections_Generic_IEnumerable_System_Attribute__
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodReturnParameterAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey,System.Collections.Generic.IEnumerable{System.Attribute})
-  name.vb: AddMethodReturnParameterAttributes(ReflectionTableBase.MethodKey, IEnumerable(Of Attribute))
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodReturnParameterAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey, System.Collections.Generic.IEnumerable<System.Attribute>)
-  fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodReturnParameterAttributes(Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey, System.Collections.Generic.IEnumerable(Of System.Attribute))
-  nameWithType: ReflectionTableBase.TypeMetadata.AddMethodReturnParameterAttributes(ReflectionTableBase.MethodKey, IEnumerable<Attribute>)
-  nameWithType.vb: ReflectionTableBase.TypeMetadata.AddMethodReturnParameterAttributes(ReflectionTableBase.MethodKey, IEnumerable(Of Attribute))
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodReturnParameterAttributes*
-  name: AddMethodReturnParameterAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_AddMethodReturnParameterAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodReturnParameterAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddMethodReturnParameterAttributes
-  nameWithType: ReflectionTableBase.TypeMetadata.AddMethodReturnParameterAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddTypeAttributes(System.Collections.Generic.IEnumerable{System.Attribute})
-  name: AddTypeAttributes(IEnumerable<Attribute>)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_AddTypeAttributes_System_Collections_Generic_IEnumerable_System_Attribute__
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddTypeAttributes(System.Collections.Generic.IEnumerable{System.Attribute})
-  name.vb: AddTypeAttributes(IEnumerable(Of Attribute))
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddTypeAttributes(System.Collections.Generic.IEnumerable<System.Attribute>)
-  fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddTypeAttributes(System.Collections.Generic.IEnumerable(Of System.Attribute))
-  nameWithType: ReflectionTableBase.TypeMetadata.AddTypeAttributes(IEnumerable<Attribute>)
-  nameWithType.vb: ReflectionTableBase.TypeMetadata.AddTypeAttributes(IEnumerable(Of Attribute))
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddTypeAttributes*
-  name: AddTypeAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_AddTypeAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddTypeAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.AddTypeAttributes
-  nameWithType: ReflectionTableBase.TypeMetadata.AddTypeAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.Empty
-  name: Empty
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_Empty
-  commentId: F:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.Empty
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.Empty
-  nameWithType: ReflectionTableBase.TypeMetadata.Empty
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MemberAttributes
-  name: MemberAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_MemberAttributes
-  commentId: P:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MemberAttributes
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MemberAttributes
-  nameWithType: ReflectionTableBase.TypeMetadata.MemberAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MemberAttributes*
-  name: MemberAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_MemberAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MemberAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MemberAttributes
-  nameWithType: ReflectionTableBase.TypeMetadata.MemberAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MethodAttributes
-  name: MethodAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_MethodAttributes
-  commentId: P:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MethodAttributes
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MethodAttributes
-  nameWithType: ReflectionTableBase.TypeMetadata.MethodAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MethodAttributes*
-  name: MethodAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_MethodAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MethodAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.MethodAttributes
-  nameWithType: ReflectionTableBase.TypeMetadata.MethodAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.TypeAttributes
-  name: TypeAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_TypeAttributes
-  commentId: P:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.TypeAttributes
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.TypeAttributes
-  nameWithType: ReflectionTableBase.TypeMetadata.TypeAttributes
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.TypeAttributes*
-  name: TypeAttributes
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html#Alphaleonis_Reflection_Context_ReflectionTableBase_TypeMetadata_TypeAttributes_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.TypeAttributes
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.TypeAttributes
-  nameWithType: ReflectionTableBase.TypeMetadata.TypeAttributes
 - uid: Alphaleonis.Reflection.Context.ReflectionTableBuilder
   name: ReflectionTableBuilder
   href: api/Alphaleonis.Reflection.Context.ReflectionTableBuilder.html
@@ -3540,19 +3028,6 @@ references:
   isSpec: "True"
   fullName: Alphaleonis.Reflection.Context.ReflectionTableBuilder.CreateTable
   nameWithType: ReflectionTableBuilder.CreateTable
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBuilder.GetTypeMetadata(System.Type)
-  name: GetTypeMetadata(Type)
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBuilder.html#Alphaleonis_Reflection_Context_ReflectionTableBuilder_GetTypeMetadata_System_Type_
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBuilder.GetTypeMetadata(System.Type)
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBuilder.GetTypeMetadata(System.Type)
-  nameWithType: ReflectionTableBuilder.GetTypeMetadata(Type)
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBuilder.GetTypeMetadata*
-  name: GetTypeMetadata
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBuilder.html#Alphaleonis_Reflection_Context_ReflectionTableBuilder_GetTypeMetadata_
-  commentId: Overload:Alphaleonis.Reflection.Context.ReflectionTableBuilder.GetTypeMetadata
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBuilder.GetTypeMetadata
-  nameWithType: ReflectionTableBuilder.GetTypeMetadata
 - uid: Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions
   name: ReflectionTableBuilderExtensions
   href: api/Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.html
@@ -3731,6 +3206,15 @@ references:
   fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddParameterAttributes(Of T)(Alphaleonis.Reflection.Context.IReflectionTableBuilder, System.Linq.Expressions.Expression(Of System.Action(Of T)))
   nameWithType: ReflectionTableBuilderExtensions.AddParameterAttributes<T>(IReflectionTableBuilder, Expression<Action<T>>)
   nameWithType.vb: ReflectionTableBuilderExtensions.AddParameterAttributes(Of T)(IReflectionTableBuilder, Expression(Of Action(Of T)))
+- uid: Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Attribute[])
+  name: AddPropertyAttributes(IReflectionTableBuilder, Type, String, Attribute[])
+  href: api/Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.html#Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___
+  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Attribute[])
+  name.vb: AddPropertyAttributes(IReflectionTableBuilder, Type, String, Attribute())
+  fullName: Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder, System.Type, System.String, System.Attribute[])
+  fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder, System.Type, System.String, System.Attribute())
+  nameWithType: ReflectionTableBuilderExtensions.AddPropertyAttributes(IReflectionTableBuilder, Type, String, Attribute[])
+  nameWithType.vb: ReflectionTableBuilderExtensions.AddPropertyAttributes(IReflectionTableBuilder, Type, String, Attribute())
 - uid: Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Collections.Generic.IEnumerable{System.Attribute})
   name: AddPropertyAttributes(IReflectionTableBuilder, Type, String, IEnumerable<Attribute>)
   href: api/Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.html#Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Collections_Generic_IEnumerable_System_Attribute__
@@ -3765,15 +3249,6 @@ references:
   fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes(Of T)(Alphaleonis.Reflection.Context.IReflectionTableBuilder, System.String, System.Collections.Generic.IEnumerable(Of System.Attribute))
   nameWithType: ReflectionTableBuilderExtensions.AddPropertyAttributes<T>(IReflectionTableBuilder, String, IEnumerable<Attribute>)
   nameWithType.vb: ReflectionTableBuilderExtensions.AddPropertyAttributes(Of T)(IReflectionTableBuilder, String, IEnumerable(Of Attribute))
-- uid: Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Attribute[])
-  name: AddPropertyAttributes<T>(IReflectionTableBuilder, Type, String, Attribute[])
-  href: api/Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.html#Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___
-  commentId: M:Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Attribute[])
-  name.vb: AddPropertyAttributes(Of T)(IReflectionTableBuilder, Type, String, Attribute())
-  fullName: Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes<T>(Alphaleonis.Reflection.Context.IReflectionTableBuilder, System.Type, System.String, System.Attribute[])
-  fullName.vb: Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes(Of T)(Alphaleonis.Reflection.Context.IReflectionTableBuilder, System.Type, System.String, System.Attribute())
-  nameWithType: ReflectionTableBuilderExtensions.AddPropertyAttributes<T>(IReflectionTableBuilder, Type, String, Attribute[])
-  nameWithType.vb: ReflectionTableBuilderExtensions.AddPropertyAttributes(Of T)(IReflectionTableBuilder, Type, String, Attribute())
 - uid: Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Action},System.Attribute[])
   name: AddReturnParameterAttributes(IReflectionTableBuilder, Expression<Action>, Attribute[])
   href: api/Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.html#Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action__System_Attribute___
@@ -5979,6 +5454,19 @@ references:
   isSpec: "True"
   fullName: Alphaleonis.Reflection.DelegatingEventInfo.ToString
   nameWithType: DelegatingEventInfo.ToString
+- uid: Alphaleonis.Reflection.DelegatingEventInfo.UnderlyingEventInfo
+  name: UnderlyingEventInfo
+  href: api/Alphaleonis.Reflection.DelegatingEventInfo.html#Alphaleonis_Reflection_DelegatingEventInfo_UnderlyingEventInfo
+  commentId: P:Alphaleonis.Reflection.DelegatingEventInfo.UnderlyingEventInfo
+  fullName: Alphaleonis.Reflection.DelegatingEventInfo.UnderlyingEventInfo
+  nameWithType: DelegatingEventInfo.UnderlyingEventInfo
+- uid: Alphaleonis.Reflection.DelegatingEventInfo.UnderlyingEventInfo*
+  name: UnderlyingEventInfo
+  href: api/Alphaleonis.Reflection.DelegatingEventInfo.html#Alphaleonis_Reflection_DelegatingEventInfo_UnderlyingEventInfo_
+  commentId: Overload:Alphaleonis.Reflection.DelegatingEventInfo.UnderlyingEventInfo
+  isSpec: "True"
+  fullName: Alphaleonis.Reflection.DelegatingEventInfo.UnderlyingEventInfo
+  nameWithType: DelegatingEventInfo.UnderlyingEventInfo
 - uid: Alphaleonis.Reflection.DelegatingFieldInfo
   name: DelegatingFieldInfo
   href: api/Alphaleonis.Reflection.DelegatingFieldInfo.html

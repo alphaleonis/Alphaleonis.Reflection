@@ -84,7 +84,7 @@
   <h1 id="Alphaleonis_Reflection_Context_ReflectionTableBuilder" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilder" class="text-break">Class ReflectionTableBuilder
   </h1>
   <div class="markdown level0 summary"><p>A class used to build the table to be used for adding reflection information
-<a class="xref" href="Alphaleonis.Reflection.Context.TableReflectionContext.html">TableReflectionContext</a>.</p>
+in a <a class="xref" href="Alphaleonis.Reflection.Context.TableReflectionContext.html">TableReflectionContext</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -145,7 +145,8 @@
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilder__ctor_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilder.#ctor*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilder__ctor" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilder.#ctor">ReflectionTableBuilder()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Default constructor.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -158,11 +159,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilder_AddMemberAttributes_System_Reflection_MemberInfo_System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilder.AddMemberAttributes(System.Reflection.MemberInfo%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilder.cs/#L60">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilder.cs/#L72">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilder_AddMemberAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilder.AddMemberAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilder_AddMemberAttributes_System_Reflection_MemberInfo_System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilder.AddMemberAttributes(System.Reflection.MemberInfo,System.Collections.Generic.IEnumerable{System.Attribute})">AddMemberAttributes(MemberInfo, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the specified <code data-dev-comment-type="paramref" class="paramref">member</code> in this reflection table.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -181,12 +183,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></td>
         <td><span class="parametername">member</span></td>
-        <td></td>
+        <td><p>The parameter to add one or more attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the <code data-dev-comment-type="paramref" class="paramref">member</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -201,7 +205,24 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>This instance of the <a class="xref" href="Alphaleonis.Reflection.Context.ReflectionTableBuilder.html">ReflectionTableBuilder</a>, allowing chaining calls to multiple methods.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when one or more required arguments are null.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -210,11 +231,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilder_AddParameterAttributes_System_Reflection_ParameterInfo_System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilder.AddParameterAttributes(System.Reflection.ParameterInfo%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilder.cs/#L47">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilder.cs/#L54">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilder_AddParameterAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilder.AddParameterAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilder_AddParameterAttributes_System_Reflection_ParameterInfo_System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilder.AddParameterAttributes(System.Reflection.ParameterInfo,System.Collections.Generic.IEnumerable{System.Attribute})">AddParameterAttributes(ParameterInfo, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the specified <code data-dev-comment-type="paramref" class="paramref">parameter</code> in this reflection table.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -233,12 +255,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.parameterinfo">ParameterInfo</a></td>
         <td><span class="parametername">parameter</span></td>
-        <td></td>
+        <td><p>The parameter to add one or more attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the <code data-dev-comment-type="paramref" class="paramref">parameter</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -253,7 +277,24 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>This instance of the <a class="xref" href="Alphaleonis.Reflection.Context.ReflectionTableBuilder.html">ReflectionTableBuilder</a>, allowing chaining calls to multiple methods.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when one or more required arguments are null.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -262,11 +303,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilder_CreateTable.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilder.CreateTable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilder.cs/#L38">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilder.cs/#L40">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilder_CreateTable_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilder.CreateTable*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilder_CreateTable" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilder.CreateTable">CreateTable()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates an immutable <a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTable.html">IReflectionTable</a> based on the contents of this builder.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -283,59 +325,11 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTable.html">IReflectionTable</a></td>
-        <td></td>
+        <td><p>A new instance of an immutable <a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTable.html">IReflectionTable</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilder_GetTypeMetadata_System_Type_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilder.GetTypeMetadata(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilder.cs/#L93">View Source</a>
-  </span>
-  <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilder_GetTypeMetadata_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilder.GetTypeMetadata*"></a>
-  <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilder_GetTypeMetadata_System_Type_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilder.GetTypeMetadata(System.Type)">GetTypeMetadata(Type)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override ReflectionTableBase.TypeMetadata GetTypeMetadata(Type type)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">type</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html">ReflectionTableBase.TypeMetadata</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Alphaleonis.Reflection.Context.ReflectionTableBase.html#Alphaleonis_Reflection_Context_ReflectionTableBase_GetTypeMetadata_System_Type_">ReflectionTableBase.GetTypeMetadata(Type)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a>
@@ -354,7 +348,7 @@
       <a class="xref" href="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.html#Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Collections_Generic_IEnumerable_System_Attribute__">ReflectionTableBuilderExtensions.AddPropertyAttributes(IReflectionTableBuilder, Type, String, IEnumerable&lt;Attribute&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.html#Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___">ReflectionTableBuilderExtensions.AddPropertyAttributes&lt;T&gt;(IReflectionTableBuilder, Type, String, Attribute[])</a>
+      <a class="xref" href="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.html#Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___">ReflectionTableBuilderExtensions.AddPropertyAttributes(IReflectionTableBuilder, Type, String, Attribute[])</a>
   </div>
   <div>
       <a class="xref" href="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.html#Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Collections_Generic_IEnumerable_System_Attribute__">ReflectionTableBuilderExtensions.AddEventAttributes&lt;T&gt;(IReflectionTableBuilder, String, IEnumerable&lt;Attribute&gt;)</a>

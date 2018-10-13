@@ -226,8 +226,8 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
       each member it implements, <a class="xref" href="Alphaleonis.Reflection.DelegatingAssembly.html">DelegatingAssembly</a> automatically delegates to
       the corresponding member of the internal <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a>
       object which was supplied as the argument to the constructor.  This internal
-<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a> is exposed to deriving classes by the <span class="xref">langword_csharp_protected</span>
-<a class="xref" href="Alphaleonis.Reflection.DelegatingAssembly.html#Alphaleonis_Reflection_DelegatingAssembly_m_assemblyImpl">m_assemblyImpl</a> field.</p>
+<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a> is exposed to deriving classes by the
+<a class="xref" href="Alphaleonis.Reflection.DelegatingAssembly.html#Alphaleonis_Reflection_DelegatingAssembly_UnderlyingAssembly">UnderlyingAssembly</a> property.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -304,7 +304,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_CodeBase.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.CodeBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L49">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L50">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_CodeBase_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.CodeBase*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_CodeBase" data-uid="Alphaleonis.Reflection.DelegatingAssembly.CodeBase">CodeBase</h4>
@@ -336,7 +336,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_CustomAttributes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.CustomAttributes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L129">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L169">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_CustomAttributes_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.CustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_CustomAttributes" data-uid="Alphaleonis.Reflection.DelegatingAssembly.CustomAttributes">CustomAttributes</h4>
@@ -368,7 +368,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_DefinedTypes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.DefinedTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L131">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L172">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_DefinedTypes_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.DefinedTypes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_DefinedTypes" data-uid="Alphaleonis.Reflection.DelegatingAssembly.DefinedTypes">DefinedTypes</h4>
@@ -400,7 +400,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_EntryPoint.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.EntryPoint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L51">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L53">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_EntryPoint_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.EntryPoint*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_EntryPoint" data-uid="Alphaleonis.Reflection.DelegatingAssembly.EntryPoint">EntryPoint</h4>
@@ -432,7 +432,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_EscapedCodeBase.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.EscapedCodeBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L53">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L56">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_EscapedCodeBase_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.EscapedCodeBase*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_EscapedCodeBase" data-uid="Alphaleonis.Reflection.DelegatingAssembly.EscapedCodeBase">EscapedCodeBase</h4>
@@ -464,7 +464,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_Evidence.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.Evidence%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L56">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L60">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_Evidence_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.Evidence*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_Evidence" data-uid="Alphaleonis.Reflection.DelegatingAssembly.Evidence">Evidence</h4>
@@ -496,7 +496,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_ExportedTypes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.ExportedTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L142">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L185">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_ExportedTypes_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.ExportedTypes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_ExportedTypes" data-uid="Alphaleonis.Reflection.DelegatingAssembly.ExportedTypes">ExportedTypes</h4>
@@ -528,7 +528,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_FullName.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.FullName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L59">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L64">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_FullName_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.FullName*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_FullName" data-uid="Alphaleonis.Reflection.DelegatingAssembly.FullName">FullName</h4>
@@ -560,7 +560,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GlobalAssemblyCache.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GlobalAssemblyCache%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L61">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L67">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GlobalAssemblyCache_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GlobalAssemblyCache*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GlobalAssemblyCache" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GlobalAssemblyCache">GlobalAssemblyCache</h4>
@@ -592,7 +592,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_HostContext.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.HostContext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L63">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L70">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_HostContext_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.HostContext*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_HostContext" data-uid="Alphaleonis.Reflection.DelegatingAssembly.HostContext">HostContext</h4>
@@ -624,7 +624,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_ImageRuntimeVersion.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.ImageRuntimeVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L65">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L73">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_ImageRuntimeVersion_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.ImageRuntimeVersion*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_ImageRuntimeVersion" data-uid="Alphaleonis.Reflection.DelegatingAssembly.ImageRuntimeVersion">ImageRuntimeVersion</h4>
@@ -656,7 +656,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_IsDynamic.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.IsDynamic%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L67">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L76">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_IsDynamic_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.IsDynamic*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_IsDynamic" data-uid="Alphaleonis.Reflection.DelegatingAssembly.IsDynamic">IsDynamic</h4>
@@ -688,7 +688,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_Location.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.Location%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L69">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L79">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_Location_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.Location*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_Location" data-uid="Alphaleonis.Reflection.DelegatingAssembly.Location">Location</h4>
@@ -720,7 +720,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_ManifestModule.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.ManifestModule%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L71">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L82">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_ManifestModule_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.ManifestModule*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_ManifestModule" data-uid="Alphaleonis.Reflection.DelegatingAssembly.ManifestModule">ManifestModule</h4>
@@ -752,7 +752,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_Modules.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.Modules%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L165">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L214">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_Modules_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.Modules*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_Modules" data-uid="Alphaleonis.Reflection.DelegatingAssembly.Modules">Modules</h4>
@@ -784,7 +784,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_PermissionSet.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.PermissionSet%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L168">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L218">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_PermissionSet_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.PermissionSet*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_PermissionSet" data-uid="Alphaleonis.Reflection.DelegatingAssembly.PermissionSet">PermissionSet</h4>
@@ -816,7 +816,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_ReflectionOnly.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.ReflectionOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L73">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L85">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_ReflectionOnly_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.ReflectionOnly*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_ReflectionOnly" data-uid="Alphaleonis.Reflection.DelegatingAssembly.ReflectionOnly">ReflectionOnly</h4>
@@ -848,7 +848,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_SecurityRuleSet.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.SecurityRuleSet%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L75">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L88">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_SecurityRuleSet_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.SecurityRuleSet*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_SecurityRuleSet" data-uid="Alphaleonis.Reflection.DelegatingAssembly.SecurityRuleSet">SecurityRuleSet</h4>
@@ -880,11 +880,12 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_UnderlyingAssembly.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.UnderlyingAssembly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L77">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L91">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_UnderlyingAssembly_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.UnderlyingAssembly*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_UnderlyingAssembly" data-uid="Alphaleonis.Reflection.DelegatingAssembly.UnderlyingAssembly">UnderlyingAssembly</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The underlying assembly passed to the constructor.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -912,7 +913,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_CreateInstance_System_String_System_Boolean_System_Reflection_BindingFlags_System_Reflection_Binder_System_Object___System_Globalization_CultureInfo_System_Object___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.CreateInstance(System.String%2CSystem.Boolean%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L79">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L94">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_CreateInstance_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.CreateInstance*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_CreateInstance_System_String_System_Boolean_System_Reflection_BindingFlags_System_Reflection_Binder_System_Object___System_Globalization_CultureInfo_System_Object___" data-uid="Alphaleonis.Reflection.DelegatingAssembly.CreateInstance(System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[])">CreateInstance(String, Boolean, BindingFlags, Binder, Object[], CultureInfo, Object[])</h4>
@@ -991,7 +992,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L133">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L175">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_Equals_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.Equals*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_Equals_System_Object_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.Equals(System.Object)">Equals(Object)</h4>
@@ -1040,7 +1041,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetCustomAttributes_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetCustomAttributes(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L81">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L97">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetCustomAttributes_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetCustomAttributes_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetCustomAttributes(System.Boolean)">GetCustomAttributes(Boolean)</h4>
@@ -1089,7 +1090,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetCustomAttributes_System_Type_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetCustomAttributes(System.Type%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L83">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L100">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetCustomAttributes_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetCustomAttributes_System_Type_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetCustomAttributes(System.Type,System.Boolean)">GetCustomAttributes(Type, Boolean)</h4>
@@ -1143,7 +1144,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetCustomAttributesData.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetCustomAttributesData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L85">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L103">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetCustomAttributesData_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetCustomAttributesData*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetCustomAttributesData" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetCustomAttributesData">GetCustomAttributesData()</h4>
@@ -1175,7 +1176,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetExportedTypes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetExportedTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L87">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L106">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetExportedTypes_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetExportedTypes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetExportedTypes" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetExportedTypes">GetExportedTypes()</h4>
@@ -1207,7 +1208,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetFile_System_String_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetFile(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L89">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L109">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetFile_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetFile*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetFile_System_String_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetFile(System.String)">GetFile(String)</h4>
@@ -1256,7 +1257,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetFiles.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetFiles%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L91">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L112">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetFiles_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetFiles*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetFiles" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetFiles">GetFiles()</h4>
@@ -1288,7 +1289,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetFiles_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetFiles(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L93">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L115">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetFiles_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetFiles*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetFiles_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetFiles(System.Boolean)">GetFiles(Boolean)</h4>
@@ -1337,7 +1338,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetHashCode.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L144">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L188">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetHashCode_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetHashCode*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetHashCode" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetHashCode">GetHashCode()</h4>
@@ -1369,7 +1370,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetLoadedModules_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetLoadedModules(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L95">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L118">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetLoadedModules_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetLoadedModules*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetLoadedModules_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetLoadedModules(System.Boolean)">GetLoadedModules(Boolean)</h4>
@@ -1418,7 +1419,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceInfo_System_String_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceInfo(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L97">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L121">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceInfo_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceInfo*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceInfo_System_String_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceInfo(System.String)">GetManifestResourceInfo(String)</h4>
@@ -1467,7 +1468,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceNames.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceNames%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L99">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L124">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceNames_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceNames*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceNames" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceNames">GetManifestResourceNames()</h4>
@@ -1499,7 +1500,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceStream_System_String_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceStream(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L101">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L127">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceStream_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceStream*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceStream_System_String_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceStream(System.String)">GetManifestResourceStream(String)</h4>
@@ -1548,7 +1549,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceStream_System_Type_System_String_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceStream(System.Type%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L103">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L130">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceStream_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceStream*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetManifestResourceStream_System_Type_System_String_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetManifestResourceStream(System.Type,System.String)">GetManifestResourceStream(Type, String)</h4>
@@ -1602,7 +1603,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetModule_System_String_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetModule(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L105">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L133">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetModule_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetModule*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetModule_System_String_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetModule(System.String)">GetModule(String)</h4>
@@ -1651,7 +1652,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetModules_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetModules(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L107">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L136">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetModules_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetModules*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetModules_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetModules(System.Boolean)">GetModules(Boolean)</h4>
@@ -1700,7 +1701,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetName.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L109">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L139">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetName_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetName*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetName" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetName">GetName()</h4>
@@ -1732,7 +1733,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetName_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetName(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L111">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L142">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetName_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetName*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetName_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetName(System.Boolean)">GetName(Boolean)</h4>
@@ -1781,7 +1782,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetObjectData_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetObjectData(System.Runtime.Serialization.SerializationInfo%2CSystem.Runtime.Serialization.StreamingContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L146">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L191">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetObjectData_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetObjectData*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetObjectData_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">GetObjectData(SerializationInfo, StreamingContext)</h4>
@@ -1820,7 +1821,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetReferencedAssemblies.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetReferencedAssemblies%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L113">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L145">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetReferencedAssemblies_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetReferencedAssemblies*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetReferencedAssemblies" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetReferencedAssemblies">GetReferencedAssemblies()</h4>
@@ -1852,7 +1853,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetSatelliteAssembly_System_Globalization_CultureInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetSatelliteAssembly(System.Globalization.CultureInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L115">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L148">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetSatelliteAssembly_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetSatelliteAssembly*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetSatelliteAssembly_System_Globalization_CultureInfo_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetSatelliteAssembly(System.Globalization.CultureInfo)">GetSatelliteAssembly(CultureInfo)</h4>
@@ -1901,7 +1902,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetSatelliteAssembly_System_Globalization_CultureInfo_System_Version_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetSatelliteAssembly(System.Globalization.CultureInfo%2CSystem.Version)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L117">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L151">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetSatelliteAssembly_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetSatelliteAssembly*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetSatelliteAssembly_System_Globalization_CultureInfo_System_Version_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetSatelliteAssembly(System.Globalization.CultureInfo,System.Version)">GetSatelliteAssembly(CultureInfo, Version)</h4>
@@ -1955,7 +1956,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetType_System_String_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetType(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L148">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L194">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetType_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetType*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetType_System_String_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetType(System.String)">GetType(String)</h4>
@@ -2004,7 +2005,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetType_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetType(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L150">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L197">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetType_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetType*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetType_System_String_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetType(System.String,System.Boolean)">GetType(String, Boolean)</h4>
@@ -2058,7 +2059,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetType_System_String_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetType(System.String%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L119">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L154">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetType_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetType*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetType_System_String_System_Boolean_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetType(System.String,System.Boolean,System.Boolean)">GetType(String, Boolean, Boolean)</h4>
@@ -2117,7 +2118,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_GetTypes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.GetTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L121">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L157">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_GetTypes_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetTypes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_GetTypes" data-uid="Alphaleonis.Reflection.DelegatingAssembly.GetTypes">GetTypes()</h4>
@@ -2149,7 +2150,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_IsDefined_System_Type_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.IsDefined(System.Type%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L123">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L160">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_IsDefined_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.IsDefined*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_IsDefined_System_Type_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.IsDefined(System.Type,System.Boolean)">IsDefined(Type, Boolean)</h4>
@@ -2203,7 +2204,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_LoadModule_System_String_System_Byte___System_Byte___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.LoadModule(System.String%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L125">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L163">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_LoadModule_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.LoadModule*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_LoadModule_System_String_System_Byte___System_Byte___" data-uid="Alphaleonis.Reflection.DelegatingAssembly.LoadModule(System.String,System.Byte[],System.Byte[])">LoadModule(String, Byte[], Byte[])</h4>
@@ -2262,7 +2263,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_ToString.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L127">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L166">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingAssembly_ToString_" data-uid="Alphaleonis.Reflection.DelegatingAssembly.ToString*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_ToString" data-uid="Alphaleonis.Reflection.DelegatingAssembly.ToString">ToString()</h4>
@@ -2296,7 +2297,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingAssembly_ModuleResolve.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingAssembly.ModuleResolve%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L152">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingAssembly.cs/#L200">View Source</a>
   </span>
   <h4 id="Alphaleonis_Reflection_DelegatingAssembly_ModuleResolve" data-uid="Alphaleonis.Reflection.DelegatingAssembly.ModuleResolve">ModuleResolve</h4>
   <div class="markdown level1 summary"></div>

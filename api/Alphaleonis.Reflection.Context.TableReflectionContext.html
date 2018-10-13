@@ -83,7 +83,9 @@
   
   <h1 id="Alphaleonis_Reflection_Context_TableReflectionContext" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext" class="text-break">Class TableReflectionContext
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A reflection context that provides additional attributes to Types, members and parameters
+based on a static table.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -195,11 +197,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext__ctor_Alphaleonis_Reflection_Context_IReflectionTable_Alphaleonis_Reflection_Context_TableReflectionContextOptions_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.%23ctor(Alphaleonis.Reflection.Context.IReflectionTable%2CAlphaleonis.Reflection.Context.TableReflectionContextOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L17">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L24">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_TableReflectionContext__ctor_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.#ctor*"></a>
   <h4 id="Alphaleonis_Reflection_Context_TableReflectionContext__ctor_Alphaleonis_Reflection_Context_IReflectionTable_Alphaleonis_Reflection_Context_TableReflectionContextOptions_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.#ctor(Alphaleonis.Reflection.Context.IReflectionTable,Alphaleonis.Reflection.Context.TableReflectionContextOptions)">TableReflectionContext(IReflectionTable, TableReflectionContextOptions)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -218,12 +221,30 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTable.html">IReflectionTable</a></td>
         <td><span class="parametername">table</span></td>
-        <td></td>
+        <td><p>The reflection table to use for adding attributes to types and members.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.TableReflectionContextOptions.html">TableReflectionContextOptions</a></td>
         <td><span class="parametername">options</span></td>
-        <td></td>
+        <td><p>Options controlling various aspects of the reflection context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when one or more required arguments are null.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -234,11 +255,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext_Options.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.Options%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L32">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L38">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_TableReflectionContext_Options_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.Options*"></a>
   <h4 id="Alphaleonis_Reflection_Context_TableReflectionContext_Options" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.Options">Options</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets options passed to the constructor of this reflection context.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -266,11 +288,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext_MapAssemblyCore_System_Reflection_Assembly_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.MapAssemblyCore(System.Reflection.Assembly)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L38">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L45">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_TableReflectionContext_MapAssemblyCore_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapAssemblyCore*"></a>
   <h4 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapAssemblyCore_System_Reflection_Assembly_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapAssemblyCore(System.Reflection.Assembly)">MapAssemblyCore(Assembly)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs projection of an assembly that has not already been mapped in this reflection context.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -289,7 +312,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a></td>
         <td><span class="parametername">assembly</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a> to map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -304,22 +328,34 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a></td>
-        <td></td>
+        <td><p>The representation of the <code data-dev-comment-type="paramref" class="paramref">assembly</code> in this reflection context.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_MapAssemblyCore_System_Reflection_Assembly_">CustomReflectionContextBase.MapAssemblyCore(Assembly)</a></div>
+  <h5 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapAssemblyCore_System_Reflection_Assembly__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Override this method to customize how an assembly is mapped in this reflection context.  This method is called
+by all other methods mapping an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a>, and it is only called if the assembly has not already
+been mapped in this reflection context. 
+</p>
+<p>The default implementation returns a
+<a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly-1.html">CustomReflectionContextBase.ProjectedAssembly&lt;TContext&gt;</a>
+that simply delegates all operations to the mapped member.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext_MapConstructorCore_System_Reflection_ConstructorInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.MapConstructorCore(System.Reflection.ConstructorInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L40">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L48">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_TableReflectionContext_MapConstructorCore_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapConstructorCore*"></a>
   <h4 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapConstructorCore_System_Reflection_ConstructorInfo_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapConstructorCore(System.Reflection.ConstructorInfo)">MapConstructorCore(ConstructorInfo)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs projection of a constructor that has not already been mapped in this reflection context.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -338,7 +374,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.constructorinfo">ConstructorInfo</a></td>
         <td><span class="parametername">constructor</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.constructorinfo">ConstructorInfo</a> to map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -353,22 +390,34 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.constructorinfo">ConstructorInfo</a></td>
-        <td></td>
+        <td><p>The representation of the <code data-dev-comment-type="paramref" class="paramref">constructor</code> in this reflection context.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_MapConstructorCore_System_Reflection_ConstructorInfo_">CustomReflectionContextBase.MapConstructorCore(ConstructorInfo)</a></div>
+  <h5 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapConstructorCore_System_Reflection_ConstructorInfo__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Override this method to customize how a constructor is mapped in this reflection context.  This method is called
+by all other methods mapping a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.constructorinfo">ConstructorInfo</a>, and it is only called if the constructor has not already
+been mapped in this reflection context. 
+</p>
+<p>The default implementation returns a
+<a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedConstructorInfo-1.html">CustomReflectionContextBase.ProjectedConstructorInfo&lt;TContext&gt;</a>
+that simply delegates all operations to the mapped member.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext_MapEventCore_System_Reflection_EventInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.MapEventCore(System.Reflection.EventInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L42">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L51">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_TableReflectionContext_MapEventCore_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapEventCore*"></a>
   <h4 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapEventCore_System_Reflection_EventInfo_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapEventCore(System.Reflection.EventInfo)">MapEventCore(EventInfo)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs projection of an event that has not already been mapped in this reflection context.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -387,7 +436,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.eventinfo">EventInfo</a></td>
         <td><span class="parametername">eventInfo</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.eventinfo">EventInfo</a> to map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -402,22 +452,34 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.eventinfo">EventInfo</a></td>
-        <td></td>
+        <td><p>The representation of the <code data-dev-comment-type="paramref" class="paramref">eventInfo</code> in this reflection context.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_MapEventCore_System_Reflection_EventInfo_">CustomReflectionContextBase.MapEventCore(EventInfo)</a></div>
+  <h5 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapEventCore_System_Reflection_EventInfo__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Override this method to customize how an event is mapped in this reflection context.  This method is called
+by all other methods mapping a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.eventinfo">EventInfo</a>, and it is only called if the event has not already
+been mapped in this reflection context. 
+</p>
+<p>The default implementation returns a
+<a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedEventInfo-1.html">CustomReflectionContextBase.ProjectedEventInfo&lt;TContext&gt;</a>
+that simply delegates all operations to the mapped member.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext_MapFieldCore_System_Reflection_FieldInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.MapFieldCore(System.Reflection.FieldInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L44">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L54">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_TableReflectionContext_MapFieldCore_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapFieldCore*"></a>
   <h4 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapFieldCore_System_Reflection_FieldInfo_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapFieldCore(System.Reflection.FieldInfo)">MapFieldCore(FieldInfo)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs projection of a field that has not already been mapped in this reflection context.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -436,7 +498,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a></td>
         <td><span class="parametername">field</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a> to map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -451,22 +514,34 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a></td>
-        <td></td>
+        <td><p>The representation of the <code data-dev-comment-type="paramref" class="paramref">field</code> in this reflection context.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_MapFieldCore_System_Reflection_FieldInfo_">CustomReflectionContextBase.MapFieldCore(FieldInfo)</a></div>
+  <h5 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapFieldCore_System_Reflection_FieldInfo__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Override this method to customize how a field is mapped in this reflection context.  This method is called
+by all other methods mapping a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a>, and it is only called if the field has not already
+been mapped in this reflection context. 
+</p>
+<p>The default implementation returns a
+<a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedFieldInfo-1.html">CustomReflectionContextBase.ProjectedFieldInfo&lt;TContext&gt;</a>
+that simply delegates all operations to the mapped member.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext_MapMethodCore_System_Reflection_MethodInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.MapMethodCore(System.Reflection.MethodInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L46">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L57">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_TableReflectionContext_MapMethodCore_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapMethodCore*"></a>
   <h4 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapMethodCore_System_Reflection_MethodInfo_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapMethodCore(System.Reflection.MethodInfo)">MapMethodCore(MethodInfo)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs projection of a method that has not already been mapped in this reflection context.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -485,7 +560,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></td>
         <td><span class="parametername">method</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a> to map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -500,22 +576,34 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></td>
-        <td></td>
+        <td><p>The representation of the <code data-dev-comment-type="paramref" class="paramref">method</code> in this reflection context.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_MapMethodCore_System_Reflection_MethodInfo_">CustomReflectionContextBase.MapMethodCore(MethodInfo)</a></div>
+  <h5 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapMethodCore_System_Reflection_MethodInfo__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Override this method to customize how a method is mapped in this reflection context.  This method is called
+by all other methods mapping a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a>, and it is only called if the method has not already
+been mapped in this reflection context. 
+</p>
+<p>The default implementation returns a
+<a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo-1.html">CustomReflectionContextBase.ProjectedMethodInfo&lt;TContext&gt;</a>
+that simply delegates all operations to the mapped member.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext_MapParameterCore_System_Reflection_ParameterInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.MapParameterCore(System.Reflection.ParameterInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L48">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L60">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_TableReflectionContext_MapParameterCore_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapParameterCore*"></a>
   <h4 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapParameterCore_System_Reflection_ParameterInfo_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapParameterCore(System.Reflection.ParameterInfo)">MapParameterCore(ParameterInfo)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs projection of a parameter that has not already been mapped in this reflection context.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -534,7 +622,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.parameterinfo">ParameterInfo</a></td>
         <td><span class="parametername">parameter</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.parameterinfo">ParameterInfo</a> to map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -549,22 +638,34 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.parameterinfo">ParameterInfo</a></td>
-        <td></td>
+        <td><p>The representation of the <code data-dev-comment-type="paramref" class="paramref">parameter</code> in this reflection context.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_MapParameterCore_System_Reflection_ParameterInfo_">CustomReflectionContextBase.MapParameterCore(ParameterInfo)</a></div>
+  <h5 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapParameterCore_System_Reflection_ParameterInfo__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Override this method to customize how a parameter is mapped in this reflection context.  This method is called
+by all other methods mapping a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.parameterinfo">ParameterInfo</a>, and it is only called if the parameter has not already
+been mapped in this reflection context. 
+</p>
+<p>The default implementation returns a
+<a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedParameterInfo-1.html">CustomReflectionContextBase.ProjectedParameterInfo&lt;TContext&gt;</a>
+that simply delegates all operations to the mapped member.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext_MapPropertyCore_System_Reflection_PropertyInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.MapPropertyCore(System.Reflection.PropertyInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L50">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L63">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_TableReflectionContext_MapPropertyCore_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapPropertyCore*"></a>
   <h4 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapPropertyCore_System_Reflection_PropertyInfo_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapPropertyCore(System.Reflection.PropertyInfo)">MapPropertyCore(PropertyInfo)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs projection of a property that has not already been mapped in this reflection context.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -583,7 +684,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></td>
         <td><span class="parametername">property</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a> to map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -598,22 +700,34 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></td>
-        <td></td>
+        <td><p>The representation of the <code data-dev-comment-type="paramref" class="paramref">property</code> in this reflection context.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_MapPropertyCore_System_Reflection_PropertyInfo_">CustomReflectionContextBase.MapPropertyCore(PropertyInfo)</a></div>
+  <h5 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapPropertyCore_System_Reflection_PropertyInfo__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Override this method to customize how a property is mapped in this reflection context.  This method is called
+by all other methods mapping a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>, and it is only called if the property has not already
+been mapped in this reflection context. 
+</p>
+<p>The default implementation returns a
+<a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo-1.html">CustomReflectionContextBase.ProjectedPropertyInfo&lt;TContext&gt;</a>
+that simply delegates all operations to the mapped member.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext_MapTypeCore_System_Type_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.MapTypeCore(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L52">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.cs/#L66">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_TableReflectionContext_MapTypeCore_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapTypeCore*"></a>
   <h4 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapTypeCore_System_Type_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.MapTypeCore(System.Type)">MapTypeCore(Type)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Performs projection of a type that has not already been mapped in this reflection context.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -632,7 +746,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">type</span></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a> to map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -647,12 +762,23 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td></td>
+        <td><p>The representation of the <code data-dev-comment-type="paramref" class="paramref">type</code> in this reflection context.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_MapTypeCore_System_Type_">CustomReflectionContextBase.MapTypeCore(Type)</a></div>
+  <h5 id="Alphaleonis_Reflection_Context_TableReflectionContext_MapTypeCore_System_Type__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Override this method to customize how a type is mapped in this reflection context.  This method is called
+by all other methods mapping a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>, and it is only called if the type has not already
+been mapped in this reflection context. 
+</p>
+<p>The default implementation returns a
+<a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedType-1.html">CustomReflectionContextBase.ProjectedType&lt;TContext&gt;</a>
+that simply delegates all operations to the mapped type.</p>
+</div>
 </article>
           </div>
           

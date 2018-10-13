@@ -83,7 +83,8 @@
   
   <h1 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1" class="text-break">Class CustomReflectionContextBase.ProjectedMethodInfo&lt;TContext&gt;
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A default projector that wraps a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a> for a reflection context.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -101,8 +102,6 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.interopservices._memberinfo">_MemberInfo</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.interopservices._methodbase">_MethodBase</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.interopservices._methodinfo">_MethodInfo</a></div>
-    <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.html">CustomReflectionContextBase.IProjector</a>&lt;TContext&gt;</div>
-    <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.html">CustomReflectionContextBase.IProjector</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -346,10 +345,17 @@
     <tbody>
       <tr>
         <td><span class="parametername">TContext</span></td>
-        <td></td>
+        <td><p>The type of the reflection context. Must inherit from
+<a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.html">CustomReflectionContextBase</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This projector is intended to be used as a base class for projectors in derived reflection contexts. It
+adds no functionality to the underlying object, other than ensuring that all
+types and members returned from the object are also mapped in the same reflection context.</p>
+</div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
@@ -357,11 +363,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1__ctor_System_Reflection_MethodInfo__0_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.%23ctor(System.Reflection.MethodInfo%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L15">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L28">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1__ctor_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.#ctor*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1__ctor_System_Reflection_MethodInfo__0_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.#ctor(System.Reflection.MethodInfo,`0)">ProjectedMethodInfo(MethodInfo, TContext)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -380,12 +387,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></td>
         <td><span class="parametername">method</span></td>
-        <td></td>
+        <td><p>The method to wrap.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TContext</span></td>
         <td><span class="parametername">reflectionContext</span></td>
-        <td></td>
+        <td><p>The owner reflection context.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -396,7 +405,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_DeclaringType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.DeclaringType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L25">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L40">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_DeclaringType_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.DeclaringType*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_DeclaringType" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.DeclaringType">DeclaringType</h4>
@@ -428,7 +437,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReflectedType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.ReflectedType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L56">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L73">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReflectedType_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.ReflectedType*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReflectedType" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.ReflectedType">ReflectedType</h4>
@@ -460,11 +469,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReflectionContext.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.ReflectionContext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L21">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L35">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReflectionContext_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.ReflectionContext*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReflectionContext" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.ReflectionContext">ReflectionContext</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the owner reflection context.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -490,7 +500,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReturnParameter.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.ReturnParameter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L58">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L76">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReturnParameter_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.ReturnParameter*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReturnParameter" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.ReturnParameter">ReturnParameter</h4>
@@ -522,7 +532,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReturnType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.ReturnType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L60">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L79">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReturnType_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.ReturnType*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReturnType" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.ReturnType">ReturnType</h4>
@@ -554,7 +564,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReturnTypeCustomAttributes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.ReturnTypeCustomAttributes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L62">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L82">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReturnTypeCustomAttributes_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.ReturnTypeCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_ReturnTypeCustomAttributes" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.ReturnTypeCustomAttributes">ReturnTypeCustomAttributes</h4>
@@ -588,7 +598,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetBaseDefinition.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.GetBaseDefinition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L27">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L43">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetBaseDefinition_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetBaseDefinition*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetBaseDefinition" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetBaseDefinition">GetBaseDefinition()</h4>
@@ -620,7 +630,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetCustomAttributes_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.GetCustomAttributes(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L29">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L46">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetCustomAttributes_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetCustomAttributes_System_Boolean_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetCustomAttributes(System.Boolean)">GetCustomAttributes(Boolean)</h4>
@@ -669,7 +679,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetCustomAttributes_System_Type_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.GetCustomAttributes(System.Type%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L34">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L49">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetCustomAttributes_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetCustomAttributes_System_Type_System_Boolean_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetCustomAttributes(System.Type,System.Boolean)">GetCustomAttributes(Type, Boolean)</h4>
@@ -723,7 +733,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetGenericArguments.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.GetGenericArguments%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L42">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L55">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetGenericArguments_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetGenericArguments*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetGenericArguments" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetGenericArguments">GetGenericArguments()</h4>
@@ -755,7 +765,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetGenericMethodDefinition.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.GetGenericMethodDefinition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L44">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L58">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetGenericMethodDefinition_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetGenericMethodDefinition*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetGenericMethodDefinition" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetGenericMethodDefinition">GetGenericMethodDefinition()</h4>
@@ -787,7 +797,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetParameters.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.GetParameters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L40">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L52">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetParameters_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetParameters*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_GetParameters" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.GetParameters">GetParameters()</h4>
@@ -819,7 +829,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_IsDefined_System_Type_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.IsDefined(System.Type%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L46">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L61">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_IsDefined_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.IsDefined*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_IsDefined_System_Type_System_Boolean_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.IsDefined(System.Type,System.Boolean)">IsDefined(Type, Boolean)</h4>
@@ -873,7 +883,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_MakeGenericMethod_System_Type___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601.MakeGenericMethod(System.Type%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L54">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L70">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_MakeGenericMethod_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.MakeGenericMethod*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1_MakeGenericMethod_System_Type___" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo`1.MakeGenericMethod(System.Type[])">MakeGenericMethod(Type[])</h4>
@@ -930,12 +940,6 @@
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.interopservices._methodinfo">System.Runtime.InteropServices._MethodInfo</a>
   </div>
-  <div>
-      <a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.html">CustomReflectionContextBase.IProjector&lt;TContext&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.html">CustomReflectionContextBase.IProjector</a>
-  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Alphaleonis.Reflection.MemberInfoExtensions.html#Alphaleonis_Reflection_MemberInfoExtensions_IsOverride_System_Reflection_MethodInfo_">MemberInfoExtensions.IsOverride(MethodInfo)</a>
@@ -960,7 +964,7 @@
                     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedMethodInfo_1.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedMethodInfo.cs/#L23" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

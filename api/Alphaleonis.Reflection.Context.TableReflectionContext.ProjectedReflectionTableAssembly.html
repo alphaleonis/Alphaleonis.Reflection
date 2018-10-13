@@ -83,7 +83,8 @@
   
   <h1 id="Alphaleonis_Reflection_Context_TableReflectionContext_ProjectedReflectionTableAssembly" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableAssembly" class="text-break">Class TableReflectionContext.ProjectedReflectionTableAssembly
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Projector used for <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a> instances in this reflection context.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -99,8 +100,6 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.security.ievidencefactory">IEvidenceFactory</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.icustomattributeprovider">ICustomAttributeProvider</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a></div>
-    <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.html">CustomReflectionContextBase.IProjector</a>&lt;<a class="xref" href="Alphaleonis.Reflection.Context.TableReflectionContext.html">TableReflectionContext</a>&gt;</div>
-    <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.html">CustomReflectionContextBase.IProjector</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -375,6 +374,9 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected class ProjectedReflectionTableAssembly : CustomReflectionContextBase.ProjectedAssembly&lt;TableReflectionContext&gt;, _Assembly, IEvidenceFactory, ICustomAttributeProvider, ISerializable, CustomReflectionContextBase.IProjector&lt;TableReflectionContext&gt;, CustomReflectionContextBase.IProjector</code></pre>
   </div>
+  <h5 id="Alphaleonis_Reflection_Context_TableReflectionContext_ProjectedReflectionTableAssembly_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Adding attributes on an assembly level is currently not supported.</p>
+</div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
@@ -382,11 +384,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext_ProjectedReflectionTableAssembly__ctor_System_Reflection_Assembly_Alphaleonis_Reflection_Context_TableReflectionContext_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableAssembly.%23ctor(System.Reflection.Assembly%2CAlphaleonis.Reflection.Context.TableReflectionContext)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.ProjectedReflectionTableAssembly.cs/#L13">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.ProjectedReflectionTableAssembly.cs/#L17">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_TableReflectionContext_ProjectedReflectionTableAssembly__ctor_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableAssembly.#ctor*"></a>
   <h4 id="Alphaleonis_Reflection_Context_TableReflectionContext_ProjectedReflectionTableAssembly__ctor_System_Reflection_Assembly_Alphaleonis_Reflection_Context_TableReflectionContext_" data-uid="Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableAssembly.#ctor(System.Reflection.Assembly,Alphaleonis.Reflection.Context.TableReflectionContext)">ProjectedReflectionTableAssembly(Assembly, TableReflectionContext)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -405,12 +408,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a></td>
         <td><span class="parametername">assembly</span></td>
-        <td></td>
+        <td><p>The assembly to wrap.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.TableReflectionContext.html">TableReflectionContext</a></td>
         <td><span class="parametername">context</span></td>
-        <td></td>
+        <td><p>The parent reflection context.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -427,12 +432,6 @@
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">System.Runtime.Serialization.ISerializable</a>
   </div>
-  <div>
-      <a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.html">CustomReflectionContextBase.IProjector&lt;TContext&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.html">CustomReflectionContextBase.IProjector</a>
-  </div>
 </article>
           </div>
           
@@ -444,7 +443,7 @@
                     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_TableReflectionContext_ProjectedReflectionTableAssembly.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableAssembly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.ProjectedReflectionTableAssembly.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/TableReflectionContext.ProjectedReflectionTableAssembly.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

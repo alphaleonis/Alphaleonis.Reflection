@@ -83,7 +83,8 @@
   
   <h1 id="Alphaleonis_Reflection_Context_ReflectionTableBase" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBase" class="text-break">Class ReflectionTableBase
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Base class containing common functionality for classes representing a <a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTable.html">IReflectionTable</a>.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -128,11 +129,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBase_GetCustomAttributes_System_Reflection_MemberInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBase.GetCustomAttributes(System.Reflection.MemberInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilder.ReflectionTable.cs/#L15">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBase.cs/#L29">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBase_GetCustomAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBase.GetCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBase_GetCustomAttributes_System_Reflection_MemberInfo_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBase.GetCustomAttributes(System.Reflection.MemberInfo)">GetCustomAttributes(MemberInfo)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the custom attributes applied to the specified member in this reflection table.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -151,7 +153,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></td>
         <td><span class="parametername">member</span></td>
-        <td></td>
+        <td><p>The member to retrieve the custom attributes for.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -166,7 +169,29 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
-        <td></td>
+        <td><p>The custom attributes that were added to the specified <code data-dev-comment-type="paramref" class="paramref">member</code> in this
+reflection table.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Alphaleonis_Reflection_Context_ReflectionTableBase_GetCustomAttributes_System_Reflection_MemberInfo__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method does not perform any reflection on the member in question. Only those attributes
+that have been added to the member in this table will be returned.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when one or more required arguments are null.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -175,15 +200,16 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBase_GetCustomAttributes_System_Reflection_ParameterInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBase.GetCustomAttributes(System.Reflection.ParameterInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilder.ReflectionTable.cs/#L51">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBase.cs/#L78">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBase_GetCustomAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBase.GetCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBase_GetCustomAttributes_System_Reflection_ParameterInfo_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBase.GetCustomAttributes(System.Reflection.ParameterInfo)">GetCustomAttributes(ParameterInfo)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the custom attributes applied to the specified parameter in this reflection table.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Attribute&gt; GetCustomAttributes(ParameterInfo parameterInfo)</code></pre>
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Attribute&gt; GetCustomAttributes(ParameterInfo parameter)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -197,8 +223,9 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.parameterinfo">ParameterInfo</a></td>
-        <td><span class="parametername">parameterInfo</span></td>
-        <td></td>
+        <td><span class="parametername">parameter</span></td>
+        <td><p>The parameter to retrieve the custom attributes for.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -213,54 +240,29 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
-        <td></td>
+        <td><p>The custom attributes that were added to the specified <code data-dev-comment-type="paramref" class="paramref">parameter</code> in this
+reflection table.</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBase_GetTypeMetadata_System_Type_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBase.GetTypeMetadata(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilder.ReflectionTable.cs/#L13">View Source</a>
-  </span>
-  <a id="Alphaleonis_Reflection_Context_ReflectionTableBase_GetTypeMetadata_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBase.GetTypeMetadata*"></a>
-  <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBase_GetTypeMetadata_System_Type_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBase.GetTypeMetadata(System.Type)">GetTypeMetadata(Type)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract ReflectionTableBase.TypeMetadata GetTypeMetadata(Type type)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 id="Alphaleonis_Reflection_Context_ReflectionTableBase_GetCustomAttributes_System_Reflection_ParameterInfo__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method does not perform any reflection on the parameter in question. Only those attributes
+that have been added to the parameter in this table will be returned.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
+        <th>Condition</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">type</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html">ReflectionTableBase.TypeMetadata</a></td>
-        <td></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when one or more required arguments are null.</p>
+</td>
       </tr>
     </tbody>
   </table>

@@ -18,31 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.CachingReflectionContext.html",
-          "hash": "NMEuoFQlWYxrID61y/ZFTQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.html",
-          "hash": "iKEplX8T8SZxenJbAyJpQw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.html",
-          "hash": "1GM94HtJKWHze95A7i0tvA=="
+          "hash": "tClZtQrzFEy/zHnbTNOHzw=="
         }
       },
       "is_incremental": false,
@@ -54,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly-1.html",
-          "hash": "PgW1xQn3EXV+KtQlAumTvQ=="
+          "hash": "PUjnH0kTBfEbQ0RpGniqpg=="
         }
       },
       "is_incremental": false,
@@ -66,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedConstructorInfo-1.html",
-          "hash": "OJOc85yZEn1CTscOHzkFqg=="
+          "hash": "LS0XEzKEvPtMVj8cSzMx0A=="
         }
       },
       "is_incremental": false,
@@ -78,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedEventInfo-1.html",
-          "hash": "OlyfGL5KTmkBgAULF1nkdA=="
+          "hash": "hRkqzZq5TZBEos873zuYGQ=="
         }
       },
       "is_incremental": false,
@@ -90,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedFieldInfo-1.html",
-          "hash": "ZDSvX3y/qXeXEO1cbRruLw=="
+          "hash": "mUQ+NskrAbipni5nItju6Q=="
         }
       },
       "is_incremental": false,
@@ -102,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo-1.html",
-          "hash": "6NhA2ql3r88l7/xC9OFQ3g=="
+          "hash": "rrd/dTWjAzRSgIU+bT2lZw=="
         }
       },
       "is_incremental": false,
@@ -114,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedParameterInfo-1.html",
-          "hash": "cSitBYgdKp5SOckXe4Y9aQ=="
+          "hash": "N7qfUV0H/cueAxfHoSbPMQ=="
         }
       },
       "is_incremental": false,
@@ -126,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo-1.html",
-          "hash": "8ovOoujdBdpcVCh+FD4yyg=="
+          "hash": "q1x42Rm1M5iHNsCMaIUHYg=="
         }
       },
       "is_incremental": false,
@@ -138,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedType-1.html",
-          "hash": "EYDxUBxSKUnaMKL+JhuSZg=="
+          "hash": "5J1lxDYkmlMxqzXC5lgU5Q=="
         }
       },
       "is_incremental": false,
@@ -162,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextIdAttribute.html",
-          "hash": "K2SvpRYbUwS2kvsaIAr50Q=="
+          "hash": "i2MNQWXIZku6spIRS47vMg=="
         }
       },
       "is_incremental": false,
@@ -174,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.Decorate.html",
-          "hash": "h9QC4VkHySs3VdjsDnQmrA=="
+          "hash": "1VX08EQj1NNganVkgcaaLw=="
         }
       },
       "is_incremental": false,
@@ -186,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.IMappedTypedReflectionTableBuilder-1.html",
-          "hash": "zZIZZTGBQmG7Ayi9tSc7BQ=="
+          "hash": "f/CIzQVoPhnlkNN8ICgazw=="
         }
       },
       "is_incremental": false,
@@ -210,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.IReflectionTableBuilder.html",
-          "hash": "NhKct+bW+WAOl191kL07Uw=="
+          "hash": "++t9ILo0hF9fRZdqGe+Cmw=="
         }
       },
       "is_incremental": false,
@@ -222,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder-1.html",
-          "hash": "K9flV9crHaFQsWt0iumjzg=="
+          "hash": "LQv63K3Q8eUlhXx+eNeIbQ=="
         }
       },
       "is_incremental": false,
@@ -234,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder.html",
-          "hash": "fn3lF3uU0YrQH+iKxndpWA=="
+          "hash": "2hSy+kGu11sTWL2NR4leAQ=="
         }
       },
       "is_incremental": false,
@@ -258,55 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.Param.html",
-          "hash": "Br/8tFsLR02zwT1uLYz5sA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html",
-          "hash": "k6WWq5CFMZ0EjgDM0PyJeg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html",
-          "hash": "/VysueFItNxsPMQIcC7vZg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html",
-          "hash": "EH/y0tB80owvEN79oK9YxQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html",
-          "hash": "FKKCR/yk6xNuIDS4q4Wmew=="
+          "hash": "0U8cpqih66yRgT4aIvZG4Q=="
         }
       },
       "is_incremental": false,
@@ -318,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.html",
-          "hash": "N/Mc6kxGdCmYs8FxEbQhVw=="
+          "hash": "kGZPLvA0rrXco+I6U3T14A=="
         }
       },
       "is_incremental": false,
@@ -330,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBuilder.html",
-          "hash": "eDYNY4+Xp+nxQ6osSsAbSQ=="
+          "hash": "37EiXEdfsQs4KTWZ2774sw=="
         }
       },
       "is_incremental": false,
@@ -342,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.html",
-          "hash": "KQY9HtrclGNAhytiFKHZ2w=="
+          "hash": "HpSV/lpvPmp6KKD5K9yXTA=="
         }
       },
       "is_incremental": false,
@@ -354,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableAssembly.html",
-          "hash": "1P8ToOkLkW31S6cOxhQPYw=="
+          "hash": "+jsmDc3qatyGsB7pJT4M9Q=="
         }
       },
       "is_incremental": false,
@@ -366,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableConstructorInfo.html",
-          "hash": "xngFr1pmtwJ9UyegvustcA=="
+          "hash": "xTg/5pY8M9trlp9rsw+LYg=="
         }
       },
       "is_incremental": false,
@@ -378,7 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableEventInfo.html",
-          "hash": "ukpQfGIZSWYkh4YtN1wasw=="
+          "hash": "qNEP13Ts5De9AYqy0OnI4w=="
         }
       },
       "is_incremental": false,
@@ -390,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableFieldInfo.html",
-          "hash": "nudSpyl7o+lb9WdGXrYrBw=="
+          "hash": "3OCdoJ8dYv27PBgOOvJ1mA=="
         }
       },
       "is_incremental": false,
@@ -402,7 +330,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableMethodInfo.html",
-          "hash": "HyugQbSmYx0oZ/PvhLSKoA=="
+          "hash": "+jgIp6D5Tl7/28OsPk6l7A=="
         }
       },
       "is_incremental": false,
@@ -414,7 +342,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableParameterInfo.html",
-          "hash": "KPd7FzFdnLQaHKlkUHUXQg=="
+          "hash": "IQHxp68VR83J9Hwvl5KI/w=="
         }
       },
       "is_incremental": false,
@@ -426,7 +354,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTablePropertyInfo.html",
-          "hash": "RulZ/liNkcxOIeJbl3pfWQ=="
+          "hash": "KxNwbELPkn1et0TmrtxbTQ=="
         }
       },
       "is_incremental": false,
@@ -438,7 +366,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableType.html",
-          "hash": "HDESXBNNOhtmsKDV5T3C3g=="
+          "hash": "jyIH9TAi8U2DC2VttafjzA=="
         }
       },
       "is_incremental": false,
@@ -450,7 +378,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.html",
-          "hash": "Ar++kBF+yxD1N0CumTZuLw=="
+          "hash": "gY1MXhr2ar3IY+7gwaSmJg=="
         }
       },
       "is_incremental": false,
@@ -462,7 +390,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContextOptions.html",
-          "hash": "rgrtERfOS+Rem4KI8xVwHg=="
+          "hash": "UkJxOsB/MA4P4mnMfOIARw=="
         }
       },
       "is_incremental": false,
@@ -474,7 +402,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.TypedReflectionTableBuilderExtensions.html",
-          "hash": "iBb6e6QF49mepPNrr+Us6w=="
+          "hash": "WMJT9Znn9G6B7jtr0sOITA=="
         }
       },
       "is_incremental": false,
@@ -486,7 +414,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.Context.html",
-          "hash": "/VxW0vLYls6OwQsOSO4oRg=="
+          "hash": "68c2iX9hx+kZNuQM6O7TLA=="
         }
       },
       "is_incremental": false,
@@ -498,7 +426,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.DelegatingAssembly.html",
-          "hash": "OObfqYW7bquBMjsL+r6DWg=="
+          "hash": "xaWS41rL6DF/3TOeJ/urzA=="
         }
       },
       "is_incremental": false,
@@ -510,7 +438,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.DelegatingConstructorInfo.html",
-          "hash": "JiIJ/7q5EeY8l+y/auczew=="
+          "hash": "QZ8JFXUYWAVudP7c6HNrog=="
         }
       },
       "is_incremental": false,
@@ -522,7 +450,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.DelegatingEventInfo.html",
-          "hash": "2k5t5J5URjzUttU4+r7V+w=="
+          "hash": "7ociT6Ru3cSdZy8iKAKb4w=="
         }
       },
       "is_incremental": false,
@@ -534,7 +462,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.DelegatingFieldInfo.html",
-          "hash": "nmjiCiA8ovmacWAGKJUOag=="
+          "hash": "2XSzKSjFsNjAwSiI4AGNVw=="
         }
       },
       "is_incremental": false,
@@ -546,7 +474,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.DelegatingMethodInfo.html",
-          "hash": "JWh3n36EzN6WrjxYf3rcLA=="
+          "hash": "KUjlShMW9zJRni73sndekQ=="
         }
       },
       "is_incremental": false,
@@ -558,7 +486,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.DelegatingParameterInfo.html",
-          "hash": "ecoV/buIJ9s36gTXMgIzVg=="
+          "hash": "tsMrAbRCyd71I2gIFWss+g=="
         }
       },
       "is_incremental": false,
@@ -582,7 +510,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Alphaleonis.Reflection.DelegatingType.html",
-          "hash": "x7db7kY+q+rCpU9kEZZyow=="
+          "hash": "8SoYQusHcCwwgM3bJKZLDA=="
         }
       },
       "is_incremental": false,
@@ -666,7 +594,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "2/FfSdTZ2ja+K5nyf9mGNw=="
+          "hash": "cQ/iFyVghRCckd3XUJUxig=="
         }
       },
       "is_incremental": false,
@@ -716,9 +644,8 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ResourceDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
@@ -730,8 +657,9 @@
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

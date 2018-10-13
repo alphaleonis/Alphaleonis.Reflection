@@ -83,7 +83,8 @@
   
   <h1 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1" class="text-break">Class CustomReflectionContextBase.ProjectedAssembly&lt;TContext&gt;
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A default projector that wraps an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a> for a reflection context.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -99,8 +100,6 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.security.ievidencefactory">IEvidenceFactory</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.icustomattributeprovider">ICustomAttributeProvider</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a></div>
-    <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.html">CustomReflectionContextBase.IProjector</a>&lt;TContext&gt;</div>
-    <div><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.html">CustomReflectionContextBase.IProjector</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -347,10 +346,17 @@
     <tbody>
       <tr>
         <td><span class="parametername">TContext</span></td>
-        <td></td>
+        <td><p>The type of the reflection context. Must inherit from
+<a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.html">CustomReflectionContextBase</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This projector is intended to be used as a base class for projectors in derived reflection contexts. It
+adds no functionality to the underlying object, other than ensuring that all
+types and members returned from the object are also mapped in the same reflection context.</p>
+</div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
@@ -358,15 +364,16 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1__ctor_System_Reflection_Assembly__0_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.%23ctor(System.Reflection.Assembly%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L16">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L29">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1__ctor_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.#ctor*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1__ctor_System_Reflection_Assembly__0_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.#ctor(System.Reflection.Assembly,`0)">ProjectedAssembly(Assembly, TContext)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ProjectedAssembly(Assembly assembly, TContext context)</code></pre>
+    <pre><code class="lang-csharp hljs">public ProjectedAssembly(Assembly assembly, TContext reflectionContext)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -381,12 +388,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a></td>
         <td><span class="parametername">assembly</span></td>
-        <td></td>
+        <td><p>The assembly to wrap.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TContext</span></td>
-        <td><span class="parametername">context</span></td>
-        <td></td>
+        <td><span class="parametername">reflectionContext</span></td>
+        <td><p>The reflection context through which this instance was mapped.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -397,7 +406,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_DefinedTypes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.DefinedTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L41">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L61">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_DefinedTypes_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.DefinedTypes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_DefinedTypes" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.DefinedTypes">DefinedTypes</h4>
@@ -429,7 +438,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_EntryPoint.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.EntryPoint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L43">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L64">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_EntryPoint_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.EntryPoint*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_EntryPoint" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.EntryPoint">EntryPoint</h4>
@@ -461,7 +470,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_ExportedTypes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.ExportedTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L45">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L67">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_ExportedTypes_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.ExportedTypes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_ExportedTypes" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.ExportedTypes">ExportedTypes</h4>
@@ -493,11 +502,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_ReflectionContext.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.ReflectionContext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L21">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L35">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_ReflectionContext_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.ReflectionContext*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_ReflectionContext" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.ReflectionContext">ReflectionContext</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the owner <a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly-1.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_ReflectionContext">ReflectionContext</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -525,7 +535,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetCustomAttributes_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.GetCustomAttributes(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L25">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L40">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetCustomAttributes_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetCustomAttributes_System_Boolean_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetCustomAttributes(System.Boolean)">GetCustomAttributes(Boolean)</h4>
@@ -574,7 +584,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetCustomAttributes_System_Type_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.GetCustomAttributes(System.Type%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L30">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L46">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetCustomAttributes_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetCustomAttributes_System_Type_System_Boolean_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetCustomAttributes(System.Type,System.Boolean)">GetCustomAttributes(Type, Boolean)</h4>
@@ -628,7 +638,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetExportedTypes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.GetExportedTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L39">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L58">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetExportedTypes_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetExportedTypes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetExportedTypes" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetExportedTypes">GetExportedTypes()</h4>
@@ -660,7 +670,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetSatelliteAssembly_System_Globalization_CultureInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.GetSatelliteAssembly(System.Globalization.CultureInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L47">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L70">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetSatelliteAssembly_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetSatelliteAssembly*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetSatelliteAssembly_System_Globalization_CultureInfo_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetSatelliteAssembly(System.Globalization.CultureInfo)">GetSatelliteAssembly(CultureInfo)</h4>
@@ -709,7 +719,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetSatelliteAssembly_System_Globalization_CultureInfo_System_Version_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.GetSatelliteAssembly(System.Globalization.CultureInfo%2CSystem.Version)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L49">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L73">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetSatelliteAssembly_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetSatelliteAssembly*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetSatelliteAssembly_System_Globalization_CultureInfo_System_Version_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetSatelliteAssembly(System.Globalization.CultureInfo,System.Version)">GetSatelliteAssembly(CultureInfo, Version)</h4>
@@ -763,7 +773,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetType_System_String_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.GetType(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L51">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L76">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetType_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetType*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetType_System_String_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetType(System.String)">GetType(String)</h4>
@@ -812,7 +822,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetType_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.GetType(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L53">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L79">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetType_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetType*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetType_System_String_System_Boolean_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetType(System.String,System.Boolean)">GetType(String, Boolean)</h4>
@@ -866,7 +876,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetType_System_String_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.GetType(System.String%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L35">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L52">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetType_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetType*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetType_System_String_System_Boolean_System_Boolean_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetType(System.String,System.Boolean,System.Boolean)">GetType(String, Boolean, Boolean)</h4>
@@ -925,7 +935,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetTypes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601.GetTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L37">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L55">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetTypes_" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetTypes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1_GetTypes" data-uid="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly`1.GetTypes">GetTypes()</h4>
@@ -965,12 +975,6 @@
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">System.Runtime.Serialization.ISerializable</a>
   </div>
-  <div>
-      <a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.html">CustomReflectionContextBase.IProjector&lt;TContext&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.html">CustomReflectionContextBase.IProjector</a>
-  </div>
 </article>
           </div>
           
@@ -982,7 +986,7 @@
                     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_CustomReflectionContextBase_ProjectedAssembly_1.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L14" class="contribution-link">View Source</a>
+                    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/Base/CustomReflectionContextBase.ProjectedAssembly.cs/#L24" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

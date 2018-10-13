@@ -265,13 +265,14 @@
   <h5 id="Alphaleonis_Reflection_DelegatingMethodInfo_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>Derive from this type and override only those members you have to provide customization
 in.</p>
-<p><a class="xref" href="Alphaleonis.Reflection.DelegatingMethodInfo.html">DelegatingMethodInfo</a> derives from <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a> and implements most
+<p><a class="xref" href="Alphaleonis.Reflection.DelegatingMethodInfo.html">DelegatingMethodInfo</a> derives from <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a> and implements
+most
 of the properties and methods of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a>. For
       each member it implements, <a class="xref" href="Alphaleonis.Reflection.DelegatingMethodInfo.html">DelegatingMethodInfo</a> automatically delegates to
       the corresponding member of the internal <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a>
       object which was supplied as the argument to the constructor.  This internal
-<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a> is exposed to deriving classes by the <span class="xref">langword_csharp_protected</span>
-<span class="xref">Alphaleonis.Reflection.DelegatingMethodInfo.m_methodImpl</span> field.</p>
+<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a> is exposed to deriving classes by the
+<a class="xref" href="Alphaleonis.Reflection.DelegatingMethodInfo.html#Alphaleonis_Reflection_DelegatingMethodInfo_UnderlyingMethod">UnderlyingMethod</a> property.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -280,11 +281,12 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo__ctor_System_Reflection_MethodInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.%23ctor(System.Reflection.MethodInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L31">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L34">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo__ctor_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.#ctor*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo__ctor_System_Reflection_MethodInfo_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.#ctor(System.Reflection.MethodInfo)">DelegatingMethodInfo(MethodInfo)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Constructor.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -303,7 +305,8 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></td>
         <td><span class="parametername">method</span></td>
-        <td></td>
+        <td><p>The method to delegate all calls to.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -314,7 +317,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_Attributes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.Attributes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L36">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L40">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_Attributes_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.Attributes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_Attributes" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.Attributes">Attributes</h4>
@@ -346,7 +349,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_CallingConvention.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.CallingConvention%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L38">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L43">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_CallingConvention_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.CallingConvention*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_CallingConvention" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.CallingConvention">CallingConvention</h4>
@@ -378,7 +381,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_ContainsGenericParameters.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.ContainsGenericParameters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L40">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L46">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_ContainsGenericParameters_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ContainsGenericParameters*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_ContainsGenericParameters" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ContainsGenericParameters">ContainsGenericParameters</h4>
@@ -410,7 +413,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_CustomAttributes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.CustomAttributes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L113">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L152">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_CustomAttributes_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.CustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_CustomAttributes" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.CustomAttributes">CustomAttributes</h4>
@@ -442,7 +445,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_DeclaringType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.DeclaringType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L42">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L49">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_DeclaringType_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.DeclaringType*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_DeclaringType" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.DeclaringType">DeclaringType</h4>
@@ -474,7 +477,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_IsGenericMethod.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.IsGenericMethod%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L44">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L52">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_IsGenericMethod_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsGenericMethod*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_IsGenericMethod" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsGenericMethod">IsGenericMethod</h4>
@@ -506,7 +509,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_IsGenericMethodDefinition.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.IsGenericMethodDefinition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L46">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L55">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_IsGenericMethodDefinition_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsGenericMethodDefinition*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_IsGenericMethodDefinition" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsGenericMethodDefinition">IsGenericMethodDefinition</h4>
@@ -538,7 +541,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_IsSecurityCritical.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.IsSecurityCritical%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L48">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L58">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_IsSecurityCritical_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsSecurityCritical*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_IsSecurityCritical" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsSecurityCritical">IsSecurityCritical</h4>
@@ -570,7 +573,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_IsSecuritySafeCritical.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.IsSecuritySafeCritical%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L50">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L61">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_IsSecuritySafeCritical_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsSecuritySafeCritical*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_IsSecuritySafeCritical" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsSecuritySafeCritical">IsSecuritySafeCritical</h4>
@@ -602,7 +605,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_IsSecurityTransparent.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.IsSecurityTransparent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L52">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L64">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_IsSecurityTransparent_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsSecurityTransparent*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_IsSecurityTransparent" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsSecurityTransparent">IsSecurityTransparent</h4>
@@ -634,7 +637,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_MetadataToken.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.MetadataToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L54">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L67">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_MetadataToken_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.MetadataToken*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_MetadataToken" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.MetadataToken">MetadataToken</h4>
@@ -666,7 +669,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_MethodHandle.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.MethodHandle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L56">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L70">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_MethodHandle_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.MethodHandle*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_MethodHandle" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.MethodHandle">MethodHandle</h4>
@@ -698,7 +701,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_MethodImplementationFlags.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.MethodImplementationFlags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L115">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L155">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_MethodImplementationFlags_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.MethodImplementationFlags*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_MethodImplementationFlags" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.MethodImplementationFlags">MethodImplementationFlags</h4>
@@ -730,7 +733,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_Module.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.Module%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L58">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L73">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_Module_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.Module*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_Module" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.Module">Module</h4>
@@ -762,7 +765,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_Name.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L60">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L76">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_Name_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.Name*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_Name" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.Name">Name</h4>
@@ -794,7 +797,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_ReflectedType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.ReflectedType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L62">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L79">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_ReflectedType_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ReflectedType*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_ReflectedType" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ReflectedType">ReflectedType</h4>
@@ -826,7 +829,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_ReturnParameter.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.ReturnParameter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L64">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L82">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_ReturnParameter_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ReturnParameter*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_ReturnParameter" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ReturnParameter">ReturnParameter</h4>
@@ -858,7 +861,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_ReturnType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.ReturnType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L66">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L85">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_ReturnType_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ReturnType*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_ReturnType" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ReturnType">ReturnType</h4>
@@ -890,7 +893,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_ReturnTypeCustomAttributes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.ReturnTypeCustomAttributes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L68">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L88">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_ReturnTypeCustomAttributes_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ReturnTypeCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_ReturnTypeCustomAttributes" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ReturnTypeCustomAttributes">ReturnTypeCustomAttributes</h4>
@@ -922,7 +925,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_UnderlyingMethod.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.UnderlyingMethod%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L70">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L91">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_UnderlyingMethod_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.UnderlyingMethod*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_UnderlyingMethod" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.UnderlyingMethod">UnderlyingMethod</h4>
@@ -954,7 +957,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_CreateDelegate_System_Type_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.CreateDelegate(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L72">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L94">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_CreateDelegate_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.CreateDelegate*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_CreateDelegate_System_Type_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.CreateDelegate(System.Type)">CreateDelegate(Type)</h4>
@@ -1003,7 +1006,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_CreateDelegate_System_Type_System_Object_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.CreateDelegate(System.Type%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L74">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L97">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_CreateDelegate_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.CreateDelegate*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_CreateDelegate_System_Type_System_Object_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.CreateDelegate(System.Type,System.Object)">CreateDelegate(Type, Object)</h4>
@@ -1057,7 +1060,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L104">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L142">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_Equals_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.Equals*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_Equals_System_Object_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.Equals(System.Object)">Equals(Object)</h4>
@@ -1106,7 +1109,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_GetBaseDefinition.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.GetBaseDefinition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L76">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L100">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_GetBaseDefinition_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetBaseDefinition*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_GetBaseDefinition" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetBaseDefinition">GetBaseDefinition()</h4>
@@ -1138,7 +1141,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_GetCustomAttributes_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.GetCustomAttributes(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L78">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L103">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_GetCustomAttributes_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_GetCustomAttributes_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetCustomAttributes(System.Boolean)">GetCustomAttributes(Boolean)</h4>
@@ -1187,7 +1190,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_GetCustomAttributes_System_Type_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.GetCustomAttributes(System.Type%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L80">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L106">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_GetCustomAttributes_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetCustomAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_GetCustomAttributes_System_Type_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetCustomAttributes(System.Type,System.Boolean)">GetCustomAttributes(Type, Boolean)</h4>
@@ -1241,7 +1244,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_GetCustomAttributesData.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.GetCustomAttributesData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L82">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L109">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_GetCustomAttributesData_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetCustomAttributesData*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_GetCustomAttributesData" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetCustomAttributesData">GetCustomAttributesData()</h4>
@@ -1273,7 +1276,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_GetGenericArguments.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.GetGenericArguments%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L84">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L112">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_GetGenericArguments_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetGenericArguments*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_GetGenericArguments" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetGenericArguments">GetGenericArguments()</h4>
@@ -1305,7 +1308,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_GetGenericMethodDefinition.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.GetGenericMethodDefinition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L86">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L115">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_GetGenericMethodDefinition_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetGenericMethodDefinition*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_GetGenericMethodDefinition" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetGenericMethodDefinition">GetGenericMethodDefinition()</h4>
@@ -1337,7 +1340,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_GetHashCode.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L102">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L139">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_GetHashCode_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetHashCode*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_GetHashCode" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetHashCode">GetHashCode()</h4>
@@ -1369,7 +1372,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_GetMethodBody.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.GetMethodBody%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L88">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L118">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_GetMethodBody_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetMethodBody*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_GetMethodBody" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetMethodBody">GetMethodBody()</h4>
@@ -1401,7 +1404,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_GetMethodImplementationFlags.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.GetMethodImplementationFlags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L90">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L121">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_GetMethodImplementationFlags_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetMethodImplementationFlags*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_GetMethodImplementationFlags" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetMethodImplementationFlags">GetMethodImplementationFlags()</h4>
@@ -1433,7 +1436,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_GetParameters.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.GetParameters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L92">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L124">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_GetParameters_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetParameters*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_GetParameters" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.GetParameters">GetParameters()</h4>
@@ -1465,7 +1468,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_Invoke_System_Object_System_Reflection_BindingFlags_System_Reflection_Binder_System_Object___System_Globalization_CultureInfo_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.Invoke(System.Object%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L94">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L127">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_Invoke_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.Invoke*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_Invoke_System_Object_System_Reflection_BindingFlags_System_Reflection_Binder_System_Object___System_Globalization_CultureInfo_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.Invoke(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)">Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)</h4>
@@ -1534,7 +1537,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_IsDefined_System_Type_System_Boolean_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.IsDefined(System.Type%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L96">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L130">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_IsDefined_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsDefined*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_IsDefined_System_Type_System_Boolean_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.IsDefined(System.Type,System.Boolean)">IsDefined(Type, Boolean)</h4>
@@ -1588,7 +1591,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_MakeGenericMethod_System_Type___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.MakeGenericMethod(System.Type%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L98">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L133">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_MakeGenericMethod_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.MakeGenericMethod*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_MakeGenericMethod_System_Type___" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.MakeGenericMethod(System.Type[])">MakeGenericMethod(Type[])</h4>
@@ -1637,7 +1640,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo_ToString.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L100">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L136">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_DelegatingMethodInfo_ToString_" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ToString*"></a>
   <h4 id="Alphaleonis_Reflection_DelegatingMethodInfo_ToString" data-uid="Alphaleonis.Reflection.DelegatingMethodInfo.ToString">ToString()</h4>
@@ -1701,7 +1704,7 @@ of the properties and methods of <a class="xref" href="https://docs.microsoft.co
                     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingMethodInfo.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingMethodInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L27" class="contribution-link">View Source</a>
+                    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingMethodInfo.cs/#L28" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

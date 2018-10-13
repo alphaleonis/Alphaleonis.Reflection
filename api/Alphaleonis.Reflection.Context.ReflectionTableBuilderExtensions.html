@@ -83,7 +83,8 @@
   
   <h1 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions" class="text-break">Class ReflectionTableBuilderExtensions
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Provides extension methods for working with a <a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a>.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -127,11 +128,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Type%2CSystem.String%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L84">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L173">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Attribute[])">AddEventAttributes(IReflectionTableBuilder, Type, String, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the event with the given name in the
+specified type.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -150,22 +153,26 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">type</span></td>
-        <td></td>
+        <td><p>The type in which the property resides.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">eventName</span></td>
-        <td></td>
+        <td><p>The name of the event to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the event.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -180,7 +187,30 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when one or more required arguments are null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when one or more arguments have unsupported or
+illegal values.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -189,11 +219,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Type%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L66">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L141">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Collections.Generic.IEnumerable{System.Attribute})">AddEventAttributes(IReflectionTableBuilder, Type, String, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the event with the given name in the
+specified type.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -212,22 +244,26 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">type</span></td>
-        <td></td>
+        <td><p>The type in which the property resides.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">eventName</span></td>
-        <td></td>
+        <td><p>The name of the event to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the event.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -242,7 +278,30 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when one or more required arguments are null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when one or more arguments have unsupported or
+illegal values.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -251,11 +310,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.String%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L61">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L122">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.String,System.Attribute[])">AddEventAttributes&lt;T&gt;(IReflectionTableBuilder, String, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the event with the given name in the type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -274,17 +334,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">eventName</span></td>
-        <td></td>
+        <td><p>The name of the event to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the event.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -299,7 +362,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -314,7 +378,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type to act on.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -323,11 +388,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L56">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L109">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddEventAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddEventAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.String,System.Collections.Generic.IEnumerable{System.Attribute})">AddEventAttributes&lt;T&gt;(IReflectionTableBuilder, String, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the event with the given name in the type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -346,17 +412,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">eventName</span></td>
-        <td></td>
+        <td><p>The name of the event to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the event.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -371,7 +440,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -386,7 +456,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type to act on.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -395,11 +466,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Type%2CSystem.String%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L121">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L254">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Attribute[])">AddFieldAttributes(IReflectionTableBuilder, Type, String, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the field with the given name in the
+specified type.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -418,22 +491,26 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">type</span></td>
-        <td></td>
+        <td><p>The type in which the field resides.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">fieldName</span></td>
-        <td></td>
+        <td><p>The name of the field to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -448,7 +525,30 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when one or more required arguments are null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when one or more arguments have unsupported or
+illegal values.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -457,11 +557,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Type%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L103">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L222">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Collections.Generic.IEnumerable{System.Attribute})">AddFieldAttributes(IReflectionTableBuilder, Type, String, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the field with the given name in the
+specified type.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -480,22 +582,26 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">type</span></td>
-        <td></td>
+        <td><p>The type in which the field resides.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">fieldName</span></td>
-        <td></td>
+        <td><p>The name of the field to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -510,7 +616,30 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when one or more required arguments are null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when one or more arguments have unsupported or
+illegal values.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -519,11 +648,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.String%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L98">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L203">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.String,System.Attribute[])">AddFieldAttributes&lt;T&gt;(IReflectionTableBuilder, String, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the field with the given name in the type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -542,17 +672,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">fieldName</span></td>
-        <td></td>
+        <td><p>The name of the field to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -567,7 +700,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -582,7 +716,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type to act on.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -591,11 +726,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L93">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L190">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddFieldAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddFieldAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.String,System.Collections.Generic.IEnumerable{System.Attribute})">AddFieldAttributes&lt;T&gt;(IReflectionTableBuilder, String, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the field with the given name in the type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -614,17 +750,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">fieldName</span></td>
-        <td></td>
+        <td><p>The name of the field to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -639,7 +778,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -654,7 +794,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type to act on.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -663,11 +804,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action__System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Action%7D%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L221">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L420">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action__System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Action},System.Attribute[])">AddMemberAttributes(IReflectionTableBuilder, Expression&lt;Action&gt;, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the member of a class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -686,17 +828,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action">Action</a>&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing an invocation of the member.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -711,7 +856,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -720,11 +866,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action__System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Action%7D%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L226">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L434">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action__System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Action},System.Collections.Generic.IEnumerable{System.Attribute})">AddMemberAttributes(IReflectionTableBuilder, Expression&lt;Action&gt;, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the member of a class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -743,17 +890,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action">Action</a>&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing an invocation of the member.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -768,7 +918,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -777,11 +928,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action___0___System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Action%7B%60%600%7D%7D%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L246">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L478">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action___0___System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Action{``0}},System.Attribute[])">AddMemberAttributes&lt;T&gt;(IReflectionTableBuilder, Expression&lt;Action&lt;T&gt;&gt;, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the member of a class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -800,17 +952,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing an invocation of the member.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -825,7 +980,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -840,7 +996,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the object in which the member resides.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -849,11 +1006,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action___0___System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Action%7B%60%600%7D%7D%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L251">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L491">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action___0___System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Action{``0}},System.Collections.Generic.IEnumerable{System.Attribute})">AddMemberAttributes&lt;T&gt;(IReflectionTableBuilder, Expression&lt;Action&lt;T&gt;&gt;, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the member of a class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -872,17 +1030,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing an invocation of the member.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -897,7 +1058,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -912,7 +1074,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the object in which the member resides.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -921,11 +1084,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2CSystem.Object%7D%7D%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L232">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L448">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Attribute[])">AddMemberAttributes&lt;T&gt;(IReflectionTableBuilder, Expression&lt;Func&lt;T, Object&gt;&gt;, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the member of a class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -944,17 +1108,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing an invocation of the member.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -969,7 +1136,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -984,7 +1152,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the object in which the member resides.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -993,11 +1162,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2CSystem.Object%7D%7D%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L237">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L461">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddMemberAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddMemberAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Collections.Generic.IEnumerable{System.Attribute})">AddMemberAttributes&lt;T&gt;(IReflectionTableBuilder, Expression&lt;Func&lt;T, Object&gt;&gt;, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the member of a class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1016,17 +1186,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing an invocation of the member.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1041,7 +1214,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1056,7 +1230,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the object in which the member resides.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1065,11 +1240,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddParameterAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddParameterAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Action%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L182">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L325">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddParameterAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddParameterAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddParameterAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddParameterAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Action})">AddParameterAttributes(IReflectionTableBuilder, Expression&lt;Action&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the parameters of a method.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1088,12 +1264,16 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action">Action</a>&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing a method invocation, where parameters are
+decorated using the <a class="xref" href="Alphaleonis.Reflection.Context.Decorate.html">Decorate</a> class as placeholders for the parameters to which
+to add attributes, and <a class="xref" href="Alphaleonis.Reflection.Context.Param.html">Param</a> for any parameters to ignore.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1108,7 +1288,25 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when one or more arguments have unsupported or
+illegal values.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1117,11 +1315,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddParameterAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action___0___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddParameterAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Action%7B%60%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L187">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L341">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddParameterAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddParameterAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddParameterAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action___0___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddParameterAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Action{``0}})">AddParameterAttributes&lt;T&gt;(IReflectionTableBuilder, Expression&lt;Action&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the parameters of a method.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1140,12 +1339,16 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing a method invocation, where parameters are
+decorated using the <a class="xref" href="Alphaleonis.Reflection.Context.Decorate.html">Decorate</a> class as placeholders for the parameters to which
+to add attributes, and <a class="xref" href="Alphaleonis.Reflection.Context.Param.html">Param</a> for any parameters to ignore.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1160,7 +1363,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1175,7 +1379,116 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the object in which the method resides.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when one or more arguments have unsupported or
+illegal values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Type%2CSystem.String%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L92">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes*"></a>
+  <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Attribute[])">AddPropertyAttributes(IReflectionTableBuilder, Type, String, Attribute[])</h4>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the property with the given name in the
+specified type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReflectionTableBuilder AddPropertyAttributes(this IReflectionTableBuilder builder, Type type, string propertyName, params Attribute[] attributes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
+        <td><span class="parametername">builder</span></td>
+        <td><p>The reflection table builder.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The type in which the property resides.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">propertyName</span></td>
+        <td><p>The name of the property to add attributes to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
+        <td><span class="parametername">attributes</span></td>
+        <td><p>The attributes to add to the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when one or more required arguments are null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when one or more arguments have unsupported or
+illegal values.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1184,11 +1497,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Type%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L29">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L60">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Collections.Generic.IEnumerable{System.Attribute})">AddPropertyAttributes(IReflectionTableBuilder, Type, String, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the property with the given name in the
+specified type.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1207,22 +1522,26 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">type</span></td>
-        <td></td>
+        <td><p>The type in which the property resides.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">propertyName</span></td>
-        <td></td>
+        <td><p>The name of the property to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the property.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1237,7 +1556,30 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when one or more required arguments are null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when one or more arguments have unsupported or
+illegal values.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1246,11 +1588,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.String%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L24">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L41">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.String,System.Attribute[])">AddPropertyAttributes&lt;T&gt;(IReflectionTableBuilder, String, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the property with the given name in the type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1269,17 +1612,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">propertyName</span></td>
-        <td></td>
+        <td><p>The name of the property to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the property.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1294,7 +1640,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1309,7 +1656,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type to act on.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1318,11 +1666,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.String%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L19">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L28">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_String_System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.String,System.Collections.Generic.IEnumerable{System.Attribute})">AddPropertyAttributes&lt;T&gt;(IReflectionTableBuilder, String, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the property with the given name in the type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1341,17 +1690,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">propertyName</span></td>
-        <td></td>
+        <td><p>The name of the property to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the property.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1366,7 +1718,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1381,84 +1734,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Type%2CSystem.String%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L47">View Source</a>
-  </span>
-  <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes*"></a>
-  <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddPropertyAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_String_System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddPropertyAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.String,System.Attribute[])">AddPropertyAttributes&lt;T&gt;(IReflectionTableBuilder, Type, String, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IReflectionTableBuilder AddPropertyAttributes&lt;T&gt;(this IReflectionTableBuilder builder, Type type, string propertyName, params Attribute[] attributes)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td><span class="parametername">builder</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">type</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">propertyName</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
-        <td><span class="parametername">attributes</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type to act on.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1467,11 +1744,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action__System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Action%7D%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L192">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L355">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action__System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Action},System.Attribute[])">AddReturnParameterAttributes(IReflectionTableBuilder, Expression&lt;Action&gt;, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the return parameter of a method.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1490,17 +1768,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action">Action</a>&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing a method invocation.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the return parameter.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1515,7 +1796,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1524,11 +1806,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action__System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Action%7D%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L197">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L369">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action__System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Action},System.Collections.Generic.IEnumerable{System.Attribute})">AddReturnParameterAttributes(IReflectionTableBuilder, Expression&lt;Action&gt;, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the return parameter of a method.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1547,17 +1830,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action">Action</a>&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing a method invocation.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the return parameter.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1572,7 +1858,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1581,11 +1868,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action___0___System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Action%7B%60%600%7D%7D%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L203">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L383">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action___0___System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Action{``0}},System.Attribute[])">AddReturnParameterAttributes&lt;T&gt;(IReflectionTableBuilder, Expression&lt;Action&lt;T&gt;&gt;, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the return parameter of a method.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1604,17 +1892,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing a method invocation.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the return parameter.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1629,7 +1920,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1644,7 +1936,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the object in which the method resides.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1653,11 +1946,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action___0___System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Linq.Expressions.Expression%7BSystem.Action%7B%60%600%7D%7D%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L208">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L398">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddReturnParameterAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Linq_Expressions_Expression_System_Action___0___System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddReturnParameterAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Linq.Expressions.Expression{System.Action{``0}},System.Collections.Generic.IEnumerable{System.Attribute})">AddReturnParameterAttributes&lt;T&gt;(IReflectionTableBuilder, Expression&lt;Action&lt;T&gt;&gt;, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds attributes to the return parameter of a method.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1676,17 +1970,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>An expression representing a method invocation.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the return parameter.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1701,7 +1998,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1716,7 +2014,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the object in which the method resides.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1725,11 +2024,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Type%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L264">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L513">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.Attribute[])">AddTypeAttributes(IReflectionTableBuilder, Type, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the specified <code data-dev-comment-type="paramref" class="paramref">type</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1748,17 +2048,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">type</span></td>
-        <td></td>
+        <td><p>The type to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1773,7 +2076,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1782,11 +2086,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Type%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L269">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L528">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type,System.Collections.Generic.IEnumerable{System.Attribute})">AddTypeAttributes(IReflectionTableBuilder, Type, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the specified <code data-dev-comment-type="paramref" class="paramref">type</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1805,17 +2110,20 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
         <td><span class="parametername">type</span></td>
-        <td></td>
+        <td><p>The type to add attributes to.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1830,7 +2138,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1839,11 +2148,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Attribute___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Attribute%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L274">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L542">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Attribute___" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Attribute[])">AddTypeAttributes&lt;T&gt;(IReflectionTableBuilder, Attribute[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the specified type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1862,12 +2172,14 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>[]</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1882,7 +2194,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1897,7 +2210,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type to add attributes to.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1906,11 +2220,12 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Collections_Generic_IEnumerable_System_Attribute__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Collections.Generic.IEnumerable%7BSystem.Attribute%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L279">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L556">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_AddTypeAttributes__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Collections_Generic_IEnumerable_System_Attribute__" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.AddTypeAttributes``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Collections.Generic.IEnumerable{System.Attribute})">AddTypeAttributes&lt;T&gt;(IReflectionTableBuilder, IEnumerable&lt;Attribute&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">attributes</code> to the specified type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1929,12 +2244,14 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The reflection table builder.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.attribute">Attribute</a>&gt;</td>
         <td><span class="parametername">attributes</span></td>
-        <td></td>
+        <td><p>The attributes to add to the type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1949,7 +2266,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">builder</code> instance. Useful for chaining multiple calls.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1964,7 +2282,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type to add attributes to.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1973,11 +2292,14 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_ForType__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.ForType%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L288">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L573">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_ForType_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.ForType*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_ForType__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.ForType``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder)">ForType&lt;T&gt;(IReflectionTableBuilder)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns a new <a class="xref" href="Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder-1.html">ITypedReflectionTableBuilder&lt;T&gt;</a> that can be used to work on a
+single type. This may be convenient if many attributes are to be added to various members of
+the same type to avoid having to specify the type as an argument to every method.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1996,7 +2318,8 @@
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.IReflectionTableBuilder.html">IReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The builder to use.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2011,7 +2334,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder-1.html">ITypedReflectionTableBuilder</a>&lt;T&gt;</td>
-        <td></td>
+        <td><p>An <a class="xref" href="Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder-1.html">ITypedReflectionTableBuilder&lt;T&gt;</a> that can be used to add attributes to the specified type and its members.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2026,7 +2350,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type to bind the builder to.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2035,7 +2360,7 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_ForType__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.ForType%60%601(Alphaleonis.Reflection.Context.IReflectionTableBuilder%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L300">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L585">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_ForType_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.ForType*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_ForType__1_Alphaleonis_Reflection_Context_IReflectionTableBuilder_System_Type_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.ForType``1(Alphaleonis.Reflection.Context.IReflectionTableBuilder,System.Type)">ForType&lt;TInterface&gt;(IReflectionTableBuilder, Type)</h4>
@@ -2124,11 +2449,13 @@ only have compile time access to an interface of that type.</p>
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_ForType__1_Alphaleonis_Reflection_Context_ITypedReflectionTableBuilder_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.ForType%60%601(Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L308">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Context/AttributeTable/ReflectionTableBuilderExtensions.cs/#L600">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_ForType_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.ForType*"></a>
   <h4 id="Alphaleonis_Reflection_Context_ReflectionTableBuilderExtensions_ForType__1_Alphaleonis_Reflection_Context_ITypedReflectionTableBuilder_" data-uid="Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.ForType``1(Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder)">ForType&lt;T&gt;(ITypedReflectionTableBuilder)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Changes the type a specific <a class="xref" href="Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder.html">ITypedReflectionTableBuilder</a> is bound to. Useful when chaining calls together to
+start adding attributes to a new type.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2147,7 +2474,8 @@ only have compile time access to an interface of that type.</p>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder.html">ITypedReflectionTableBuilder</a></td>
         <td><span class="parametername">builder</span></td>
-        <td></td>
+        <td><p>The builder to use.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2162,7 +2490,8 @@ only have compile time access to an interface of that type.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder-1.html">ITypedReflectionTableBuilder</a>&lt;T&gt;</td>
-        <td></td>
+        <td><p>An <a class="xref" href="Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder.html">ITypedReflectionTableBuilder</a> that can be used to add attributes to the specified type and its members.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2177,7 +2506,8 @@ only have compile time access to an interface of that type.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The new type to bind the builder to.</p>
+</td>
       </tr>
     </tbody>
   </table>
