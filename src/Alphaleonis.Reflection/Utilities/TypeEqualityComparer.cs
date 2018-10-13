@@ -8,7 +8,7 @@ using System.Linq;
 namespace Alphaleonis.Reflection
 {
    /// <summary>
-   /// An equality comparer that will compare two <see langword="Type"/> instances for equality by 
+   /// An equality comparer that will compare two <see cref="Type"/> instances for equality by 
    /// returning <see langword="true"/> if the underlying system type of the two instances are equal.
    /// </summary>
    [Serializable]
