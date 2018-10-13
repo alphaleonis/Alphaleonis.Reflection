@@ -5,7 +5,7 @@
     <Authors>Alphaleonis</Authors>
     <Copyright>Copyright (C) Peter Palotas</Copyright>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseUrl>https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/alphaleonis/Alphaleonis.Reflection/</PackageProjectUrl>
     <!-- <PackageIconUrl>http://alphaleonis.com/img/AlphaFS-icon.png</PackageIconUrl> -->
     <PackageOutputPath>../../artifacts</PackageOutputPath>    

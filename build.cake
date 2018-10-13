@@ -27,6 +27,7 @@ var GitHubCommitEMail = "alphaleonis-build@users.noreply.github.com";
 var AppVeyorApiBaseUrl = "https://ci.appveyor.com/api";
 var TestProjectsPattern = "./tests/**/*.csproj";
 var PackProjectsPattern = "./src/**/*.csproj";
+var FailBuildOnTestError = true;
 
 var msBuildSettings = new DotNetCoreMSBuildSettings
 {
@@ -52,7 +53,13 @@ Setup(ctx =>
                     Verbose($"{variable.Key}={variable.Value}");
                 }
             }
-            targetVersion = EnvironmentVariable<string>("ALPHALEONIS_DEPLOY_BUILD_VERSION", null);
+
+            var buildVersion = EnvironmentVariable<string>("ALPHALEONIS_DEPLOY_BUILD_VERSION", null);
+            var buildNumber = EnvironmentVariable<string>("ALPHALEONIS_DEPLOY_BUILD_NUMBER", null);
+            if (buildVersion != null && buildNumber != null)
+                targetVersion = $"{buildVersion}.{buildNumber}";
+            else 
+                targetVersion = null;
         }
         else
         {
@@ -68,11 +75,11 @@ Setup(ctx =>
             {
                 throw new Exception($"Unable to find Major, Minor and/or Build version in {propsFile}.");
             }
-            targetVersion = $"{major}.{minor}.{revision}";
+            targetVersion = $"{major}.{minor}.{revision}.{AppVeyor.Environment.Build.Number}";
         }
 
         if (targetVersion != null)
-            BuildSystem.AppVeyor.UpdateBuildVersion($"{targetVersion}.{AppVeyor.Environment.Build.Number}");        
+            BuildSystem.AppVeyor.UpdateBuildVersion($"{targetVersion}");        
     }
 });
 
@@ -129,7 +136,9 @@ Task("Test")
     })
     .OnError(error => 
     {
-        UploadTestResults();        
+        UploadTestResults();
+        if (FailBuildOnTestError)
+            throw error;       
     });
 
 void UploadTestResults()
