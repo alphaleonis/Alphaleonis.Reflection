@@ -41,7 +41,7 @@ namespace Alphaleonis.Reflection
       #region GetBaseDefinition
 
       /// <summary>
-      /// When overridden in a derived class, returns the <see cref="propertyInfo"/> object for the 
+      /// When overridden in a derived class, returns the <see cref="PropertyInfo"/> object for the 
       /// method on the direct or indirect base class in which the property represented 
       /// by this instance was first declared. 
       /// </summary>
@@ -65,7 +65,7 @@ namespace Alphaleonis.Reflection
       /// event on the direct or indirect base class in which the event represented 
       /// by this instance was first declared. 
       /// </summary>
-      /// <returns>A <see cref="propertyInfo"/> object for the top-most declaration of this event in the inheritance chain.</returns>
+      /// <returns>An <see cref="EventInfo"/> object for the top-most declaration of this event in the inheritance chain.</returns>
       public static EventInfo GetBaseDefinition(this EventInfo eventInfo)
       {
          var method = eventInfo.GetAddMethod(true) ?? eventInfo.GetRemoveMethod(true);
@@ -142,12 +142,12 @@ namespace Alphaleonis.Reflection
       }
 
       /// <summary>Gets the most derived override of this property up the inheritance chain.</summary>
-      /// <param name="propertyInfo">The property to check.</param>
+      /// <param name="property">The property to check.</param>
       /// <remarks>Returns override of the specified property in the most derived class that is a base class of the declaring type
-      ///          of the specified <paramref name="propertyInfo"/> if it exists. If no override exists prior to this one in 
+      ///          of the specified <paramref name="property"/> if it exists. If no override exists prior to this one in 
       ///          the inheritance chain, this method will return the same as <see cref="GetBaseDefinition(PropertyInfo)"/>.
       ///          </remarks>
-      /// <returns>The most derived definition of the specified <paramref name="propertyInfo"/> in a base class.</returns>
+      /// <returns>The most derived definition of the specified <paramref name="property"/> in a base class.</returns>
       public static PropertyInfo GetParentDefinition(this PropertyInfo property)
       {
          var propertyMethod = property.GetMethod ?? property.SetMethod;
@@ -165,14 +165,14 @@ namespace Alphaleonis.Reflection
       }
 
       // TODO PP (2018-06-11): This documentation does not seem correct. We return null if there is no parent definition?
-      
+
       /// <summary>Gets the most derived override of this method up the inheritance chain.</summary>
-      /// <param name="methodInfo">The method to check.</param>
+      /// <param name="method">The method to check.</param>
       /// <remarks>Returns override of the specified method in the most derived class that is a base class of the declaring type
-      ///          of the specified <paramref name="methodInfo"/> if it exists. If no override exists prior to this one in 
-      ///          the inheritance chain, this method will return the same as <see cref="GetBaseDefinition(MethodInfo)"/>.
+      ///          of the specified <paramref name="method"/> if it exists. If no override exists prior to this one in
+      ///          the inheritance chain, this method will return the same as <see cref="GetBaseDefinition(MemberInfo)" />.
       ///          </remarks>
-      /// <returns>The most derived definition of the specified <paramref name="methodInfo"/> in a base class.</returns>
+      /// <returns>The most derived definition of the specified <paramref name="method"/> in a base class.</returns>
       public static MethodInfo GetParentDefinition(this MethodInfo method)
       {         
          var baseDefinition = method.GetBaseDefinition();
@@ -197,12 +197,12 @@ namespace Alphaleonis.Reflection
       }
 
       /// <summary>Gets the most derived override of this member up the inheritance chain.</summary>
-      /// <param name="memberInfo">The member to check.</param>
+      /// <param name="member">The member to check.</param>
       /// <remarks>Returns override of the specified member in the most derived class that is a base class of the declaring type
-      ///          of the specified <paramref name="memberInfo"/> if it exists. If no override exists prior to this one in 
+      ///          of the specified <paramref name="member"/> if it exists. If no override exists prior to this one in
       ///          the inheritance chain, this member will return the same as <see cref="GetBaseDefinition(MemberInfo)"/>.
       ///          </remarks>
-      /// <returns>The most derived definition of the specified <paramref name="memberInfo"/> in a base class.</returns>
+      /// <returns>The most derived definition of the specified <paramref name="member"/> in a base class.</returns>
       public static MemberInfo GetParentDefinition(this MemberInfo member)
       {
          if (member == null)

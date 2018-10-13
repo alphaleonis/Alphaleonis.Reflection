@@ -10,6 +10,8 @@
     <!-- <PackageIconUrl>http://alphaleonis.com/img/AlphaFS-icon.png</PackageIconUrl> -->
     <PackageOutputPath>../../artifacts</PackageOutputPath>    
     <RepositoryUrl>https://github.com/alphaleonis/Alphaleonis.Reflection</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>reflection</PackageTags>
     <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
     <EnableDefaultEmbeddedResourceItems>true</EnableDefaultEmbeddedResourceItems>
  </PropertyGroup>

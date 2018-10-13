@@ -1,9 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="../../build/common.props" />
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.0;net45;net46;net461;net462;net47;net471</TargetFrameworks>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\src\Alphaleonis.Reflection\Alphaleonis.snk</AssemblyOriginatorKeyFile>     
+    <TargetFrameworks>netcoreapp2.0;net452;net471</TargetFrameworks>
+
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
@@ -21,10 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Alphaleonis.Reflection\Alphaleonis.Reflection.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+    <ProjectReference Include="..\..\src\Alphaleonis.Reflection\Alphaleonis.Reflection.csproj" />
   </ItemGroup>
 </Project>

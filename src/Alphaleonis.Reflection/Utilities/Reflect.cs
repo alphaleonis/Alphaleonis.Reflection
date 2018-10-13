@@ -16,7 +16,7 @@ namespace Alphaleonis.Reflection
 
       /// <summary>
       /// Gets the <see cref="PropertyInfo" /> representing the property accessed in the
-      /// <see cref="expression"/>.
+      /// <paramref name="expression"/>.
       /// </summary>
       /// <typeparam name="T">The type of the property.</typeparam>
       /// <typeparam name="U">The declaring type of the property.</typeparam>
@@ -31,7 +31,7 @@ namespace Alphaleonis.Reflection
 
       /// <summary>
       /// Gets the <see cref="PropertyInfo" /> representing the property accessed in the
-      /// <see cref="expression"/>.
+      /// <paramref name="expression"/>.
       /// </summary>
       /// <exception cref="ArgumentException">The expression does not reference a property.</exception>
       /// <typeparam name="T">The type of the property.</typeparam>
@@ -45,7 +45,7 @@ namespace Alphaleonis.Reflection
 
       /// <summary>
       /// Gets the <see cref="PropertyInfo" /> representing the property accessed in the
-      /// <see cref="expression"/>.
+      /// <paramref name="expression"/>.
       /// </summary>
       /// <exception cref="ArgumentException">The expression does not reference a property.</exception>
       /// <typeparam name="T">The type of the property.</typeparam>

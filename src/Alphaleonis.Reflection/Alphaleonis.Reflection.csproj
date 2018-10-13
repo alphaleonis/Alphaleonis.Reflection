@@ -1,21 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="../../build/common.props" />
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net45;net46;net461;net462;net47;net471</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452;net471</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Alphaleonis.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>../../build/Alphaleonis.snk</AssemblyOriginatorKeyFile>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-
-     <PackageId>Alphaleonis.Reflection</PackageId>
-     <Authors>Alphaleonis</Authors>
-     <Description>Reflection utilities for .NET.</Description>
-     <Copyright>Copyright (C) 2018 Peter Palotas</Copyright>
-     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-     <PackageLicenseUrl>https://raw.githubusercontent.com/alphaleonis/Alphaleonis.Reflection/dev/LICENSE.md</PackageLicenseUrl>
-     <PackageTags>reflection</PackageTags>
-     <PackageOutputPath>..\..\artifacts</PackageOutputPath>
-     <RepositoryUrl>https://github.com/alphaleonis/Alphaleonis.Reflection</RepositoryUrl>
-     <DelaySign>false</DelaySign>
+    <PackageId>Alphaleonis.Reflection</PackageId>   
+    <PackageOutputPath>..\..\artifacts</PackageOutputPath>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
