@@ -42,7 +42,7 @@ Setup(ctx =>
 {
     if (BuildSystem.AppVeyor.IsRunningOnAppVeyor) 
     {        
-        Information("Updating build number");
+        Information("Updating build number...");
         string targetVersion;
         if (AppVeyor.Environment.Repository.Branch == DocFxBranchName)
         {
@@ -79,7 +79,10 @@ Setup(ctx =>
         }
 
         if (targetVersion != null)
+        {
+            Information($"Setting build version to {targetVersion}");
             BuildSystem.AppVeyor.UpdateBuildVersion($"{targetVersion}");        
+        }
     }
 });
 
