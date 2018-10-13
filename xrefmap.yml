@@ -77,51 +77,6 @@ references:
   isSpec: "True"
   fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.CustomReflectionContextBase
   nameWithType: CustomReflectionContextBase.CustomReflectionContextBase
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttribute(System.Object[])
-  name: AddContextIdentifierAttribute(Object[])
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_AddContextIdentifierAttribute_System_Object___
-  commentId: M:Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttribute(System.Object[])
-  name.vb: AddContextIdentifierAttribute(Object())
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttribute(System.Object[])
-  fullName.vb: Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttribute(System.Object())
-  nameWithType: CustomReflectionContextBase.AddContextIdentifierAttribute(Object[])
-  nameWithType.vb: CustomReflectionContextBase.AddContextIdentifierAttribute(Object())
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttribute*
-  name: AddContextIdentifierAttribute
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_AddContextIdentifierAttribute_
-  commentId: Overload:Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttribute
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttribute
-  nameWithType: CustomReflectionContextBase.AddContextIdentifierAttribute
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttributeIfRequested(System.Type,System.Object[])
-  name: AddContextIdentifierAttributeIfRequested(Type, Object[])
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_AddContextIdentifierAttributeIfRequested_System_Type_System_Object___
-  commentId: M:Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttributeIfRequested(System.Type,System.Object[])
-  name.vb: AddContextIdentifierAttributeIfRequested(Type, Object())
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttributeIfRequested(System.Type, System.Object[])
-  fullName.vb: Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttributeIfRequested(System.Type, System.Object())
-  nameWithType: CustomReflectionContextBase.AddContextIdentifierAttributeIfRequested(Type, Object[])
-  nameWithType.vb: CustomReflectionContextBase.AddContextIdentifierAttributeIfRequested(Type, Object())
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttributeIfRequested*
-  name: AddContextIdentifierAttributeIfRequested
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_AddContextIdentifierAttributeIfRequested_
-  commentId: Overload:Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttributeIfRequested
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.AddContextIdentifierAttributeIfRequested
-  nameWithType: CustomReflectionContextBase.AddContextIdentifierAttributeIfRequested
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ContextIdentifierAttribute
-  name: ContextIdentifierAttribute
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_ContextIdentifierAttribute
-  commentId: P:Alphaleonis.Reflection.Context.CustomReflectionContextBase.ContextIdentifierAttribute
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ContextIdentifierAttribute
-  nameWithType: CustomReflectionContextBase.ContextIdentifierAttribute
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ContextIdentifierAttribute*
-  name: ContextIdentifierAttribute
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_ContextIdentifierAttribute_
-  commentId: Overload:Alphaleonis.Reflection.Context.CustomReflectionContextBase.ContextIdentifierAttribute
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.ContextIdentifierAttribute
-  nameWithType: CustomReflectionContextBase.ContextIdentifierAttribute
 - uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.Id
   name: Id
   href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_Id
@@ -193,19 +148,6 @@ references:
   isSpec: "True"
   fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IsMapped
   nameWithType: CustomReflectionContextBase.IsMapped
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IsSystemMemberInfo(System.Reflection.ICustomAttributeProvider)
-  name: IsSystemMemberInfo(ICustomAttributeProvider)
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_IsSystemMemberInfo_System_Reflection_ICustomAttributeProvider_
-  commentId: M:Alphaleonis.Reflection.Context.CustomReflectionContextBase.IsSystemMemberInfo(System.Reflection.ICustomAttributeProvider)
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IsSystemMemberInfo(System.Reflection.ICustomAttributeProvider)
-  nameWithType: CustomReflectionContextBase.IsSystemMemberInfo(ICustomAttributeProvider)
-- uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IsSystemMemberInfo*
-  name: IsSystemMemberInfo
-  href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_IsSystemMemberInfo_
-  commentId: Overload:Alphaleonis.Reflection.Context.CustomReflectionContextBase.IsSystemMemberInfo
-  isSpec: "True"
-  fullName: Alphaleonis.Reflection.Context.CustomReflectionContextBase.IsSystemMemberInfo
-  nameWithType: CustomReflectionContextBase.IsSystemMemberInfo
 - uid: Alphaleonis.Reflection.Context.CustomReflectionContextBase.MapAssembly(System.Reflection.Assembly)
   name: MapAssembly(Assembly)
   href: api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html#Alphaleonis_Reflection_Context_CustomReflectionContextBase_MapAssembly_System_Reflection_Assembly_
