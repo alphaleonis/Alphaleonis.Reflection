@@ -16,6 +16,7 @@ namespace Alphaleonis.Reflection
    {
       private readonly static TypeEqualityComparer s_default = new TypeEqualityComparer();
 
+      /// <summary>Gets the default instance of the <see cref="TypeEqualityComparer"/>.</summary>
       public static IEqualityComparer<Type> Default
       {
          get
@@ -24,6 +25,10 @@ namespace Alphaleonis.Reflection
          }
       }
 
+      /// <summary>Tests if two Type objects are considered equal according to this comparer.</summary>
+      /// <param name="x">Type to be compared.</param>
+      /// <param name="y">Type to be compared.</param>
+      /// <returns><see langword="true"/> if the underlying system type of the two types are equal, <see langword="false"/> otherwise.</returns>
       public bool Equals(Type x, Type y)
       {
          if (object.ReferenceEquals(x, null))
@@ -32,6 +37,9 @@ namespace Alphaleonis.Reflection
          return x.Equals(y);
       }
 
+      /// <summary>Calculates a hash code for the type specified according to this comparer.</summary>
+      /// <param name="obj">The type to get a hash code from.</param>
+      /// <returns>The hash code for the specified type.</returns>
       public int GetHashCode(Type obj)
       {
          if (obj == null)

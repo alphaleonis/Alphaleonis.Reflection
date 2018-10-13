@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Alphaleonis.Reflection
 {
-   /// <summary>Defines methods to get reflection information based on lambda expressions.</summary>
+   /// <summary>Provides methods to get reflection information based on lambda expressions.</summary>
    public static class Reflect
    {
       #region GetProperty
@@ -73,16 +73,44 @@ namespace Alphaleonis.Reflection
 
       #region GetField
 
+      /// <summary>
+      /// Gets the <see cref="FieldInfo" /> representing the field accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the field.</typeparam>
+      /// <typeparam name="U">The declaring type of the field.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// field.</param>
+      /// <returns>The <see cref="FieldInfo"/> representing the field.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a field.</exception>      
       public static FieldInfo GetField<T, U>(Expression<Func<U, T>> expression)
       {
          return GetField((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="FieldInfo" /> representing the field accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the property.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// field.</param>
+      /// <returns>The <see cref="FieldInfo"/> representing the field.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a field.</exception>     
       public static FieldInfo GetField<T>(Expression<Func<T>> expression)
       {
          return GetField((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="FieldInfo" /> representing the field accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the property.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// field.</param>
+      /// <returns>The <see cref="FieldInfo"/> representing the field.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a field.</exception>           
       public static FieldInfo GetField<T>(Expression<Action<T>> expression)
       {
          return GetField((LambdaExpression)expression);
@@ -101,21 +129,57 @@ namespace Alphaleonis.Reflection
 
       #region GetMember
 
+      /// <summary>
+      /// Gets the <see cref="MemberInfo" /> representing the member accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the member.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// single member.</param>
+      /// <returns>The <see cref="MemberInfo"/> representing the member.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a member.</exception>       
       public static MemberInfo GetMember<T>(Expression<Action<T>> expression)
       {
          return GetMember((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="MemberInfo" /> representing the member accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the member.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// single member.</param>
+      /// <returns>The <see cref="MemberInfo"/> representing the member.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a member.</exception>       
       public static MemberInfo GetMember<T>(Expression<Func<T, object>> expression)
       {
          return GetMember((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="MemberInfo" /> representing the member accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the member.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// single member.</param>
+      /// <returns>The <see cref="MemberInfo"/> representing the member.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a member.</exception>       
       public static MemberInfo GetMember<T>(Expression<Action> expression)
       {
          return GetMember((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="MemberInfo" /> representing the member accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the member.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// single member.</param>
+      /// <returns>The <see cref="MemberInfo"/> representing the member.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a member.</exception>       
       public static MemberInfo GetMember<T>(Expression<Func<T>> expression)
       {
          return GetMember((LambdaExpression)expression);
@@ -196,17 +260,41 @@ namespace Alphaleonis.Reflection
 
       #region GetMethod
 
+      /// <summary>
+      /// Gets the <see cref="MethodInfo" /> representing the method accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <param name="expression">The expression. This must be a lambda expression invoking a single method.</param>
+      /// <returns>The <see cref="MethodInfo"/> representing the method.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a method.</exception>       
       public static MethodInfo GetMethod(Expression<Action> expression)
       {
          return GetMethod((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="MethodInfo" /> representing the method accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <exception cref="ArgumentException">The expression does not reference a method.</exception>
+      /// <typeparam name="T">The type of the object declaring the method.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression invoking a single
+      /// method.</param>
+      /// <returns>The <see cref="MethodInfo"/> representing the method.</returns>
       public static MethodInfo GetMethod<T>(Expression<Action<T>> expression)
       {
          return GetMethod((LambdaExpression)expression);
       }
 
-      public static MethodInfo GetMethod(LambdaExpression expression)
+      /// <summary>
+      /// Gets the <see cref="MethodInfo" /> representing the method accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <exception cref="ArgumentException">The expression does not reference a method.</exception>
+      /// <param name="expression">The expression. This must be a lambda expression invoking a single
+      /// method.</param>
+      /// <returns>The <see cref="MethodInfo"/> representing the method.</returns>
+      internal static MethodInfo GetMethod(LambdaExpression expression)
       {
          MethodCallExpression methodCallExpression = expression.Body as MethodCallExpression ?? throw new ArgumentException("Invalid Expression. Expression should consist of a Method call only.");
 
@@ -229,37 +317,92 @@ namespace Alphaleonis.Reflection
       #endregion
    }
 
+   /// <summary>
+   /// Provides methods to get reflection information based on lambda expressions.
+   /// </summary>
+   /// <typeparam name="TSource">The type to perform reflection on.</typeparam>
    public static class Reflect<TSource>
    {
+      /// <summary>
+      /// Gets the <see cref="FieldInfo" /> representing the field accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the field.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// field.</param>
+      /// <returns>The <see cref="FieldInfo"/> representing the field.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a field.</exception>      
       public static FieldInfo GetField<T>(Expression<Func<TSource, T>> expression)
       {
          return Reflect.GetField((LambdaExpression)expression);
       }
-     
+
+      /// <summary>
+      /// Gets the <see cref="PropertyInfo" /> representing the property accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <typeparam name="T">The type of the property.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// property.</param>
+      /// <returns>The <see cref="PropertyInfo"/> representing the field.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a property.</exception>      
       public static PropertyInfo GetProperty<T>(Expression<Func<TSource, T>> expression)
       {
          return Reflect.GetProperty((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="MethodInfo" /> representing the method accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// method invocation.</param>
+      /// <returns>The <see cref="MethodInfo"/> representing the method.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a method.</exception>      
       public static MethodInfo GetMethod(Expression<Action> expression)
       {
          return Reflect.GetMethod((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="MethodInfo" /> representing the method accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a
+      /// method invocation.</param>
+      /// <returns>The <see cref="MethodInfo"/> representing the method.</returns>
+      /// <exception cref="ArgumentException">The expression does not reference a method.</exception>      
       public static MethodInfo GetMethod(Expression<Action<TSource>> expression)
       {
          return Reflect.GetMethod((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="MethodInfo" /> representing the method accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <exception cref="ArgumentException">The expression does not reference a method.</exception>
+      /// <typeparam name="TResult">The return type of the method.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a method
+      /// invocation.</param>
+      /// <returns>The <see cref="MethodInfo"/> representing the method.</returns>
       public static MethodInfo GetMethod<TResult>(Expression<Func<TResult>> expression)
       {
          return Reflect.GetMethod((LambdaExpression)expression);
       }
 
+      /// <summary>
+      /// Gets the <see cref="MethodInfo" /> representing the method accessed in the
+      /// <paramref name="expression"/>.
+      /// </summary>
+      /// <exception cref="ArgumentException">The expression does not reference a method.</exception>
+      /// <typeparam name="TResult">The return type of the method.</typeparam>
+      /// <param name="expression">The expression. This must be a lambda expression referring to a method
+      /// invocation.</param>
+      /// <returns>The <see cref="MethodInfo"/> representing the method.</returns>
       public static MethodInfo GetMethod<TResult>(Expression<Func<TSource, TResult>> expression)
       {
          return Reflect.GetMethod((LambdaExpression)expression);
       }
-
    }
 }
