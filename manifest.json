@@ -1,0 +1,754 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/projects/alphaleonis-reflection/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CachingReflectionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CachingReflectionContext.html",
+          "hash": "NMEuoFQlWYxrID61y/ZFTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector-1.html",
+          "hash": "iKEplX8T8SZxenJbAyJpQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.IProjector.html",
+          "hash": "1GM94HtJKWHze95A7i0tvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedAssembly-1.html",
+          "hash": "PgW1xQn3EXV+KtQlAumTvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedConstructorInfo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedConstructorInfo-1.html",
+          "hash": "OJOc85yZEn1CTscOHzkFqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedEventInfo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedEventInfo-1.html",
+          "hash": "OlyfGL5KTmkBgAULF1nkdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedFieldInfo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedFieldInfo-1.html",
+          "hash": "ZDSvX3y/qXeXEO1cbRruLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedMethodInfo-1.html",
+          "hash": "6NhA2ql3r88l7/xC9OFQ3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedParameterInfo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedParameterInfo-1.html",
+          "hash": "cSitBYgdKp5SOckXe4Y9aQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedPropertyInfo-1.html",
+          "hash": "8ovOoujdBdpcVCh+FD4yyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedType-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedType-1.html",
+          "hash": "EYDxUBxSKUnaMKL+JhuSZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextBase.html",
+          "hash": "L/rlwqKSai7YWP1twobTZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextIdAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.CustomReflectionContextIdAttribute.html",
+          "hash": "K2SvpRYbUwS2kvsaIAr50Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.Decorate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.Decorate.html",
+          "hash": "h9QC4VkHySs3VdjsDnQmrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.IMappedTypedReflectionTableBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.IMappedTypedReflectionTableBuilder-1.html",
+          "hash": "ULYfBj0pzC8rNuTzxjMMZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.IReflectionTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.IReflectionTable.html",
+          "hash": "24/UexL0zQeL5Oc0XnsqLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.IReflectionTableBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.IReflectionTableBuilder.html",
+          "hash": "NhKct+bW+WAOl191kL07Uw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder-1.html",
+          "hash": "MdCZHfISQPeS5be19S5CmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.ITypedReflectionTableBuilder.html",
+          "hash": "1NllXzi1ZQ4914zC/sE4Vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.MappedTypedReflectionTableBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.MappedTypedReflectionTableBuilderExtensions.html",
+          "hash": "yrxxFgX5ApIlqKc5fYuHHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.Param.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.Param.html",
+          "hash": "Br/8tFsLR02zwT1uLYz5sA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MemberKey.html",
+          "hash": "k6WWq5CFMZ0EjgDM0PyJeg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodKey.html",
+          "hash": "/VysueFItNxsPMQIcC7vZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.MethodMetadata.html",
+          "hash": "EH/y0tB80owvEN79oK9YxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.TypeMetadata.html",
+          "hash": "FKKCR/yk6xNuIDS4q4Wmew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBase.html",
+          "hash": "N/Mc6kxGdCmYs8FxEbQhVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBuilder.html",
+          "hash": "eDYNY4+Xp+nxQ6osSsAbSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.ReflectionTableBuilderExtensions.html",
+          "hash": "KQY9HtrclGNAhytiFKHZ2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableAssembly.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableAssembly.html",
+          "hash": "1P8ToOkLkW31S6cOxhQPYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableConstructorInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableConstructorInfo.html",
+          "hash": "xngFr1pmtwJ9UyegvustcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableEventInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableEventInfo.html",
+          "hash": "ukpQfGIZSWYkh4YtN1wasw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableFieldInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableFieldInfo.html",
+          "hash": "nudSpyl7o+lb9WdGXrYrBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableMethodInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableMethodInfo.html",
+          "hash": "HyugQbSmYx0oZ/PvhLSKoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableParameterInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableParameterInfo.html",
+          "hash": "KPd7FzFdnLQaHKlkUHUXQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTablePropertyInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTablePropertyInfo.html",
+          "hash": "RulZ/liNkcxOIeJbl3pfWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.ProjectedReflectionTableType.html",
+          "hash": "HDESXBNNOhtmsKDV5T3C3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContext.html",
+          "hash": "lFq2kavwx4bnS4cmwnqchw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContextOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.TableReflectionContextOptions.html",
+          "hash": "rgrtERfOS+Rem4KI8xVwHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.TypedReflectionTableBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.TypedReflectionTableBuilderExtensions.html",
+          "hash": "iBb6e6QF49mepPNrr+Us6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Context.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Context.html",
+          "hash": "96Z3Ca1i2FJO16n/15ZvGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.DelegatingAssembly.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.DelegatingAssembly.html",
+          "hash": "OObfqYW7bquBMjsL+r6DWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.DelegatingConstructorInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.DelegatingConstructorInfo.html",
+          "hash": "JiIJ/7q5EeY8l+y/auczew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.DelegatingEventInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.DelegatingEventInfo.html",
+          "hash": "2k5t5J5URjzUttU4+r7V+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.DelegatingFieldInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.DelegatingFieldInfo.html",
+          "hash": "nmjiCiA8ovmacWAGKJUOag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.DelegatingMethodInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.DelegatingMethodInfo.html",
+          "hash": "JWh3n36EzN6WrjxYf3rcLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.DelegatingParameterInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.DelegatingParameterInfo.html",
+          "hash": "ecoV/buIJ9s36gTXMgIzVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.DelegatingPropertyInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.DelegatingPropertyInfo.html",
+          "hash": "L8xyEtLBCjrzVUGfSKmx0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.DelegatingType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.DelegatingType.html",
+          "hash": "x7db7kY+q+rCpU9kEZZyow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.MemberInfoExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.MemberInfoExtensions.html",
+          "hash": "okGOSG1vIWWNN62S+dqnXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Reflect-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Reflect-1.html",
+          "hash": "N1OS523Wy6mOtjWF55zt+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.Reflect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.Reflect.html",
+          "hash": "BZSJXCMr/iZ9Fx0cc3lkxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.TypeEqualityComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.TypeEqualityComparer.html",
+          "hash": "9Q/gQxZ2OYn/2O97WSksAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Alphaleonis.Reflection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Alphaleonis.Reflection.html",
+          "hash": "s9tnIm2YEbfqhJmWxanRfw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "dPzjZk8dTQWWKqNBhrrYMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "2/FfSdTZ2ja+K5nyf9mGNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "bF9vWP7CfGHSySi8zSf/9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "fS6seDjG2zgQPgNbIMWT3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

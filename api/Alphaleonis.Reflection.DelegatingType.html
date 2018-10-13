@@ -1,0 +1,2469 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DelegatingType
+   | Alphaleonis.Reflection </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DelegatingType
+   | Alphaleonis.Reflection ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Alphaleonis.Reflection.DelegatingType">
+  
+  
+  <h1 id="Alphaleonis_Reflection_DelegatingType" data-uid="Alphaleonis.Reflection.DelegatingType" class="text-break">Class DelegatingType
+  </h1>
+  <div class="markdown level0 summary"><p>Wraps a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a> and delegates all methods to that Type.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></div>
+    <div class="level2"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></div>
+    <div class="level3"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo">TypeInfo</a></div>
+    <div class="level4"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator">TypeDelegator</a></div>
+    <div class="level5"><span class="xref">DelegatingType</span></div>
+      <div class="level6"><a class="xref" href="Alphaleonis.Reflection.Context.CustomReflectionContextBase.ProjectedType-1.html">CustomReflectionContextBase.ProjectedType&lt;TContext&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.icustomattributeprovider">ICustomAttributeProvider</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.interopservices._memberinfo">_MemberInfo</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.interopservices._type">_Type</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.ireflect">IReflect</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.ireflectabletype">IReflectableType</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.typeimpl">TypeDelegator.typeImpl</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.isassignablefrom#System_Reflection_TypeDelegator_IsAssignableFrom_System_Reflection_TypeInfo_">TypeDelegator.IsAssignableFrom(TypeInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.invokemember#System_Reflection_TypeDelegator_InvokeMember_System_String_System_Reflection_BindingFlags_System_Reflection_Binder_System_Object_System_Object___System_Reflection_ParameterModifier___System_Globalization_CultureInfo_System_String___">TypeDelegator.InvokeMember(String, BindingFlags, Binder, Object, Object[], ParameterModifier[], CultureInfo, String[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getconstructorimpl#System_Reflection_TypeDelegator_GetConstructorImpl_System_Reflection_BindingFlags_System_Reflection_Binder_System_Reflection_CallingConventions_System_Type___System_Reflection_ParameterModifier___">TypeDelegator.GetConstructorImpl(BindingFlags, Binder, CallingConventions, Type[], ParameterModifier[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getconstructors#System_Reflection_TypeDelegator_GetConstructors_System_Reflection_BindingFlags_">TypeDelegator.GetConstructors(BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getmethodimpl#System_Reflection_TypeDelegator_GetMethodImpl_System_String_System_Reflection_BindingFlags_System_Reflection_Binder_System_Reflection_CallingConventions_System_Type___System_Reflection_ParameterModifier___">TypeDelegator.GetMethodImpl(String, BindingFlags, Binder, CallingConventions, Type[], ParameterModifier[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getmethods#System_Reflection_TypeDelegator_GetMethods_System_Reflection_BindingFlags_">TypeDelegator.GetMethods(BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getfield#System_Reflection_TypeDelegator_GetField_System_String_System_Reflection_BindingFlags_">TypeDelegator.GetField(String, BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getfields#System_Reflection_TypeDelegator_GetFields_System_Reflection_BindingFlags_">TypeDelegator.GetFields(BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getinterface#System_Reflection_TypeDelegator_GetInterface_System_String_System_Boolean_">TypeDelegator.GetInterface(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getinterfaces#System_Reflection_TypeDelegator_GetInterfaces">TypeDelegator.GetInterfaces()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getevent#System_Reflection_TypeDelegator_GetEvent_System_String_System_Reflection_BindingFlags_">TypeDelegator.GetEvent(String, BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getevents#System_Reflection_TypeDelegator_GetEvents">TypeDelegator.GetEvents()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getpropertyimpl#System_Reflection_TypeDelegator_GetPropertyImpl_System_String_System_Reflection_BindingFlags_System_Reflection_Binder_System_Type_System_Type___System_Reflection_ParameterModifier___">TypeDelegator.GetPropertyImpl(String, BindingFlags, Binder, Type, Type[], ParameterModifier[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getproperties#System_Reflection_TypeDelegator_GetProperties_System_Reflection_BindingFlags_">TypeDelegator.GetProperties(BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getevents#System_Reflection_TypeDelegator_GetEvents_System_Reflection_BindingFlags_">TypeDelegator.GetEvents(BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getnestedtypes#System_Reflection_TypeDelegator_GetNestedTypes_System_Reflection_BindingFlags_">TypeDelegator.GetNestedTypes(BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getnestedtype#System_Reflection_TypeDelegator_GetNestedType_System_String_System_Reflection_BindingFlags_">TypeDelegator.GetNestedType(String, BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getmembers#System_Reflection_TypeDelegator_GetMembers_System_Reflection_BindingFlags_">TypeDelegator.GetMembers(BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getattributeflagsimpl#System_Reflection_TypeDelegator_GetAttributeFlagsImpl">TypeDelegator.GetAttributeFlagsImpl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.isarrayimpl#System_Reflection_TypeDelegator_IsArrayImpl">TypeDelegator.IsArrayImpl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.isprimitiveimpl#System_Reflection_TypeDelegator_IsPrimitiveImpl">TypeDelegator.IsPrimitiveImpl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.isbyrefimpl#System_Reflection_TypeDelegator_IsByRefImpl">TypeDelegator.IsByRefImpl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.ispointerimpl#System_Reflection_TypeDelegator_IsPointerImpl">TypeDelegator.IsPointerImpl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.isvaluetypeimpl#System_Reflection_TypeDelegator_IsValueTypeImpl">TypeDelegator.IsValueTypeImpl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.iscomobjectimpl#System_Reflection_TypeDelegator_IsCOMObjectImpl">TypeDelegator.IsCOMObjectImpl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getelementtype#System_Reflection_TypeDelegator_GetElementType">TypeDelegator.GetElementType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.haselementtypeimpl#System_Reflection_TypeDelegator_HasElementTypeImpl">TypeDelegator.HasElementTypeImpl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getcustomattributes#System_Reflection_TypeDelegator_GetCustomAttributes_System_Boolean_">TypeDelegator.GetCustomAttributes(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getcustomattributes#System_Reflection_TypeDelegator_GetCustomAttributes_System_Type_System_Boolean_">TypeDelegator.GetCustomAttributes(Type, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.isdefined#System_Reflection_TypeDelegator_IsDefined_System_Type_System_Boolean_">TypeDelegator.IsDefined(Type, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.guid#System_Reflection_TypeDelegator_GUID">TypeDelegator.GUID</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.metadatatoken#System_Reflection_TypeDelegator_MetadataToken">TypeDelegator.MetadataToken</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.module#System_Reflection_TypeDelegator_Module">TypeDelegator.Module</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.assembly#System_Reflection_TypeDelegator_Assembly">TypeDelegator.Assembly</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.name#System_Reflection_TypeDelegator_Name">TypeDelegator.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.fullname#System_Reflection_TypeDelegator_FullName">TypeDelegator.FullName</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.namespace#System_Reflection_TypeDelegator_Namespace">TypeDelegator.Namespace</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.assemblyqualifiedname#System_Reflection_TypeDelegator_AssemblyQualifiedName">TypeDelegator.AssemblyQualifiedName</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.basetype#System_Reflection_TypeDelegator_BaseType">TypeDelegator.BaseType</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.underlyingsystemtype#System_Reflection_TypeDelegator_UnderlyingSystemType">TypeDelegator.UnderlyingSystemType</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.system-reflection-ireflectabletype-gettypeinfo#System_Reflection_TypeInfo_System_Reflection_IReflectableType_GetTypeInfo">TypeInfo.IReflectableType.GetTypeInfo()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.astype#System_Reflection_TypeInfo_AsType">TypeInfo.AsType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.getdeclaredevent#System_Reflection_TypeInfo_GetDeclaredEvent_System_String_">TypeInfo.GetDeclaredEvent(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.getdeclaredfield#System_Reflection_TypeInfo_GetDeclaredField_System_String_">TypeInfo.GetDeclaredField(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.getdeclaredmethod#System_Reflection_TypeInfo_GetDeclaredMethod_System_String_">TypeInfo.GetDeclaredMethod(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.getdeclaredmethods#System_Reflection_TypeInfo_GetDeclaredMethods_System_String_">TypeInfo.GetDeclaredMethods(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.getdeclarednestedtype#System_Reflection_TypeInfo_GetDeclaredNestedType_System_String_">TypeInfo.GetDeclaredNestedType(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.getdeclaredproperty#System_Reflection_TypeInfo_GetDeclaredProperty_System_String_">TypeInfo.GetDeclaredProperty(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.generictypeparameters#System_Reflection_TypeInfo_GenericTypeParameters">TypeInfo.GenericTypeParameters</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.declaredconstructors#System_Reflection_TypeInfo_DeclaredConstructors">TypeInfo.DeclaredConstructors</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.declaredevents#System_Reflection_TypeInfo_DeclaredEvents">TypeInfo.DeclaredEvents</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.declaredfields#System_Reflection_TypeInfo_DeclaredFields">TypeInfo.DeclaredFields</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.declaredmembers#System_Reflection_TypeInfo_DeclaredMembers">TypeInfo.DeclaredMembers</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.declaredmethods#System_Reflection_TypeInfo_DeclaredMethods">TypeInfo.DeclaredMethods</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.declarednestedtypes#System_Reflection_TypeInfo_DeclaredNestedTypes">TypeInfo.DeclaredNestedTypes</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.declaredproperties#System_Reflection_TypeInfo_DeclaredProperties">TypeInfo.DeclaredProperties</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typeinfo.implementedinterfaces#System_Reflection_TypeInfo_ImplementedInterfaces">TypeInfo.ImplementedInterfaces</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.filterattribute">Type.FilterAttribute</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.filtername">Type.FilterName</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.filternameignorecase">Type.FilterNameIgnoreCase</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.missing">Type.Missing</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.delimiter">Type.Delimiter</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.emptytypes">Type.EmptyTypes</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettype#System_Type_GetType_System_String_System_Boolean_System_Boolean_">Type.GetType(String, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettype#System_Type_GetType_System_String_System_Boolean_">Type.GetType(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettype#System_Type_GetType_System_String_">Type.GetType(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettype#System_Type_GetType_System_String_System_Func_System_Reflection_AssemblyName_System_Reflection_Assembly__System_Func_System_Reflection_Assembly_System_String_System_Boolean_System_Type__">Type.GetType(String, Func&lt;AssemblyName, Assembly&gt;, Func&lt;Assembly, String, Boolean, Type&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettype#System_Type_GetType_System_String_System_Func_System_Reflection_AssemblyName_System_Reflection_Assembly__System_Func_System_Reflection_Assembly_System_String_System_Boolean_System_Type__System_Boolean_">Type.GetType(String, Func&lt;AssemblyName, Assembly&gt;, Func&lt;Assembly, String, Boolean, Type&gt;, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettype#System_Type_GetType_System_String_System_Func_System_Reflection_AssemblyName_System_Reflection_Assembly__System_Func_System_Reflection_Assembly_System_String_System_Boolean_System_Type__System_Boolean_System_Boolean_">Type.GetType(String, Func&lt;AssemblyName, Assembly&gt;, Func&lt;Assembly, String, Boolean, Type&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.reflectiononlygettype#System_Type_ReflectionOnlyGetType_System_String_System_Boolean_System_Boolean_">Type.ReflectionOnlyGetType(String, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypefromprogid#System_Type_GetTypeFromProgID_System_String_">Type.GetTypeFromProgID(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypefromprogid#System_Type_GetTypeFromProgID_System_String_System_Boolean_">Type.GetTypeFromProgID(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypefromprogid#System_Type_GetTypeFromProgID_System_String_System_String_">Type.GetTypeFromProgID(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypefromprogid#System_Type_GetTypeFromProgID_System_String_System_String_System_Boolean_">Type.GetTypeFromProgID(String, String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypefromclsid#System_Type_GetTypeFromCLSID_System_Guid_">Type.GetTypeFromCLSID(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypefromclsid#System_Type_GetTypeFromCLSID_System_Guid_System_Boolean_">Type.GetTypeFromCLSID(Guid, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypefromclsid#System_Type_GetTypeFromCLSID_System_Guid_System_String_">Type.GetTypeFromCLSID(Guid, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypefromclsid#System_Type_GetTypeFromCLSID_System_Guid_System_String_System_Boolean_">Type.GetTypeFromCLSID(Guid, String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypecode#System_Type_GetTypeCode_System_Type_">Type.GetTypeCode(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypecodeimpl#System_Type_GetTypeCodeImpl">Type.GetTypeCodeImpl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.invokemember#System_Type_InvokeMember_System_String_System_Reflection_BindingFlags_System_Reflection_Binder_System_Object_System_Object___System_Globalization_CultureInfo_">Type.InvokeMember(String, BindingFlags, Binder, Object, Object[], CultureInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.invokemember#System_Type_InvokeMember_System_String_System_Reflection_BindingFlags_System_Reflection_Binder_System_Object_System_Object___">Type.InvokeMember(String, BindingFlags, Binder, Object, Object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypehandle#System_Type_GetTypeHandle_System_Object_">Type.GetTypeHandle(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypefromhandle#System_Type_GetTypeFromHandle_System_RuntimeTypeHandle_">Type.GetTypeFromHandle(RuntimeTypeHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getconstructor#System_Type_GetConstructor_System_Reflection_BindingFlags_System_Reflection_Binder_System_Reflection_CallingConventions_System_Type___System_Reflection_ParameterModifier___">Type.GetConstructor(BindingFlags, Binder, CallingConventions, Type[], ParameterModifier[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getconstructor#System_Type_GetConstructor_System_Reflection_BindingFlags_System_Reflection_Binder_System_Type___System_Reflection_ParameterModifier___">Type.GetConstructor(BindingFlags, Binder, Type[], ParameterModifier[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getconstructor#System_Type_GetConstructor_System_Type___">Type.GetConstructor(Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getconstructors#System_Type_GetConstructors">Type.GetConstructors()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getmethod#System_Type_GetMethod_System_String_System_Reflection_BindingFlags_System_Reflection_Binder_System_Reflection_CallingConventions_System_Type___System_Reflection_ParameterModifier___">Type.GetMethod(String, BindingFlags, Binder, CallingConventions, Type[], ParameterModifier[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getmethod#System_Type_GetMethod_System_String_System_Reflection_BindingFlags_System_Reflection_Binder_System_Type___System_Reflection_ParameterModifier___">Type.GetMethod(String, BindingFlags, Binder, Type[], ParameterModifier[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getmethod#System_Type_GetMethod_System_String_System_Type___System_Reflection_ParameterModifier___">Type.GetMethod(String, Type[], ParameterModifier[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getmethod#System_Type_GetMethod_System_String_System_Type___">Type.GetMethod(String, Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getmethod#System_Type_GetMethod_System_String_System_Reflection_BindingFlags_">Type.GetMethod(String, BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getmethod#System_Type_GetMethod_System_String_">Type.GetMethod(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getmethods#System_Type_GetMethods">Type.GetMethods()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getfield#System_Type_GetField_System_String_">Type.GetField(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getfields#System_Type_GetFields">Type.GetFields()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getinterface#System_Type_GetInterface_System_String_">Type.GetInterface(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getevent#System_Type_GetEvent_System_String_">Type.GetEvent(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getproperty#System_Type_GetProperty_System_String_System_Reflection_BindingFlags_System_Reflection_Binder_System_Type_System_Type___System_Reflection_ParameterModifier___">Type.GetProperty(String, BindingFlags, Binder, Type, Type[], ParameterModifier[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getproperty#System_Type_GetProperty_System_String_System_Type_System_Type___System_Reflection_ParameterModifier___">Type.GetProperty(String, Type, Type[], ParameterModifier[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getproperty#System_Type_GetProperty_System_String_System_Reflection_BindingFlags_">Type.GetProperty(String, BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getproperty#System_Type_GetProperty_System_String_System_Type_System_Type___">Type.GetProperty(String, Type, Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getproperty#System_Type_GetProperty_System_String_System_Type___">Type.GetProperty(String, Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getproperty#System_Type_GetProperty_System_String_System_Type_">Type.GetProperty(String, Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getproperty#System_Type_GetProperty_System_String_">Type.GetProperty(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getproperties#System_Type_GetProperties">Type.GetProperties()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getnestedtypes#System_Type_GetNestedTypes">Type.GetNestedTypes()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getnestedtype#System_Type_GetNestedType_System_String_">Type.GetNestedType(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getmember#System_Type_GetMember_System_String_">Type.GetMember(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getmember#System_Type_GetMember_System_String_System_Reflection_BindingFlags_">Type.GetMember(String, BindingFlags)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getmembers#System_Type_GetMembers">Type.GetMembers()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.iscontextfulimpl#System_Type_IsContextfulImpl">Type.IsContextfulImpl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.ismarshalbyrefimpl#System_Type_IsMarshalByRefImpl">Type.IsMarshalByRefImpl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isassignablefrom#System_Type_IsAssignableFrom_System_Type_">Type.IsAssignableFrom(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettypearray#System_Type_GetTypeArray_System_Object___">Type.GetTypeArray(Object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gettype#System_Type_GetType">Type.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.system-runtime-interopservices-_type-gettypeinfocount#System_Type_System_Runtime_InteropServices__Type_GetTypeInfoCount_System_UInt32__">Type._Type.GetTypeInfoCount(UInt32)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.system-runtime-interopservices-_type-gettypeinfo#System_Type_System_Runtime_InteropServices__Type_GetTypeInfo_System_UInt32_System_UInt32_System_IntPtr_">Type._Type.GetTypeInfo(UInt32, UInt32, IntPtr)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.system-runtime-interopservices-_type-getidsofnames#System_Type_System_Runtime_InteropServices__Type_GetIDsOfNames_System_Guid__System_IntPtr_System_UInt32_System_UInt32_System_IntPtr_">Type._Type.GetIDsOfNames(Guid, IntPtr, UInt32, UInt32, IntPtr)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.system-runtime-interopservices-_type-invoke#System_Type_System_Runtime_InteropServices__Type_Invoke_System_UInt32_System_Guid__System_UInt32_System_Int16_System_IntPtr_System_IntPtr_System_IntPtr_System_IntPtr_">Type._Type.Invoke(UInt32, Guid, UInt32, Int16, IntPtr, IntPtr, IntPtr, IntPtr)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.defaultbinder#System_Type_DefaultBinder">Type.DefaultBinder</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.typeinitializer#System_Type_TypeInitializer">Type.TypeInitializer</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isnested#System_Type_IsNested">Type.IsNested</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.attributes#System_Type_Attributes">Type.Attributes</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isvisible#System_Type_IsVisible">Type.IsVisible</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isnotpublic#System_Type_IsNotPublic">Type.IsNotPublic</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.ispublic#System_Type_IsPublic">Type.IsPublic</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isnestedpublic#System_Type_IsNestedPublic">Type.IsNestedPublic</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isnestedprivate#System_Type_IsNestedPrivate">Type.IsNestedPrivate</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isnestedfamily#System_Type_IsNestedFamily">Type.IsNestedFamily</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isnestedassembly#System_Type_IsNestedAssembly">Type.IsNestedAssembly</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isnestedfamandassem#System_Type_IsNestedFamANDAssem">Type.IsNestedFamANDAssem</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isnestedfamorassem#System_Type_IsNestedFamORAssem">Type.IsNestedFamORAssem</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isautolayout#System_Type_IsAutoLayout">Type.IsAutoLayout</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.islayoutsequential#System_Type_IsLayoutSequential">Type.IsLayoutSequential</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isexplicitlayout#System_Type_IsExplicitLayout">Type.IsExplicitLayout</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isclass#System_Type_IsClass">Type.IsClass</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isinterface#System_Type_IsInterface">Type.IsInterface</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isvaluetype#System_Type_IsValueType">Type.IsValueType</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isabstract#System_Type_IsAbstract">Type.IsAbstract</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.issealed#System_Type_IsSealed">Type.IsSealed</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isspecialname#System_Type_IsSpecialName">Type.IsSpecialName</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isimport#System_Type_IsImport">Type.IsImport</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isansiclass#System_Type_IsAnsiClass">Type.IsAnsiClass</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isunicodeclass#System_Type_IsUnicodeClass">Type.IsUnicodeClass</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isautoclass#System_Type_IsAutoClass">Type.IsAutoClass</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isarray#System_Type_IsArray">Type.IsArray</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isbyref#System_Type_IsByRef">Type.IsByRef</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.ispointer#System_Type_IsPointer">Type.IsPointer</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isprimitive#System_Type_IsPrimitive">Type.IsPrimitive</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.iscomobject#System_Type_IsCOMObject">Type.IsCOMObject</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.haselementtype#System_Type_HasElementType">Type.HasElementType</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.iscontextful#System_Type_IsContextful">Type.IsContextful</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.ismarshalbyref#System_Type_IsMarshalByRef">Type.IsMarshalByRef</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo.system-runtime-interopservices-_memberinfo-gettype#System_Reflection_MemberInfo_System_Runtime_InteropServices__MemberInfo_GetType">MemberInfo._MemberInfo.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo.system-runtime-interopservices-_memberinfo-gettypeinfocount#System_Reflection_MemberInfo_System_Runtime_InteropServices__MemberInfo_GetTypeInfoCount_System_UInt32__">MemberInfo._MemberInfo.GetTypeInfoCount(UInt32)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo.system-runtime-interopservices-_memberinfo-gettypeinfo#System_Reflection_MemberInfo_System_Runtime_InteropServices__MemberInfo_GetTypeInfo_System_UInt32_System_UInt32_System_IntPtr_">MemberInfo._MemberInfo.GetTypeInfo(UInt32, UInt32, IntPtr)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo.system-runtime-interopservices-_memberinfo-getidsofnames#System_Reflection_MemberInfo_System_Runtime_InteropServices__MemberInfo_GetIDsOfNames_System_Guid__System_IntPtr_System_UInt32_System_UInt32_System_IntPtr_">MemberInfo._MemberInfo.GetIDsOfNames(Guid, IntPtr, UInt32, UInt32, IntPtr)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo.system-runtime-interopservices-_memberinfo-invoke#System_Reflection_MemberInfo_System_Runtime_InteropServices__MemberInfo_Invoke_System_UInt32_System_Guid__System_UInt32_System_Int16_System_IntPtr_System_IntPtr_System_IntPtr_System_IntPtr_">MemberInfo._MemberInfo.Invoke(UInt32, Guid, UInt32, Int16, IntPtr, IntPtr, IntPtr, IntPtr)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Alphaleonis.Reflection.html">Alphaleonis.Reflection</a></h6>
+  <h6><strong>Assembly</strong>: Alphaleonis.Reflection.dll</h6>
+  <h5 id="Alphaleonis_Reflection_DelegatingType_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DelegatingType : TypeDelegator, ICustomAttributeProvider, _MemberInfo, _Type, IReflect, IReflectableType</code></pre>
+  </div>
+  <h5 id="Alphaleonis_Reflection_DelegatingType_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class extends <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator">TypeDelegator</a> which is missing several overrides to delegate
+method calls to the wrapped type.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType__ctor_System_Type_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.%23ctor(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L19">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType__ctor_" data-uid="Alphaleonis.Reflection.DelegatingType.#ctor*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType__ctor_System_Type_" data-uid="Alphaleonis.Reflection.DelegatingType.#ctor(System.Type)">DelegatingType(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DelegatingType(Type delegatingType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">delegatingType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_ContainsGenericParameters.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.ContainsGenericParameters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L24">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_ContainsGenericParameters_" data-uid="Alphaleonis.Reflection.DelegatingType.ContainsGenericParameters*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_ContainsGenericParameters" data-uid="Alphaleonis.Reflection.DelegatingType.ContainsGenericParameters">ContainsGenericParameters</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool ContainsGenericParameters { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.containsgenericparameters#System_Type_ContainsGenericParameters">Type.ContainsGenericParameters</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_CustomAttributes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.CustomAttributes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L26">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_CustomAttributes_" data-uid="Alphaleonis.Reflection.DelegatingType.CustomAttributes*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_CustomAttributes" data-uid="Alphaleonis.Reflection.DelegatingType.CustomAttributes">CustomAttributes</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEnumerable&lt;CustomAttributeData&gt; CustomAttributes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.customattributedata">CustomAttributeData</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo.customattributes#System_Reflection_MemberInfo_CustomAttributes">MemberInfo.CustomAttributes</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_DeclaringMethod.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.DeclaringMethod%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L28">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_DeclaringMethod_" data-uid="Alphaleonis.Reflection.DelegatingType.DeclaringMethod*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_DeclaringMethod" data-uid="Alphaleonis.Reflection.DelegatingType.DeclaringMethod">DeclaringMethod</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MethodBase DeclaringMethod { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodbase">MethodBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.declaringmethod#System_Type_DeclaringMethod">Type.DeclaringMethod</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_DeclaringType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.DeclaringType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L46">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_DeclaringType_" data-uid="Alphaleonis.Reflection.DelegatingType.DeclaringType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_DeclaringType" data-uid="Alphaleonis.Reflection.DelegatingType.DeclaringType">DeclaringType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type DeclaringType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.declaringtype#System_Type_DeclaringType">Type.DeclaringType</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GenericParameterAttributes.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GenericParameterAttributes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L48">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GenericParameterAttributes_" data-uid="Alphaleonis.Reflection.DelegatingType.GenericParameterAttributes*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GenericParameterAttributes" data-uid="Alphaleonis.Reflection.DelegatingType.GenericParameterAttributes">GenericParameterAttributes</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override GenericParameterAttributes GenericParameterAttributes { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.genericparameterattributes">GenericParameterAttributes</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.genericparameterattributes#System_Type_GenericParameterAttributes">Type.GenericParameterAttributes</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GenericParameterPosition.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GenericParameterPosition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L50">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GenericParameterPosition_" data-uid="Alphaleonis.Reflection.DelegatingType.GenericParameterPosition*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GenericParameterPosition" data-uid="Alphaleonis.Reflection.DelegatingType.GenericParameterPosition">GenericParameterPosition</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GenericParameterPosition { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.genericparameterposition#System_Type_GenericParameterPosition">Type.GenericParameterPosition</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GenericTypeArguments.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GenericTypeArguments%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L34">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GenericTypeArguments_" data-uid="Alphaleonis.Reflection.DelegatingType.GenericTypeArguments*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GenericTypeArguments" data-uid="Alphaleonis.Reflection.DelegatingType.GenericTypeArguments">GenericTypeArguments</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type[] GenericTypeArguments { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.generictypearguments#System_Type_GenericTypeArguments">Type.GenericTypeArguments</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsConstructedGenericType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsConstructedGenericType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L52">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsConstructedGenericType_" data-uid="Alphaleonis.Reflection.DelegatingType.IsConstructedGenericType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsConstructedGenericType" data-uid="Alphaleonis.Reflection.DelegatingType.IsConstructedGenericType">IsConstructedGenericType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsConstructedGenericType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.isconstructedgenerictype#System_Reflection_TypeDelegator_IsConstructedGenericType">TypeDelegator.IsConstructedGenericType</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsEnum.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsEnum%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L44">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsEnum_" data-uid="Alphaleonis.Reflection.DelegatingType.IsEnum*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsEnum" data-uid="Alphaleonis.Reflection.DelegatingType.IsEnum">IsEnum</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsEnum { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isenum#System_Type_IsEnum">Type.IsEnum</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsGenericParameter.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsGenericParameter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L54">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsGenericParameter_" data-uid="Alphaleonis.Reflection.DelegatingType.IsGenericParameter*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsGenericParameter" data-uid="Alphaleonis.Reflection.DelegatingType.IsGenericParameter">IsGenericParameter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsGenericParameter { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isgenericparameter#System_Type_IsGenericParameter">Type.IsGenericParameter</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsGenericType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsGenericType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L56">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsGenericType_" data-uid="Alphaleonis.Reflection.DelegatingType.IsGenericType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsGenericType" data-uid="Alphaleonis.Reflection.DelegatingType.IsGenericType">IsGenericType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsGenericType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isgenerictype#System_Type_IsGenericType">Type.IsGenericType</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsGenericTypeDefinition.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsGenericTypeDefinition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L58">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsGenericTypeDefinition_" data-uid="Alphaleonis.Reflection.DelegatingType.IsGenericTypeDefinition*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsGenericTypeDefinition" data-uid="Alphaleonis.Reflection.DelegatingType.IsGenericTypeDefinition">IsGenericTypeDefinition</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsGenericTypeDefinition { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isgenerictypedefinition#System_Type_IsGenericTypeDefinition">Type.IsGenericTypeDefinition</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsSecurityCritical.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsSecurityCritical%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L60">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsSecurityCritical_" data-uid="Alphaleonis.Reflection.DelegatingType.IsSecurityCritical*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsSecurityCritical" data-uid="Alphaleonis.Reflection.DelegatingType.IsSecurityCritical">IsSecurityCritical</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsSecurityCritical { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.issecuritycritical#System_Type_IsSecurityCritical">Type.IsSecurityCritical</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsSecuritySafeCritical.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsSecuritySafeCritical%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L62">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsSecuritySafeCritical_" data-uid="Alphaleonis.Reflection.DelegatingType.IsSecuritySafeCritical*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsSecuritySafeCritical" data-uid="Alphaleonis.Reflection.DelegatingType.IsSecuritySafeCritical">IsSecuritySafeCritical</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsSecuritySafeCritical { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.issecuritysafecritical#System_Type_IsSecuritySafeCritical">Type.IsSecuritySafeCritical</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsSecurityTransparent.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsSecurityTransparent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L64">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsSecurityTransparent_" data-uid="Alphaleonis.Reflection.DelegatingType.IsSecurityTransparent*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsSecurityTransparent" data-uid="Alphaleonis.Reflection.DelegatingType.IsSecurityTransparent">IsSecurityTransparent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsSecurityTransparent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.issecuritytransparent#System_Type_IsSecurityTransparent">Type.IsSecurityTransparent</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsSerializable.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsSerializable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L106">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsSerializable_" data-uid="Alphaleonis.Reflection.DelegatingType.IsSerializable*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsSerializable" data-uid="Alphaleonis.Reflection.DelegatingType.IsSerializable">IsSerializable</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsSerializable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isserializable#System_Type_IsSerializable">Type.IsSerializable</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_MemberType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.MemberType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L110">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_MemberType_" data-uid="Alphaleonis.Reflection.DelegatingType.MemberType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_MemberType" data-uid="Alphaleonis.Reflection.DelegatingType.MemberType">MemberType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MemberTypes MemberType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.membertypes">MemberTypes</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.membertype#System_Type_MemberType">Type.MemberType</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_ReflectedType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.ReflectedType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L66">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_ReflectedType_" data-uid="Alphaleonis.Reflection.DelegatingType.ReflectedType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_ReflectedType" data-uid="Alphaleonis.Reflection.DelegatingType.ReflectedType">ReflectedType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type ReflectedType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.reflectedtype#System_Type_ReflectedType">Type.ReflectedType</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_StructLayoutAttribute.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.StructLayoutAttribute%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L68">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_StructLayoutAttribute_" data-uid="Alphaleonis.Reflection.DelegatingType.StructLayoutAttribute*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_StructLayoutAttribute" data-uid="Alphaleonis.Reflection.DelegatingType.StructLayoutAttribute">StructLayoutAttribute</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override StructLayoutAttribute StructLayoutAttribute { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.structlayoutattribute">StructLayoutAttribute</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.structlayoutattribute#System_Type_StructLayoutAttribute">Type.StructLayoutAttribute</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_TypeHandle.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.TypeHandle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L70">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_TypeHandle_" data-uid="Alphaleonis.Reflection.DelegatingType.TypeHandle*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_TypeHandle" data-uid="Alphaleonis.Reflection.DelegatingType.TypeHandle">TypeHandle</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override RuntimeTypeHandle TypeHandle { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtimetypehandle">RuntimeTypeHandle</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.typehandle#System_Reflection_TypeDelegator_TypeHandle">TypeDelegator.TypeHandle</a></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L112">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_Equals_" data-uid="Alphaleonis.Reflection.DelegatingType.Equals*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_Equals_System_Object_" data-uid="Alphaleonis.Reflection.DelegatingType.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object o)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">o</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.equals#System_Type_Equals_System_Object_">Type.Equals(Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_Equals_System_Type_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.Equals(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L121">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_Equals_" data-uid="Alphaleonis.Reflection.DelegatingType.Equals*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_Equals_System_Type_" data-uid="Alphaleonis.Reflection.DelegatingType.Equals(System.Type)">Equals(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(Type o)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">o</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.equals#System_Type_Equals_System_Type_">Type.Equals(Type)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_FindInterfaces_System_Reflection_TypeFilter_System_Object_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.FindInterfaces(System.Reflection.TypeFilter%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L30">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_FindInterfaces_" data-uid="Alphaleonis.Reflection.DelegatingType.FindInterfaces*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_FindInterfaces_System_Reflection_TypeFilter_System_Object_" data-uid="Alphaleonis.Reflection.DelegatingType.FindInterfaces(System.Reflection.TypeFilter,System.Object)">FindInterfaces(TypeFilter, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type[] FindInterfaces(TypeFilter filter, object filterCriteria)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typefilter">TypeFilter</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">filterCriteria</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.findinterfaces#System_Type_FindInterfaces_System_Reflection_TypeFilter_System_Object_">Type.FindInterfaces(TypeFilter, Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_FindMembers_System_Reflection_MemberTypes_System_Reflection_BindingFlags_System_Reflection_MemberFilter_System_Object_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.FindMembers(System.Reflection.MemberTypes%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.MemberFilter%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L32">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_FindMembers_" data-uid="Alphaleonis.Reflection.DelegatingType.FindMembers*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_FindMembers_System_Reflection_MemberTypes_System_Reflection_BindingFlags_System_Reflection_MemberFilter_System_Object_" data-uid="Alphaleonis.Reflection.DelegatingType.FindMembers(System.Reflection.MemberTypes,System.Reflection.BindingFlags,System.Reflection.MemberFilter,System.Object)">FindMembers(MemberTypes, BindingFlags, MemberFilter, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MemberInfo[] FindMembers(MemberTypes memberType, BindingFlags bindingAttr, MemberFilter filter, object filterCriteria)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.membertypes">MemberTypes</a></td>
+        <td><span class="parametername">memberType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></td>
+        <td><span class="parametername">bindingAttr</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberfilter">MemberFilter</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">filterCriteria</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.findmembers#System_Type_FindMembers_System_Reflection_MemberTypes_System_Reflection_BindingFlags_System_Reflection_MemberFilter_System_Object_">Type.FindMembers(MemberTypes, BindingFlags, MemberFilter, Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetArrayRank.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetArrayRank%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L72">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetArrayRank_" data-uid="Alphaleonis.Reflection.DelegatingType.GetArrayRank*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetArrayRank" data-uid="Alphaleonis.Reflection.DelegatingType.GetArrayRank">GetArrayRank()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetArrayRank()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getarrayrank#System_Type_GetArrayRank">Type.GetArrayRank()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetCustomAttributesData.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetCustomAttributesData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L74">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetCustomAttributesData_" data-uid="Alphaleonis.Reflection.DelegatingType.GetCustomAttributesData*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetCustomAttributesData" data-uid="Alphaleonis.Reflection.DelegatingType.GetCustomAttributesData">GetCustomAttributesData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IList&lt;CustomAttributeData&gt; GetCustomAttributesData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.customattributedata">CustomAttributeData</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo.getcustomattributesdata#System_Reflection_MemberInfo_GetCustomAttributesData">MemberInfo.GetCustomAttributesData()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetDefaultMembers.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetDefaultMembers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L76">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetDefaultMembers_" data-uid="Alphaleonis.Reflection.DelegatingType.GetDefaultMembers*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetDefaultMembers" data-uid="Alphaleonis.Reflection.DelegatingType.GetDefaultMembers">GetDefaultMembers()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MemberInfo[] GetDefaultMembers()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getdefaultmembers#System_Type_GetDefaultMembers">Type.GetDefaultMembers()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetEnumName_System_Object_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetEnumName(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L78">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetEnumName_" data-uid="Alphaleonis.Reflection.DelegatingType.GetEnumName*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetEnumName_System_Object_" data-uid="Alphaleonis.Reflection.DelegatingType.GetEnumName(System.Object)">GetEnumName(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetEnumName(object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getenumname#System_Type_GetEnumName_System_Object_">Type.GetEnumName(Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetEnumNames.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetEnumNames%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L80">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetEnumNames_" data-uid="Alphaleonis.Reflection.DelegatingType.GetEnumNames*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetEnumNames" data-uid="Alphaleonis.Reflection.DelegatingType.GetEnumNames">GetEnumNames()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string[] GetEnumNames()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getenumnames#System_Type_GetEnumNames">Type.GetEnumNames()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetEnumUnderlyingType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetEnumUnderlyingType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L36">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetEnumUnderlyingType_" data-uid="Alphaleonis.Reflection.DelegatingType.GetEnumUnderlyingType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetEnumUnderlyingType" data-uid="Alphaleonis.Reflection.DelegatingType.GetEnumUnderlyingType">GetEnumUnderlyingType()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type GetEnumUnderlyingType()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getenumunderlyingtype#System_Type_GetEnumUnderlyingType">Type.GetEnumUnderlyingType()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetEnumValues.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetEnumValues%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L82">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetEnumValues_" data-uid="Alphaleonis.Reflection.DelegatingType.GetEnumValues*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetEnumValues" data-uid="Alphaleonis.Reflection.DelegatingType.GetEnumValues">GetEnumValues()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Array GetEnumValues()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getenumvalues#System_Type_GetEnumValues">Type.GetEnumValues()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetGenericArguments.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetGenericArguments%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L84">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetGenericArguments_" data-uid="Alphaleonis.Reflection.DelegatingType.GetGenericArguments*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetGenericArguments" data-uid="Alphaleonis.Reflection.DelegatingType.GetGenericArguments">GetGenericArguments()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type[] GetGenericArguments()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getgenericarguments#System_Type_GetGenericArguments">Type.GetGenericArguments()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetGenericParameterConstraints.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetGenericParameterConstraints%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L86">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetGenericParameterConstraints_" data-uid="Alphaleonis.Reflection.DelegatingType.GetGenericParameterConstraints*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetGenericParameterConstraints" data-uid="Alphaleonis.Reflection.DelegatingType.GetGenericParameterConstraints">GetGenericParameterConstraints()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type[] GetGenericParameterConstraints()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getgenericparameterconstraints#System_Type_GetGenericParameterConstraints">Type.GetGenericParameterConstraints()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetGenericTypeDefinition.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetGenericTypeDefinition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L88">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetGenericTypeDefinition_" data-uid="Alphaleonis.Reflection.DelegatingType.GetGenericTypeDefinition*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetGenericTypeDefinition" data-uid="Alphaleonis.Reflection.DelegatingType.GetGenericTypeDefinition">GetGenericTypeDefinition()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type GetGenericTypeDefinition()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.getgenerictypedefinition#System_Type_GetGenericTypeDefinition">Type.GetGenericTypeDefinition()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetHashCode.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L90">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetHashCode_" data-uid="Alphaleonis.Reflection.DelegatingType.GetHashCode*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetHashCode" data-uid="Alphaleonis.Reflection.DelegatingType.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.gethashcode#System_Type_GetHashCode">Type.GetHashCode()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetInterfaceMap_System_Type_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetInterfaceMap(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L92">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetInterfaceMap_" data-uid="Alphaleonis.Reflection.DelegatingType.GetInterfaceMap*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetInterfaceMap_System_Type_" data-uid="Alphaleonis.Reflection.DelegatingType.GetInterfaceMap(System.Type)">GetInterfaceMap(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override InterfaceMapping GetInterfaceMap(Type interfaceType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">interfaceType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.interfacemapping">InterfaceMapping</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getinterfacemap#System_Reflection_TypeDelegator_GetInterfaceMap_System_Type_">TypeDelegator.GetInterfaceMap(Type)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_GetMember_System_String_System_Reflection_MemberTypes_System_Reflection_BindingFlags_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.GetMember(System.String%2CSystem.Reflection.MemberTypes%2CSystem.Reflection.BindingFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L94">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_GetMember_" data-uid="Alphaleonis.Reflection.DelegatingType.GetMember*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_GetMember_System_String_System_Reflection_MemberTypes_System_Reflection_BindingFlags_" data-uid="Alphaleonis.Reflection.DelegatingType.GetMember(System.String,System.Reflection.MemberTypes,System.Reflection.BindingFlags)">GetMember(String, MemberTypes, BindingFlags)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MemberInfo[] GetMember(string name, MemberTypes type, BindingFlags bindingAttr)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.membertypes">MemberTypes</a></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></td>
+        <td><span class="parametername">bindingAttr</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.typedelegator.getmember#System_Reflection_TypeDelegator_GetMember_System_String_System_Reflection_MemberTypes_System_Reflection_BindingFlags_">TypeDelegator.GetMember(String, MemberTypes, BindingFlags)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsEnumDefined_System_Object_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsEnumDefined(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L38">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsEnumDefined_" data-uid="Alphaleonis.Reflection.DelegatingType.IsEnumDefined*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsEnumDefined_System_Object_" data-uid="Alphaleonis.Reflection.DelegatingType.IsEnumDefined(System.Object)">IsEnumDefined(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsEnumDefined(object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isenumdefined#System_Type_IsEnumDefined_System_Object_">Type.IsEnumDefined(Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsEquivalentTo_System_Type_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsEquivalentTo(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L130">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsEquivalentTo_" data-uid="Alphaleonis.Reflection.DelegatingType.IsEquivalentTo*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsEquivalentTo_System_Type_" data-uid="Alphaleonis.Reflection.DelegatingType.IsEquivalentTo(System.Type)">IsEquivalentTo(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsEquivalentTo(Type other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isequivalentto#System_Type_IsEquivalentTo_System_Type_">Type.IsEquivalentTo(Type)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsInstanceOfType_System_Object_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsInstanceOfType(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L40">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsInstanceOfType_" data-uid="Alphaleonis.Reflection.DelegatingType.IsInstanceOfType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsInstanceOfType_System_Object_" data-uid="Alphaleonis.Reflection.DelegatingType.IsInstanceOfType(System.Object)">IsInstanceOfType(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsInstanceOfType(object o)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">o</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.isinstanceoftype#System_Type_IsInstanceOfType_System_Object_">Type.IsInstanceOfType(Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_IsSubclassOf_System_Type_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.IsSubclassOf(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L42">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_IsSubclassOf_" data-uid="Alphaleonis.Reflection.DelegatingType.IsSubclassOf*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_IsSubclassOf_System_Type_" data-uid="Alphaleonis.Reflection.DelegatingType.IsSubclassOf(System.Type)">IsSubclassOf(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsSubclassOf(Type c)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">c</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.issubclassof#System_Type_IsSubclassOf_System_Type_">Type.IsSubclassOf(Type)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_MakeArrayType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.MakeArrayType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L96">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_MakeArrayType_" data-uid="Alphaleonis.Reflection.DelegatingType.MakeArrayType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_MakeArrayType" data-uid="Alphaleonis.Reflection.DelegatingType.MakeArrayType">MakeArrayType()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type MakeArrayType()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.makearraytype#System_Type_MakeArrayType">Type.MakeArrayType()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_MakeArrayType_System_Int32_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.MakeArrayType(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L98">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_MakeArrayType_" data-uid="Alphaleonis.Reflection.DelegatingType.MakeArrayType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_MakeArrayType_System_Int32_" data-uid="Alphaleonis.Reflection.DelegatingType.MakeArrayType(System.Int32)">MakeArrayType(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type MakeArrayType(int rank)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">rank</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.makearraytype#System_Type_MakeArrayType_System_Int32_">Type.MakeArrayType(Int32)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_MakeByRefType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.MakeByRefType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L100">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_MakeByRefType_" data-uid="Alphaleonis.Reflection.DelegatingType.MakeByRefType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_MakeByRefType" data-uid="Alphaleonis.Reflection.DelegatingType.MakeByRefType">MakeByRefType()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type MakeByRefType()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.makebyreftype#System_Type_MakeByRefType">Type.MakeByRefType()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_MakeGenericType_System_Type___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.MakeGenericType(System.Type%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L102">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_MakeGenericType_" data-uid="Alphaleonis.Reflection.DelegatingType.MakeGenericType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_MakeGenericType_System_Type___" data-uid="Alphaleonis.Reflection.DelegatingType.MakeGenericType(System.Type[])">MakeGenericType(Type[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type MakeGenericType(params Type[] typeArguments)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</td>
+        <td><span class="parametername">typeArguments</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.makegenerictype#System_Type_MakeGenericType_System_Type___">Type.MakeGenericType(Type[])</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_MakePointerType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.MakePointerType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L104">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_MakePointerType_" data-uid="Alphaleonis.Reflection.DelegatingType.MakePointerType*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_MakePointerType" data-uid="Alphaleonis.Reflection.DelegatingType.MakePointerType">MakePointerType()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type MakePointerType()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.makepointertype#System_Type_MakePointerType">Type.MakePointerType()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType_ToString.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L108">View Source</a>
+  </span>
+  <a id="Alphaleonis_Reflection_DelegatingType_ToString_" data-uid="Alphaleonis.Reflection.DelegatingType.ToString*"></a>
+  <h4 id="Alphaleonis_Reflection_DelegatingType_ToString" data-uid="Alphaleonis.Reflection.DelegatingType.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type.tostring#System_Type_ToString">Type.ToString()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.icustomattributeprovider">System.Reflection.ICustomAttributeProvider</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.interopservices._memberinfo">System.Runtime.InteropServices._MemberInfo</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.runtime.interopservices._type">System.Runtime.InteropServices._Type</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.ireflect">System.Reflection.IReflect</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.ireflectabletype">System.Reflection.IReflectableType</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Alphaleonis.Reflection.MemberInfoExtensions.html#Alphaleonis_Reflection_MemberInfoExtensions_GetBaseDefinition_System_Reflection_MemberInfo_">MemberInfoExtensions.GetBaseDefinition(MemberInfo)</a>
+  </div>
+  <div>
+      <a class="xref" href="Alphaleonis.Reflection.MemberInfoExtensions.html#Alphaleonis_Reflection_MemberInfoExtensions_GetParentDefinition_System_Reflection_MemberInfo_">MemberInfoExtensions.GetParentDefinition(MemberInfo)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_DelegatingType.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.DelegatingType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Delegators/DelegatingType.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2018 <strong>Peter Palotas</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
