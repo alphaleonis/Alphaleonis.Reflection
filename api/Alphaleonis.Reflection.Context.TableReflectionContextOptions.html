@@ -110,12 +110,13 @@ public enum TableReflectionContextOptions</code></pre>
       </tr>
       <tr>
         <td id="Alphaleonis_Reflection_Context_TableReflectionContextOptions_HonorEventAttributeInheritance">HonorEventAttributeInheritance</td>
-        <td><p>If specified, attribute inheritance will be respected with regards to events.</p>
+        <td><p>If specified, attribute inheritance will be respected with regards to events. Note that this is different from how normal reflection works. Calling for example <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo.getcustomattributes#System_Reflection_MemberInfo_GetCustomAttributes_System_Boolean_">GetCustomAttributes(Boolean)</a> on an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.eventinfo">EventInfo</a>
+instance specifying <span class="xref">true</span> for the <code>inherit</code> flag, inheritance will still be ignored.</p>
 </td>
       </tr>
       <tr>
         <td id="Alphaleonis_Reflection_Context_TableReflectionContextOptions_HonorPropertyAttributeInheritance">HonorPropertyAttributeInheritance</td>
-        <td><p>If specified, attribute inheritance will be respected with regards to properties.</p>
+        <td><p>If specified, attribute inheritance will be respected with regards to properties.  Note that this is different from how normal reflection works. Calling for example <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo.getcustomattributes#System_Reflection_MemberInfo_GetCustomAttributes_System_Boolean_">GetCustomAttributes(Boolean)</a> on a property specifying <span class="xref">true</span> for the <code>inherit</code> flag, inheritance will still be ignored.</p>
 </td>
       </tr>
     </tbody>

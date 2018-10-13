@@ -83,7 +83,7 @@
   
   <h1 id="Alphaleonis_Reflection_Reflect" data-uid="Alphaleonis.Reflection.Reflect" class="text-break">Class Reflect
   </h1>
-  <div class="markdown level0 summary"><p>Defines methods to get reflection information based on lambda expressions.</p>
+  <div class="markdown level0 summary"><p>Provides methods to get reflection information based on lambda expressions.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -128,11 +128,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Reflect_GetField__1_System_Linq_Expressions_Expression_System_Action___0___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Reflect.GetField%60%601(System.Linq.Expressions.Expression%7BSystem.Action%7B%60%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L86">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L114">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Reflect_GetField_" data-uid="Alphaleonis.Reflection.Reflect.GetField*"></a>
   <h4 id="Alphaleonis_Reflection_Reflect_GetField__1_System_Linq_Expressions_Expression_System_Action___0___" data-uid="Alphaleonis.Reflection.Reflect.GetField``1(System.Linq.Expressions.Expression{System.Action{``0}})">GetField&lt;T&gt;(Expression&lt;Action&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a> representing the field accessed in the
+<code data-dev-comment-type="paramref" class="paramref">expression</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -151,7 +153,9 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>The expression. This must be a lambda expression referring to a
+field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -166,7 +170,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a> representing the field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -181,7 +186,24 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The expression does not reference a field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -190,11 +212,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Reflect_GetField__1_System_Linq_Expressions_Expression_System_Func___0___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Reflect.GetField%60%601(System.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L81">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L100">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Reflect_GetField_" data-uid="Alphaleonis.Reflection.Reflect.GetField*"></a>
   <h4 id="Alphaleonis_Reflection_Reflect_GetField__1_System_Linq_Expressions_Expression_System_Func___0___" data-uid="Alphaleonis.Reflection.Reflect.GetField``1(System.Linq.Expressions.Expression{System.Func{``0}})">GetField&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a> representing the field accessed in the
+<code data-dev-comment-type="paramref" class="paramref">expression</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -213,7 +237,9 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>The expression. This must be a lambda expression referring to a
+field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -228,7 +254,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a> representing the field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -243,7 +270,24 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The expression does not reference a field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -252,11 +296,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Reflect_GetField__2_System_Linq_Expressions_Expression_System_Func___1___0___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Reflect.GetField%60%602(System.Linq.Expressions.Expression%7BSystem.Func%7B%60%601%2C%60%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L76">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L86">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Reflect_GetField_" data-uid="Alphaleonis.Reflection.Reflect.GetField*"></a>
   <h4 id="Alphaleonis_Reflection_Reflect_GetField__2_System_Linq_Expressions_Expression_System_Func___1___0___" data-uid="Alphaleonis.Reflection.Reflect.GetField``2(System.Linq.Expressions.Expression{System.Func{``1,``0}})">GetField&lt;T, U&gt;(Expression&lt;Func&lt;U, T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a> representing the field accessed in the
+<code data-dev-comment-type="paramref" class="paramref">expression</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -275,7 +321,9 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;U, T&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>The expression. This must be a lambda expression referring to a
+field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -290,7 +338,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.fieldinfo">FieldInfo</a> representing the field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -305,11 +354,29 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the field.</p>
+</td>
       </tr>
       <tr>
         <td><span class="parametername">U</span></td>
-        <td></td>
+        <td><p>The declaring type of the field.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The expression does not reference a field.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -318,11 +385,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Reflect_GetMember__1_System_Linq_Expressions_Expression_System_Action___0___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Reflect.GetMember%60%601(System.Linq.Expressions.Expression%7BSystem.Action%7B%60%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L104">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L141">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Reflect_GetMember_" data-uid="Alphaleonis.Reflection.Reflect.GetMember*"></a>
   <h4 id="Alphaleonis_Reflection_Reflect_GetMember__1_System_Linq_Expressions_Expression_System_Action___0___" data-uid="Alphaleonis.Reflection.Reflect.GetMember``1(System.Linq.Expressions.Expression{System.Action{``0}})">GetMember&lt;T&gt;(Expression&lt;Action&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a> representing the member accessed in the
+<code data-dev-comment-type="paramref" class="paramref">expression</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -341,7 +410,9 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>The expression. This must be a lambda expression referring to a
+single member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -356,7 +427,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a> representing the member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -371,7 +443,24 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the member.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The expression does not reference a member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -380,11 +469,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Reflect_GetMember__1_System_Linq_Expressions_Expression_System_Action__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Reflect.GetMember%60%601(System.Linq.Expressions.Expression%7BSystem.Action%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L114">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L169">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Reflect_GetMember_" data-uid="Alphaleonis.Reflection.Reflect.GetMember*"></a>
   <h4 id="Alphaleonis_Reflection_Reflect_GetMember__1_System_Linq_Expressions_Expression_System_Action__" data-uid="Alphaleonis.Reflection.Reflect.GetMember``1(System.Linq.Expressions.Expression{System.Action})">GetMember&lt;T&gt;(Expression&lt;Action&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a> representing the member accessed in the
+<code data-dev-comment-type="paramref" class="paramref">expression</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -403,7 +494,9 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action">Action</a>&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>The expression. This must be a lambda expression referring to a
+single member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -418,7 +511,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a> representing the member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -433,7 +527,24 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the member.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The expression does not reference a member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -442,11 +553,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Reflect_GetMember__1_System_Linq_Expressions_Expression_System_Func___0_System_Object___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Reflect.GetMember%60%601(System.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2CSystem.Object%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L109">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L155">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Reflect_GetMember_" data-uid="Alphaleonis.Reflection.Reflect.GetMember*"></a>
   <h4 id="Alphaleonis_Reflection_Reflect_GetMember__1_System_Linq_Expressions_Expression_System_Func___0_System_Object___" data-uid="Alphaleonis.Reflection.Reflect.GetMember``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">GetMember&lt;T&gt;(Expression&lt;Func&lt;T, Object&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a> representing the member accessed in the
+<code data-dev-comment-type="paramref" class="paramref">expression</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -465,7 +578,9 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>The expression. This must be a lambda expression referring to a
+single member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -480,7 +595,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a> representing the member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -495,7 +611,24 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the member.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The expression does not reference a member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -504,11 +637,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Reflect_GetMember__1_System_Linq_Expressions_Expression_System_Func___0___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Reflect.GetMember%60%601(System.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L119">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L183">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Reflect_GetMember_" data-uid="Alphaleonis.Reflection.Reflect.GetMember*"></a>
   <h4 id="Alphaleonis_Reflection_Reflect_GetMember__1_System_Linq_Expressions_Expression_System_Func___0___" data-uid="Alphaleonis.Reflection.Reflect.GetMember``1(System.Linq.Expressions.Expression{System.Func{``0}})">GetMember&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a> representing the member accessed in the
+<code data-dev-comment-type="paramref" class="paramref">expression</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -527,7 +662,9 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>The expression. This must be a lambda expression referring to a
+single member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -542,7 +679,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.memberinfo">MemberInfo</a> representing the member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -557,7 +695,24 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the member.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The expression does not reference a member.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -566,11 +721,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Reflect_GetMethod_System_Linq_Expressions_Expression_System_Action__.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Reflect.GetMethod(System.Linq.Expressions.Expression%7BSystem.Action%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L199">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L270">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Reflect_GetMethod_" data-uid="Alphaleonis.Reflection.Reflect.GetMethod*"></a>
   <h4 id="Alphaleonis_Reflection_Reflect_GetMethod_System_Linq_Expressions_Expression_System_Action__" data-uid="Alphaleonis.Reflection.Reflect.GetMethod(System.Linq.Expressions.Expression{System.Action})">GetMethod(Expression&lt;Action&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a> representing the method accessed in the
+<code data-dev-comment-type="paramref" class="paramref">expression</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -589,7 +746,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action">Action</a>&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>The expression. This must be a lambda expression invoking a single method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -604,54 +762,24 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a> representing the method.</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Reflect_GetMethod_System_Linq_Expressions_LambdaExpression_.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Reflect.GetMethod(System.Linq.Expressions.LambdaExpression)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L209">View Source</a>
-  </span>
-  <a id="Alphaleonis_Reflection_Reflect_GetMethod_" data-uid="Alphaleonis.Reflection.Reflect.GetMethod*"></a>
-  <h4 id="Alphaleonis_Reflection_Reflect_GetMethod_System_Linq_Expressions_LambdaExpression_" data-uid="Alphaleonis.Reflection.Reflect.GetMethod(System.Linq.Expressions.LambdaExpression)">GetMethod(LambdaExpression)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static MethodInfo GetMethod(LambdaExpression expression)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
+        <th>Condition</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.lambdaexpression">LambdaExpression</a></td>
-        <td><span class="parametername">expression</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></td>
-        <td></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The expression does not reference a method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -660,11 +788,13 @@
     <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/new/master/apiSpec/new?filename=Alphaleonis_Reflection_Reflect_GetMethod__1_System_Linq_Expressions_Expression_System_Action___0___.md&amp;value=---%0Auid%3A%20Alphaleonis.Reflection.Reflect.GetMethod%60%601(System.Linq.Expressions.Expression%7BSystem.Action%7B%60%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L204">View Source</a>
+    <a href="https://github.com/alphaleonis/Alphaleonis.Reflection/blob/master/src/Alphaleonis.Reflection/Utilities/Reflect.cs/#L284">View Source</a>
   </span>
   <a id="Alphaleonis_Reflection_Reflect_GetMethod_" data-uid="Alphaleonis.Reflection.Reflect.GetMethod*"></a>
   <h4 id="Alphaleonis_Reflection_Reflect_GetMethod__1_System_Linq_Expressions_Expression_System_Action___0___" data-uid="Alphaleonis.Reflection.Reflect.GetMethod``1(System.Linq.Expressions.Expression{System.Action{``0}})">GetMethod&lt;T&gt;(Expression&lt;Action&lt;T&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a> representing the method accessed in the
+<code data-dev-comment-type="paramref" class="paramref">expression</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -683,7 +813,9 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;T&gt;&gt;</td>
         <td><span class="parametername">expression</span></td>
-        <td></td>
+        <td><p>The expression. This must be a lambda expression invoking a single
+method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -698,7 +830,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></td>
-        <td></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a> representing the method.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -713,7 +846,24 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>The type of the object declaring the method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The expression does not reference a method.</p>
+</td>
       </tr>
     </tbody>
   </table>

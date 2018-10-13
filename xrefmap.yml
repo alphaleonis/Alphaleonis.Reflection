@@ -7779,12 +7779,6 @@ references:
   fullName.vb: Alphaleonis.Reflection.Reflect.GetMethod(System.Linq.Expressions.Expression(Of System.Action))
   nameWithType: Reflect.GetMethod(Expression<Action>)
   nameWithType.vb: Reflect.GetMethod(Expression(Of Action))
-- uid: Alphaleonis.Reflection.Reflect.GetMethod(System.Linq.Expressions.LambdaExpression)
-  name: GetMethod(LambdaExpression)
-  href: api/Alphaleonis.Reflection.Reflect.html#Alphaleonis_Reflection_Reflect_GetMethod_System_Linq_Expressions_LambdaExpression_
-  commentId: M:Alphaleonis.Reflection.Reflect.GetMethod(System.Linq.Expressions.LambdaExpression)
-  fullName: Alphaleonis.Reflection.Reflect.GetMethod(System.Linq.Expressions.LambdaExpression)
-  nameWithType: Reflect.GetMethod(LambdaExpression)
 - uid: Alphaleonis.Reflection.Reflect.GetMethod*
   name: GetMethod
   href: api/Alphaleonis.Reflection.Reflect.html#Alphaleonis_Reflection_Reflect_GetMethod_
