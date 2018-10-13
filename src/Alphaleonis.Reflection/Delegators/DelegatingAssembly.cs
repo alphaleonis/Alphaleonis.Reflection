@@ -1,3 +1,6 @@
+// Copyright (c) Peter Palotas
+// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+
 #if !NETSTANDARD1_6 && !NETSTANDARD2_0
 #define NETFX
 #endif
