@@ -11,7 +11,7 @@ namespace Alphaleonis.Reflection.Context
 {   
    public partial class ReflectionTableBase
    {
-      protected struct MethodKey : IEquatable<MethodKey>
+      private protected struct MethodKey : IEquatable<MethodKey>
       {
          public MethodKey(MethodBase method)
          {

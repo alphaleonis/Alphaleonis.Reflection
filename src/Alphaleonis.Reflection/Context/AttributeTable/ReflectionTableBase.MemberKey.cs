@@ -9,7 +9,7 @@ namespace Alphaleonis.Reflection.Context
    public partial class ReflectionTableBase
    {
       [Serializable]
-      protected struct MemberKey : IEquatable<MemberKey>
+      private protected struct MemberKey : IEquatable<MemberKey>
       {
          public MemberKey(MemberInfo member)
             : this(member.MemberType, member.Name)

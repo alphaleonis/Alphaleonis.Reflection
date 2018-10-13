@@ -13,11 +13,10 @@ namespace Alphaleonis.Reflection.Context
 {
    /// <summary>
    /// A class used to build the table to be used for adding reflection information
-   /// <see cref="TableReflectionContext"/>.
+   /// in a <see cref="TableReflectionContext"/>.
    /// </summary>
    public partial class ReflectionTableBuilder : IReflectionTableBuilder
-   {
-      // TODO PP (2018-04-30): Document members of this class.
+   {      
       #region Private Fields
 
       private readonly ImmutableDictionary<Type, TypeMetadata>.Builder m_metadata;
@@ -26,6 +25,7 @@ namespace Alphaleonis.Reflection.Context
 
       #region Constructor
 
+      /// <summary>Default constructor.</summary>
       public ReflectionTableBuilder()
       {
          m_metadata = ImmutableDictionary.CreateBuilder<Type, TypeMetadata>(TypeEqualityComparerIgnoringTypeParameters.Default);
@@ -35,6 +35,8 @@ namespace Alphaleonis.Reflection.Context
 
       #region General Methods
 
+      /// <summary>Creates an immutable <see cref="IReflectionTable"/> based on the contents of this builder.</summary>
+      /// <returns>A new instance of an immutable <see cref="IReflectionTable"/>.</returns>
       public IReflectionTable CreateTable()
       {
          return new ReflectionTable(m_metadata.ToImmutable());
@@ -44,6 +46,11 @@ namespace Alphaleonis.Reflection.Context
 
       #region Add Attributes
 
+      /// <summary>Adds the specified <paramref name="attributes"/> to the specified <paramref name="parameter"/> in this reflection table.</summary>
+      /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+      /// <param name="parameter">The parameter to add one or more attributes to.</param>
+      /// <param name="attributes">The attributes to add to the <paramref name="parameter"/>.</param>
+      /// <returns>This instance of the <see cref="ReflectionTableBuilder"/>, allowing chaining calls to multiple methods.</returns>
       public IReflectionTableBuilder AddParameterAttributes(ParameterInfo parameter, IEnumerable<Attribute> attributes)
       {
          if (parameter == null)
@@ -57,6 +64,11 @@ namespace Alphaleonis.Reflection.Context
          return this;
       }
 
+      /// <summary>Adds the specified <paramref name="attributes"/> to the specified <paramref name="member"/> in this reflection table.</summary>
+      /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+      /// <param name="member">The parameter to add one or more attributes to.</param>
+      /// <param name="attributes">The attributes to add to the <paramref name="member"/>.</param>
+      /// <returns>This instance of the <see cref="ReflectionTableBuilder"/>, allowing chaining calls to multiple methods.</returns>
       public IReflectionTableBuilder AddMemberAttributes(MemberInfo member, IEnumerable<Attribute> attributes)
       {         
          if (member == null)
@@ -90,7 +102,7 @@ namespace Alphaleonis.Reflection.Context
 
       #region Private Methods
 
-      protected override TypeMetadata GetTypeMetadata(Type type)
+      private protected override TypeMetadata GetTypeMetadata(Type type)
       {
          TypeMetadata metadata;
          if (!m_metadata.TryGetValue(type, out metadata))

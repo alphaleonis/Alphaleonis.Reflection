@@ -66,6 +66,7 @@
     "fileMetadataFiles": [],
     "template": [
       "default",
+      "theme/mathew",
       "theme/alphaleonis"
     ],
     "postProcessors": [],

@@ -8,6 +8,7 @@
     <PackageId>Alphaleonis.Reflection</PackageId>   
     <PackageOutputPath>..\..\artifacts</PackageOutputPath>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

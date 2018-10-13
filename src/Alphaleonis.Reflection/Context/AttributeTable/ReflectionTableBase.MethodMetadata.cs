@@ -10,7 +10,7 @@ namespace Alphaleonis.Reflection.Context
 {
    public partial class ReflectionTableBase
    {
-      protected struct MethodMetadata
+      private protected struct MethodMetadata
       {
          public MethodMetadata(int parameterCount)
          {

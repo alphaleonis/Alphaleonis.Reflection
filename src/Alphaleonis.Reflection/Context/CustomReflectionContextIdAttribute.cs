@@ -13,11 +13,15 @@ namespace Alphaleonis.Reflection.Context
    [AttributeUsage(AttributeTargets.All, AllowMultiple = true, Inherited = false)]
    public class CustomReflectionContextIdAttribute : Attribute
    {
+      /// <summary>Constructor.</summary>
+      /// <param name="contextId">Identifier of the reflection context.</param>
       public CustomReflectionContextIdAttribute(Guid contextId)
       {
          ContextId = contextId;
       }
 
+      /// <summary>Gets the identifier of the reflection context.</summary>
+      /// <value>The identifier of the reflection context.</value>
       public Guid ContextId { get; }
    }
 }

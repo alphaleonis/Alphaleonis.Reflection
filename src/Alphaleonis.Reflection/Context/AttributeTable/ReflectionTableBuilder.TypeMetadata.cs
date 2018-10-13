@@ -9,7 +9,7 @@ namespace Alphaleonis.Reflection.Context
 {
    public partial class ReflectionTableBase
    {
-      protected class TypeMetadata
+      private protected class TypeMetadata
       {
          public static readonly TypeMetadata Empty = new TypeMetadata();
 

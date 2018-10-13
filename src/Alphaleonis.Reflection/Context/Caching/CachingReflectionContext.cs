@@ -11,22 +11,28 @@ using System.Text;
 
 namespace Alphaleonis.Reflection.Context
 {
-   // TODO PP (2018-06-27): Work in progress, needs a bunch more work.
+   
+   /// <summary>A reflection context thats adds caching of some reflection lookups.</summary>
+   
    public class CachingReflectionContext : ReflectionContext
    {
       private readonly Dictionary<Type, TypeInfo> m_mappedTypes = new Dictionary<Type, TypeInfo>(TypeEqualityComparer.Default);
       private readonly ReflectionContext m_baseContext;
 
+      /// <summary>Constructor.</summary>
+      /// <param name="baseContext">The underlying <see cref="ReflectionContext"/> to delegate calls to.</param>
       public CachingReflectionContext(ReflectionContext baseContext)
       {
          m_baseContext = baseContext;
       }
 
+      /// <inheritdoc/> 
       public override Assembly MapAssembly(Assembly assembly)
       {
          return m_baseContext.MapAssembly(assembly);
       }
 
+      /// <inheritdoc/> 
       public override TypeInfo MapType(TypeInfo type)
       {
          TypeInfo result;
